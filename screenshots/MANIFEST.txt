@@ -1,0 +1,27 @@
+Microsoft Learn screenshot download manifest
+Generated: 2026-07-07T21:47:19.1812381-07:00
+Root: C:\Users\amandan\Downloads\Amanda_Portfolio\screenshots
+
+[01_vra]
+Source page: https://learn.microsoft.com/en-us/intune/copilot/agents/manage-vulnerability-remediation-agent
+  Saved: agent-home-screen.png | Size: 488785 bytes | Original image URL: https://learn.microsoft.com/en-us/intune/copilot/agents/media/vulnerability-remediation-agent/agent-home-screen.png
+  Saved: configurations.png | Size: 303534 bytes | Original image URL: https://learn.microsoft.com/en-us/intune/copilot/agents/media/vulnerability-remediation-agent/configurations.png
+  Saved: suggested-action-pane.png | Size: 302225 bytes | Original image URL: https://learn.microsoft.com/en-us/intune/copilot/agents/media/vulnerability-remediation-agent/suggested-action-pane.png
+  Saved: suggestions-tab.png | Size: 332459 bytes | Original image URL: https://learn.microsoft.com/en-us/intune/copilot/agents/media/vulnerability-remediation-agent/suggestions-tab.png
+Source page: https://learn.microsoft.com/en-us/intune/intune-service/protect/vulnerability-remediation-agent
+  Saved: agent-set-up.png | Size: 368339 bytes | Original image URL: https://learn.microsoft.com/en-us/intune/intune-service/protect/media/vulnerability-remediation-agent/agent-set-up.png
+  Saved: set-up-and-start-agent.png | Size: 61344 bytes | Original image URL: https://learn.microsoft.com/en-us/intune/intune-service/protect/media/vulnerability-remediation-agent/set-up-and-start-agent.png
+
+[02_device_query]
+  No valid images saved.
+
+[03_windows365]
+  No valid images saved.
+
+[Issues]
+- 01_vra: failed to retrieve page https://learn.microsoft.com/en-us/intune/intune-service/protect/manage-vulnerability-remediation-agent - Response status code does not indicate success: 404 (Not Found).; using fallback https://learn.microsoft.com/en-us/intune/copilot/agents/manage-vulnerability-remediation-agent
+- 02_device_query: no eligible /media/ PNG/JPG image srcs found on https://learn.microsoft.com/en-us/intune/advanced-analytics/device-query-multiple-devices
+- 03_windows365: no eligible /media/ PNG/JPG image srcs found on https://learn.microsoft.com/en-us/windows-365/enterprise/introduction-windows-365-flex
+- 03_windows365: no eligible /media/ PNG/JPG image srcs found on https://learn.microsoft.com/en-us/windows-365/enterprise/provisioning
+- 03_windows365: no eligible /media/ PNG/JPG image srcs found on https://learn.microsoft.com/en-us/windows-365/enterprise/create-provisioning-policy
+- 03_windows365: no eligible /media/ PNG/JPG image srcs found on https://learn.microsoft.com/en-us/windows-365/enterprise/windows-365-flex-manage

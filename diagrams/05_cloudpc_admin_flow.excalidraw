@@ -1,0 +1,100 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "portfolio",
+  "elements": [
+    {
+      "type": "text", "id": "title", "x": 40, "y": 30, "width": 900, "height": 40,
+      "text": "Windows 365 / Cloud PC \u2014 Admin Experience", "fontSize": 28, "fontFamily": 1,
+      "strokeColor": "#000000", "backgroundColor": "transparent", "textAlign": "left", "verticalAlign": "top"
+    },
+    {
+      "type": "text", "id": "subtitle", "x": 40, "y": 78, "width": 900, "height": 28,
+      "text": "Provisioning \u2192 Assignment \u2192 Health \u2192 Repair, plus shared Cloud PCs and an IA rename", "fontSize": 16, "fontFamily": 1,
+      "strokeColor": "#000000", "backgroundColor": "transparent", "textAlign": "left", "verticalAlign": "top"
+    },
+
+    {
+      "type": "rectangle", "id": "s1", "x": 40, "y": 150, "width": 200, "height": 100,
+      "strokeColor": "#0078D4", "backgroundColor": "#CFE4FA", "fillStyle": "hachure", "strokeWidth": 2,
+      "roundness": { "type": 3 }, "boundElements": [{ "type": "text", "id": "s1t" }]
+    },
+    {
+      "type": "text", "id": "s1t", "containerId": "s1", "x": 50, "y": 175, "width": 180, "height": 50,
+      "text": "Guided\nprovisioning", "fontSize": 18, "fontFamily": 1, "strokeColor": "#000000",
+      "textAlign": "center", "verticalAlign": "middle"
+    },
+
+    {
+      "type": "rectangle", "id": "s2", "x": 300, "y": 150, "width": 200, "height": 100,
+      "strokeColor": "#0078D4", "backgroundColor": "#CFE4FA", "fillStyle": "hachure", "strokeWidth": 2,
+      "roundness": { "type": 3 }, "boundElements": [{ "type": "text", "id": "s2t" }]
+    },
+    {
+      "type": "text", "id": "s2t", "containerId": "s2", "x": 310, "y": 175, "width": 180, "height": 50,
+      "text": "Assignment\n& policy", "fontSize": 18, "fontFamily": 1, "strokeColor": "#000000",
+      "textAlign": "center", "verticalAlign": "middle"
+    },
+
+    {
+      "type": "rectangle", "id": "s3", "x": 560, "y": 150, "width": 200, "height": 100,
+      "strokeColor": "#107C10", "backgroundColor": "#DFF6DD", "fillStyle": "hachure", "strokeWidth": 2,
+      "roundness": { "type": 3 }, "boundElements": [{ "type": "text", "id": "s3t" }]
+    },
+    {
+      "type": "text", "id": "s3t", "containerId": "s3", "x": 570, "y": 168, "width": 180, "height": 64,
+      "text": "Health dashboard\n(\u201cFitness Tracker\u201d)", "fontSize": 18, "fontFamily": 1, "strokeColor": "#000000",
+      "textAlign": "center", "verticalAlign": "middle"
+    },
+
+    {
+      "type": "rectangle", "id": "s4", "x": 820, "y": 150, "width": 200, "height": 100,
+      "strokeColor": "#F7630C", "backgroundColor": "#FFF4CE", "fillStyle": "hachure", "strokeWidth": 2,
+      "roundness": { "type": 3 }, "boundElements": [{ "type": "text", "id": "s4t" }]
+    },
+    {
+      "type": "text", "id": "s4t", "containerId": "s4", "x": 830, "y": 168, "width": 180, "height": 64,
+      "text": "Attempt to repair\nconnection", "fontSize": 18, "fontFamily": 1, "strokeColor": "#000000",
+      "textAlign": "center", "verticalAlign": "middle"
+    },
+
+    {
+      "type": "arrow", "id": "a1", "x": 246, "y": 200, "width": 48, "height": 0,
+      "strokeColor": "#495057", "strokeWidth": 2, "points": [[0, 0], [48, 0]],
+      "startBinding": { "elementId": "s1", "focus": 0, "gap": 6 }, "endBinding": { "elementId": "s2", "focus": 0, "gap": 6 }
+    },
+    {
+      "type": "arrow", "id": "a2", "x": 506, "y": 200, "width": 48, "height": 0,
+      "strokeColor": "#495057", "strokeWidth": 2, "points": [[0, 0], [48, 0]],
+      "startBinding": { "elementId": "s2", "focus": 0, "gap": 6 }, "endBinding": { "elementId": "s3", "focus": 0, "gap": 6 }
+    },
+    {
+      "type": "arrow", "id": "a3", "x": 766, "y": 200, "width": 48, "height": 0,
+      "strokeColor": "#495057", "strokeWidth": 2, "points": [[0, 0], [48, 0]],
+      "startBinding": { "elementId": "s3", "focus": 0, "gap": 6 }, "endBinding": { "elementId": "s4", "focus": 0, "gap": 6 }
+    },
+
+    {
+      "type": "rectangle", "id": "flex", "x": 40, "y": 320, "width": 460, "height": 110,
+      "strokeColor": "#5C2D91", "backgroundColor": "#E8DAEF", "fillStyle": "hachure", "strokeWidth": 2,
+      "roundness": { "type": 3 }, "boundElements": [{ "type": "text", "id": "flext" }]
+    },
+    {
+      "type": "text", "id": "flext", "containerId": "flex", "x": 55, "y": 340, "width": 430, "height": 70,
+      "text": "Shared / Frontline (Flex) Cloud PC\nup to 4 workers, one at a time\nDesign Owner \u2014 shipped to Private Preview", "fontSize": 15, "fontFamily": 1,
+      "strokeColor": "#000000", "textAlign": "center", "verticalAlign": "middle"
+    },
+
+    {
+      "type": "rectangle", "id": "ia", "x": 560, "y": 320, "width": 460, "height": 110,
+      "strokeColor": "#495057", "backgroundColor": "#F3F2F1", "fillStyle": "hachure", "strokeWidth": 2,
+      "roundness": { "type": 3 }, "boundElements": [{ "type": "text", "id": "iat" }]
+    },
+    {
+      "type": "text", "id": "iat", "containerId": "ia", "x": 575, "y": 340, "width": 430, "height": 70,
+      "text": "IA change (research-backed)\n\u201cWindows 365\u201d \u2192 \u201cCloud PC creation\u201d\n+ new Device Onboarding section", "fontSize": 15, "fontFamily": 1,
+      "strokeColor": "#000000", "textAlign": "center", "verticalAlign": "middle"
+    }
+  ],
+  "appState": { "viewBackgroundColor": "#ffffff" }
+}

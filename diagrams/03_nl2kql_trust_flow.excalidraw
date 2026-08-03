@@ -1,0 +1,409 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "claude",
+  "elements": [
+    {
+      "type": "text",
+      "id": "txt_0",
+      "x": 40,
+      "y": 24,
+      "width": 1000,
+      "height": 60,
+      "text": "NL2KQL Copilot — Natural Language as the Interface to Data",
+      "fontSize": 24,
+      "fontFamily": 1,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "text",
+      "id": "txt_1",
+      "x": 40,
+      "y": 64,
+      "width": 1000,
+      "height": 37.5,
+      "text": "The hard part isn’t generating KQL — it’s helping users trust it.",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "rectangle",
+      "id": "box_2",
+      "x": 40,
+      "y": 150,
+      "width": 168,
+      "height": 90,
+      "strokeColor": "#0078D4",
+      "backgroundColor": "#CFE4FA",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "box_2_t"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box_2_t",
+      "containerId": "box_2",
+      "x": 48,
+      "y": 158,
+      "width": 152,
+      "height": 74,
+      "text": "“Which devices\nare non-compliant?”",
+      "fontSize": 13,
+      "fontFamily": 1,
+      "strokeColor": "#000000",
+      "textAlign": "center",
+      "verticalAlign": "middle"
+    },
+    {
+      "type": "rectangle",
+      "id": "box_3",
+      "x": 262,
+      "y": 150,
+      "width": 168,
+      "height": 90,
+      "strokeColor": "#5C2D91",
+      "backgroundColor": "#E8DAEF",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "box_3_t"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box_3_t",
+      "containerId": "box_3",
+      "x": 270,
+      "y": 158,
+      "width": 152,
+      "height": 74,
+      "text": "Interpret intent",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#000000",
+      "textAlign": "center",
+      "verticalAlign": "middle"
+    },
+    {
+      "type": "rectangle",
+      "id": "box_4",
+      "x": 484,
+      "y": 150,
+      "width": 168,
+      "height": 90,
+      "strokeColor": "#107C10",
+      "backgroundColor": "#DFF6DD",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "box_4_t"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box_4_t",
+      "containerId": "box_4",
+      "x": 492,
+      "y": 158,
+      "width": 152,
+      "height": 74,
+      "text": "Generate KQL\n(shown, not hidden)",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#000000",
+      "textAlign": "center",
+      "verticalAlign": "middle"
+    },
+    {
+      "type": "rectangle",
+      "id": "box_5",
+      "x": 706,
+      "y": 150,
+      "width": 168,
+      "height": 90,
+      "strokeColor": "#F7630C",
+      "backgroundColor": "#FFF4CE",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "box_5_t"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box_5_t",
+      "containerId": "box_5",
+      "x": 714,
+      "y": 158,
+      "width": 152,
+      "height": 74,
+      "text": "Validate\n& handle errors",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#000000",
+      "textAlign": "center",
+      "verticalAlign": "middle"
+    },
+    {
+      "type": "rectangle",
+      "id": "box_6",
+      "x": 928,
+      "y": 150,
+      "width": 168,
+      "height": 90,
+      "strokeColor": "#0078D4",
+      "backgroundColor": "#CFE4FA",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "box_6_t"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box_6_t",
+      "containerId": "box_6",
+      "x": 936,
+      "y": 158,
+      "width": 152,
+      "height": 74,
+      "text": "Clear, trusted\nresult",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#000000",
+      "textAlign": "center",
+      "verticalAlign": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "arr_7",
+      "x": 208,
+      "y": 195,
+      "width": 54,
+      "height": 0,
+      "strokeColor": "#495057",
+      "strokeWidth": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          54,
+          0
+        ]
+      ],
+      "startBinding": {
+        "elementId": "box_2",
+        "focus": 0,
+        "gap": 4
+      },
+      "endBinding": {
+        "elementId": "box_3",
+        "focus": 0,
+        "gap": 4
+      },
+      "endArrowhead": "arrow"
+    },
+    {
+      "type": "arrow",
+      "id": "arr_8",
+      "x": 430,
+      "y": 195,
+      "width": 54,
+      "height": 0,
+      "strokeColor": "#495057",
+      "strokeWidth": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          54,
+          0
+        ]
+      ],
+      "startBinding": {
+        "elementId": "box_3",
+        "focus": 0,
+        "gap": 4
+      },
+      "endBinding": {
+        "elementId": "box_4",
+        "focus": 0,
+        "gap": 4
+      },
+      "endArrowhead": "arrow"
+    },
+    {
+      "type": "arrow",
+      "id": "arr_9",
+      "x": 652,
+      "y": 195,
+      "width": 54,
+      "height": 0,
+      "strokeColor": "#495057",
+      "strokeWidth": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          54,
+          0
+        ]
+      ],
+      "startBinding": {
+        "elementId": "box_4",
+        "focus": 0,
+        "gap": 4
+      },
+      "endBinding": {
+        "elementId": "box_5",
+        "focus": 0,
+        "gap": 4
+      },
+      "endArrowhead": "arrow"
+    },
+    {
+      "type": "arrow",
+      "id": "arr_10",
+      "x": 874,
+      "y": 195,
+      "width": 54,
+      "height": 0,
+      "strokeColor": "#495057",
+      "strokeWidth": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          54,
+          0
+        ]
+      ],
+      "startBinding": {
+        "elementId": "box_5",
+        "focus": 0,
+        "gap": 4
+      },
+      "endBinding": {
+        "elementId": "box_6",
+        "focus": 0,
+        "gap": 4
+      },
+      "endArrowhead": "arrow"
+    },
+    {
+      "type": "rectangle",
+      "id": "box_11",
+      "x": 464,
+      "y": 310,
+      "width": 208,
+      "height": 70,
+      "strokeColor": "#495057",
+      "backgroundColor": "#F3F2F1",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "box_11_t"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box_11_t",
+      "containerId": "box_11",
+      "x": 472,
+      "y": 318,
+      "width": 192,
+      "height": 54,
+      "text": "Transparency builds trust:\nshow the query · validate · explain errors",
+      "fontSize": 13,
+      "fontFamily": 1,
+      "strokeColor": "#000000",
+      "textAlign": "center",
+      "verticalAlign": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "arr_12",
+      "x": 568,
+      "y": 240,
+      "width": 0,
+      "height": 70,
+      "strokeColor": "#495057",
+      "strokeWidth": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          70
+        ]
+      ],
+      "startBinding": {
+        "elementId": "box_4",
+        "focus": 0,
+        "gap": 4
+      },
+      "endBinding": {
+        "elementId": "box_11",
+        "focus": 0,
+        "gap": 4
+      },
+      "endArrowhead": "arrow"
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#ffffff"
+  }
+}

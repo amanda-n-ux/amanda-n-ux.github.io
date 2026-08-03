@@ -1,0 +1,476 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "claude",
+  "elements": [
+    {
+      "type": "text",
+      "id": "txt_0",
+      "x": 40,
+      "y": 24,
+      "width": 1000,
+      "height": 65,
+      "text": "AI Governance — One Operational Experience",
+      "fontSize": 26,
+      "fontFamily": 1,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "text",
+      "id": "txt_1",
+      "x": 40,
+      "y": 66,
+      "width": 1000,
+      "height": 37.5,
+      "text": "The challenge isn’t one agent — it’s governing many, safely, in one place.",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "strokeColor": "#000000",
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "rectangle",
+      "id": "box_2",
+      "x": 470,
+      "y": 320,
+      "width": 200,
+      "height": 110,
+      "strokeColor": "#5C2D91",
+      "backgroundColor": "#E8DAEF",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "box_2_t"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box_2_t",
+      "containerId": "box_2",
+      "x": 478,
+      "y": 328,
+      "width": 184,
+      "height": 94,
+      "text": "Fleet of agents\n— centrally governed",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#000000",
+      "textAlign": "center",
+      "verticalAlign": "middle"
+    },
+    {
+      "type": "rectangle",
+      "id": "box_3",
+      "x": 210,
+      "y": 170,
+      "width": 170,
+      "height": 84,
+      "strokeColor": "#F7630C",
+      "backgroundColor": "#FFF4CE",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "box_3_t"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box_3_t",
+      "containerId": "box_3",
+      "x": 218,
+      "y": 178,
+      "width": 154,
+      "height": 68,
+      "text": "Approval &\noversight",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#000000",
+      "textAlign": "center",
+      "verticalAlign": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "arr_4",
+      "x": 295,
+      "y": 212,
+      "width": 275,
+      "height": 163,
+      "strokeColor": "#F7630C",
+      "strokeWidth": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          275,
+          163
+        ]
+      ],
+      "startBinding": {
+        "elementId": "box_3",
+        "focus": 0,
+        "gap": 4
+      },
+      "endBinding": {
+        "elementId": "box_2",
+        "focus": 0,
+        "gap": 4
+      },
+      "endArrowhead": "arrow"
+    },
+    {
+      "type": "rectangle",
+      "id": "box_5",
+      "x": 730,
+      "y": 170,
+      "width": 170,
+      "height": 84,
+      "strokeColor": "#0078D4",
+      "backgroundColor": "#CFE4FA",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "box_5_t"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box_5_t",
+      "containerId": "box_5",
+      "x": 738,
+      "y": 178,
+      "width": 154,
+      "height": 68,
+      "text": "Observability &\nmonitoring",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#000000",
+      "textAlign": "center",
+      "verticalAlign": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "arr_6",
+      "x": 815,
+      "y": 212,
+      "width": 245,
+      "height": 163,
+      "strokeColor": "#0078D4",
+      "strokeWidth": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -245,
+          163
+        ]
+      ],
+      "startBinding": {
+        "elementId": "box_5",
+        "focus": 0,
+        "gap": 4
+      },
+      "endBinding": {
+        "elementId": "box_2",
+        "focus": 0,
+        "gap": 4
+      },
+      "endArrowhead": "arrow"
+    },
+    {
+      "type": "rectangle",
+      "id": "box_7",
+      "x": 170,
+      "y": 360,
+      "width": 170,
+      "height": 84,
+      "strokeColor": "#107C10",
+      "backgroundColor": "#DFF6DD",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "box_7_t"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box_7_t",
+      "containerId": "box_7",
+      "x": 178,
+      "y": 368,
+      "width": 154,
+      "height": 68,
+      "text": "Access control &\npermissions",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#000000",
+      "textAlign": "center",
+      "verticalAlign": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "arr_8",
+      "x": 255,
+      "y": 402,
+      "width": 315,
+      "height": 27,
+      "strokeColor": "#107C10",
+      "strokeWidth": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          315,
+          -27
+        ]
+      ],
+      "startBinding": {
+        "elementId": "box_7",
+        "focus": 0,
+        "gap": 4
+      },
+      "endBinding": {
+        "elementId": "box_2",
+        "focus": 0,
+        "gap": 4
+      },
+      "endArrowhead": "arrow"
+    },
+    {
+      "type": "rectangle",
+      "id": "box_9",
+      "x": 770,
+      "y": 360,
+      "width": 170,
+      "height": 84,
+      "strokeColor": "#0078D4",
+      "backgroundColor": "#CFE4FA",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "box_9_t"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box_9_t",
+      "containerId": "box_9",
+      "x": 778,
+      "y": 368,
+      "width": 154,
+      "height": 68,
+      "text": "Ownership &\naccountability",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#000000",
+      "textAlign": "center",
+      "verticalAlign": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "arr_10",
+      "x": 855,
+      "y": 402,
+      "width": 285,
+      "height": 27,
+      "strokeColor": "#0078D4",
+      "strokeWidth": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -285,
+          -27
+        ]
+      ],
+      "startBinding": {
+        "elementId": "box_9",
+        "focus": 0,
+        "gap": 4
+      },
+      "endBinding": {
+        "elementId": "box_2",
+        "focus": 0,
+        "gap": 4
+      },
+      "endArrowhead": "arrow"
+    },
+    {
+      "type": "rectangle",
+      "id": "box_11",
+      "x": 340,
+      "y": 530,
+      "width": 170,
+      "height": 84,
+      "strokeColor": "#495057",
+      "backgroundColor": "#F3F2F1",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "box_11_t"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box_11_t",
+      "containerId": "box_11",
+      "x": 348,
+      "y": 538,
+      "width": 154,
+      "height": 68,
+      "text": "Durable audit\ntrail",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#000000",
+      "textAlign": "center",
+      "verticalAlign": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "arr_12",
+      "x": 425,
+      "y": 572,
+      "width": 145,
+      "height": 197,
+      "strokeColor": "#495057",
+      "strokeWidth": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          145,
+          -197
+        ]
+      ],
+      "startBinding": {
+        "elementId": "box_11",
+        "focus": 0,
+        "gap": 4
+      },
+      "endBinding": {
+        "elementId": "box_2",
+        "focus": 0,
+        "gap": 4
+      },
+      "endArrowhead": "arrow"
+    },
+    {
+      "type": "rectangle",
+      "id": "box_13",
+      "x": 600,
+      "y": 530,
+      "width": 170,
+      "height": 84,
+      "strokeColor": "#D13438",
+      "backgroundColor": "#FDE7E9",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "box_13_t"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box_13_t",
+      "containerId": "box_13",
+      "x": 608,
+      "y": 538,
+      "width": 154,
+      "height": 68,
+      "text": "Blast-radius\ncontrols",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#000000",
+      "textAlign": "center",
+      "verticalAlign": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "arr_14",
+      "x": 685,
+      "y": 572,
+      "width": 115,
+      "height": 197,
+      "strokeColor": "#D13438",
+      "strokeWidth": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -115,
+          -197
+        ]
+      ],
+      "startBinding": {
+        "elementId": "box_13",
+        "focus": 0,
+        "gap": 4
+      },
+      "endBinding": {
+        "elementId": "box_2",
+        "focus": 0,
+        "gap": 4
+      },
+      "endArrowhead": "arrow"
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#ffffff"
+  }
+}

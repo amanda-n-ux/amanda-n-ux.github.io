@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Amanda Neves — Principal Product Designer</title>
+<style>
+  :root{
+    --ink:#1a1a1f; --muted:#5c5f66; --soft:#8a8d94;
+    --accent:#2e5b9a; --accent-2:#3f7fc4; --line:#e7e9ee;
+    --bg:#ffffff; --panel:#f7f8fa; --chip:#eef2f8;
+    --max:960px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+    color:var(--ink); background:var(--bg); line-height:1.6; font-size:17px;
+  }
+  a{color:var(--accent); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
+
+  /* NAV */
+  nav{position:sticky; top:0; z-index:20; background:rgba(255,255,255,.92);
+    backdrop-filter:saturate(180%) blur(8px); border-bottom:1px solid var(--line);}
+  nav .wrap{display:flex; align-items:center; justify-content:space-between; height:60px;}
+  nav .brand{font-weight:700; letter-spacing:.2px;}
+  nav .links a{margin-left:22px; color:var(--muted); font-size:15px; font-weight:500;}
+  nav .links a:hover{color:var(--accent);}
+  @media(max-width:640px){ nav .links{display:none;} }
+
+  /* HERO */
+  header.hero{padding:88px 0 56px; border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg,#f7f9fc 0%, #ffffff 100%);}
+  .eyebrow{color:var(--accent); font-weight:700; letter-spacing:.14em; text-transform:uppercase; font-size:13px;}
+  header.hero h1{font-size:52px; line-height:1.05; margin:14px 0 10px; letter-spacing:-1px;}
+  header.hero .role{font-size:22px; color:var(--muted); font-weight:500; margin-bottom:22px;}
+  header.hero p.lede{font-size:19px; color:var(--ink); max-width:680px; margin:0 0 26px;}
+  .contact{display:flex; flex-wrap:wrap; gap:10px 18px; font-size:15px; color:var(--muted);}
+  .contact .ph{color:var(--soft); font-style:italic;}
+
+  /* ARC */
+  .arc{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:30px;}
+  .arc .node{background:var(--chip); color:var(--accent); font-weight:600; font-size:14px;
+    padding:8px 14px; border-radius:999px;}
+  .arc .sep{color:var(--soft);}
+
+  /* SECTION */
+  section{padding:64px 0; border-bottom:1px solid var(--line);}
+  .sec-eyebrow{color:var(--accent); font-weight:700; letter-spacing:.14em; text-transform:uppercase; font-size:12px;}
+  h2.sec{font-size:30px; margin:8px 0 26px; letter-spacing:-.4px;}
+
+  /* CASE STUDY */
+  .case{padding:38px 0; border-top:1px dashed var(--line);}
+  .case:first-of-type{border-top:none;}
+  .case .num{font-size:13px; font-weight:700; color:var(--accent); letter-spacing:.1em;}
+  .case h3{font-size:26px; margin:6px 0 4px; letter-spacing:-.3px;}
+  .case .tag{color:var(--soft); font-size:14px; margin-bottom:18px;}
+  .beforeafter{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:20px 0 8px;}
+  @media(max-width:640px){ .beforeafter{grid-template-columns:1fr;} }
+  .ba{padding:16px 18px; border-radius:10px; border:1px solid var(--line);}
+  .ba.b{background:#fbf6f4;} .ba.a{background:#f2f7fb;}
+  .ba .lab{font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--soft);}
+  .ba.b .lab{color:#b5674a;} .ba.a .lab{color:var(--accent);}
+  .ba p{margin:6px 0 0; font-size:16px;}
+
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-top:22px;}
+  @media(max-width:640px){ .grid{grid-template-columns:1fr;} }
+  .block h4{font-size:14px; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); margin:0 0 8px;}
+  .block ul{margin:0; padding-left:18px;}
+  .block li{margin-bottom:5px; font-size:16px;}
+  .block p{margin:0; font-size:16px;}
+
+  .decisions{margin-top:24px;}
+  .decision{padding:16px 18px; background:var(--panel); border-radius:10px; margin-bottom:12px; border-left:3px solid var(--accent);}
+  .decision .d-title{font-weight:700; margin-bottom:4px;}
+  .decision .why{font-size:15px; color:var(--muted);}
+  .decision .why b{color:var(--ink);}
+
+  .imgslot{margin-top:22px; border:2px dashed #cdd4de; border-radius:12px; padding:34px;
+    text-align:center; color:var(--soft); background:#fbfcfe; font-size:14px;}
+  .imgslot b{color:var(--muted);}
+
+  /* VISUALS */
+  .fig{margin:22px 0 4px;}
+  .fig img{width:100%; border:1px solid var(--line); border-radius:10px; display:block; background:#fff;}
+  .fig figcaption, .attrib{font-size:13px; color:var(--soft); font-style:italic; margin-top:8px; line-height:1.5;}
+  .attrib a{font-style:normal;}
+  .shots{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:20px 0 4px;}
+  @media(max-width:640px){ .shots{grid-template-columns:1fr;} }
+  .shots figure{margin:0;}
+  .shots img{width:100%; border:1px solid var(--line); border-radius:8px; display:block; background:#fff;}
+  .shots figcaption{font-size:12px; color:var(--soft); margin-top:5px; text-align:center;}
+
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px;}
+  .chip{background:var(--chip); color:var(--accent); font-size:14px; font-weight:500; padding:6px 12px; border-radius:8px;}
+
+  /* SKILLS */
+  .skillgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
+  @media(max-width:640px){ .skillgrid{grid-template-columns:1fr;} }
+  .skillcard{background:var(--panel); border-radius:10px; padding:16px 18px;}
+  .skillcard h4{margin:0 0 8px; font-size:15px; color:var(--accent);}
+  .skillcard p{margin:0; font-size:15px; color:var(--muted);}
+
+  /* QUOTES */
+  .quotegrid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px;}
+  @media(max-width:640px){ .quotegrid{grid-template-columns:1fr;} }
+  .quote{background:var(--panel); border-left:3px solid var(--accent); border-radius:8px; padding:18px 20px;}
+  .quote p{margin:0 0 10px; font-size:15px; line-height:1.55; font-style:italic; color:var(--ink);}
+  .quote .cite{font-size:13px; color:var(--muted); font-style:normal;}
+  .quote .cite b{color:var(--accent); font-weight:600;}
+
+  footer{padding:48px 0 72px; text-align:center; color:var(--soft); font-size:14px;}
+  footer .note{max-width:620px; margin:14px auto 0; font-size:12.5px; line-height:1.5;}
+
+  @media print{
+    nav{display:none;} header.hero{padding-top:24px;} section{page-break-inside:avoid;}
+    .imgslot{display:none;} body{font-size:12px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Amanda Neves</div>
+    <div class="links">
+      <a href="#work">Work</a>
+      <a href="#intune-agents">Intune Agents</a>
+      <a href="#vra">VRA</a>
+      <a href="#perception">Perception</a>
+      <a href="#cloudpc">Windows 365</a>
+      <a href="#skills">Skills</a>
+      <a href="#voices">Voices</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Principal Product Designer</div>
+    <h1>Designing how humans<br/>and AI agents work together.</h1>
+    <div class="role">25+ years designing enterprise experiences at Microsoft</div>
+    <p class="lede">I lead UX for agentic security and AI experiences across Microsoft Security, enterprise device management, and platform-level design systems — taking ambiguous problems from concept to Public Preview and establishing reusable patterns adopted across teams.</p>
+    <p class="lede" style="font-size:0.9em; opacity:0.85; margin-top:-6px;">Currently: leading UX for agentic security experiences across Microsoft Security — extending agent-session and playbook patterns across first-party products. <em>(Most recent work; pre-release, details confidential.)</em></p>
+    <div class="contact">
+      <span class="ph">[City, State]</span>
+      <span class="ph">[personal email]</span>
+      <span class="ph">[phone]</span>
+      <a href="#">[LinkedIn]</a>
+    </div>
+    <div class="arc">
+      <span class="node">Agents as a System</span><span class="sep">&rarr;</span>
+      <span class="node">Flagship Execution</span><span class="sep">&rarr;</span>
+      <span class="node">Multi-Agent Coordination</span><span class="sep">&rarr;</span>
+      <span class="node">Foundational Ownership</span>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-eyebrow">Selected Work</div>
+    <h2 class="sec">A multi-year arc: from managing individual agents to coordinated agent systems</h2>
+    <p style="max-width:720px; color:var(--muted); margin-top:-8px;">
+      Connected projects tell one story — bringing agents into Intune as a managed system, going deep
+      on a flagship agent, extending that thinking into a broader multi-agent security system, and grounding
+      it all in foundational, fully-led product work: the admin UX for Windows 365 / Cloud PC.
+    </p>
+
+    <!-- CASE 1 -->
+    <div class="case" id="intune-agents">
+      <div class="num">01 &mdash; ADDING AGENTS TO INTUNE</div>
+      <h3>Agents as a Managed System</h3>
+      <div class="tag">Experience strategy &amp; interaction design</div>
+      <div class="beforeafter">
+        <div class="ba b"><div class="lab">Before</div><p>Admins manually investigated and coordinated remediation across disconnected consoles — spending more time coordinating than solving problems.</p></div>
+        <div class="ba a"><div class="lab">After</div><p>Agents investigate, build durable plans, and present actionable recommendations while keeping the admin firmly in control.</p></div>
+      </div>
+      <div class="grid">
+        <div class="block">
+          <h4>Problem</h4>
+          <p>Bringing agents into Intune raised a foundational design question: what does it mean to design agents as a <b>category</b> of Intune functionality — not one-off features, but a system that needs to be introduced, permissioned, governed, and managed at scale? Multiple agents were in motion at once — Policy Configuration, Vulnerability Remediation, Change Review, and Device Offboarding — each with different scope, timelines, and levels of readiness.</p>
+        </div>
+        <div class="block">
+          <h4>My Role</h4>
+          <p>Principal Product Designer leading experience strategy and interaction design for agentic administration across Intune. Defined the conceptual and interaction model for agents as a class of Intune functionality, spanning agent management, permissions &amp; access, output surfaces (standalone artifacts and inline/in-context), and Responsible AI considerations. Led design end-to-end for the Vulnerability Remediation Agent and drove design strategy across the broader agent portfolio. Bridged the SFE/design-system team and the Intune product team throughout — both consuming shared components and driving new agent-specific patterns back into the shared system.</p>
+        </div>
+      </div>
+      <div class="block" style="margin-top:22px;">
+        <h4>Considerations</h4>
+        <ul>
+          <li><b>Customer needs</b> — admins wanted agents to reduce coordination overhead without losing control or visibility; trust in <i>why</i> an agent recommended an action mattered as much as the action itself.</li>
+          <li><b>Business objectives</b> — establish a credible, coherent agentic-AI foundation in Intune, with reusable patterns so agent work wouldn&rsquo;t each start from zero — and could scale or contract as agent priorities shifted.</li>
+          <li><b>Technical constraints</b> — multiple agents, different teams, different levels of maturity, all needing to feel like one coherent, governable system while the underlying design system was still evolving alongside the work.</li>
+        </ul>
+      </div>
+      <div class="decisions">
+        <div class="decision"><div class="d-title">Agents produce durable artifacts, not ephemeral chat</div><div class="why"><b>Why:</b> admins must revisit, audit, share, and continue work — chat transcripts can&rsquo;t support that.</div></div>
+        <div class="decision"><div class="d-title">Design for both standalone and in-context output</div><div class="why"><b>Why:</b> some agent work needs a dedicated place to live and be audited; other output is most useful surfaced right where the admin is already looking. Both needed distinct, deliberate patterns.</div></div>
+        <div class="decision"><div class="d-title">Human approval gates and transparency as first-class, not bolted on</div><div class="why"><b>Why:</b> security and config actions carry organizational risk — RAI-aligned progressive disclosure over full automation, with reasoning visible, not just outcomes.</div></div>
+        <div class="decision"><div class="d-title">Design agents as a managed category, not individual features</div><div class="why"><b>Why:</b> with multiple agents moving at different speeds — including some paused as priorities shifted — admins needed one consistent way to discover, configure, and govern any agent, regardless of its individual status.</div></div>
+        <div class="decision"><div class="d-title">A shared Agent section in the Intune Design Toolkit</div><div class="why"><b>Why:</b> championed reusable components and guidance, driven by real needs from developing agents in parallel — patterns adopted across teams, not one-off features.</div></div>
+      </div>
+      <figure class="fig">
+        <img src="diagrams_png/01_agentic_session_flow.png" alt="Abstracted agentic session flow: trigger, investigate, plan, review, act" />
+        <figcaption>Abstracted agent session flow — a diagram I recreated for portfolio use (not internal artwork).</figcaption>
+      </figure>
+      <div class="shots">
+        <figure><img src="screenshots/05_intune_agents/change-review__suggestions.png" alt="Change Review Agent suggestions" /><figcaption>Change Review Agent — same Suggestions / approve pattern</figcaption></figure>
+        <figure><img src="screenshots/05_intune_agents/device-offboarding__overview.png" alt="Device Offboarding Agent overview" /><figcaption>Device Offboarding Agent — shared framework</figcaption></figure>
+      </div>
+      <p class="attrib">Multiple shipped Intune agents (Change Review, Device Offboarding, Policy Configuration, Vulnerability Remediation) reuse the agent framework and interaction patterns I led — published by Microsoft (<a href="https://learn.microsoft.com/en-us/intune/copilot/agents/">learn.microsoft.com/intune/copilot/agents</a>). Evidence of pattern adoption across teams; my contribution is the design system, not the pixels.</p>
+    </div>
+
+    <!-- CASE 2 -->
+    <div class="case" id="vra">
+      <div class="num">02 &mdash; VRA DEEP DIVE</div>
+      <h3>CVE Vulnerability Remediation Agent</h3>
+      <div class="tag">Lead UX &middot; Public Preview &rarr; GA planning &middot; Flagship agent example</div>
+      <div class="beforeafter">
+        <div class="ba b"><div class="lab">Before</div><p>Security teams found problems; IT teams manually translated them into fixes — slow, fragmented, coordination-heavy.</p></div>
+        <div class="ba a"><div class="lab">After</div><p>The agent converts vulnerability intelligence into remediation plans, ready for administrator review and approval.</p></div>
+      </div>
+      <div class="grid">
+        <div class="block">
+          <h4>Problem</h4>
+          <p>A single CVE requires understanding risk, identifying affected devices, creating deployment groups, choosing a strategy, and deploying — usually stitched together by hand across security and IT teams.</p>
+        </div>
+        <div class="block">
+          <h4>My Role</h4>
+          <p>Lead UX for the Vulnerability Remediation Agent — design owner across Public Preview and GA planning, applying the permissions, output, and RAI framework established above to a specific, high-stakes scenario. Led the Intune agent demo for the first public showcase of Security Copilot Agents to the press (RSA).</p>
+        </div>
+      </div>
+      <div class="block" style="margin-top:22px;">
+        <h4>Considerations</h4>
+        <ul>
+          <li><b>Customer needs</b> — security and IT teams needed a faster path from &ldquo;here&rsquo;s a CVE&rdquo; to &ldquo;here&rsquo;s what to do about it,&rdquo; without losing the ability to review and control what actually deploys.</li>
+          <li><b>Business objectives</b> — prove out the agent framework on a concrete, high-value scenario; establish credibility for Intune&rsquo;s agentic-AI direction with a flagship example.</li>
+          <li><b>Technical constraints</b> — CVE remediation spans risk assessment, device targeting, and deployment — each with different data sources and different levels of automation that could safely be offered at MVP.</li>
+        </ul>
+      </div>
+      <div class="decisions">
+        <div class="decision"><div class="d-title">Generate remediation plans automatically</div><div class="why"><b>Why:</b> surface impacted devices, recommended actions, and deployment guidance instead of forcing admins to build plans from scratch.</div></div>
+        <div class="decision"><div class="d-title">Keep the administrator in the loop</div><div class="why"><b>Why:</b> admins review, customize, and approve before anything deploys.</div></div>
+        <div class="decision"><div class="d-title">Dedicated vulnerable-device groups</div><div class="why"><b>Why:</b> targeted groups simplified execution and established clear remediation scope.</div></div>
+        <div class="decision"><div class="d-title">Deliberate MVP simplification</div><div class="why"><b>Why:</b> a strong tradeoff story — reduced interaction complexity for the MVP (plans, review, approval) while keeping an ambitious autonomy roadmap: assisted &rarr; automatic &rarr; safe rollouts &rarr; expanded coverage.</div></div>
+      </div>
+      <figure class="fig">
+        <img src="diagrams_png/02_cve_remediation_flow.png" alt="Abstracted CVE remediation flow: discovery, plan, approval, deploy" />
+        <figcaption>Abstracted remediation flow I recreated (discovery &rarr; plan &rarr; approval &rarr; deploy).</figcaption>
+      </figure>
+      <div class="shots">
+        <figure><img src="screenshots/01_vra/suggestions-tab.png" alt="Prioritized vulnerability remediation suggestions" /><figcaption>Prioritized suggestions</figcaption></figure>
+        <figure><img src="screenshots/01_vra/suggested-action-pane.png" alt="Suggestion detail with CVE impact and remediation steps" /><figcaption>Suggestion detail &amp; remediation steps</figcaption></figure>
+        <figure><img src="screenshots/01_vra/agent-home-screen.png" alt="Vulnerability Remediation Agent home in the Intune admin center" /><figcaption>Agent home in the Intune admin center</figcaption></figure>
+        <figure><img src="screenshots/01_vra/configurations.png" alt="Agent configuration settings" /><figcaption>Agent configuration</figcaption></figure>
+      </div>
+      <p class="attrib">Shipped feature, published by Microsoft — <a href="https://learn.microsoft.com/en-us/intune/copilot/agents/vulnerability-remediation-agent">learn.microsoft.com</a>. Shown as reference for the shipped experience; my contribution is the interaction design and flows, not the raw pixels.</p>
+    </div>
+
+    <!-- CASE 3 -->
+    <div class="case" id="perception">
+      <div class="num">03 &mdash; PROJECT PERCEPTION</div>
+      <h3>Extending Agents Into a Coordinated, Multi-Agent System</h3>
+      <div class="tag">Foundational design contributor &middot; Public preview launched Aug 2026</div>
+      <div class="beforeafter">
+        <div class="ba b"><div class="lab">Before</div><p>Agentic thinking focused on individual agents handling individual tasks, each governed on its own.</p></div>
+        <div class="ba a"><div class="lab">After</div><p>Specialized agents coordinated in teams, sharing context, working together toward a security outcome — with the admin directing and approving at key checkpoints.</p></div>
+      </div>
+      <div class="grid">
+        <div class="block">
+          <h4>Problem</h4>
+          <p>The agent-by-agent model raised the next question: what happens when agents need to work <b>together</b>, coordinating across roles rather than operating as isolated tools? Early thinking explored an interaction model, governance patterns, and durable-artifact approach for a multi-agent system spanning security workflows — building on security-wide agent patterns rather than any single product&rsquo;s approach.</p>
+        </div>
+        <div class="block">
+          <h4>My Role</h4>
+          <p>Contributed early, foundational design work on the interaction model and design direction for what became Project Perception — applying and extending security-wide agent patterns into a coordinated multi-agent system: specialized agent teams (investigation, analysis, remediation) working through orchestrated playbooks, with chat as a natural-language entry point and approval checkpoints throughout. Also designed new patterns to address scale and monitoring challenges specific to Intune&rsquo;s agent volume, and pushed those patterns back up into the security-wide pattern library — the same two-way bridging approach used with the SFE/design-system team on the Intune agent work.</p>
+        </div>
+      </div>
+      <div class="block" style="margin-top:22px;">
+        <h4>Considerations</h4>
+        <ul>
+          <li><b>Customer needs</b> — security teams needed coordinated defense, not more disconnected point tools; admins still needed to trust and control what agents did on their behalf, now multiplied across a team of agents instead of one.</li>
+          <li><b>Business objectives</b> — establish a credible agentic-AI security direction ahead of a fast-moving threat landscape, building on established security-wide agent patterns rather than starting over.</li>
+          <li><b>Technical constraints</b> — coordinating multiple agent types (investigation, analysis, remediation) sharing context and handing off work, while keeping the system auditable and governable end-to-end.</li>
+        </ul>
+      </div>
+      <div class="decisions">
+        <div class="decision"><div class="d-title">Extend durable, auditable sessions to multi-agent workflows</div><div class="why"><b>Why:</b> the same &ldquo;revisitable artifact, not ephemeral chat&rdquo; principle from the Intune agent work, applied to a system where several agents now contribute to one outcome.</div></div>
+        <div class="decision"><div class="d-title">Natural-language entry point (chat) over manual navigation</div><div class="why"><b>Why:</b> reduce the friction of finding and configuring the right tool for a task — describe the goal, let the system route to the right workflow.</div></div>
+        <div class="decision"><div class="d-title">Approval checkpoints throughout, not just at the end</div><div class="why"><b>Why:</b> with multiple agents acting in sequence, admins needed the ability to intervene at any point — approve, reject, or redirect — not just sign off on a final result.</div></div>
+        <div class="decision"><div class="d-title">Fed Intune-specific scale and monitoring patterns back into the broader security agent library</div><div class="why"><b>Why:</b> Intune&rsquo;s agent volume surfaced monitoring and scale challenges the broader system hadn&rsquo;t yet addressed — solving them locally, then generalizing the pattern, strengthened the system for every product using it.</div></div>
+      </div>
+      <p class="attrib">Project Perception publicly launched to preview in August 2026 — <a href="https://learn.microsoft.com/en-us/security/agentic-security/agentic-security-overview">learn.microsoft.com</a>. Shown as reference for the direction this foundational work fed into; specific screens and decisions above reflect my own contribution, not the full shipped product.</p>
+    </div>
+
+    <!-- CASE 4 -->
+    <div class="case" id="cloudpc">
+      <div class="num">04 &mdash; NEW-PRODUCT ADMIN UX &middot; FOUNDATIONAL WORK</div>
+      <h3>Windows 365 / Cloud PC — Provisioning, Health &amp; Shared Cloud PCs</h3>
+      <div class="tag">Design lead / Design owner &middot; Pre-launch &rarr; Private Preview &amp; GA &middot; ~3.5 years (2021&ndash;2024)</div>
+      <div class="beforeafter">
+        <div class="ba b"><div class="lab">Before</div><p>A brand-new virtualization product with no established admin model — fragmented provisioning, confusing navigation, and no way to see whether Cloud PCs were healthy.</p></div>
+        <div class="ba a"><div class="lab">After</div><p>A coherent admin experience: guided provisioning, a Cloud PC health dashboard, shared/Frontline Cloud PCs, and navigation that matched how admins actually think.</p></div>
+      </div>
+      <div class="grid">
+        <div class="block">
+          <h4>Problem</h4>
+          <p>Windows 365 introduced Cloud PCs into Intune with no precedent for how admins would provision, assign, monitor, and troubleshoot them. Research showed admins confused Windows 365 / Microsoft 365 / Office 365, and treated provisioning as separate from ongoing management.</p>
+        </div>
+        <div class="block">
+          <h4>My Role</h4>
+          <p>Design lead for the Intune-based Cloud PC admin experiences and Design Owner for Windows 365 Frontline (later Flex) shared Cloud PCs — from early pre-launch through Private Preview and GA. Partnered with PMs Sam Tulimat, Christiaan Brinkhoff, and Colby Hanley; content by Kay Jorgensen; research by Abena Edugyan.</p>
+        </div>
+      </div>
+      <div class="decisions">
+        <div class="decision"><div class="d-title">Guided scenarios for first-time setup</div><div class="why"><b>Why:</b> provisioning spanned many objects, settings, and assignments — a guided flow reduced what admins had to assemble and prevented common assignment errors.</div></div>
+        <div class="decision"><div class="d-title">A Cloud PC health dashboard (&ldquo;Fitness Tracker&rdquo;)</div><div class="why"><b>Why:</b> admins couldn&rsquo;t tell if Cloud PCs were healthy — surfacing connection quality, latency, crashes, and health scoring in Endpoint analytics made problems visible proactively.</div></div>
+        <div class="decision"><div class="d-title">Own the shared / Frontline (Flex) model</div><div class="why"><b>Why:</b> a partial-use, shared-license Cloud PC (up to 4 workers, one at a time) needed its own provisioning, management, and reporting — shipped to Private Preview.</div></div>
+        <div class="decision"><div class="d-title">Rename &ldquo;Windows 365&rdquo; &rarr; &ldquo;Cloud PC creation&rdquo; (research-backed IA)</div><div class="why"><b>Why:</b> usability research showed the old label caused product confusion; the new name plus a Device Onboarding section matched admin mental models of create vs. manage.</div></div>
+        <div class="decision"><div class="d-title">Content strategy for troubleshooting</div><div class="why"><b>Why:</b> chose &ldquo;Attempt to repair connection&rdquo; over &ldquo;Troubleshoot&rdquo; (which already meant something else in Intune) to set correct expectations about what the action does.</div></div>
+      </div>
+      <figure class="fig">
+        <img src="diagrams_png/05_cloudpc_admin_flow.png" alt="Windows 365 / Cloud PC admin flow: guided provisioning, assignment, health dashboard, repair; plus shared Flex Cloud PC and the Windows 365 to Cloud PC creation IA rename" />
+        <figcaption>Abstracted Cloud PC admin experience I recreated — provisioning &rarr; health &rarr; repair, plus shared (Flex) Cloud PCs and the &ldquo;Windows 365&rdquo; &rarr; &ldquo;Cloud PC creation&rdquo; IA change.</figcaption>
+      </figure>
+      <div class="shots">
+        <figure><img src="screenshots/03_windows365_manage/report-resource-performance__resource-performance-report.png" alt="Windows 365 resource performance report in Endpoint analytics" /><figcaption>Cloud PC health/resource performance (Endpoint analytics)</figcaption></figure>
+        <figure><img src="screenshots/03_windows365_manage/alerts__view-alerts.png" alt="Alerts for Cloud PCs in Tenant admin" /><figcaption>Cloud PC alerts &amp; monitoring</figcaption></figure>
+        <figure><img src="screenshots/03_windows365_manage/cloud-pc-configurations__screenshot-that-shows-cloud-pc-configurations-in-intune.png" alt="Cloud PC configurations in Intune" /><figcaption>Cloud PC configurations</figcaption></figure>
+        <figure><img src="screenshots/03_windows365_manage/resize-cloud-pc-single__resize.png" alt="Resize a Cloud PC" /><figcaption>Resize a Cloud PC (management action)</figcaption></figure>
+      </div>
+      <p class="attrib">Shipped Windows 365 management experiences, published by Microsoft — <a href="https://learn.microsoft.com/en-us/windows-365/enterprise/report-resource-performance">learn.microsoft.com/windows-365</a>. Reference for the shipped admin surfaces; my contribution is the design of these management/health experiences, not the raw pixels. Use only Microsoft-published screens or abstractions you recreate — never internal or unreleased UI.</p>
+      <p style="font-size:13px; color:var(--soft); font-style:italic; margin-top:8px;">Honest scope note: strongest as admin &amp; management UX in Intune, not broad end-user client design; hard quantitative outcomes weren&rsquo;t tracked, so it&rsquo;s framed by role, decisions, and shipped surfaces.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-eyebrow">Capabilities</div>
+    <h2 class="sec">What I bring to a team</h2>
+    <div class="skillgrid">
+      <div class="skillcard"><h4>AI &amp; Agentic UX</h4><p>Interaction models for investigation, planning, approval, and execution — keeping humans in control.</p></div>
+      <div class="skillcard"><h4>Enterprise &amp; Admin UX</h4><p>Device management, RBAC, compliance, and security workflows for IT and SecOps audiences.</p></div>
+      <div class="skillcard"><h4>Design Systems &amp; Patterns</h4><p>Reusable, platform-level patterns adopted across multiple product teams.</p></div>
+      <div class="skillcard"><h4>AI-first Prototyping</h4><p>Interactive chat &amp; custom reporting prototypes built in VS Code with GitHub Copilot to shape product direction.</p></div>
+      <div class="skillcard"><h4>Design Strategy</h4><p>Jobs-to-be-done framing, North Star visioning, and MVP tradeoffs grounded in constraints.</p></div>
+      <div class="skillcard"><h4>Cross-functional Leadership</h4><p>Aligning design, PM, engineering, research, and content; mentoring across the org.</p></div>
+      <div class="skillcard"><h4>Windows 365 / Cloud PC</h4><p>Admin UX for a new virtualization product: provisioning, health monitoring, shared/Frontline Cloud PCs, and IA.</p></div>
+      <div class="skillcard"><h4>Accessibility</h4><p>Inclusive, accessible experiences as a first-class design requirement.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="voices">
+  <div class="wrap">
+    <div class="sec-eyebrow">In their words</div>
+    <h2 class="sec">What colleagues say</h2>
+    <p class="lede" style="margin-bottom:24px;">Verbatim excerpts from written peer feedback (Microsoft Connect). Names and dates on file.</p>
+    <div class="quotegrid">
+      <div class="quote">
+        <p>&ldquo;Your leadership in laying the foundational design for IRG was nothing short of masterful&hellip; I&rsquo;ve learned so much from watching how you navigate ambiguity with grace and how you advocate for both users and design integrity without ever losing momentum.&rdquo;</p>
+        <div class="cite"><b>Arisa Conwell</b> &middot; Senior Product Designer &middot; May 2025</div>
+      </div>
+      <div class="quote">
+        <p>&ldquo;You deserve a medal for the gauntlet you ran on this agent sprint&hellip; you had the most challenging set of conditions to address&hellip; your tenacity and commitment were the only reason that work was delivered at all.&rdquo;</p>
+        <div class="cite"><b>Sunder Srinivasan</b> &middot; Principal Product Design Manager &middot; May 2025</div>
+      </div>
+      <div class="quote">
+        <p>&ldquo;You do a great job taking sometimes nebulous requirements from a variety of sources and turning them into amazing designs! I&rsquo;m always impressed about how you handle it and deliver results.&rdquo;</p>
+        <div class="cite"><b>Beth Woodbury</b> &middot; Senior Content Designer &middot; May 2025</div>
+      </div>
+      <div class="quote">
+        <p>&ldquo;You have the amazing ability to think across both UX and business goals&hellip; Your persistence and progress in driving the Cloud PC integration strategy, helping build consensus and creating clarity on the path forward has been impressive.&rdquo;</p>
+        <div class="cite"><b>Sindhia Thirumaran</b> &middot; Product Designer &middot; May 2023</div>
+      </div>
+      <div class="quote">
+        <p>&ldquo;Amanda keeps amazing me with the amount of experience, matureness, and eagerness shaping the future of our Windows 365 product&hellip; she returns phenomenal designs afterward that do not need that many edits! A great partner.&rdquo;</p>
+        <div class="cite"><b>Christiaan Brinkhoff</b> &middot; PM, Windows 365 &middot; May 2023</div>
+      </div>
+      <div class="quote">
+        <p>&ldquo;I can give you a tricky set of requirements (often driven by exec, which can be particularly tricky) and have confidence the right design will be built&hellip; which takes a load of pressure off me.&rdquo;</p>
+        <div class="cite"><b>Matt Shadbolt</b> &middot; PM, Windows 365 &middot; May 2022</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>Amanda Neves &middot; Principal Product Designer</div>
+    <div class="note">
+      This portfolio describes my role, process, and design decisions in my own words.
+      Visuals are either diagrams I recreated or Microsoft-published, public screenshots (attributed) —
+      never confidential or unreleased company materials.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
