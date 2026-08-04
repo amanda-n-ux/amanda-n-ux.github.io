@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Windows 365 / Cloud PC — Amanda Neves</title>
+<meta name="description" content="Case study: complete lifecycle ownership of the Windows 365 / Cloud PC admin experience — Amanda Neves, Principal Product Designer." />
+<link rel="canonical" href="https://amanda-n-ux.github.io/project-cloudpc.html" />
+<meta name="theme-color" content="#FBF7F2" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="stylesheet" href="style.css" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://amanda-n-ux.github.io/project-cloudpc.html" />
+<meta property="og:title" content="Windows 365 / Cloud PC — Amanda Neves" />
+<meta property="og:description" content="Complete lifecycle ownership: provisioning, health, and shared Cloud PCs." />
+<meta property="og:image" content="https://amanda-n-ux.github.io/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Windows 365 / Cloud PC — Amanda Neves" />
+<meta name="twitter:description" content="Complete lifecycle ownership: provisioning, health, and shared Cloud PCs." />
+<meta name="twitter:image" content="https://amanda-n-ux.github.io/og-image.png" />
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html">Amanda Neves</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="resume.html">Résumé</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<header class="page-header">
+  <div class="wrap">
+    <a class="back-link" href="projects.html">&larr; All Projects</a>
+    <div class="eyebrow">ADDITIONAL CASE STUDY &mdash; COMPLETE LIFECYCLE</div>
+    <h1>Windows 365 / Cloud PC — Provisioning, Health &amp; Shared Cloud PCs</h1>
+    <p>Design lead / Design owner &middot; Pre-launch &rarr; Private Preview &amp; GA &middot; ~3.5 years (2021&ndash;2024)</p>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <div class="case">
+      <div class="beforeafter">
+        <div class="ba b"><div class="lab">Before</div><p>A brand-new virtualization product with no established admin model — fragmented provisioning, confusing navigation, and no way to see whether Cloud PCs were healthy.</p></div>
+        <div class="ba a"><div class="lab">After</div><p>A coherent admin experience: guided provisioning, a Cloud PC health dashboard, shared/Frontline Cloud PCs, and navigation that matched how admins actually think.</p></div>
+      </div>
+      <div class="grid">
+        <div class="block">
+          <h4>Problem</h4>
+          <p>Windows 365 introduced Cloud PCs into Intune with no precedent for how admins would provision, assign, monitor, and troubleshoot them. Research showed admins confused Windows 365 / Microsoft 365 / Office 365, and treated provisioning as separate from ongoing management.</p>
+        </div>
+        <div class="block">
+          <h4>My Role</h4>
+          <p>Design lead for the Intune-based Cloud PC admin experiences and Design Owner for Windows 365 Frontline (later Flex) shared Cloud PCs — from early pre-launch through Private Preview and GA. Partnered with PMs Sam Tulimat, Christiaan Brinkhoff, and Colby Hanley; content by Kay Jorgensen; research by Abena Edugyan.</p>
+        </div>
+      </div>
+      <div class="decisions">
+        <div class="decision"><div class="d-title">Guided scenarios for first-time setup</div><div class="why"><b>Why:</b> provisioning spanned many objects, settings, and assignments — a guided flow reduced what admins had to assemble and prevented common assignment errors.</div></div>
+        <div class="decision"><div class="d-title">A Cloud PC health dashboard (&ldquo;Fitness Tracker&rdquo;)</div><div class="why"><b>Why:</b> admins couldn&rsquo;t tell if Cloud PCs were healthy — surfacing connection quality, latency, crashes, and health scoring in Endpoint analytics made problems visible proactively.</div></div>
+        <div class="decision"><div class="d-title">Own the shared / Frontline (Flex) model</div><div class="why"><b>Why:</b> a partial-use, shared-license Cloud PC (up to 4 workers, one at a time) needed its own provisioning, management, and reporting — shipped to Private Preview.</div></div>
+        <div class="decision"><div class="d-title">Rename &ldquo;Windows 365&rdquo; &rarr; &ldquo;Cloud PC creation&rdquo; (research-backed IA)</div><div class="why"><b>Why:</b> usability research showed the old label caused product confusion; the new name plus a Device Onboarding section matched admin mental models of create vs. manage.</div></div>
+        <div class="decision"><div class="d-title">Content strategy for troubleshooting</div><div class="why"><b>Why:</b> chose &ldquo;Attempt to repair connection&rdquo; over &ldquo;Troubleshoot&rdquo; (which already meant something else in Intune) to set correct expectations about what the action does.</div></div>
+      </div>
+      <figure class="fig">
+        <img src="diagrams_png/05_cloudpc_admin_flow.png" alt="Windows 365 / Cloud PC admin flow: guided provisioning, assignment, health dashboard, repair; plus shared Flex Cloud PC and the Windows 365 to Cloud PC creation IA rename" />
+        <figcaption>Abstracted Cloud PC admin experience I recreated — provisioning &rarr; health &rarr; repair, plus shared (Flex) Cloud PCs and the &ldquo;Windows 365&rdquo; &rarr; &ldquo;Cloud PC creation&rdquo; IA change.</figcaption>
+      </figure>
+      <div class="shots">
+        <figure><img src="screenshots/03_windows365_manage/report-resource-performance__resource-performance-report.png" alt="Windows 365 resource performance report in Endpoint analytics" /><figcaption>Cloud PC health/resource performance (Endpoint analytics)</figcaption></figure>
+        <figure><img src="screenshots/03_windows365_manage/alerts__view-alerts.png" alt="Alerts for Cloud PCs in Tenant admin" /><figcaption>Cloud PC alerts &amp; monitoring</figcaption></figure>
+        <figure><img src="screenshots/03_windows365_manage/cloud-pc-configurations__screenshot-that-shows-cloud-pc-configurations-in-intune.png" alt="Cloud PC configurations in Intune" /><figcaption>Cloud PC configurations</figcaption></figure>
+        <figure><img src="screenshots/03_windows365_manage/resize-cloud-pc-single__resize.png" alt="Resize a Cloud PC" /><figcaption>Resize a Cloud PC (management action)</figcaption></figure>
+      </div>
+      <p class="attrib">Shipped Windows 365 management experiences, published by Microsoft — <a href="https://learn.microsoft.com/en-us/windows-365/enterprise/report-resource-performance">learn.microsoft.com/windows-365</a>. Reference for the shipped admin surfaces; my contribution is the design of these management/health experiences, not the raw pixels. Use only Microsoft-published screens or abstractions you recreate — never internal or unreleased UI.</p>
+      <p style="font-size:13px; color:var(--soft); font-style:italic; margin-top:8px;">Honest scope note: strongest as admin &amp; management UX in Intune, not broad end-user client design; hard quantitative outcomes weren&rsquo;t tracked, so it&rsquo;s framed by role, decisions, and shipped surfaces.</p>
+    </div>
+
+    <div class="case-nav">
+      <a href="project-perception.html">&larr; Chapter Three: Project Perception</a>
+      <a class="next" href="projects.html">All Projects &rarr;</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>Amanda Neves &middot; Principal Product Designer</div>
+    <div class="note">
+      This portfolio describes my role, process, and design decisions in my own words.
+      Visuals are either diagrams I recreated or Microsoft-published, public screenshots (attributed) —
+      never confidential or unreleased company materials.
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+</body>
+</html>

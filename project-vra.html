@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CVE Vulnerability Remediation Agent — Amanda Neves</title>
+<meta name="description" content="Case study: the flagship Vulnerability Remediation Agent, from Public Preview to GA planning — Amanda Neves, Principal Product Designer." />
+<link rel="canonical" href="https://amanda-n-ux.github.io/project-vra.html" />
+<meta name="theme-color" content="#FBF7F2" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="stylesheet" href="style.css" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://amanda-n-ux.github.io/project-vra.html" />
+<meta property="og:title" content="CVE Vulnerability Remediation Agent — Amanda Neves" />
+<meta property="og:description" content="The flagship agent example: converting vulnerability intelligence into remediation plans." />
+<meta property="og:image" content="https://amanda-n-ux.github.io/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CVE Vulnerability Remediation Agent — Amanda Neves" />
+<meta name="twitter:description" content="The flagship agent example: converting vulnerability intelligence into remediation plans." />
+<meta name="twitter:image" content="https://amanda-n-ux.github.io/og-image.png" />
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html">Amanda Neves</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="resume.html">Résumé</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<header class="page-header">
+  <div class="wrap">
+    <a class="back-link" href="projects.html">&larr; All Projects</a>
+    <div class="eyebrow">CHAPTER TWO &mdash; VRA DEEP DIVE</div>
+    <h1>CVE Vulnerability Remediation Agent</h1>
+    <p>Lead UX &middot; Public Preview &rarr; GA planning &middot; Flagship agent example</p>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <div class="case">
+      <div class="beforeafter">
+        <div class="ba b"><div class="lab">Before</div><p>Security teams found problems; IT teams manually translated them into fixes — slow, fragmented, coordination-heavy.</p></div>
+        <div class="ba a"><div class="lab">After</div><p>The agent converts vulnerability intelligence into remediation plans, ready for administrator review and approval.</p></div>
+      </div>
+      <div class="grid">
+        <div class="block">
+          <h4>Problem</h4>
+          <p>A single CVE requires understanding risk, identifying affected devices, creating deployment groups, choosing a strategy, and deploying — usually stitched together by hand across security and IT teams.</p>
+        </div>
+        <div class="block">
+          <h4>My Role</h4>
+          <p>Lead UX for the Vulnerability Remediation Agent — design owner across Public Preview and GA planning, applying the permissions, output, and RAI framework established above to a specific, high-stakes scenario. Led the Intune agent demo for the first public showcase of Security Copilot Agents to the press (RSA).</p>
+        </div>
+      </div>
+      <div class="block" style="margin-top:22px;">
+        <h4>Considerations</h4>
+        <ul>
+          <li><b>Customer needs</b> — security and IT teams needed a faster path from &ldquo;here&rsquo;s a CVE&rdquo; to &ldquo;here&rsquo;s what to do about it,&rdquo; without losing the ability to review and control what actually deploys.</li>
+          <li><b>Business objectives</b> — prove out the agent framework on a concrete, high-value scenario; establish credibility for Intune&rsquo;s agentic-AI direction with a flagship example.</li>
+          <li><b>Technical constraints</b> — CVE remediation spans risk assessment, device targeting, and deployment — each with different data sources and different levels of automation that could safely be offered at MVP.</li>
+        </ul>
+      </div>
+      <div class="decisions">
+        <div class="decision"><div class="d-title">Generate remediation plans automatically</div><div class="why"><b>Why:</b> surface impacted devices, recommended actions, and deployment guidance instead of forcing admins to build plans from scratch.</div></div>
+        <div class="decision"><div class="d-title">Keep the administrator in the loop</div><div class="why"><b>Why:</b> admins review, customize, and approve before anything deploys.</div></div>
+        <div class="decision"><div class="d-title">Dedicated vulnerable-device groups</div><div class="why"><b>Why:</b> targeted groups simplified execution and established clear remediation scope.</div></div>
+        <div class="decision"><div class="d-title">Deliberate MVP simplification</div><div class="why"><b>Why:</b> a strong tradeoff story — reduced interaction complexity for the MVP (plans, review, approval) while keeping an ambitious autonomy roadmap: assisted &rarr; automatic &rarr; safe rollouts &rarr; expanded coverage.</div></div>
+      </div>
+      <figure class="fig">
+        <img src="diagrams_png/02_cve_remediation_flow.png" alt="Abstracted CVE remediation flow: discovery, plan, approval, deploy" />
+        <figcaption>Abstracted remediation flow I recreated (discovery &rarr; plan &rarr; approval &rarr; deploy).</figcaption>
+      </figure>
+      <div class="shots">
+        <figure><img src="screenshots/01_vra/suggestions-tab.png" alt="Prioritized vulnerability remediation suggestions" /><figcaption>Prioritized suggestions</figcaption></figure>
+        <figure><img src="screenshots/01_vra/suggested-action-pane.png" alt="Suggestion detail with CVE impact and remediation steps" /><figcaption>Suggestion detail &amp; remediation steps</figcaption></figure>
+        <figure><img src="screenshots/01_vra/agent-home-screen.png" alt="Vulnerability Remediation Agent home in the Intune admin center" /><figcaption>Agent home in the Intune admin center</figcaption></figure>
+        <figure><img src="screenshots/01_vra/configurations.png" alt="Agent configuration settings" /><figcaption>Agent configuration</figcaption></figure>
+      </div>
+      <p class="attrib">Shipped feature, published by Microsoft — <a href="https://learn.microsoft.com/en-us/intune/copilot/agents/vulnerability-remediation-agent">learn.microsoft.com</a>. Shown as reference for the shipped experience; my contribution is the interaction design and flows, not the raw pixels.</p>
+    </div>
+
+    <div class="case-nav">
+      <a href="project-intune-agents.html">&larr; Chapter One: Adding Agents to Intune</a>
+      <a class="next" href="project-perception.html">Chapter Three: Project Perception &rarr;</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>Amanda Neves &middot; Principal Product Designer</div>
+    <div class="note">
+      This portfolio describes my role, process, and design decisions in my own words.
+      Visuals are either diagrams I recreated or Microsoft-published, public screenshots (attributed) —
+      never confidential or unreleased company materials.
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+</body>
+</html>

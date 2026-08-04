@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Agents as a Managed System — Amanda Neves</title>
+<meta name="description" content="Case study: bringing agents into Intune as a managed, governable system — Amanda Neves, Principal Product Designer." />
+<link rel="canonical" href="https://amanda-n-ux.github.io/project-intune-agents.html" />
+<meta name="theme-color" content="#FBF7F2" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="stylesheet" href="style.css" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://amanda-n-ux.github.io/project-intune-agents.html" />
+<meta property="og:title" content="Agents as a Managed System — Amanda Neves" />
+<meta property="og:description" content="Bringing agents into Intune as a managed, governable system." />
+<meta property="og:image" content="https://amanda-n-ux.github.io/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Agents as a Managed System — Amanda Neves" />
+<meta name="twitter:description" content="Bringing agents into Intune as a managed, governable system." />
+<meta name="twitter:image" content="https://amanda-n-ux.github.io/og-image.png" />
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html">Amanda Neves</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="resume.html">Résumé</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<header class="page-header">
+  <div class="wrap">
+    <a class="back-link" href="projects.html">&larr; All Projects</a>
+    <div class="eyebrow">CHAPTER ONE &mdash; ADDING AGENTS TO INTUNE</div>
+    <h1>Agents as a Managed System</h1>
+    <p>Experience strategy &amp; interaction design</p>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <div class="case">
+      <div class="beforeafter">
+        <div class="ba b"><div class="lab">Before</div><p>Admins manually investigated and coordinated remediation across disconnected consoles — spending more time coordinating than solving problems.</p></div>
+        <div class="ba a"><div class="lab">After</div><p>Agents investigate, build durable plans, and present actionable recommendations while keeping the admin firmly in control.</p></div>
+      </div>
+      <div class="narrative">
+        <p>Bringing agents into Intune raised a foundational design question: what does it mean to design agents as a <b>category</b> of Intune functionality — not one-off features, but a system that needs to be introduced, permissioned, governed, and managed at scale? Multiple agents were in motion at once — Policy Configuration, Vulnerability Remediation, Change Review, and Device Offboarding — each with different scope, timelines, and levels of readiness.</p>
+        <p>As Principal Product Designer leading experience strategy and interaction design for agentic administration across Intune, I defined the conceptual and interaction model for agents as a class of Intune functionality — spanning agent management, permissions &amp; access, output surfaces (standalone artifacts and inline/in-context), and Responsible AI considerations. I led design end-to-end for the Vulnerability Remediation Agent and drove design strategy across the broader agent portfolio, bridging the SFE/design-system team and the Intune product team throughout — both consuming shared components and driving new agent-specific patterns back into the shared system.</p>
+      </div>
+      <div class="block" style="margin-top:22px;">
+        <h4>Considerations</h4>
+        <ul>
+          <li><b>Customer needs</b> — admins wanted agents to reduce coordination overhead without losing control or visibility; trust in <i>why</i> an agent recommended an action mattered as much as the action itself.</li>
+          <li><b>Business objectives</b> — establish a credible, coherent agentic-AI foundation in Intune, with reusable patterns so agent work wouldn&rsquo;t each start from zero — and could scale or contract as agent priorities shifted.</li>
+          <li><b>Technical constraints</b> — multiple agents, different teams, different levels of maturity, all needing to feel like one coherent, governable system while the underlying design system was still evolving alongside the work.</li>
+        </ul>
+      </div>
+      <div class="decisions">
+        <div class="decision"><div class="d-title">Agents produce durable artifacts, not ephemeral chat</div><div class="why"><b>Why:</b> admins must revisit, audit, share, and continue work — chat transcripts can&rsquo;t support that.</div></div>
+        <div class="decision"><div class="d-title">Design for both standalone and in-context output</div><div class="why"><b>Why:</b> some agent work needs a dedicated place to live and be audited; other output is most useful surfaced right where the admin is already looking. Both needed distinct, deliberate patterns.</div></div>
+        <div class="decision"><div class="d-title">Human approval gates and transparency as first-class, not bolted on</div><div class="why"><b>Why:</b> security and config actions carry organizational risk — RAI-aligned progressive disclosure over full automation, with reasoning visible, not just outcomes.</div></div>
+        <div class="decision"><div class="d-title">Design agents as a managed category, not individual features</div><div class="why"><b>Why:</b> with multiple agents moving at different speeds — including some paused as priorities shifted — admins needed one consistent way to discover, configure, and govern any agent, regardless of its individual status.</div></div>
+        <div class="decision"><div class="d-title">A shared Agent section in the Intune Design Toolkit</div><div class="why"><b>Why:</b> championed reusable components and guidance, driven by real needs from developing agents in parallel — patterns adopted across teams, not one-off features.</div></div>
+      </div>
+      <figure class="fig">
+        <img src="diagrams_png/01_agentic_session_flow.png" alt="Abstracted agentic session flow: trigger, investigate, plan, review, act" />
+        <figcaption>Abstracted agent session flow — a diagram I recreated for portfolio use (not internal artwork).</figcaption>
+      </figure>
+      <div class="shots">
+        <figure><img src="screenshots/05_intune_agents/change-review__suggestions.png" alt="Change Review Agent suggestions" /><figcaption>Change Review Agent — same Suggestions / approve pattern</figcaption></figure>
+        <figure><img src="screenshots/05_intune_agents/device-offboarding__overview.png" alt="Device Offboarding Agent overview" /><figcaption>Device Offboarding Agent — shared framework</figcaption></figure>
+      </div>
+      <p class="attrib">Multiple shipped Intune agents (Change Review, Device Offboarding, Policy Configuration, Vulnerability Remediation) reuse the agent framework and interaction patterns I led — published by Microsoft (<a href="https://learn.microsoft.com/en-us/intune/copilot/agents/">learn.microsoft.com/intune/copilot/agents</a>). Evidence of pattern adoption across teams; my contribution is the design system, not the pixels.</p>
+    </div>
+
+    <div class="case-nav">
+      <a href="projects.html">&larr; All Projects</a>
+      <a class="next" href="project-vra.html">Chapter Two: VRA Deep Dive &rarr;</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>Amanda Neves &middot; Principal Product Designer</div>
+    <div class="note">
+      This portfolio describes my role, process, and design decisions in my own words.
+      Visuals are either diagrams I recreated or Microsoft-published, public screenshots (attributed) —
+      never confidential or unreleased company materials.
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+</body>
+</html>

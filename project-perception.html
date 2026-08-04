@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Project Perception — Amanda Neves</title>
+<meta name="description" content="Case study: extending agents into a coordinated, multi-agent security system — Amanda Neves, Principal Product Designer." />
+<link rel="canonical" href="https://amanda-n-ux.github.io/project-perception.html" />
+<meta name="theme-color" content="#FBF7F2" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="stylesheet" href="style.css" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://amanda-n-ux.github.io/project-perception.html" />
+<meta property="og:title" content="Project Perception — Amanda Neves" />
+<meta property="og:description" content="Extending agents into a coordinated, multi-agent security system." />
+<meta property="og:image" content="https://amanda-n-ux.github.io/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Project Perception — Amanda Neves" />
+<meta name="twitter:description" content="Extending agents into a coordinated, multi-agent security system." />
+<meta name="twitter:image" content="https://amanda-n-ux.github.io/og-image.png" />
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html">Amanda Neves</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="resume.html">Résumé</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<header class="page-header">
+  <div class="wrap">
+    <a class="back-link" href="projects.html">&larr; All Projects</a>
+    <div class="eyebrow">CHAPTER THREE &mdash; PROJECT PERCEPTION</div>
+    <h1>Extending Agents Into a Coordinated, Multi-Agent System</h1>
+    <p>Foundational design contributor &middot; Public preview launched Aug 2026</p>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <div class="case">
+      <div class="beforeafter">
+        <div class="ba b"><div class="lab">Before</div><p>Agentic thinking focused on individual agents handling individual tasks, each governed on its own.</p></div>
+        <div class="ba a"><div class="lab">After</div><p>Specialized agents coordinated in teams, sharing context, working together toward a security outcome — with the admin directing and approving at key checkpoints.</p></div>
+      </div>
+      <div class="grid">
+        <div class="block">
+          <h4>Problem</h4>
+          <p>The agent-by-agent model raised the next question: what happens when agents need to work <b>together</b>, coordinating across roles rather than operating as isolated tools? Early thinking explored an interaction model, governance patterns, and durable-artifact approach for a multi-agent system spanning security workflows — building on security-wide agent patterns rather than any single product&rsquo;s approach.</p>
+        </div>
+        <div class="block">
+          <h4>My Role</h4>
+          <p>Contributed early, foundational design work on the interaction model and design direction for what became Project Perception — applying and extending security-wide agent patterns into a coordinated multi-agent system: specialized agent teams (investigation, analysis, remediation) working through orchestrated playbooks, with chat as a natural-language entry point and approval checkpoints throughout. Also designed new patterns to address scale and monitoring challenges specific to Intune&rsquo;s agent volume, and pushed those patterns back up into the security-wide pattern library — the same two-way bridging approach used with the SFE/design-system team on the Intune agent work.</p>
+        </div>
+      </div>
+      <div class="block" style="margin-top:22px;">
+        <h4>Considerations</h4>
+        <ul>
+          <li><b>Customer needs</b> — security teams needed coordinated defense, not more disconnected point tools; admins still needed to trust and control what agents did on their behalf, now multiplied across a team of agents instead of one.</li>
+          <li><b>Business objectives</b> — establish a credible agentic-AI security direction ahead of a fast-moving threat landscape, building on established security-wide agent patterns rather than starting over.</li>
+          <li><b>Technical constraints</b> — coordinating multiple agent types (investigation, analysis, remediation) sharing context and handing off work, while keeping the system auditable and governable end-to-end.</li>
+        </ul>
+      </div>
+      <div class="decisions">
+        <div class="decision"><div class="d-title">Extend durable, auditable sessions to multi-agent workflows</div><div class="why"><b>Why:</b> the same &ldquo;revisitable artifact, not ephemeral chat&rdquo; principle from the Intune agent work, applied to a system where several agents now contribute to one outcome.</div></div>
+        <div class="decision"><div class="d-title">Natural-language entry point (chat) over manual navigation</div><div class="why"><b>Why:</b> reduce the friction of finding and configuring the right tool for a task — describe the goal, let the system route to the right workflow.</div></div>
+        <div class="decision"><div class="d-title">Approval checkpoints throughout, not just at the end</div><div class="why"><b>Why:</b> with multiple agents acting in sequence, admins needed the ability to intervene at any point — approve, reject, or redirect — not just sign off on a final result.</div></div>
+        <div class="decision"><div class="d-title">Fed Intune-specific scale and monitoring patterns back into the broader security agent library</div><div class="why"><b>Why:</b> Intune&rsquo;s agent volume surfaced monitoring and scale challenges the broader system hadn&rsquo;t yet addressed — solving them locally, then generalizing the pattern, strengthened the system for every product using it.</div></div>
+      </div>
+      <p class="attrib">Project Perception publicly launched to preview in August 2026 — <a href="https://learn.microsoft.com/en-us/security/agentic-security/agentic-security-overview">learn.microsoft.com</a>. Shown as reference for the direction this foundational work fed into; specific screens and decisions above reflect my own contribution, not the full shipped product.</p>
+    </div>
+
+    <div class="case-nav">
+      <a href="project-vra.html">&larr; Chapter Two: VRA Deep Dive</a>
+      <a class="next" href="project-cloudpc.html">Additional Case Study: Windows 365 / Cloud PC &rarr;</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>Amanda Neves &middot; Principal Product Designer</div>
+    <div class="note">
+      This portfolio describes my role, process, and design decisions in my own words.
+      Visuals are either diagrams I recreated or Microsoft-published, public screenshots (attributed) —
+      never confidential or unreleased company materials.
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+</body>
+</html>
