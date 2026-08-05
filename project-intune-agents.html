@@ -6,7 +6,7 @@
 <title>Agents as a Managed System — Amanda Neves</title>
 <meta name="description" content="Case study: bringing agents into Intune as a managed, governable system — Amanda Neves, Principal Product Designer." />
 <link rel="canonical" href="https://amanda-n-ux.github.io/project-intune-agents.html" />
-<meta name="theme-color" content="#FBF7F2" />
+<meta name="theme-color" content="#FFFFFF" />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="stylesheet" href="style.css" />
 
@@ -56,11 +56,9 @@
 <section id="work">
   <div class="wrap">
     <div class="case">
-      <div class="beforeafter">
-        <div class="ba b"><div class="lab">Before</div><p>Admins manually investigated and coordinated remediation across disconnected consoles — spending more time coordinating than solving problems.</p></div>
-        <div class="ba a"><div class="lab">After</div><p>Agents investigate, build durable plans, and present actionable recommendations while keeping the admin firmly in control.</p></div>
-      </div>
+      <div class="case-cover img-ph"></div>
       <div class="narrative">
+        <p>Admins used to manually investigate and coordinate remediation across disconnected consoles — spending more time coordinating than solving problems. Now, agents investigate, build durable plans, and present actionable recommendations, while the admin stays firmly in control.</p>
         <p>Bringing agents into Intune raised a foundational design question: what does it mean to design agents as a <b>category</b> of Intune functionality — not one-off features, but a system that needs to be introduced, permissioned, governed, and managed at scale? Multiple agents were in motion at once — Policy Configuration, Vulnerability Remediation, Change Review, and Device Offboarding — each with different scope, timelines, and levels of readiness.</p>
         <p>As Principal Product Designer leading experience strategy and interaction design for agentic administration across Intune, I defined the conceptual and interaction model for agents as a class of Intune functionality — spanning agent management, permissions &amp; access, output surfaces (standalone artifacts and inline/in-context), and Responsible AI considerations. I led design end-to-end for the Vulnerability Remediation Agent and drove design strategy across the broader agent portfolio, bridging the SFE/design-system team and the Intune product team throughout — both consuming shared components and driving new agent-specific patterns back into the shared system.</p>
       </div>
@@ -79,6 +77,7 @@
         <div class="decision"><div class="d-title">Design agents as a managed category, not individual features</div><div class="why"><b>Why:</b> with multiple agents moving at different speeds — including some paused as priorities shifted — admins needed one consistent way to discover, configure, and govern any agent, regardless of its individual status.</div></div>
         <div class="decision"><div class="d-title">A shared Agent section in the Intune Design Toolkit</div><div class="why"><b>Why:</b> championed reusable components and guidance, driven by real needs from developing agents in parallel — patterns adopted across teams, not one-off features.</div></div>
       </div>
+      <p class="pull-quote">Four shipped agents, one shared framework — patterns built once, reused across the product.</p>
       <figure class="fig">
         <img src="diagrams_png/01_agentic_session_flow.png" alt="Abstracted agentic session flow: trigger, investigate, plan, review, act" />
         <figcaption>Abstracted agent session flow — a diagram I recreated for portfolio use (not internal artwork).</figcaption>

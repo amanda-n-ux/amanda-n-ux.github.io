@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Design System — Amanda Neves Portfolio</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="stylesheet" href="style.css" />
+<style>
+  /* Reference-page-only styles -- not part of the shared design system itself */
+  .ds-section{padding:48px 0; border-bottom:1px solid var(--line);}
+  .ds-section .wrap{max-width:1040px;}
+  .ds-label{font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--soft); margin:0 0 6px;}
+  .ds-title{font-size:22px; margin:0 0 6px; letter-spacing:-.3px;}
+  .ds-desc{color:var(--muted); font-size:15px; max-width:640px; margin:0 0 24px;}
+  .ds-rule{display:inline-block; font-size:13px; font-weight:600; padding:4px 10px; border-radius:6px; margin-bottom:20px;}
+  .ds-rule.clickable{background:#E9F5EC; color:#1F7A3D;}
+  .ds-rule.static{background:var(--panel); color:var(--muted);}
+  .ds-swatches{display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:16px;}
+  .ds-swatch{border:1px solid var(--line); border-radius:10px; overflow:hidden;}
+  .ds-swatch .fill{height:64px;}
+  .ds-swatch .meta{padding:8px 10px; font-size:12px; background:#fff;}
+  .ds-swatch .meta b{display:block; font-size:13px; margin-bottom:2px;}
+  .ds-demo{margin-top:8px;}
+  .ds-demo .explore, .ds-demo .quotegrid{max-width:none;}
+  .ds-two{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  @media(max-width:640px){ .ds-two{grid-template-columns:1fr;} }
+  .ds-principles{list-style:none; margin:0; padding:0; display:grid; gap:16px;}
+  .ds-principles li{padding-left:22px; position:relative; font-size:16px; color:var(--ink); max-width:680px;}
+  .ds-principles li::before{content:""; position:absolute; left:0; top:8px; width:9px; height:9px; border-radius:50%; background:var(--coral);}
+  .ds-principles b{display:block; margin-bottom:2px;}
+  header.ds-hero{padding:56px 0 40px; border-bottom:1px solid var(--line); background:linear-gradient(180deg,var(--panel) 0%, var(--bg) 100%);}
+  header.ds-hero h1{font-size:36px; margin:0 0 10px;}
+  header.ds-hero p{color:var(--muted); font-size:17px; max-width:640px; margin:0;}
+</style>
+</head>
+<body>
+
+<header class="ds-hero">
+  <div class="wrap">
+    <h1>Design System</h1>
+    <p>Internal reference for amanda-n-ux.github.io. Every example on this page renders with the site's actual <code>style.css</code> and the same markup used on the real pages — this isn't a mockup, it's the live component set. Not linked from site navigation.</p>
+  </div>
+</header>
+
+<section class="ds-section">
+  <div class="wrap">
+    <div class="ds-label">North Star</div>
+    <h2 class="ds-title">The human touch, in a world of AI</h2>
+    <p class="ds-desc">This portfolio is itself an example of a human directing AI rather than being replaced by it (see the About page's "Process" section). The visual language should make that argument, not just state it — organic and hand-touched beats geometric and templated whenever the two are in tension.</p>
+    <ul class="ds-principles">
+      <li><b>Organic over geometric.</b> Wobbly, hand-drawn-feeling lines (see: Decision markers, the flower mark's petal outline) instead of straight CSS borders wherever an accent is purely decorative.</li>
+      <li><b>Imperfection is a feature.</b> The flower mark's dots are irregular in size and placement on purpose — perfectly even spacing reads as machine-made, not hand-made.</li>
+      <li><b>Process imagery over polished screenshots.</b> Whiteboard photos, sketches, and wireframes read as more human than clean product screenshots — lean on them wherever available.</li>
+      <li><b>Show, don't over-explain.</b> Fewer paragraphs, more images, shorter statements pulled out and given room to breathe (see: Pull Quote).</li>
+      <li><b>When in doubt, ask "does this feel human, not templated?"</b> That's the tiebreaker over "does this look clean/professional" if the two conflict.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="ds-section">
+  <div class="wrap">
+    <div class="ds-label">Core Rule</div>
+    <h2 class="ds-title">Boxes mean clickable. Plain text means static.</h2>
+    <p class="ds-desc">A panel-fill background + border is reserved exclusively for the two components that are actual links (Explore cards, Case cards). Everything else — Decisions, Skills, Quotes, Narrative — uses typographic accents (dots, organic rules, quote marks) instead of a box, so nothing implies an affordance that isn't there.</p>
+  </div>
+</section>
+
+<section class="ds-section">
+  <div class="wrap">
+    <div class="ds-label">Palette</div>
+    <h2 class="ds-title">Colors</h2>
+    <p class="ds-desc">Black/white core, two brand accent families (each with a decorative-strength and a text-safe deepened variant), Tailwind's <code>slate</code> scale for all neutrals. Deep variants are used anywhere color sits on text or a white button label; raw accents are for decorative fills, large elements, and the mark itself.</p>
+    <div class="ds-swatches">
+      <div class="ds-swatch"><div class="fill" style="background:#2C2A28"></div><div class="meta"><b>Ink</b>#2C2A28</div></div>
+      <div class="ds-swatch"><div class="fill" style="background:#FFFFFF"></div><div class="meta"><b>White</b>#FFFFFF</div></div>
+      <div class="ds-swatch"><div class="fill" style="background:#E8672A"></div><div class="meta"><b>Orange</b>#E8672A</div></div>
+      <div class="ds-swatch"><div class="fill" style="background:#AE4D1F"></div><div class="meta"><b>Orange deep</b>#AE4D1F</div></div>
+      <div class="ds-swatch"><div class="fill" style="background:#E8432A"></div><div class="meta"><b>Coral</b>#E8432A</div></div>
+      <div class="ds-swatch"><div class="fill" style="background:#AE321F"></div><div class="meta"><b>Coral deep</b>#AE321F</div></div>
+      <div class="ds-swatch"><div class="fill" style="background:#475569"></div><div class="meta"><b>Muted (slate-600)</b>#475569</div></div>
+      <div class="ds-swatch"><div class="fill" style="background:#64748b"></div><div class="meta"><b>Soft (slate-500)</b>#64748b</div></div>
+      <div class="ds-swatch"><div class="fill" style="background:#F1F5F9"></div><div class="meta"><b>Panel (slate-100)</b>#F1F5F9</div></div>
+      <div class="ds-swatch"><div class="fill" style="background:#E2E8F0"></div><div class="meta"><b>Line (slate-200)</b>#E2E8F0</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-section">
+  <div class="wrap">
+    <div class="ds-label">Mark</div>
+    <h2 class="ds-title">The flower mark</h2>
+    <p class="ds-desc">Personal mark, redrawn as a clean vector from a hand-drawn original (five overlapping circles, pinwheel-style occlusion so every petal is equally exposed, organic-width outline). Component motifs below are all pulled from its parts: the dot, the stamen spray, the organic variable-width line.</p>
+    <img src="flower-mark.png" alt="Flower mark" style="width:140px; height:140px; display:block;" />
+  </div>
+</section>
+
+<section class="ds-section">
+  <div class="wrap">
+    <span class="ds-rule clickable">Clickable</span>
+    <h2 class="ds-title">Explore card</h2>
+    <p class="ds-desc">Used on Home to link out to About and Projects. Full border box, panel background, hover darkens the border, arrow signals "go here."</p>
+    <div class="ds-demo">
+      <div class="explore" style="margin-top:0;">
+        <a href="about.html">About me<span>Background, skills, and what colleagues say <span class="arrow">&rarr;</span></span></a>
+        <a href="projects.html">Projects<span>Four case studies, from 0-to-1 products to AI-agentic systems <span class="arrow">&rarr;</span></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-section">
+  <div class="wrap">
+    <span class="ds-rule clickable">Clickable</span>
+    <h2 class="ds-title">Case card</h2>
+    <p class="ds-desc">Used on the Projects table-of-contents. Horizontal layout (thumbnail left, content right), single column — deliberately not a responsive multi-column grid, since 3 items reflow badly at in-between viewport widths. Same box language as Explore card for consistency across the two link-card types.</p>
+    <div class="ds-demo">
+      <div class="case-toc" style="margin-top:0;">
+        <a class="case-card" href="project-intune-agents.html">
+          <img class="case-thumb" src="diagrams_png/01_agentic_session_flow.png" alt="" />
+          <div class="case-body">
+            <div class="num">CHAPTER ONE &mdash; ADDING AGENTS TO INTUNE</div>
+            <h3>Agents as a Managed System</h3>
+            <div class="tag">Experience strategy &amp; interaction design</div>
+            <p class="teaser">Agents investigate, build durable plans, and present actionable recommendations while keeping the admin firmly in control.</p>
+            <span class="case-link">Read the case study &rarr;</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-section">
+  <div class="wrap">
+    <span class="ds-rule static">Static</span>
+    <h2 class="ds-title">Decision (Why callout)</h2>
+    <p class="ds-desc">Used throughout every case study and the About "Process" section. No box or panel — an organic variable-width rule (same wobble math as the flower's petal outline) replaces a straight CSS border-left.</p>
+    <div class="ds-demo">
+      <div class="decisions" style="margin-top:0;">
+        <div class="decision"><div class="d-title">Generate remediation plans automatically</div><div class="why"><b>Why:</b> surface impacted devices, recommended actions, and deployment guidance instead of forcing admins to build plans from scratch.</div></div>
+        <div class="decision"><div class="d-title">Keep the administrator in the loop</div><div class="why"><b>Why:</b> admins review, customize, and approve before anything deploys.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-section">
+  <div class="wrap">
+    <span class="ds-rule static">Static</span>
+    <h2 class="ds-title">Narrative</h2>
+    <p class="ds-desc">Plain flowing prose, used for Problem/Role and Before/After framing on every case study. Replaced an earlier two-column grid pattern (Problem beside Role, Before beside After) that implied a false point-by-point correlation between columns that weren't actually parallel. One or two paragraphs, no visual structure beyond the text itself.</p>
+    <div class="ds-demo">
+      <div class="narrative" style="margin-top:0;">
+        <p>Security teams found problems that IT teams manually translated into fixes — slow, fragmented, coordination-heavy. Today, the agent converts vulnerability intelligence into remediation plans, ready for admin review and approval.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-section">
+  <div class="wrap">
+    <span class="ds-rule static">Static</span>
+    <h2 class="ds-title">Pull quote</h2>
+    <p class="ds-desc">One standout statement (usually a concrete outcome or metric) pulled out of the surrounding text and given visual weight — large serif italic with a coral rule. Used sparingly, at most once or twice per case study, for the "show don't over-explain" principle.</p>
+    <div class="ds-demo">
+      <p class="pull-quote" style="margin-top:0;">An early preview customer collapsed a two-week remediation cycle to under two minutes.</p>
+    </div>
+  </div>
+</section>
+
+<section class="ds-section">
+  <div class="wrap">
+    <span class="ds-rule static">Static</span>
+    <h2 class="ds-title">Image placeholder</h2>
+    <p class="ds-desc">Plain gray box (<code>.img-ph</code>), deliberately unstyled as a "design element" — no dashed border, no brand color, no caption required — so it never gets mistaken for a finished part of the page. Swap for a real photo, sketch, whiteboard shot, or screenshot by replacing the element with an <code>&lt;img&gt;</code>. <code>.case-cover</code> combines this with a 21:9 aspect ratio for the large image at the top of each case study.</p>
+    <div class="ds-demo">
+      <div class="case-cover img-ph" style="max-width:500px;"></div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-section">
+  <div class="wrap">
+    <span class="ds-rule static">Static</span>
+    <h2 class="ds-title">Skill item</h2>
+    <p class="ds-desc">Used on About &gt; Capabilities. No box, no border, no divider — a small coral dot marks each title, list reads as plain content, not tiles.</p>
+    <div class="ds-demo">
+      <div class="skillgrid" style="margin-top:0; max-width:640px;">
+        <div class="skillcard"><h4>AI &amp; Agentic UX</h4><p>Interaction models for investigation, planning, approval, and execution — keeping humans in control.</p></div>
+        <div class="skillcard"><h4>Design Systems &amp; Patterns</h4><p>Reusable, platform-level patterns adopted across multiple product teams.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-section">
+  <div class="wrap">
+    <span class="ds-rule static">Static</span>
+    <h2 class="ds-title">Quote</h2>
+    <p class="ds-desc">Used on About &gt; In their words. No box, no border, no citation shown (sources available on request) — a large coral quotation-mark glyph does the accenting instead of a panel.</p>
+    <div class="ds-demo">
+      <div class="quotegrid" style="margin-top:0; max-width:640px;">
+        <div class="quote">
+          <p>&ldquo;Your leadership in laying the foundational design for IRG was nothing short of masterful&hellip; I&rsquo;ve learned so much from watching how you navigate ambiguity with grace.&rdquo;</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-section">
+  <div class="wrap">
+    <div class="ds-label">Typography</div>
+    <h2 class="ds-title">Type</h2>
+    <p class="ds-desc">Headings use a Georgia-based serif stack for an editorial feel; body copy stays on the system-font stack for performance and native rendering.</p>
+    <div class="ds-two">
+      <div>
+        <h1 style="font-size:32px; margin:0 0 8px;">Heading (Georgia)</h1>
+        <h3 style="margin:0;">Sub-heading (Georgia)</h3>
+      </div>
+      <div>
+        <p style="margin:0; font-size:17px;">Body copy runs on the system-font stack (-apple-system, Segoe UI, Arial) — fast, native, and legible at small sizes across platforms.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>Amanda Neves &middot; Design system reference &middot; not part of site navigation</div>
+  </div>
+</footer>
+
+</body>
+</html>

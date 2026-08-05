@@ -1,12 +1,12 @@
 :root{
-  --ink:#2C2A28; --muted:#655d55; --soft:#6e675f;
-  --accent:#3f5a78; --accent-soft:#517295; --pink:#D4738F; --pink-deep:#8f4a5f;
-  --line:#e7ded2;
-  --bg:#FBF7F2; --panel:#F3EDE4; --chip:#EAF0F6; --chip-pink:#FBEEF1;
+  --ink:#2C2A28; --muted:#475569; --soft:#64748b;
+  --accent:#AE4D1F; --accent-soft:#E8672A; --coral:#E8432A; --coral-deep:#AE321F;
+  --line:#E2E8F0;
+  --bg:#FFFFFF; --panel:#F1F5F9;
   --max:960px;
 }
 *{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+html{scroll-behavior:smooth; overflow-y:scroll; scrollbar-gutter:stable;}
 body{
   margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
   color:var(--ink); background:var(--bg); line-height:1.6; font-size:17px;
@@ -32,7 +32,7 @@ nav .brand{font-weight:700; letter-spacing:.2px; color:var(--ink); font-family:G
 nav .brand:hover{text-decoration:none;}
 nav .links a{margin-left:22px; color:var(--muted); font-size:15px; font-weight:500;}
 nav .links a:hover{color:var(--accent);}
-nav .links a.active{color:var(--accent); font-weight:700;}
+nav .links a.active{color:var(--accent);}
 .nav-toggle{display:none; background:none; border:none; cursor:pointer; padding:8px; margin:0; }
 .nav-toggle span{display:block; width:22px; height:2px; background:var(--ink); margin:5px 0; border-radius:2px;}
 @media(max-width:640px){
@@ -49,18 +49,24 @@ nav .links a.active{color:var(--accent); font-weight:700;}
 
 /* HERO */
 header.hero{padding:88px 0 56px; border-bottom:1px solid var(--line);
-  background:linear-gradient(180deg,#F6EEE3 0%, var(--bg) 100%);}
+  background:linear-gradient(180deg,var(--panel) 0%, var(--bg) 100%);}
 .hero-inner{display:flex; gap:52px; align-items:flex-start; justify-content:space-between;}
 .hero-text{flex:1 1 auto; min-width:0;}
-.hero-portrait{flex:0 0 220px;}
-.hero-portrait img{
+.hero-portrait{position:relative; flex:0 0 220px;}
+.hero-portrait img:not(.hero-seal){
   width:220px; height:auto; aspect-ratio:700/865; object-fit:cover;
   border-radius:20px; border:1px solid var(--line); box-shadow:0 12px 30px rgba(60,45,30,.14);
+}
+.hero-seal{
+  position:absolute; bottom:-18px; right:-18px; width:88px; height:88px;
+  border-radius:50%; background:#fff; padding:10px;
+  box-shadow:0 6px 16px rgba(60,45,30,.18);
 }
 @media(max-width:800px){
   .hero-inner{flex-direction:column-reverse; gap:28px;}
   .hero-portrait{flex:0 0 auto;}
-  .hero-portrait img{width:150px;}
+  .hero-portrait img:not(.hero-seal){width:150px;}
+  .hero-seal{width:64px; height:64px; bottom:-12px; right:-12px;}
 }
 .eyebrow{color:var(--accent); font-weight:700; letter-spacing:.14em; text-transform:uppercase; font-size:13px;}
 header.hero h1{font-size:52px; line-height:1.1; margin:14px 0 10px; letter-spacing:-.5px; font-weight:700;}
@@ -85,26 +91,39 @@ header.hero p.lede{font-size:19px; color:var(--ink); max-width:680px; margin:0 0
 .explore a span{display:block; margin-top:4px; font-weight:400; font-size:14px; color:var(--muted);}
 .explore a .arrow{color:var(--accent); font-weight:700;}
 
-/* PAGE HEADER (About / Projects) */
-.page-header{padding:64px 0 40px; border-bottom:1px solid var(--line);
-  background:linear-gradient(180deg,#F6EEE3 0%, var(--bg) 100%);}
-.page-header h1{font-size:38px; margin:8px 0 12px; letter-spacing:-.4px;}
+/* PAGE HEADER (About / Projects / Resume) */
+.page-header{position:relative; padding:64px 0 40px; border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,var(--panel) 0%, var(--bg) 100%); overflow:hidden;}
+.page-header h1{font-size:38px; margin:8px 0 12px; letter-spacing:-.4px; max-width:680px;}
 .page-header p{font-size:18px; color:var(--muted); max-width:680px; margin:0;}
 .page-header .resume-btn{margin-top:22px;}
+.page-header .mark{
+  position:absolute; top:50%; right:36px; transform:translateY(-50%);
+  width:90px; height:90px; opacity:.92;
+}
+@media(max-width:800px){ .page-header .mark{display:none;} }
 .back-link{display:inline-block; margin-bottom:14px; font-size:14px; font-weight:600; color:var(--muted);}
 .back-link:hover{color:var(--accent);}
 
-/* PROJECTS TOC */
+/* PROJECTS TOC -- horizontal cards (image left, content right), single
+   column. Sidesteps the responsive-column reflow problem entirely: always
+   one column, image and text just stack within the card on narrow screens. */
 .case-toc{display:flex; flex-direction:column; gap:16px; margin-top:8px;}
 .case-card{
-  display:block; padding:24px 26px; background:var(--panel); border:1px solid var(--line);
+  display:flex; overflow:hidden; background:var(--panel); border:1px solid var(--line);
   border-radius:16px; color:var(--ink);
 }
+@media(max-width:640px){ .case-card{flex-direction:column;} }
 .case-card:hover{border-color:var(--accent-soft); text-decoration:none;}
-.case-card .num{font-size:13px; font-weight:700; color:var(--accent); letter-spacing:.1em;}
-.case-card h3{font-size:24px; margin:6px 0 4px; letter-spacing:-.3px;}
+.case-card .case-thumb{
+  width:260px; flex:none; aspect-ratio:16/10; object-fit:cover; display:block; background:#fff;
+}
+@media(max-width:640px){ .case-card .case-thumb{width:100%;} }
+.case-card .case-body{padding:20px 24px; display:flex; flex-direction:column; justify-content:center;}
+.case-card .num{font-size:12px; font-weight:700; color:var(--accent); letter-spacing:.1em;}
+.case-card h3{font-size:21px; margin:6px 0 4px; letter-spacing:-.3px;}
 .case-card .tag{color:var(--soft); font-size:14px; margin-bottom:14px;}
-.case-card p.teaser{margin:0 0 14px; font-size:16px; max-width:640px;}
+.case-card p.teaser{margin:0 0 14px; font-size:15px;}
 .case-card .case-link{font-weight:700; font-size:15px;}
 
 /* CASE STUDY PREV/NEXT */
@@ -133,19 +152,12 @@ h2.sec{font-size:30px; margin:8px 0 26px; letter-spacing:-.4px;}
 .case:first-of-type{border-top:none;}
 
 .case-transition{
-  padding:48px 0 12px; margin-top:10px; border-top:3px solid var(--accent-soft);
+  padding:48px 0 12px; margin-top:10px;
 }
 .case-transition p{max-width:680px; color:var(--muted); font-size:16px; margin:0;}
 .case .num{font-size:13px; font-weight:700; color:var(--accent); letter-spacing:.1em;}
 .case h3{font-size:26px; margin:6px 0 4px; letter-spacing:-.3px;}
 .case .tag{color:var(--soft); font-size:14px; margin-bottom:18px;}
-.beforeafter{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:20px 0 8px;}
-@media(max-width:640px){ .beforeafter{grid-template-columns:1fr;} }
-.ba{padding:16px 18px; border-radius:14px; border:1px solid var(--line);}
-.ba.b{background:var(--chip-pink);} .ba.a{background:var(--chip);}
-.ba .lab{font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;}
-.ba.b .lab{color:var(--pink-deep);} .ba.a .lab{color:var(--accent);}
-.ba p{margin:6px 0 0; font-size:16px;}
 
 .grid{display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-top:22px;}
 @media(max-width:640px){ .grid{grid-template-columns:1fr;} }
@@ -158,16 +170,50 @@ h2.sec{font-size:30px; margin:8px 0 26px; letter-spacing:-.4px;}
 .narrative p{font-size:16px; margin:0 0 16px;}
 .narrative p:last-child{margin-bottom:0;}
 
+/* Decisions are static callouts, not clickable -- a soft full-bleed color
+   wash marks each one instead of a box. Deliberately NO border and NO
+   border-radius, so it stays visually distinct from the bordered/rounded
+   clickable cards (Explore, Case) and doesn't imply a link affordance. */
 .decisions{margin-top:24px;}
-.decision{padding:16px 18px; background:var(--panel); border-radius:14px; margin-bottom:12px; border-left:3px solid var(--accent-soft);}
+.decision{
+  padding:16px 20px; margin-bottom:14px;
+  background:#FCEDE5;
+}
+.decision:last-child{margin-bottom:0;}
 .decision .d-title{font-weight:700; margin-bottom:4px;}
 .decision .why{font-size:15px; color:var(--muted);}
 .decision .why b{color:var(--ink);}
 .process-shot{width:100%; display:block; margin-top:14px; border:1px solid var(--line); border-radius:10px; background:#fff;}
+.process-mark{width:120px; height:120px; display:block; margin-top:16px;}
 
 .imgslot{margin-top:22px; border:2px dashed var(--line); border-radius:14px; padding:34px;
   text-align:center; color:var(--soft); background:var(--panel); font-size:14px;}
 .imgslot b{color:var(--muted);}
+
+/* IMAGE PLACEHOLDER -- plain gray box, swap for a real photo/sketch/wireframe
+   later by replacing the element with an <img>. Deliberately not styled as
+   a "design element" (no dashed border, no brand color) so it never gets
+   mistaken for a finished part of the page. */
+.img-ph{
+  background:#CBD5E1; border-radius:14px; display:block;
+  min-height:120px;
+}
+
+/* CASE COVER -- large image at the top of each case study page, Adri-style
+   "lead with a big picture" opener. */
+.case-cover{
+  margin-bottom:8px; border-radius:18px; overflow:hidden; aspect-ratio:21/9;
+}
+.case-cover img{width:100%; height:100%; object-fit:cover; display:block;}
+
+/* PULL QUOTE -- one standout statement pulled out of the body copy, large
+   serif italic, for the "let a big statement carry weight" text treatment. */
+.pull-quote{
+  margin:32px 0; padding:0 0 0 22px; border-left:3px solid var(--coral);
+  font-family:Georgia,serif; font-style:italic; font-size:26px; line-height:1.4;
+  color:var(--ink); max-width:640px;
+}
+@media(max-width:640px){ .pull-quote{font-size:21px;} }
 
 /* VISUALS */
 .fig{margin:22px 0 4px;}
@@ -180,25 +226,28 @@ h2.sec{font-size:30px; margin:8px 0 26px; letter-spacing:-.4px;}
 .shots img{width:100%; border:1px solid var(--line); border-radius:10px; display:block; background:#fff;}
 .shots figcaption{font-size:12px; color:var(--soft); margin-top:5px; text-align:center;}
 
-.chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px;}
-.chip{background:var(--chip); color:var(--accent); font-size:14px; font-weight:500; padding:6px 12px; border-radius:8px;}
 
-/* SKILLS */
-.skillgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
+/* SKILLS -- deliberately not card/button styled (unlike .explore, these aren't links) */
+#skills .sec-eyebrow{color:var(--accent);}
+.skillgrid{display:grid; grid-template-columns:1fr 1fr; gap:22px 40px;}
 @media(max-width:640px){ .skillgrid{grid-template-columns:1fr;} }
-.skillcard{background:var(--panel); border-radius:14px; padding:16px 18px;}
-.skillcard h4{margin:0 0 8px; font-size:15px; color:var(--accent);}
-.skillcard p{margin:0; font-size:15px; color:var(--muted);}
+.skillcard{padding:0;}
+.skillcard h4{margin:0 0 8px; font-size:15px; color:var(--ink); display:flex; align-items:center; gap:9px;}
+.skillcard h4::before{content:""; width:9px; height:9px; border-radius:50%; background:var(--coral); flex:none;}
+.skillcard p{margin:0; font-size:15px; color:var(--muted); padding-left:18px;}
 
 /* BIO (about page) */
-.bio p{font-size:17px; max-width:720px; margin:0 0 18px;}
-.bio p:last-child{margin-bottom:0;}
+.bio p{font-size:18px; max-width:640px; margin:0;}
 
-/* QUOTES */
-.quotegrid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px;}
+/* QUOTES -- no box; a large mark glyph does the work instead of a border/panel */
+.quotegrid{display:grid; grid-template-columns:repeat(2,1fr); gap:32px 40px;}
 @media(max-width:640px){ .quotegrid{grid-template-columns:1fr;} }
-.quote{background:var(--panel); border-left:3px solid var(--accent-soft); border-radius:12px; padding:18px 20px;}
-.quote p{margin:0 0 10px; font-size:15px; line-height:1.55; font-style:italic; color:var(--ink);}
+.quote{position:relative; padding-left:8px;}
+.quote::before{
+  content:"\201C"; position:absolute; left:-6px; top:-14px;
+  font-family:Georgia,serif; font-size:52px; color:var(--coral); opacity:.35; line-height:1;
+}
+.quote p{margin:0; font-size:16px; line-height:1.6; color:var(--ink);}
 .quote .cite{font-size:13px; color:var(--muted); font-style:normal;}
 .quote .cite b{color:var(--accent); font-weight:600;}
 
