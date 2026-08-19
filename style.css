@@ -28,8 +28,9 @@ a:hover{text-decoration:underline;}
 nav{position:sticky; top:0; z-index:20; background:rgba(251,247,242,.92);
   backdrop-filter:saturate(180%) blur(8px); border-bottom:1px solid var(--line);}
 nav .wrap{display:flex; align-items:center; justify-content:space-between; height:60px; position:relative;}
-nav .brand{font-weight:700; letter-spacing:.2px; color:var(--ink); font-family:Georgia,serif;}
+nav .brand{display:flex; align-items:center; gap:9px; font-weight:700; letter-spacing:.2px; color:var(--ink); font-family:Georgia,serif;}
 nav .brand:hover{text-decoration:none;}
+nav .brand-mark{width:24px; height:24px; display:block;}
 nav .links a{margin-left:22px; color:var(--muted); font-size:15px; font-weight:500;}
 nav .links a:hover{color:var(--accent);}
 nav .links a.active{color:var(--accent);}
@@ -92,16 +93,11 @@ header.hero p.lede{font-size:19px; color:var(--ink); max-width:680px; margin:0 0
 .explore a .arrow{color:var(--accent); font-weight:700;}
 
 /* PAGE HEADER (About / Projects / Resume) */
-.page-header{position:relative; padding:64px 0 40px; border-bottom:1px solid var(--line);
-  background:linear-gradient(180deg,var(--panel) 0%, var(--bg) 100%); overflow:hidden;}
+.page-header{padding:64px 0 40px; border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,var(--panel) 0%, var(--bg) 100%);}
 .page-header h1{font-size:38px; margin:8px 0 12px; letter-spacing:-.4px; max-width:680px;}
 .page-header p{font-size:18px; color:var(--muted); max-width:680px; margin:0;}
 .page-header .resume-btn{margin-top:22px;}
-.page-header .mark{
-  position:absolute; top:50%; right:36px; transform:translateY(-50%);
-  width:90px; height:90px; opacity:.92;
-}
-@media(max-width:800px){ .page-header .mark{display:none;} }
 .back-link{display:inline-block; margin-bottom:14px; font-size:14px; font-weight:600; color:var(--muted);}
 .back-link:hover{color:var(--accent);}
 
@@ -123,6 +119,10 @@ header.hero p.lede{font-size:19px; color:var(--ink); max-width:680px; margin:0 0
 .case-card .num{font-size:12px; font-weight:700; color:var(--accent); letter-spacing:.1em;}
 .case-card h3{font-size:21px; margin:6px 0 4px; letter-spacing:-.3px;}
 .case-card .tag{color:var(--soft); font-size:14px; margin-bottom:14px;}
+.tag-pills{display:flex; flex-wrap:wrap; gap:6px; margin:6px 0 12px;}
+.tag-pill{border:1px solid var(--line); color:var(--muted); font-size:12px; font-weight:600; padding:4px 10px; border-radius:20px; white-space:nowrap;}
+.stat-pills{display:flex; flex-wrap:wrap; gap:8px; margin:0 0 14px;}
+.stat-pill{background:var(--panel); color:var(--muted); font-size:12px; font-weight:700; padding:5px 12px; border-radius:20px; white-space:nowrap;}
 .case-card p.teaser{margin:0 0 14px; font-size:15px;}
 .case-card .case-link{font-weight:700; font-size:15px;}
 
@@ -154,7 +154,7 @@ h2.sec{font-size:30px; margin:8px 0 26px; letter-spacing:-.4px;}
 .case-transition{
   padding:48px 0 12px; margin-top:10px;
 }
-.case-transition p{max-width:680px; color:var(--muted); font-size:16px; margin:0;}
+.case-transition p{color:var(--muted); font-size:16px; margin:0;}
 .case .num{font-size:13px; font-weight:700; color:var(--accent); letter-spacing:.1em;}
 .case h3{font-size:26px; margin:6px 0 4px; letter-spacing:-.3px;}
 .case .tag{color:var(--soft); font-size:14px; margin-bottom:18px;}
@@ -162,11 +162,13 @@ h2.sec{font-size:30px; margin:8px 0 26px; letter-spacing:-.4px;}
 .grid{display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-top:22px;}
 @media(max-width:640px){ .grid{grid-template-columns:1fr;} }
 .block h4{font-size:14px; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); margin:0 0 8px;}
-.block ul{margin:0; padding-left:18px;}
-.block li{margin-bottom:5px; font-size:16px;}
+.block ul{list-style:none; margin:0; padding:0;}
+.block li{position:relative; padding-left:20px; margin-bottom:10px; font-size:16px; line-height:1.6;}
+.block li::before{content:""; position:absolute; left:0; top:9px; width:8px; height:8px; border-radius:50%; background:var(--coral);}
+.block li:last-child{margin-bottom:0;}
 .block p{margin:0; font-size:16px;}
 
-.narrative{margin-top:22px; max-width:680px;}
+.narrative{margin-top:22px;}
 .narrative p{font-size:16px; margin:0 0 16px;}
 .narrative p:last-child{margin-bottom:0;}
 
@@ -211,7 +213,7 @@ h2.sec{font-size:30px; margin:8px 0 26px; letter-spacing:-.4px;}
 .pull-quote{
   margin:32px 0; padding:0 0 0 22px; border-left:3px solid var(--coral);
   font-family:Georgia,serif; font-style:italic; font-size:26px; line-height:1.4;
-  color:var(--ink); max-width:640px;
+  color:var(--ink);
 }
 @media(max-width:640px){ .pull-quote{font-size:21px;} }
 
@@ -238,6 +240,13 @@ h2.sec{font-size:30px; margin:8px 0 26px; letter-spacing:-.4px;}
 
 /* BIO (about page) */
 .bio p{font-size:18px; max-width:640px; margin:0;}
+.bio-inner{display:flex; gap:40px; align-items:center;}
+.bio-text{flex:1 1 auto; min-width:0;}
+.bio-photo{flex:0 0 280px; aspect-ratio:4/3;}
+@media(max-width:640px){
+  .bio-inner{flex-direction:column;}
+  .bio-photo{flex:0 0 auto; width:100%;}
+}
 
 /* QUOTES -- no box; a large mark glyph does the work instead of a border/panel */
 .quotegrid{display:grid; grid-template-columns:repeat(2,1fr); gap:32px 40px;}
