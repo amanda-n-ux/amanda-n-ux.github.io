@@ -123,6 +123,8 @@ header.hero p.lede{font-size:19px; color:var(--ink); max-width:680px; margin:0 0
 .case-card .num{font-size:12px; font-weight:700; color:var(--accent); letter-spacing:.1em;}
 .case-card h3{font-size:21px; margin:6px 0 4px; letter-spacing:-.3px;}
 .case-card .tag{color:var(--soft); font-size:14px; margin-bottom:14px;}
+.tag-pills{display:flex; flex-wrap:wrap; gap:6px; margin:6px 0 12px;}
+.tag-pill{border:1px solid var(--line); color:var(--muted); font-size:12px; font-weight:600; padding:4px 10px; border-radius:20px; white-space:nowrap;}
 .case-card p.teaser{margin:0 0 14px; font-size:15px;}
 .case-card .case-link{font-weight:700; font-size:15px;}
 
