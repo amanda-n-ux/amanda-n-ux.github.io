@@ -70,9 +70,18 @@ header.hero{border-bottom:1px solid var(--line);
   .hero-seal{width:64px; height:64px; top:16px; right:16px;}
 }
 .eyebrow{color:var(--accent); font-weight:700; letter-spacing:.14em; text-transform:uppercase; font-size:13px;}
+.hero-eyebrow{display:flex; align-items:center; gap:9px; margin-bottom:12px;}
+.hero-eyebrow img{width:22px; height:22px; display:block;}
+.hero-eyebrow span{color:var(--accent); font-weight:700; letter-spacing:.14em; text-transform:uppercase; font-size:13px;}
 header.hero h1{font-size:clamp(40px, 5.5vw, 60px); line-height:1.1; margin:14px 0 10px; letter-spacing:-.5px; font-weight:700;}
+header.hero h1 .accent-text{color:var(--accent-soft);}
 header.hero .role{font-size:22px; color:var(--muted); font-weight:500; margin-bottom:22px;}
 header.hero p.lede{font-size:19px; color:var(--ink); max-width:680px; margin:0 0 26px;}
+.hero-cta{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:18px;}
+.btn-primary{display:inline-block; padding:14px 26px; background:var(--ink); color:#fff; font-weight:600; font-size:15px; border-radius:8px; text-decoration:none;}
+.btn-primary:hover{opacity:.88; text-decoration:none;}
+.btn-outline{display:inline-block; padding:14px 26px; background:transparent; color:var(--ink); font-weight:600; font-size:15px; border-radius:8px; border:1px solid var(--line); text-decoration:none;}
+.btn-outline:hover{border-color:var(--ink); text-decoration:none;}
 .contact{display:flex; flex-wrap:wrap; gap:10px 18px; font-size:15px; color:var(--muted);}
 .resume-btn{
   display:inline-block; margin-top:20px; padding:12px 22px;
