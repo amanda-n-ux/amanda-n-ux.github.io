@@ -121,7 +121,7 @@ header.hero p.lede{font-size:18px; color:var(--ink); max-width:680px; margin:0 0
   display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;
   padding:48px; border-top:1px solid var(--line); color:var(--ink);
 }
-.case-rows .case-row:first-child{border-top:1px solid var(--line);}
+.case-rows:first-of-type .case-row:first-child{border-top:none;}
 .case-row:hover{text-decoration:none;}
 .case-row.reverse .case-row-media{order:2;}
 .case-row.reverse .case-row-text{order:1;}
@@ -164,6 +164,7 @@ header.hero p.lede{font-size:18px; color:var(--ink); max-width:680px; margin:0 0
 
 /* SECTION */
 section{padding:64px 0; border-bottom:1px solid var(--line);}
+.projects-head + #work{padding-top:0;}
 .sec-eyebrow{color:var(--coral); font-weight:700; letter-spacing:.14em; text-transform:uppercase; font-size:12px;}
 h2.sec{font-size:30px; margin:8px 0 26px; letter-spacing:-.4px;}
 
