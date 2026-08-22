@@ -290,6 +290,7 @@ h2.sec{font-size:30px; margin:8px 0 26px; letter-spacing:-.4px;}
 .voices-label img{width:16px; height:16px;}
 .voices-label span{font:700 11px ui-monospace,monospace; letter-spacing:.06em; text-transform:uppercase; color:var(--ink);}
 
+.voices-note{font-size:12px; color:var(--muted); margin:14px 0 0;}
 .quotegrid{display:flex; gap:14px; flex-wrap:wrap;}
 .quote{flex:1 1 240px; padding:22px; border-radius:2px; font:400 13px/1.55 Georgia,serif; font-style:italic;}
 .quote:nth-child(odd){background:var(--ink); color:#fff;}
