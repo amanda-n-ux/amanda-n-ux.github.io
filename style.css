@@ -190,7 +190,7 @@ h2.sec{font-size:30px; margin:8px 0 26px; letter-spacing:-.4px;}
 .cs-meta dd{font:400 13px/1.5 Arial,sans-serif; color:var(--ink); margin:0;}
 
 .case-transition{
-  padding:48px 48px 12px; margin-top:10px;
+  max-width:var(--max); margin:10px auto 0; padding:48px 48px 12px; box-sizing:border-box;
 }
 .case-transition p{color:var(--muted); font-size:16px; margin:0;}
 .case .num{font-size:13px; font-weight:700; color:var(--coral); letter-spacing:.1em;}
