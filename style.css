@@ -109,7 +109,7 @@ header.hero p.lede{font-size:18px; color:var(--ink); max-width:680px; margin:0 0
 .back-link:hover{color:var(--accent);}
 
 /* PROJECTS PAGE */
-.projects-head{padding:44px 48px 8px; background:var(--bg-warm); position:relative; max-width:var(--max); margin:0 auto;}
+.projects-head{padding:44px 48px 40px; background:var(--bg-warm); position:relative; max-width:var(--max); margin:0 auto;}
 .projects-head .mark{position:absolute; right:44px; top:20px; width:90px; height:90px; opacity:.4;}
 .projects-head .eyebrow{font:600 11px ui-monospace,monospace; letter-spacing:.06em; text-transform:uppercase; color:var(--coral); margin-bottom:10px;}
 .projects-head h1{font-family:"Newsreader",Georgia,serif; font-weight:500; font-size:32px; line-height:1.15; color:var(--ink); max-width:640px; margin:0;}
@@ -118,7 +118,7 @@ header.hero p.lede{font-size:18px; color:var(--ink); max-width:680px; margin:0 0
 .case-toc{display:grid; grid-template-columns:1fr 1fr; gap:2px; padding:28px 48px; background:var(--bg); max-width:var(--max); margin:0 auto;}
 .case-rows{display:flex; flex-direction:column; max-width:var(--max); margin:0 auto;}
 .case-row{
-  display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;
+  display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start;
   padding:48px; border-top:1px solid var(--line); color:var(--ink);
 }
 .case-rows:first-of-type .case-row:first-child{border-top:none;}
