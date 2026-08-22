@@ -3,7 +3,7 @@
   --accent:#E1614A; --accent-soft:#D98B3F; --coral:#E1614A; --coral-deep:#AE321F; --amber:#D98B3F;
   --line:rgba(32,30,28,.1);
   --bg:#FFFFFF; --panel:#FFFFFF; --bg-warm:#FAF6F1; --cream:#FAF6F1; --chip:rgba(32,30,28,.06);
-  --max:960px;
+  --max:1280px;
 }
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth; overflow-y:scroll; scrollbar-gutter:stable;}
