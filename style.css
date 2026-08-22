@@ -3,13 +3,15 @@
   --accent:#E1614A; --accent-soft:#D98B3F; --coral:#E1614A; --coral-deep:#AE321F; --amber:#D98B3F;
   --line:rgba(32,30,28,.1);
   --bg:#FFFFFF; --panel:#FFFFFF; --bg-warm:#FAF6F1; --cream:#FAF6F1; --chip:rgba(32,30,28,.06);
+  --page-bg:#EFEDE7;
   --max:1280px;
 }
 *{box-sizing:border-box;}
-html{scroll-behavior:smooth; overflow-y:scroll; scrollbar-gutter:stable;}
+html{scroll-behavior:smooth; overflow-y:scroll; scrollbar-gutter:stable; background:var(--page-bg);}
 body{
-  margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  margin:0 auto; max-width:var(--max); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
   color:var(--ink); background:var(--bg); line-height:1.6; font-size:17px;
+  border-left:1px solid var(--line); border-right:1px solid var(--line);
 }
 h1,h2,h3,.serif{ font-family:"Newsreader",Georgia,"Iowan Old Style","Palatino Linotype",serif; font-weight:500; }
 a{color:var(--accent); text-decoration:none;}
