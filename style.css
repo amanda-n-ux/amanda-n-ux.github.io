@@ -116,7 +116,7 @@ header.hero p.lede{font-size:18px; color:var(--ink); max-width:680px; margin:0 0
 .projects-head-sub{font:400 15px/1.6 Arial,sans-serif; color:var(--muted); max-width:640px; margin:16px 0 0;}
 
 .case-toc{display:grid; grid-template-columns:1fr 1fr; gap:2px; padding:28px 48px; background:var(--bg); max-width:var(--max); margin:0 auto;}
-.case-rows{display:flex; flex-direction:column;}
+.case-rows{display:flex; flex-direction:column; max-width:var(--max); margin:0 auto;}
 .case-row{
   display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;
   padding:48px; border-top:1px solid var(--line); color:var(--ink);
