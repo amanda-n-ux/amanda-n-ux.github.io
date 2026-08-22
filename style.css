@@ -30,10 +30,9 @@ nav{position:sticky; top:0; z-index:20; background:rgba(251,247,242,.92);
 nav .wrap{display:flex; align-items:center; justify-content:space-between; height:60px; position:relative;}
 nav .brand{display:flex; align-items:center; gap:9px; font-weight:700; letter-spacing:.2px; color:var(--ink); font-family:Georgia,serif;}
 nav .brand:hover{text-decoration:none;}
-nav .brand-mark{width:24px; height:24px; display:block;}
 nav .links a{margin-left:22px; color:var(--muted); font-size:15px; font-weight:500;}
-nav .links a:hover{color:var(--accent);}
-nav .links a.active{color:var(--accent);}
+nav .links a:hover{color:var(--coral);}
+nav .links a.active{color:var(--coral);}
 .nav-toggle{display:none; background:none; border:none; cursor:pointer; padding:8px; margin:0; }
 .nav-toggle span{display:block; width:22px; height:2px; background:var(--ink); margin:5px 0; border-radius:2px;}
 @media(max-width:640px){
@@ -69,10 +68,7 @@ header.hero{border-bottom:1px solid var(--line);
   .hero-text{padding:32px 24px;}
   .hero-seal{width:64px; height:64px; top:16px; right:16px;}
 }
-.eyebrow{color:var(--accent); font-weight:700; letter-spacing:.14em; text-transform:uppercase; font-size:13px;}
-.hero-eyebrow{display:flex; align-items:center; gap:9px; margin-bottom:12px;}
-.hero-eyebrow img{width:22px; height:22px; display:block;}
-.hero-eyebrow span{color:var(--accent); font-weight:700; letter-spacing:.14em; text-transform:uppercase; font-size:13px;}
+.eyebrow{color:var(--coral); font-weight:700; letter-spacing:.14em; text-transform:uppercase; font-size:13px;}
 header.hero h1{font-size:clamp(40px, 5.5vw, 60px); line-height:1.1; margin:14px 0 10px; letter-spacing:-.5px; font-weight:700;}
 header.hero h1 .accent-text{color:var(--accent-soft);}
 header.hero .role{font-size:22px; color:var(--muted); font-weight:500; margin-bottom:22px;}
@@ -114,9 +110,6 @@ header.hero p.lede{font-size:19px; color:var(--ink); max-width:680px; margin:0 0
 .quote-spotlight-photo{width:96px; height:96px; border-radius:50%; object-fit:cover; border:3px solid rgba(255,255,255,.2);}
 .quote-spotlight-text{font-family:Georgia,"Iowan Old Style","Palatino Linotype",serif; font-size:26px; line-height:1.4; margin:0;}
 .back-link{display:inline-block; margin-bottom:14px; font-size:14px; font-weight:600; color:var(--muted);}
-.page-header-eyebrow{display:flex; align-items:center; gap:12px; margin-bottom:14px;}
-.page-header-eyebrow img{width:40px; height:40px; display:block;}
-.page-header-eyebrow span{color:var(--accent); font-weight:700; letter-spacing:.14em; text-transform:uppercase; font-size:13px;}
 .back-link:hover{color:var(--accent);}
 
 /* PROJECTS TOC -- horizontal cards (image left, content right), single
@@ -131,16 +124,16 @@ header.hero p.lede{font-size:19px; color:var(--ink); max-width:680px; margin:0 0
 }
 .case-card:hover{border-color:var(--accent-soft); text-decoration:none;}
 .case-card .case-thumb{
-  width:100%; aspect-ratio:16/10; object-fit:cover; display:block; background:#fff;
+  width:100%; aspect-ratio:16/10; object-fit:contain; display:block; background:#fff;
 }
 .case-card .case-body{padding:20px 24px; display:flex; flex-direction:column; justify-content:center;}
-.case-card .num{font-size:12px; font-weight:700; color:var(--accent); letter-spacing:.1em;}
+.case-card .num{font-size:12px; font-weight:700; color:var(--coral); letter-spacing:.1em;}
 .case-card h3{font-size:21px; margin:6px 0 4px; letter-spacing:-.3px;}
 .case-card .tag{color:var(--soft); font-size:14px; margin-bottom:14px;}
 .tag-pills{display:flex; flex-wrap:wrap; gap:6px; margin:6px 0 12px;}
-.tag-pill{border:1px solid var(--line); color:var(--muted); font-size:12px; font-weight:600; padding:4px 10px; border-radius:20px; white-space:nowrap;}
+.tag-pill{border:1.5px solid var(--coral); color:var(--coral); font-size:12px; font-weight:700; padding:5px 12px; border-radius:20px; white-space:nowrap;}
 .stat-pills{display:flex; flex-wrap:wrap; gap:8px; margin:0 0 14px;}
-.stat-pill{background:var(--panel); color:var(--muted); font-size:12px; font-weight:700; padding:5px 12px; border-radius:20px; white-space:nowrap;}
+.stat-pill{background:var(--ink); color:#fff; font-size:12px; font-weight:700; padding:6px 14px; border-radius:20px; white-space:nowrap;}
 .case-card p.teaser{margin:0 0 14px; font-size:15px;}
 .case-card .case-link{font-weight:700; font-size:15px;}
 .case-card.dark{background:var(--ink); color:#fff; border-color:var(--ink);}
@@ -169,7 +162,7 @@ header.hero p.lede{font-size:19px; color:var(--ink); max-width:680px; margin:0 0
 
 /* SECTION */
 section{padding:64px 0; border-bottom:1px solid var(--line);}
-.sec-eyebrow{color:var(--accent); font-weight:700; letter-spacing:.14em; text-transform:uppercase; font-size:12px;}
+.sec-eyebrow{color:var(--coral); font-weight:700; letter-spacing:.14em; text-transform:uppercase; font-size:12px;}
 h2.sec{font-size:30px; margin:8px 0 26px; letter-spacing:-.4px;}
 
 /* CASE STUDY */
@@ -191,7 +184,7 @@ h2.sec{font-size:30px; margin:8px 0 26px; letter-spacing:-.4px;}
   padding:48px 0 12px; margin-top:10px;
 }
 .case-transition p{color:var(--muted); font-size:16px; margin:0;}
-.case .num{font-size:13px; font-weight:700; color:var(--accent); letter-spacing:.1em;}
+.case .num{font-size:13px; font-weight:700; color:var(--coral); letter-spacing:.1em;}
 .case h3{font-size:26px; margin:6px 0 4px; letter-spacing:-.3px;}
 .case .tag{color:var(--soft); font-size:14px; margin-bottom:18px;}
 
@@ -266,7 +259,6 @@ h2.sec{font-size:30px; margin:8px 0 26px; letter-spacing:-.4px;}
 
 
 /* SKILLS -- deliberately not card/button styled (unlike .explore, these aren't links) */
-#skills .sec-eyebrow{color:var(--accent);}
 .skillgrid{display:grid; grid-template-columns:1fr 1fr; gap:22px 40px;}
 @media(max-width:640px){ .skillgrid{grid-template-columns:1fr;} }
 .skillcard{padding:0;}
