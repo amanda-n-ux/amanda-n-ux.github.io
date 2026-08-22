@@ -2,7 +2,7 @@
   --ink:#2C2A28; --muted:#475569; --soft:#64748b;
   --accent:#AE4D1F; --accent-soft:#E8672A; --coral:#E8432A; --coral-deep:#AE321F;
   --line:#E2E8F0;
-  --bg:#FFFFFF; --panel:#F1F5F9;
+  --bg:#FFFFFF; --panel:#F1F5F9; --cream:#FBF7F2;
   --max:960px;
 }
 *{box-sizing:border-box;}
@@ -25,8 +25,7 @@ a:hover{text-decoration:underline;}
 .skip-link:focus{top:12px; text-decoration:none;}
 
 /* NAV */
-nav{position:sticky; top:0; z-index:20; background:rgba(251,247,242,.92);
-  backdrop-filter:saturate(180%) blur(8px); border-bottom:1px solid var(--line);}
+nav{position:sticky; top:0; z-index:20; background:var(--cream);}
 nav .wrap{display:flex; align-items:center; justify-content:space-between; height:60px; position:relative;}
 nav .brand{display:flex; align-items:center; gap:9px; font-weight:700; letter-spacing:.2px; color:var(--ink); font-family:Georgia,serif;}
 nav .brand:hover{text-decoration:none;}
@@ -48,8 +47,7 @@ nav .links a.active{color:var(--coral);}
 }
 
 /* HERO */
-header.hero{border-bottom:1px solid var(--line);
-  background:linear-gradient(180deg,var(--panel) 0%, var(--bg) 100%);}
+header.hero{background:linear-gradient(180deg,var(--cream) 0%, var(--bg) 100%);}
 .hero-inner{display:grid; grid-template-columns:1.1fr .9fr; column-gap:52px; align-items:stretch;}
 .hero-text{min-width:0; display:flex; flex-direction:column; justify-content:center;
   padding:88px max(24px, calc((100% - 960px) / 2 + 24px)) 88px max(24px, calc((100% - 960px) / 2));}
@@ -98,8 +96,8 @@ header.hero p.lede{font-size:19px; color:var(--ink); max-width:680px; margin:0 0
 .explore-v2 h3{font-size:24px; margin:8px 0 0; letter-spacing:-.2px;}
 
 /* PAGE HEADER (About / Projects / Resume) */
-.page-header{padding:64px 0 40px; border-bottom:1px solid var(--line);
-  background:linear-gradient(180deg,var(--panel) 0%, var(--bg) 100%);}
+.page-header{padding:64px 0 40px;
+  background:linear-gradient(180deg,var(--cream) 0%, var(--bg) 100%);}
 .page-header h1{font-size:38px; margin:8px 0 12px; letter-spacing:-.4px; max-width:680px;}
 .page-header p{font-size:18px; color:var(--muted); max-width:680px; margin:0;}
 .page-header .resume-btn{margin-top:22px;}
