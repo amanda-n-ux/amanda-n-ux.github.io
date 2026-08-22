@@ -11,7 +11,7 @@ body{
   margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
   color:var(--ink); background:var(--bg); line-height:1.6; font-size:17px;
 }
-h1,h2,h3,.serif{ font-family:Georgia,"Iowan Old Style","Palatino Linotype",serif; }
+h1,h2,h3,.serif{ font-family:"Newsreader",Georgia,"Iowan Old Style","Palatino Linotype",serif; font-weight:500; }
 a{color:var(--accent); text-decoration:none;}
 a:hover{text-decoration:underline;}
 .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
@@ -19,7 +19,7 @@ a:hover{text-decoration:underline;}
 /* SKIP LINK */
 .skip-link{
   position:absolute; left:12px; top:-60px; z-index:100;
-  background:var(--accent); color:#fff; padding:10px 16px; border-radius:8px;
+  background:var(--accent); color:#fff; padding:10px 16px; border-radius:2px;
   font-weight:600; font-size:14px; transition:top .15s ease;
 }
 .skip-link:focus{top:12px; text-decoration:none;}
@@ -58,32 +58,34 @@ header.hero{background:linear-gradient(180deg,var(--cream) 0%, var(--bg) 100%);}
   width:100%; height:100%; object-fit:cover; display:block;
 }
 .hero-seal{
-  position:absolute; top:24px; right:24px; width:88px; height:88px;
-  border-radius:50%; background:#fff; padding:10px;
-  box-shadow:0 6px 16px rgba(60,45,30,.18);
+  position:absolute; top:24px; right:24px; width:46px; height:46px;
+  border-radius:50%; background:#fff; padding:8px;
 }
 @media(max-width:800px){
   .hero-inner{grid-template-columns:1fr;}
   .hero-portrait{height:320px; order:-1;}
   .hero-text{padding:32px 24px;}
-  .hero-seal{width:64px; height:64px; top:16px; right:16px;}
+  .hero-seal{width:38px; height:38px; top:16px; right:16px;}
 }
 .eyebrow{color:var(--coral); font-weight:700; letter-spacing:.14em; text-transform:uppercase; font-size:13px;}
-header.hero h1{font-size:clamp(40px, 5.5vw, 60px); line-height:1.1; margin:14px 0 10px; letter-spacing:-.5px; font-weight:700;}
+.hero-eyebrow{display:flex; align-items:center; gap:12px; margin-bottom:16px;}
+.hero-eyebrow-icon{width:44px; height:44px; padding:8px; border:1px dashed var(--line); box-sizing:border-box;}
+.hero-eyebrow span{color:var(--coral); font:600 11px ui-monospace,monospace; letter-spacing:.06em; text-transform:uppercase;}
+header.hero h1{font-size:clamp(40px, 5.5vw, 60px); line-height:1.15; margin:14px 0 10px; letter-spacing:-.5px;}
 header.hero h1 .accent-text{color:var(--accent-soft);}
 header.hero .role{font-size:22px; color:var(--muted); font-weight:500; margin-bottom:22px;}
 header.hero p.lede{font-size:19px; color:var(--ink); max-width:680px; margin:0 0 26px;}
 .hero-cta{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:18px;}
-.btn-primary{display:inline-block; padding:14px 26px; background:var(--ink); color:#fff; font-weight:600; font-size:15px; border-radius:8px; text-decoration:none;}
+.btn-primary{display:inline-block; padding:14px 26px; background:var(--ink); color:#fff; font-weight:600; font-size:15px; border-radius:2px; text-decoration:none;}
 .btn-primary:hover{opacity:.88; text-decoration:none;}
-.btn-outline{display:inline-block; padding:14px 26px; background:transparent; color:var(--ink); font-weight:600; font-size:15px; border-radius:8px; border:1px solid var(--line); text-decoration:none;}
+.btn-outline{display:inline-block; padding:14px 26px; background:transparent; color:var(--ink); font-weight:600; font-size:15px; border-radius:2px; border:1px solid var(--line); text-decoration:none;}
 .btn-outline:hover{border-color:var(--ink); text-decoration:none;}
 .contact{display:flex; flex-wrap:wrap; gap:10px 18px; font-size:15px; color:var(--muted);}
 .hero-location{font-size:14px; color:var(--muted); margin:0 0 14px;}
 .resume-btn{
   display:inline-block; margin-top:20px; padding:12px 22px;
   background:var(--accent-soft); color:#fff; font-weight:600; font-size:15px;
-  border-radius:10px; text-decoration:none;
+  border-radius:2px; text-decoration:none;
 }
 .resume-btn:hover{background:var(--accent); text-decoration:none;}
 
@@ -107,13 +109,11 @@ header.hero p.lede{font-size:19px; color:var(--ink); max-width:680px; margin:0 0
 .back-link:hover{color:var(--accent);}
 
 /* PROJECTS PAGE */
-.projects-head{padding:44px 48px 28px; background:var(--bg-warm); position:relative;}
+.projects-head{padding:44px 48px 8px; background:var(--bg-warm); position:relative;}
 .projects-head .mark{position:absolute; right:44px; top:20px; width:90px; height:90px; opacity:.4;}
 .projects-head .eyebrow{font:600 11px ui-monospace,monospace; letter-spacing:.06em; text-transform:uppercase; color:var(--coral); margin-bottom:10px;}
 .projects-head h1{font-family:"Newsreader",Georgia,serif; font-weight:500; font-size:32px; line-height:1.15; color:var(--ink); max-width:640px; margin:0;}
 .projects-head-sub{font:400 15px/1.6 Arial,sans-serif; color:var(--muted); max-width:640px; margin:16px 0 0;}
-
-.stat-pill{background:var(--ink); color:#fff; font-size:12px; font-weight:700; padding:6px 14px; border-radius:20px; white-space:nowrap;}
 
 .case-toc{display:grid; grid-template-columns:1fr 1fr; gap:2px; padding:28px 48px; background:var(--bg);}
 .case-toc.case-toc-single{grid-template-columns:1fr;}
@@ -151,8 +151,7 @@ header.hero p.lede{font-size:19px; color:var(--ink); max-width:680px; margin:0 0
 .resume-pages{max-width:800px; margin:0 auto;}
 .resume-pages img{
   width:100%; display:block; margin-bottom:20px;
-  border:1px solid var(--line); border-radius:10px;
-  box-shadow:0 12px 30px rgba(60,45,30,.08); background:#fff;
+  border:1px solid var(--line); border-radius:2px; background:#fff;
 }
 .resume-pages img:last-child{margin-bottom:0;}
 .resume-fallback{max-width:800px; margin:18px auto 0; font-size:14px; color:var(--muted); text-align:center;}
@@ -218,10 +217,10 @@ h2.sec{font-size:30px; margin:8px 0 26px; letter-spacing:-.4px;}
 .decision .d-title{font-weight:700; margin-bottom:4px;}
 .decision .why{font-size:15px; color:var(--muted);}
 .decision .why b{color:var(--ink);}
-.process-shot{width:100%; display:block; margin-top:14px; border:1px solid var(--line); border-radius:10px; background:#fff;}
+.process-shot{width:100%; display:block; margin-top:14px; border:1px solid var(--line); border-radius:2px; background:#fff;}
 .process-mark{width:120px; height:120px; display:block; margin-top:16px;}
 
-.imgslot{margin-top:22px; border:2px dashed var(--line); border-radius:14px; padding:34px;
+.imgslot{margin-top:22px; border:2px dashed var(--line); border-radius:2px; padding:34px;
   text-align:center; color:var(--soft); background:var(--panel); font-size:14px;}
 .imgslot b{color:var(--muted);}
 
@@ -230,14 +229,14 @@ h2.sec{font-size:30px; margin:8px 0 26px; letter-spacing:-.4px;}
    a "design element" (no dashed border, no brand color) so it never gets
    mistaken for a finished part of the page. */
 .img-ph{
-  background:#CBD5E1; border-radius:14px; display:block;
+  background:#CBD5E1; border-radius:2px; display:block;
   min-height:120px;
 }
 
 /* CASE COVER -- large image at the top of each case study page, Adri-style
    "lead with a big picture" opener. */
 .case-cover{
-  margin-bottom:8px; border-radius:18px; overflow:hidden; aspect-ratio:21/9;
+  margin-bottom:8px; border-radius:2px; overflow:hidden; aspect-ratio:21/9;
 }
 .case-cover img{width:100%; height:100%; object-fit:cover; display:block;}
 
@@ -252,13 +251,13 @@ h2.sec{font-size:30px; margin:8px 0 26px; letter-spacing:-.4px;}
 
 /* VISUALS */
 .fig{margin:22px 0 4px;}
-.fig img{width:100%; border:1px solid var(--line); border-radius:12px; display:block; background:#fff;}
+.fig img{width:100%; border:1px solid var(--line); border-radius:2px; display:block; background:#fff;}
 .fig figcaption, .attrib{font-size:13px; color:var(--soft); font-style:italic; margin-top:8px; line-height:1.5;}
 .attrib a{font-style:normal;}
 .shots{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:20px 0 4px;}
 @media(max-width:640px){ .shots{grid-template-columns:1fr;} }
 .shots figure{margin:0;}
-.shots img{width:100%; border:1px solid var(--line); border-radius:10px; display:block; background:#fff;}
+.shots img{width:100%; border:1px solid var(--line); border-radius:2px; display:block; background:#fff;}
 .shots figcaption{font-size:12px; color:var(--soft); margin-top:5px; text-align:center;}
 
 
