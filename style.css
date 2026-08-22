@@ -165,17 +165,24 @@ h2.sec{font-size:30px; margin:8px 0 26px; letter-spacing:-.4px;}
 /* CASE STUDY */
 .case{padding:38px 0; border-top:1px dashed var(--line);}
 .case:first-of-type{border-top:none;}
-.case-with-sidebar{display:grid; grid-template-columns:220px 1fr; column-gap:40px; align-items:start;}
-.case-sidebar{position:sticky; top:78px;}
-.case-sidebar-label{font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--soft); margin:0 0 4px;}
-.case-sidebar-label:not(:first-child){margin-top:22px;}
-.case-sidebar-value{font-size:15px; font-weight:600; color:var(--ink); margin:0;}
-@media(max-width:900px){
-  .case-with-sidebar{grid-template-columns:1fr;}
-  .case-sidebar{position:static; display:flex; flex-wrap:wrap; gap:8px 28px; margin-bottom:24px;}
-  .case-sidebar-label:not(:first-child){margin-top:0;}
-  .case-sidebar-label{flex-basis:100%; margin-bottom:2px;}
-}
+
+/* CASE STUDY HERO + META (mockup 2c) */
+.cs-back{margin:20px 48px 0; position:relative; z-index:1;}
+.cs-hero{height:280px; position:relative; background:var(--ink); overflow:hidden;}
+.cs-hero img.shot{width:100%; height:100%; object-fit:cover; display:block; opacity:.9;}
+.cs-hero .mark{position:absolute; right:40px; top:24px; width:70px; height:70px; opacity:.6;}
+.cs-hero .titles{position:absolute; left:48px; bottom:28px;}
+.cs-hero .eyebrow{font:600 11px ui-monospace,monospace; letter-spacing:.06em; text-transform:uppercase; color:var(--amber); margin-bottom:8px;}
+.cs-hero h1{font-family:"Newsreader",Georgia,serif; font-weight:500; font-size:34px; line-height:1.15; color:#fff; margin:0;}
+.cs-meta{display:grid; grid-template-columns:repeat(3,1fr); border-bottom:1px solid var(--line);}
+@media(max-width:700px){ .cs-meta{grid-template-columns:1fr;} }
+.cs-meta > div{padding:26px 32px; border-right:1px solid var(--line);}
+.cs-meta > div:last-child{border-right:0;}
+.cs-meta dt{font:600 11px ui-monospace,monospace; letter-spacing:.06em; text-transform:uppercase; margin:0 0 6px;}
+.cs-meta > div:nth-child(1) dt{color:var(--coral);}
+.cs-meta > div:nth-child(2) dt{color:var(--amber);}
+.cs-meta > div:nth-child(3) dt{color:var(--coral);}
+.cs-meta dd{font:400 13px/1.5 Arial,sans-serif; color:var(--ink); margin:0;}
 
 .case-transition{
   padding:48px 48px 12px; margin-top:10px;
