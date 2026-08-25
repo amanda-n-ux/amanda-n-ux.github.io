@@ -124,6 +124,10 @@
   <div class="label">04 &mdash; What shipped</div>
   <div>
     <p>Four agents, sharing one interaction model and one set of components — not four separate UIs stitched together after the fact. Individual agent screens live on their own chapter pages; what shipped here is the framework underneath all of them.</p>
+    <figure class="fig">
+      <img src="screenshots/05_intune_agents/security-copilot-agents-landing.png" alt="Security Copilot Agents landing page in the Intune admin center, showing Change Review Agent, Device Offboarding Agent, Policy Configuration Agent, and Vulnerability Remediation Agent as four cards in the same layout" />
+      <figcaption>All four agents on one landing page, one card pattern — published by Microsoft.</figcaption>
+    </figure>
     <p>Every agent follows the same shape, whatever it&rsquo;s watching for: it&rsquo;s triggered by a schedule or an event, investigates the relevant state, builds a plan, and presents that plan for review before it does anything. Trust but review, not trust and hope — the plan is always visible before it becomes an action.</p>
     <figure class="fig">
       <img src="diagrams_png/01_agentic_session_flow.png" alt="Abstracted agentic session flow: trigger, investigate, plan, review, act" />
@@ -139,7 +143,7 @@
       <img src="diagrams_png/15_agent_settings_pattern.png" alt="One settings pattern shared by every agent: access and identity (required permissions, chosen identity, 90-day authentication expiry, role-based access control) and configuration and scope (plugins granting access to Intune and Entra, roles with access, tenant Security Copilot workspace, custom instructions)" />
       <figcaption>The shared settings pattern underneath every agent — a diagram I recreated for portfolio use (not internal artwork).</figcaption>
     </figure>
-    <p class="attrib">Multiple shipped Intune agents (Change Review, Device Offboarding, Policy Configuration, Vulnerability Remediation) reuse the agent framework and interaction patterns I led — published by Microsoft (<a href="https://learn.microsoft.com/en-us/intune/copilot/agents/">learn.microsoft.com/intune/copilot/agents</a>). Evidence of pattern adoption across teams; my contribution is the design system, not the pixels.</p>
+    <p class="attrib">Multiple shipped Intune agents (Change Review, Device Offboarding, Policy Configuration, Vulnerability Remediation) reuse the agent framework and interaction patterns I led — published by Microsoft (<a href="https://learn.microsoft.com/en-us/intune/copilot/agents/">learn.microsoft.com/intune/copilot/agents</a>). Evidence of pattern adoption across teams; my contribution is the design system, not the pixels. Microsoft describes every agent across the portfolio as built on Security Copilot for a &ldquo;consistent, secure, and unified experience&rdquo; — the same shared-framework goal, from the <a href="https://techcommunity.microsoft.com/blog/securitycopilotblog/rsa-conference-2025-security-copilot-agents-now-in-preview/4406797">RSA Conference 2025 preview announcement</a>.</p>
   </div>
 </div>
 
