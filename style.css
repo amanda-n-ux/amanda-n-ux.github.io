@@ -306,7 +306,7 @@ h2.sec{font-size:30px; margin:8px 0 26px; letter-spacing:-.4px;}
 .shots{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:20px 0 4px;}
 @media(max-width:640px){ .shots{grid-template-columns:1fr;} }
 .shots figure{margin:0;}
-.shots img{width:100%; border:1px solid var(--line); border-radius:2px; display:block; background:#fff;}
+.shots img{width:100%; aspect-ratio:16/10; object-fit:cover; object-position:top left; border:1px solid var(--line); border-radius:2px; display:block; background:#fff;}
 .shots figcaption{font-size:12px; color:var(--soft); margin-top:5px; text-align:center;}
 
 
