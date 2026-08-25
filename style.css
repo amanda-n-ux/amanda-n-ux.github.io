@@ -182,6 +182,56 @@ h2.sec{font-size:30px; margin:8px 0 26px; letter-spacing:-.4px;}
 .cs-meta > div:nth-child(3) dt{color:var(--coral);}
 .cs-meta dd{font:400 13px/1.5 Arial,sans-serif; color:var(--ink); margin:0;}
 
+/* CASE STUDY -- new 7-phase narrative template, from the approved Design spec.
+   Being rolled out one case study at a time; .cs-hero/.cs-meta above stays live
+   for the pages not yet migrated. */
+.cs-head{background:var(--ink); padding:26px 48px 30px; max-width:var(--max); margin:0 auto;}
+.cs-crumb{display:flex; align-items:center; gap:9px; font:500 12px Arial,sans-serif; color:rgba(255,255,255,.5); margin-bottom:26px;}
+.cs-crumb .sep{opacity:.5;}
+.cs-crumb .here{color:#fff;}
+.cs-head .inner{display:grid; grid-template-columns:1fr 300px; gap:56px; align-items:end;}
+.cs-head h1{font-family:"Newsreader",Georgia,serif; font-weight:500; font-size:36px; line-height:1.16; color:#fff; max-width:660px; margin:0 0 16px;}
+.cs-head .sub{font:400 15px/1.6 Arial,sans-serif; color:rgba(255,255,255,.66); max-width:580px;}
+@media(max-width:900px){ .cs-head .inner{grid-template-columns:1fr;} }
+
+.cs-rail{display:flex; flex-direction:column; gap:9px; padding-bottom:4px;}
+.cs-rail .label{font:600 10.5px ui-monospace,monospace; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.4); margin-bottom:2px;}
+.cs-rail a{display:flex; align-items:center; gap:10px; font:400 12.5px Arial,sans-serif; color:rgba(255,255,255,.45); text-decoration:none;}
+.cs-rail a .dot{width:7px; height:7px; border-radius:50%; background:rgba(255,255,255,.3); flex:none;}
+.cs-rail a.current{font-weight:600; color:#fff;}
+.cs-rail a.current .dot{background:var(--coral);}
+
+.cs-glance{display:grid; grid-template-columns:200px 1fr; gap:48px; padding:26px 48px; background:var(--bg-warm); border-bottom:1px solid var(--line); max-width:var(--max); margin:0 auto;}
+.cs-glance .cells{display:grid; grid-template-columns:repeat(4,1fr); gap:28px;}
+.cs-glance dt{font:600 11px ui-monospace,monospace; color:var(--muted); margin-bottom:6px;}
+.cs-glance dd{font:400 13.5px/1.5 Arial,sans-serif; color:var(--ink); margin:0;}
+@media(max-width:900px){ .cs-glance{grid-template-columns:1fr;} .cs-glance .cells{grid-template-columns:1fr 1fr;} }
+
+.phase{display:grid; grid-template-columns:200px 1fr; gap:48px; padding:44px 48px; border-bottom:1px solid var(--line); max-width:var(--max); margin:0 auto;}
+.phase > .label{font:600 11px ui-monospace,monospace; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); padding-top:5px;}
+.phase h2{font-family:"Newsreader",Georgia,serif; font-weight:500; font-size:23px; color:var(--ink); max-width:600px; margin:0 0 14px;}
+.phase p{font:400 15px/1.75 Arial,sans-serif; color:#4a4744; max-width:640px; margin:0 0 16px;}
+.phase--warm{background:var(--bg-warm);}
+@media(max-width:900px){ .phase{grid-template-columns:1fr; gap:16px;} }
+
+.opt{display:grid; grid-template-columns:110px 1fr; gap:20px; padding:16px 0; border-top:1px solid var(--line);}
+.opt:last-child{border-bottom:1px solid var(--line);}
+.opt .status{font:600 12px ui-monospace,monospace; color:var(--muted); padding-top:2px;}
+.opt--shipped .status{color:var(--coral);}
+.opt h4{font-weight:600; font-size:15px; color:var(--ink); margin:0 0 4px;}
+.opt p{font:400 14px/1.6 Arial,sans-serif; color:var(--muted); margin:0; max-width:560px;}
+
+.tradeoffs{display:grid; grid-template-columns:1fr 1fr; gap:16px; max-width:720px;}
+@media(max-width:640px){ .tradeoffs{grid-template-columns:1fr;} }
+.tradeoff{border:1px solid var(--line); padding:18px; border-radius:2px;}
+.tradeoff h4{font-weight:600; font-size:14px; color:var(--ink); margin:0 0 6px;}
+.tradeoff p{font:400 13.5px/1.6 Arial,sans-serif; color:var(--muted); margin:0;}
+
+.carry-list{display:flex; flex-direction:column; gap:22px; max-width:640px;}
+.carry-item{display:grid; grid-template-columns:44px 1fr; gap:16px; align-items:baseline;}
+.carry-item .n{font-family:"Newsreader",Georgia,serif; font-size:28px; color:var(--line); line-height:1;}
+.carry-item p{font:400 15px/1.6 Arial,sans-serif; color:#4a4744; margin:0;}
+
 .case-transition{
   max-width:var(--max); margin:10px auto 0; padding:48px 48px 12px; box-sizing:border-box;
 }
