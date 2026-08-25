@@ -121,6 +121,11 @@
       <img src="diagrams_png/11_managed_agents_scope.png" alt="What managed means for a class of agents: lifecycle and control (customization, memory and context, pause and resume, rollback, multiple instances, dismiss suggestions) and delivery and access (inline in console, Teams, email, notification center, text/SMS, role-based access control)" />
       <figcaption>Managing a category of agents means more than any one agent's task UI — this is the fuller operational surface.</figcaption>
     </figure>
+    <p>Permissions, identity, and configuration followed the same shape too — one settings pattern, reused under every agent rather than redesigned per agent.</p>
+    <figure class="fig">
+      <img src="diagrams_png/15_agent_settings_pattern.png" alt="One settings pattern shared by every agent: access and identity (required permissions, chosen identity, 90-day authentication expiry, role-based access control) and configuration and scope (plugins granting access to Intune and Entra, roles with access, tenant Security Copilot workspace, custom instructions)" />
+      <figcaption>The shared settings pattern underneath every agent — a diagram I recreated for portfolio use (not internal artwork).</figcaption>
+    </figure>
     <p class="attrib">Multiple shipped Intune agents (Change Review, Device Offboarding, Policy Configuration, Vulnerability Remediation) reuse the agent framework and interaction patterns I led — published by Microsoft (<a href="https://learn.microsoft.com/en-us/intune/copilot/agents/">learn.microsoft.com/intune/copilot/agents</a>). Evidence of pattern adoption across teams; my contribution is the design system, not the pixels.</p>
   </div>
 </div>

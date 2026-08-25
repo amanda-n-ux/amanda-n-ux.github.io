@@ -52,80 +52,136 @@
 
 <main id="main">
 
-<a class="back-link cs-back" href="projects.html">&larr; All Projects</a>
-
-<header class="cs-hero">
-  <img class="shot" src="thumbnails/chapter1-intune-agents.png" alt="Policy Configuration Agent: reviewing and creating a policy, with recommended actions and mapped settings shown for approval" />
-  <img class="mark" src="flower-mark.png" alt="" />
-  <div class="titles">
-    <div class="eyebrow">Chapter One &mdash; Adding Agents to Intune</div>
-    <h1>Agents as a Managed System</h1>
+<header class="cs-head">
+  <div class="cs-crumb">
+    <a href="projects.html" style="color:inherit; text-decoration:none;">Projects</a>
+    <span class="sep">/</span>
+    <span>Agents in Intune</span>
+    <span class="sep">/</span>
+    <span class="here">Chapter One</span>
+  </div>
+  <div class="inner">
+    <div>
+      <h1>Agents as a Managed System</h1>
+      <p class="sub">Admins coordinated remediation across disconnected consoles, with no consistent way to introduce, permission, or govern agents at scale.</p>
+    </div>
+    <div class="cs-rail">
+      <div class="label">Agents in Intune</div>
+      <a class="current" href="project-intune-agents.html"><span class="dot"></span>01 &mdash; Agents as a Managed System</a>
+      <a href="project-vra.html"><span class="dot"></span>02 &mdash; CVE Vulnerability Remediation Agent</a>
+      <a href="project-perception.html"><span class="dot"></span>03 &mdash; Extending Agents Into a Coordinated, Multi-Agent System</a>
+    </div>
   </div>
 </header>
 
-<div class="cs-meta">
-  <div><dt>Role</dt><dd>Experience strategy &amp; interaction design</dd></div>
-  <div><dt>Problem</dt><dd>Admins coordinated remediation across disconnected consoles, with no consistent way to introduce, permission, or govern agents at scale.</dd></div>
-  <div><dt>Outcome</dt><dd>Four shipped agents, one shared framework — patterns built once, reused across the product.</dd></div>
+<div class="cs-glance">
+  <div class="label">At a glance</div>
+  <dl class="cells">
+    <div><dt>Role</dt><dd>Experience Strategy &amp; Interaction Design</dd></div>
+    <div><dt>Scope</dt><dd>4 shipped agents</dd></div>
+    <div><dt>Framework</dt><dd>1 shared system</dd></div>
+  </dl>
 </div>
 
-<section id="work">
-  <div class="wrap">
-    <div class="case">
-      <div class="narrative">
-        <p>Admins used to manually investigate and coordinate remediation across disconnected consoles — spending more time coordinating than solving problems. Now, agents investigate, build durable plans, and present actionable recommendations, while the admin stays firmly in control.</p>
-        <p>Bringing agents into Intune raised a foundational design question: what does it mean to design agents as a <b>category</b> of Intune functionality — not one-off features, but a system that needs to be introduced, permissioned, governed, and managed at scale? Multiple agents were in motion at once — Policy Configuration, Vulnerability Remediation, Change Review, and Device Offboarding — each with different scope, timelines, and levels of readiness.</p>
-        <p>As Principal Product Designer leading experience strategy and interaction design for agentic administration across Intune, I defined the conceptual and interaction model for agents as a class of Intune functionality — spanning agent management, permissions &amp; access, output surfaces (standalone artifacts and inline/in-context), and Responsible AI considerations. I led design end-to-end for the Vulnerability Remediation Agent and drove design strategy across the broader agent portfolio, bridging the SFE/design-system team and the Intune product team throughout — both consuming shared components and driving new agent-specific patterns back into the shared system.</p>
-      </div>
-      <div class="block" style="margin-top:22px;">
-        <h4>Considerations</h4>
-        <ul>
-          <li><b>Customer needs</b> — admins wanted agents to reduce coordination overhead without losing control or visibility; trust in <i>why</i> an agent recommended an action mattered as much as the action itself.</li>
-          <li><b>Business objectives</b> — establish a credible, coherent agentic-AI foundation in Intune, with reusable patterns so agent work wouldn&rsquo;t each start from zero — and could scale or contract as agent priorities shifted.</li>
-          <li><b>Technical constraints</b> — multiple agents, different teams, different levels of maturity, all needing to feel like one coherent, governable system while the underlying design system was still evolving alongside the work.</li>
-        </ul>
-      </div>
-      <div class="decisions">
-        <div class="decision"><div class="d-title">Agents produce durable artifacts, not ephemeral chat</div><div class="why"><b>Why:</b> admins must revisit, audit, share, and continue work — chat transcripts can&rsquo;t support that.</div></div>
-        <div class="decision"><div class="d-title">Design for both standalone and in-context output</div><div class="why"><b>Why:</b> some agent work needs a dedicated place to live and be audited; other output is most useful surfaced right where the admin is already looking. Both needed distinct, deliberate patterns.</div></div>
-        <div class="decision"><div class="d-title">Human approval gates and transparency as first-class, not bolted on</div><div class="why"><b>Why:</b> security and config actions carry organizational risk — RAI-aligned progressive disclosure over full automation, with reasoning visible, not just outcomes.</div></div>
-        <div class="decision"><div class="d-title">Design agents as a managed category, not individual features</div><div class="why"><b>Why:</b> with multiple agents moving at different speeds — including some paused as priorities shifted — admins needed one consistent way to discover, configure, and govern any agent, regardless of its individual status.</div></div>
-        <div class="decision"><div class="d-title">A shared Agent section in the Intune Design Toolkit</div><div class="why"><b>Why:</b> championed reusable components and guidance, driven by real needs from developing agents in parallel — patterns adopted across teams, not one-off features.</div></div>
-        <div class="decision"><div class="d-title">Built on Fluent, extended through SFE</div><div class="why"><b>Why:</b> agent components needed to feel native to the broader admin experience, not bolted on. I consumed Microsoft&rsquo;s Fluent design language throughout, and worked with Intune&rsquo;s shared design-system team (SFE) to both adopt existing patterns and contribute new agent-specific ones back.</div></div>
-      </div>
-      <p class="pull-quote">Four shipped agents, one shared framework — patterns built once, reused across the product.</p>
-      <figure class="fig">
-        <img src="diagrams_png/01_agentic_session_flow.png" alt="Abstracted agentic session flow: trigger, investigate, plan, review, act" />
-        <figcaption>Abstracted agent session flow — a diagram I recreated for portfolio use (not internal artwork).</figcaption>
-      </figure>
-      <figure class="fig">
-        <img src="diagrams_png/03_nl2kql_trust_flow.png" alt="NL2KQL Copilot flow: interpret intent, generate KQL shown not hidden, validate and handle errors, clear trusted result" />
-        <figcaption>Natural language as an interface to data — the same transparency-builds-trust principle, applied to query generation.</figcaption>
-      </figure>
-      <figure class="fig">
-        <img src="diagrams_png/11_managed_agents_scope.png" alt="What managed means for a class of agents: lifecycle and control (customization, memory and context, pause and resume, rollback, multiple instances, dismiss suggestions) and delivery and access (inline in console, Teams, email, notification center, text/SMS, role-based access control)" />
-        <figcaption>Managing a category of agents means more than any one agent's task UI — this is the fuller operational surface.</figcaption>
-      </figure>
-      <figure class="fig">
-        <img src="diagrams_png/12_ux_process_timeline.png" alt="My UX process: Understand, Explore, Refine, Deliver, with PM, Engineering, and RAI checkpoints, and a note about contributing new components back to the shared design system" />
-        <figcaption>The process behind this work — a repeatable framework, not a one-off.</figcaption>
-      </figure>
-      <div class="shots">
-        <figure><img src="screenshots/05_intune_agents/change-review__suggestions.png" alt="Change Review Agent suggestions" /><figcaption>Change Review Agent — same Suggestions / approve pattern</figcaption></figure>
-        <figure><img src="screenshots/05_intune_agents/device-offboarding__overview.png" alt="Device Offboarding Agent overview" /><figcaption>Device Offboarding Agent — shared framework</figcaption></figure>
-        <figure><img src="screenshots/05_intune_agents/policy-agent-mapped-settings.png" alt="Policy Configuration Agent: settings mapped from an uploaded document, reviewed before policy creation" /><figcaption>Policy Configuration Agent — mapped settings review</figcaption></figure>
-        <figure><img src="screenshots/05_intune_agents/copilot-summarize-policy.png" alt="Copilot in Intune summarizing a device configuration policy" /><figcaption>Copilot summarizing a policy — same AI-in-Intune investment</figcaption></figure>
-        <figure><img src="screenshots/05_intune_agents/copilot-tenant-admin-setup.png" alt="Tenant-level Copilot in Intune setup, showing capability areas across Devices, Configuration policies, Autopatch, and Cloud PC" /><figcaption>Copilot governed at the tenant level, across capability areas</figcaption></figure>
-      </div>
-      <p class="attrib">Multiple shipped Intune agents (Change Review, Device Offboarding, Policy Configuration, Vulnerability Remediation) reuse the agent framework and interaction patterns I led — published by Microsoft (<a href="https://learn.microsoft.com/en-us/intune/copilot/agents/">learn.microsoft.com/intune/copilot/agents</a>). Evidence of pattern adoption across teams; my contribution is the design system, not the pixels.</p>
-    </div>
+<div class="phase">
+  <div class="label">01 &mdash; The problem</div>
+  <div>
+    <p>Admins used to manually investigate and coordinate remediation across disconnected consoles — spending more time coordinating than solving problems.</p>
+    <p>Bringing agents into Intune raised a foundational design question: what does it mean to design agents as a category of Intune functionality — not one-off features, but a system that needs to be introduced, permissioned, governed, and managed at scale? Multiple agents were in motion at once — Policy Configuration, Vulnerability Remediation, Change Review, and Device Offboarding — each with different scope, timelines, and levels of readiness.</p>
+  </div>
+</div>
 
-    <div class="case-nav">
-      <a href="projects.html">&larr; All Projects</a>
-      <a class="next" href="project-vra.html">Chapter Two: VRA Deep Dive &rarr;</a>
+<div class="phase">
+  <div class="label">02 &mdash; What I learned first</div>
+  <div>
+    <p>Four agents — Policy Configuration, Vulnerability Remediation, Change Review, and Device Offboarding — were all in motion at once, built by different teams at different speeds. The real risk wasn&rsquo;t any single agent shipping badly; it was four teams each answering the same questions differently: how an admin grants an agent access, how the agent reaches admins where they already work, and how every action gets logged and approved before it runs.</p>
+    <p>Before any one agent could be designed well, the category itself needed a shared framework to design against — role-based access, human-in-the-loop approval, and transparent logging as the default for every agent action, plus consistent delivery through the Intune console and Teams. Every agent after that built on the same foundation instead of each team inventing its own.</p>
+  </div>
+</div>
+
+<div class="phase">
+  <div class="label">03 &mdash; Exploration</div>
+  <div>
+    <p>Two models for how much agents should do on their own were on the table early.</p>
+    <div class="opt">
+      <div class="status">Ruled out</div>
+      <div>
+        <h4>Opt-out, not opt-in</h4>
+        <p>Agents would act automatically unless an admin turned them off. Ruled out — security and configuration actions carry real organizational risk, and defaulting to automatic action conflicted with Responsible AI principles around user control. Admins also had no way yet to build trust in a system they hadn&rsquo;t seen work.</p>
+      </div>
+    </div>
+    <div class="opt opt--shipped">
+      <div class="status">Shipped</div>
+      <div>
+        <h4>Approval gates as the default</h4>
+        <p>Admins review, customize, and approve before anything deploys, with reasoning visible, not just outcomes — automation earns expanded trust over time rather than starting with it. This became the standard every agent in the framework follows.</p>
+      </div>
     </div>
   </div>
-</section>
+</div>
+
+<div class="phase">
+  <div class="label">04 &mdash; What shipped</div>
+  <div>
+    <p>Four agents, sharing one interaction model and one set of components — not four separate UIs stitched together after the fact. Individual agent screens live on their own chapter pages; what shipped here is the framework underneath all of them.</p>
+    <p>Every agent follows the same shape, whatever it&rsquo;s watching for: it&rsquo;s triggered by a schedule or an event, investigates the relevant state, builds a plan, and presents that plan for review before it does anything. Trust but review, not trust and hope — the plan is always visible before it becomes an action.</p>
+    <figure class="fig">
+      <img src="diagrams_png/01_agentic_session_flow.png" alt="Abstracted agentic session flow: trigger, investigate, plan, review, act" />
+      <figcaption>Abstracted agent session flow — a diagram I recreated for portfolio use (not internal artwork).</figcaption>
+    </figure>
+    <p>Being &ldquo;managed&rdquo; meant more than a single task screen. Admins could customize what an agent watches for, pause or resume it, roll back what it did, run multiple instances, or dismiss a suggestion outright — and reach any of that from wherever they already work: the console, Teams, email, or a notification, not one single place they had to remember to check.</p>
+    <figure class="fig">
+      <img src="diagrams_png/11_managed_agents_scope.png" alt="What managed means for a class of agents: lifecycle and control (customization, memory and context, pause and resume, rollback, multiple instances, dismiss suggestions) and delivery and access (inline in console, Teams, email, notification center, text/SMS, role-based access control)" />
+      <figcaption>Managing a category of agents means more than any one agent's task UI — this is the fuller operational surface.</figcaption>
+    </figure>
+    <p>Permissions, identity, and configuration followed the same shape too — one settings pattern, reused under every agent rather than redesigned per agent.</p>
+    <figure class="fig">
+      <img src="diagrams_png/15_agent_settings_pattern.png" alt="One settings pattern shared by every agent: access and identity (required permissions, chosen identity, 90-day authentication expiry, role-based access control) and configuration and scope (plugins granting access to Intune and Entra, roles with access, tenant Security Copilot workspace, custom instructions)" />
+      <figcaption>The shared settings pattern underneath every agent — a diagram I recreated for portfolio use (not internal artwork).</figcaption>
+    </figure>
+    <p class="attrib">Multiple shipped Intune agents (Change Review, Device Offboarding, Policy Configuration, Vulnerability Remediation) reuse the agent framework and interaction patterns I led — published by Microsoft (<a href="https://learn.microsoft.com/en-us/intune/copilot/agents/">learn.microsoft.com/intune/copilot/agents</a>). Evidence of pattern adoption across teams; my contribution is the design system, not the pixels.</p>
+  </div>
+</div>
+
+<div class="phase">
+  <div class="label">05 &mdash; Tradeoffs I own</div>
+  <div>
+    <p>Every one of these took longer to build than the simpler version would have — deliberately.</p>
+    <div class="tradeoffs">
+      <div class="tradeoff">
+        <h4>Durable artifacts over ephemeral chat</h4>
+        <p>A chat interface would have shipped faster. Admins need to revisit, audit, share, and continue work — chat transcripts can&rsquo;t support that.</p>
+      </div>
+      <div class="tradeoff">
+        <h4>Both standalone and in-context output</h4>
+        <p>Picking one surface would have been simpler. Some agent work needs a dedicated place to live and be audited; other output is most useful right where the admin is already looking.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="phase phase--warm">
+  <div class="label">06 &mdash; Beyond this feature</div>
+  <div>
+    <p>The patterns built for this framework didn&rsquo;t stay contained to four agents, or even to Intune. Intune was one of four security products — alongside Entra, Defender, and Purview — building on SFE, a variation of Fluent, to define a shared agent system across the security portfolio. Purview and Defender lean toward investigation; Intune and Entra lean toward action, and Intune in particular deals in scale, bulk device and policy operations that needed more variation than the other three products asked for — while still staying in sync with the shared system instead of forking away from it. A shared Agent section in the Intune Design Toolkit turned what could have been one-off features into reusable components and guidance, adopted by teams building agents after this one, driven by real needs from developing agents in parallel rather than written speculatively.</p>
+  </div>
+</div>
+
+<div class="phase">
+  <div class="label">07 &mdash; What I&rsquo;d carry forward</div>
+  <div class="carry-list">
+    <div class="carry-item"><span class="n">1</span><p>Durable, auditable artifacts beat ephemeral chat for anything an admin needs to revisit, audit, or share — worth the extra build time.</p></div>
+    <div class="carry-item"><span class="n">2</span><p>Approval as the default, not a bolted-on safety net, earns trust faster than defaulting to automation and asking forgiveness.</p></div>
+    <div class="carry-item"><span class="n">3</span><p>Building the shared framework before any single agent shipped meant every agent after the first got faster, not slower, to design.</p></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="case-nav">
+    <a href="projects.html">&larr; All Projects</a>
+    <a class="next" href="project-vra.html">Chapter Two: VRA Deep Dive &rarr;</a>
+  </div>
+</div>
 
 </main>
 
