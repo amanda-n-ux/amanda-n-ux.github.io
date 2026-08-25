@@ -70,16 +70,6 @@
   </dl>
 </div>
 
-<div class="cs-video">
-  <div class="label">Watch it work</div>
-  <div>
-    <div class="frame">
-      <iframe src="https://medius.microsoft.com/Embed/video-nc/6faa78e0-3e04-44bb-9d50-3a2a0c980b1d?r=111948621694" title="Microsoft Security Copilot agents" allowfullscreen></iframe>
-    </div>
-    <p class="caption">&ldquo;Microsoft Security Copilot agents&rdquo; — published by Microsoft on the <a href="https://adoption.microsoft.com/en-us/security-copilot/video-hub/">Security Copilot video hub</a>. Framework-level overview, not a demo I recorded myself.</p>
-  </div>
-</div>
-
 <div class="phase">
   <div class="label">01 &mdash; The problem</div>
   <div>
@@ -130,14 +120,10 @@
       <img src="diagrams_png/01_agentic_session_flow.png" alt="Abstracted agentic session flow: trigger, investigate, plan, review, act" />
       <figcaption>Abstracted agent session flow — a diagram I recreated for portfolio use (not internal artwork).</figcaption>
     </figure>
-    <p>Being &ldquo;managed&rdquo; meant more than a single task screen. Admins could customize what an agent watches for, pause or resume it, roll back what it did, run multiple instances, or dismiss a suggestion outright — and reach any of that from wherever they already work: the console, Teams, email, or a notification, not one single place they had to remember to check.</p>
-    <figure class="fig">
-      <img src="diagrams_png/11_managed_agents_scope.png" alt="What managed means for a class of agents: lifecycle and control (customization, memory and context, pause and resume, rollback, multiple instances, dismiss suggestions) and delivery and access (inline in console, Teams, email, notification center, text/SMS, role-based access control)" />
-      <figcaption>Managing a category of agents means more than any one agent's task UI — this is the fuller operational surface.</figcaption>
-    </figure>
+    <p>Being &ldquo;managed&rdquo; meant more than a single task screen. Admins could customize what an agent watches for, pause or resume it, roll back what it did, or run multiple instances — reachable from the console or the notification center, not one single place they had to remember to check.</p>
     <p>Permissions, identity, and configuration followed the same shape too — one settings pattern, reused under every agent rather than redesigned per agent.</p>
     <figure class="fig">
-      <img src="diagrams_png/15_agent_settings_pattern.png" alt="One settings pattern shared by every agent: access and identity (required permissions, chosen identity, 90-day authentication expiry, role-based access control) and configuration and scope (plugins granting access to Intune and Entra, roles with access, tenant Security Copilot workspace, custom instructions)" />
+      <img src="diagrams_png/15_agent_settings_pattern.png" alt="One settings pattern shared by every agent: access and identity (required permissions, chosen identity, 90-day authentication expiry, role-based access control) and configuration and scope (plugins granting access to what each agent needs, roles with access, tenant Security Copilot workspace, custom instructions)" />
       <figcaption>The shared settings pattern underneath every agent — a diagram I recreated for portfolio use (not internal artwork).</figcaption>
     </figure>
     <p class="attrib">Multiple shipped Intune agents (Change Review, Device Offboarding, Policy Configuration, Vulnerability Remediation) reuse the agent framework and interaction patterns I led — published by Microsoft (<a href="https://learn.microsoft.com/en-us/intune/copilot/agents/">learn.microsoft.com/intune/copilot/agents</a>). Evidence of pattern adoption across teams; my contribution is the design system, not the pixels. Microsoft describes every agent across the portfolio as built on Security Copilot for a &ldquo;consistent, secure, and unified experience&rdquo; — the same shared-framework goal, from the <a href="https://techcommunity.microsoft.com/blog/securitycopilotblog/rsa-conference-2025-security-copilot-agents-now-in-preview/4406797">RSA Conference 2025 preview announcement</a>.</p>
@@ -158,6 +144,11 @@
         <p>Picking one surface would have been simpler. Some agent work needs a dedicated place to live and be audited; other output is most useful right where the admin is already looking.</p>
       </div>
     </div>
+    <p>I designed for a fuller operational surface than what shipped: Teams and email delivery alongside the console, and the ability to dismiss a suggestion outright, not just act on it or leave it. Cut for v1 to ship the core loop &mdash; customize, pause/resume, rollback, multiple instances &mdash; faster, with the rest left as a deliberate next step rather than a gap nobody noticed.</p>
+    <figure class="fig">
+      <img src="diagrams_png/11_managed_agents_scope.png" alt="Design vision for what managed means for a class of agents: lifecycle and control (customization, memory and context, pause and resume, rollback, multiple instances, dismiss suggestions) and delivery and access (inline in console, Teams, email, notification center, text/SMS, role-based access control) — not all of which shipped in v1" />
+      <figcaption>The fuller operational surface I designed for, not a shipped inventory &mdash; Teams/email delivery and suggestion dismissal didn&rsquo;t make v1.</figcaption>
+    </figure>
   </div>
 </div>
 
