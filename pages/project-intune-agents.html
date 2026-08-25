@@ -110,16 +110,13 @@
 <div class="phase">
   <div class="label">04 &mdash; What shipped</div>
   <div>
-    <p>Four agents, sharing one interaction model and one set of components.</p>
-    <div class="shots">
-      <figure><img src="screenshots/05_intune_agents/change-review__suggestions.png" alt="Change Review Agent suggestions" /><figcaption>Change Review Agent — same Suggestions / approve pattern</figcaption></figure>
-      <figure><img src="screenshots/05_intune_agents/device-offboarding__overview.png" alt="Device Offboarding Agent overview" /><figcaption>Device Offboarding Agent — shared framework</figcaption></figure>
-      <figure><img src="screenshots/05_intune_agents/policy-agent-mapped-settings.png" alt="Policy Configuration Agent: settings mapped from an uploaded document, reviewed before policy creation" /><figcaption>Policy Configuration Agent — mapped settings review</figcaption></figure>
-    </div>
+    <p>Four agents, sharing one interaction model and one set of components — not four separate UIs stitched together after the fact. Individual agent screens live on their own chapter pages; what shipped here is the framework underneath all of them.</p>
+    <p>Every agent follows the same shape, whatever it&rsquo;s watching for: it&rsquo;s triggered by a schedule or an event, investigates the relevant state, builds a plan, and presents that plan for review before it does anything. Trust but review, not trust and hope — the plan is always visible before it becomes an action.</p>
     <figure class="fig">
       <img src="diagrams_png/01_agentic_session_flow.png" alt="Abstracted agentic session flow: trigger, investigate, plan, review, act" />
       <figcaption>Abstracted agent session flow — a diagram I recreated for portfolio use (not internal artwork).</figcaption>
     </figure>
+    <p>Being &ldquo;managed&rdquo; meant more than a single task screen. Admins could customize what an agent watches for, pause or resume it, roll back what it did, run multiple instances, or dismiss a suggestion outright — and reach any of that from wherever they already work: the console, Teams, email, or a notification, not one single place they had to remember to check.</p>
     <figure class="fig">
       <img src="diagrams_png/11_managed_agents_scope.png" alt="What managed means for a class of agents: lifecycle and control (customization, memory and context, pause and resume, rollback, multiple instances, dismiss suggestions) and delivery and access (inline in console, Teams, email, notification center, text/SMS, role-based access control)" />
       <figcaption>Managing a category of agents means more than any one agent's task UI — this is the fuller operational surface.</figcaption>
