@@ -81,8 +81,8 @@
 <div class="phase">
   <div class="label">02 &mdash; What I learned first</div>
   <div>
-    <p>Four agents — Policy Configuration, Vulnerability Remediation, Change Review, and Device Offboarding — were all in motion at once, built by different teams at different speeds. The real risk wasn&rsquo;t any single agent shipping badly; it was four teams each answering the same set of questions differently: what triggers an agent, what sources it draws from, what it&rsquo;s permitted to touch, how much it remembers between sessions, and how it asks for approval.</p>
-    <p>Before any one agent could be designed well, the category itself needed a shared framework to design against — one consistent answer for triggers, sources, permissions, memory, and approval, applied the same way across all four agents, so every team built on the same foundation instead of each inventing its own.</p>
+    <p>Four agents — Policy Configuration, Vulnerability Remediation, Change Review, and Device Offboarding — were all in motion at once, built by different teams at different speeds. The real risk wasn&rsquo;t any single agent shipping badly; it was four teams each answering the same questions differently: how an admin grants an agent access, how the agent reaches admins where they already work, and how every action gets logged and approved before it runs.</p>
+    <p>Before any one agent could be designed well, the category itself needed a shared framework to design against — role-based access, human-in-the-loop approval, and transparent logging as the default for every agent action, plus consistent delivery through the Intune console and Teams. Every agent after that built on the same foundation instead of each team inventing its own.</p>
   </div>
 </div>
 
@@ -148,7 +148,7 @@
 <div class="phase phase--warm">
   <div class="label">06 &mdash; Beyond this feature</div>
   <div>
-    <p>The patterns built for this framework didn&rsquo;t stay contained to four agents. A shared Agent section in the Intune Design Toolkit turned what could have been one-off features into reusable components and guidance — adopted by teams building agents after this one, driven by real needs from developing agents in parallel rather than written speculatively.</p>
+    <p>The patterns built for this framework didn&rsquo;t stay contained to four agents. A shared Agent section in the Intune Design Toolkit turned what could have been one-off features into reusable components and guidance — adopted by teams building agents after this one, driven by real needs from developing agents in parallel rather than written speculatively. The same framework also became the basis for coherence between Intune and Entra, so agent patterns stayed consistent across identity and endpoint management instead of diverging by product.</p>
   </div>
 </div>
 
