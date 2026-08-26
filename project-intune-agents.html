@@ -104,7 +104,7 @@
   <div>
     <p>Multiple agents were all in motion at once, built by different teams at different speeds. The real risk wasn&rsquo;t any single agent shipping badly; it was multiple teams each answering the same questions differently: how an admin grants an agent access, how the agent reaches admins where they already work, and how every action gets logged and approved before it runs.</p>
     <p>Before any one agent could be designed well, the category itself needed a shared framework to design against — role-based access, human-in-the-loop approval, and transparent logging as the default for every agent action, plus consistent delivery through the Intune console and Teams. Every agent after that built on the same foundation instead of each team inventing its own.</p>
-    <p>I joined regular MVP calls as the UX representative to hear this from customers directly, not just infer it internally — admins wanted one consistent way to grant access, get notified, and audit what happened, not four different answers to the same three questions depending on which agent they were looking at.</p>
+    <p>I joined regular MVP calls as the UX representative to hear this from customers directly, not just infer it internally — admins wanted one consistent way to grant access, get notified, and audit what happened, not different answers to the same three questions depending on which agent they were looking at.</p>
   </div>
 </div>
 
@@ -126,7 +126,58 @@
         <p>Admins review, customize, and approve before anything deploys, with reasoning visible, not just outcomes — automation earns expanded trust over time rather than starting with it. This became the standard every agent in the framework follows.</p>
       </div>
     </div>
+  </div>
+</div>
 
+<div class="phase">
+  <div class="label">04 &mdash; What shipped</div>
+  <div>
+    <p>Multiple agents, sharing one interaction model and one set of components — not separate UIs stitched together after the fact. Individual agent screens live on their own chapter pages; what shipped here is the framework underneath all of them. All shipped to public preview on schedule for Ignite, under embargo, with quality validated through Microsoft Digital and CxE (Customer Experience Engineering) testing before enterprise rollout.</p>
+    <figure class="fig">
+      <img src="screenshots/05_intune_agents/security-copilot-agents-landing.png" alt="Security Copilot Agents landing page in the Intune admin center, showing four agent cards in the same layout" />
+      <figcaption>Multiple agents on one landing page, one card pattern — published by Microsoft.</figcaption>
+    </figure>
+    <p>Every agent follows the same shape, whatever it&rsquo;s watching for: it&rsquo;s triggered by a schedule or an event, investigates the relevant state, builds a plan, and presents that plan for review before it does anything. Trust but review, not trust and hope — the plan is always visible before it becomes an action.</p>
+    <div class="diagram-head">
+      <h3>Agent Session Flow</h3>
+    </div>
+    <div class="flow">
+      <div class="step emph" style="grid-column:1">
+        <div class="bar"></div>
+        <div class="head"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><circle cx="8" cy="4.5" r="2.75"/><path d="M2 13.5c0-3.31 2.69-6 6-6s6 2.69 6 6"/></svg><span class="num">01</span></div>
+        <h4>Admin starts agent session</h4>
+      </div>
+      <div class="step" style="grid-column:2">
+        <div class="bar"></div>
+        <div class="head"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><circle cx="7" cy="7" r="4.5"/><path d="M10.3 10.3L14 14"/></svg><span class="num">02</span></div>
+        <h4>Agent investigates</h4>
+      </div>
+      <div class="step" style="grid-column:3">
+        <div class="bar"></div>
+        <div class="head"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><path d="M1.5 2h10l3 3v9h-13z"/><path d="M4 7h6M4 9.5h6M4 12h4"/></svg><span class="num">03</span></div>
+        <h4>Agent builds a plan</h4>
+      </div>
+      <div class="step emph" style="grid-column:4">
+        <div class="bar"></div>
+        <div class="head"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.25"/><path d="M5 8l2 2 4-4.5"/></svg><span class="num">04</span></div>
+        <h4>Admin reviews &amp; approves</h4>
+      </div>
+      <div class="step" style="grid-column:5">
+        <div class="bar"></div>
+        <div class="head"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 2h10l3 3v9h-13z"/><path d="M8.5 9.5L11 7.5"/></svg><span class="num">05</span></div>
+        <h4>Durable artifact + action</h4>
+      </div>
+      <div class="step" style="grid-column:6">
+        <div class="bar"></div>
+        <div class="head"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="10" height="8" rx="0.5"/><path d="M4.5 5.5h7M4.5 7.5h5" /><path d="M14 6v6.5a0.5 .5 0 0 1-.5.5H5" /></svg><span class="num">06</span></div>
+        <h4>Revisit, audit, share</h4>
+      </div>
+    </div>
+
+    <div class="diagram-head">
+      <h3>Four Moments, Every Agent</h3>
+      <p class="sub">The touchpoints every agent shares, whatever it&rsquo;s watching for.</p>
+    </div>
     <div class="moments">
       <article class="moment" style="--m-accent:#6a8fbf">
         <div class="bar"></div>
@@ -249,50 +300,6 @@
           <p class="tag">Human review required</p>
         </div>
       </article>
-    </div>
-  </div>
-</div>
-
-<div class="phase">
-  <div class="label">04 &mdash; What shipped</div>
-  <div>
-    <p>Multiple agents, sharing one interaction model and one set of components — not separate UIs stitched together after the fact. Individual agent screens live on their own chapter pages; what shipped here is the framework underneath all of them. All shipped to public preview on schedule for Ignite, under embargo, with quality validated through Microsoft Digital and CxE (Customer Experience Engineering) testing before enterprise rollout.</p>
-    <figure class="fig">
-      <img src="screenshots/05_intune_agents/security-copilot-agents-landing.png" alt="Security Copilot Agents landing page in the Intune admin center, showing four agent cards in the same layout" />
-      <figcaption>Multiple agents on one landing page, one card pattern — published by Microsoft.</figcaption>
-    </figure>
-    <p>Every agent follows the same shape, whatever it&rsquo;s watching for: it&rsquo;s triggered by a schedule or an event, investigates the relevant state, builds a plan, and presents that plan for review before it does anything. Trust but review, not trust and hope — the plan is always visible before it becomes an action.</p>
-    <div class="flow">
-      <div class="step emph" style="grid-column:1">
-        <div class="bar"></div>
-        <div class="head"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><circle cx="8" cy="4.5" r="2.75"/><path d="M2 13.5c0-3.31 2.69-6 6-6s6 2.69 6 6"/></svg><span class="num">01</span></div>
-        <h4>Admin starts agent session</h4>
-      </div>
-      <div class="step" style="grid-column:2">
-        <div class="bar"></div>
-        <div class="head"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><circle cx="7" cy="7" r="4.5"/><path d="M10.3 10.3L14 14"/></svg><span class="num">02</span></div>
-        <h4>Agent investigates</h4>
-      </div>
-      <div class="step" style="grid-column:3">
-        <div class="bar"></div>
-        <div class="head"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><path d="M1.5 2h10l3 3v9h-13z"/><path d="M4 7h6M4 9.5h6M4 12h4"/></svg><span class="num">03</span></div>
-        <h4>Agent builds a plan</h4>
-      </div>
-      <div class="step emph" style="grid-column:4">
-        <div class="bar"></div>
-        <div class="head"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.25"/><path d="M5 8l2 2 4-4.5"/></svg><span class="num">04</span></div>
-        <h4>Admin reviews &amp; approves</h4>
-      </div>
-      <div class="step" style="grid-column:5">
-        <div class="bar"></div>
-        <div class="head"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 2h10l3 3v9h-13z"/><path d="M8.5 9.5L11 7.5"/></svg><span class="num">05</span></div>
-        <h4>Durable artifact + action</h4>
-      </div>
-      <div class="step" style="grid-column:6">
-        <div class="bar"></div>
-        <div class="head"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="10" height="8" rx="0.5"/><path d="M4.5 5.5h7M4.5 7.5h5" /><path d="M14 6v6.5a0.5 .5 0 0 1-.5.5H5" /></svg><span class="num">06</span></div>
-        <h4>Revisit, audit, share</h4>
-      </div>
     </div>
     <p>Being &ldquo;managed&rdquo; meant more than a single task screen. Admins could customize what an agent watches for, pause or resume it, roll back what it did, or run multiple instances — reachable from the console or the notification center, not one single place they had to remember to check.</p>
     <p>Permissions, identity, and configuration followed the same shape too — one settings pattern, reused under every agent rather than redesigned per agent.</p>
