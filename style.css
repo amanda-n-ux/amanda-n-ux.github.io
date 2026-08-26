@@ -362,6 +362,7 @@ h2.sec{font-size:30px; margin:8px 0 26px; letter-spacing:-.4px;}
 .carry-list{display:flex; flex-direction:column; gap:22px; max-width:640px;}
 .carry-item{display:grid; grid-template-columns:44px 1fr; gap:16px; align-items:baseline;}
 .carry-item .n{font-family:"Newsreader",Georgia,serif; font-size:28px; color:var(--line); line-height:1;}
+.carry-item .n svg{display:block; color:var(--soft); opacity:.55;}
 .carry-item p{font:400 15px/1.6 Arial,sans-serif; color:#4a4744; margin:0;}
 
 .case-transition{
