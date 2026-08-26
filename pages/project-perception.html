@@ -50,7 +50,7 @@
   <div class="inner">
     <div>
       <h1>Extending Agents Into a Coordinated, Multi-Agent System</h1>
-      <p class="sub">Real security work doesn&rsquo;t stay inside one agent&rsquo;s lane &mdash; investigation, risk assessment, and remediation needed to work together, not operate as isolated tools.</p>
+      <p class="sub">The framework so far governed many agents within Intune. Real security work spans the whole estate, not one product &mdash; and needed agents that could coordinate across that boundary, not just across tasks.</p>
     </div>
     <div class="cs-rail">
       <div class="label">Agents in Intune</div>
@@ -65,7 +65,7 @@
   <div class="label">At a glance</div>
   <dl class="cells">
     <div><dt>Role</dt><dd>Foundational design contributor</dd></div>
-    <div><dt>Scope</dt><dd>Multi-agent coordination, security-wide</dd></div>
+    <div><dt>Scope</dt><dd>Multi-agent coordination across the estate, not just Intune</dd></div>
     <div><dt>Outcome</dt><dd>Entered limited public preview, August 2026</dd></div>
   </dl>
 </div>
@@ -81,15 +81,16 @@
 <div class="phase">
   <div class="label">01 &mdash; The problem</div>
   <div>
-    <p>Every agent in the framework so far had been governed on its own &mdash; one agent, one task, one approval loop. But real security work doesn&rsquo;t stay inside one agent&rsquo;s lane: an investigation might need to hand off to a different specialist, share what it found, and let a third agent act on the result. Nothing in the existing framework coordinated agents toward one outcome, shared context between them, or gave admins a single place to direct and approve work spanning more than one agent at a time.</p>
+    <p>Every agent in the framework so far had been governed within Intune &mdash; one product, one approval loop, however many agents. But real security work doesn&rsquo;t stay inside one product&rsquo;s boundary: an investigation might start in Defender, pull device context from Intune, and end with a policy change somewhere else in the estate entirely. Nothing in the existing framework coordinated agents across that boundary, shared context between them, or gave the people responsible for security a single place to direct and approve work spanning more than one product at a time.</p>
+    <p>The audience shifted too. The earlier agents were built for the Intune admin, managing devices and policy. This system is built for security teams instead &mdash; the Security Reader and Security Admin roles working in Defender, running threat investigation and remediation, not device management.</p>
   </div>
 </div>
 
 <div class="phase">
   <div class="label">02 &mdash; What I learned first</div>
   <div>
-    <p>I contributed early, foundational design work on the interaction model, before this work had the shape it does today. The first clear finding: coordination couldn&rsquo;t just mean more chat. When several specialized agents contribute to one outcome, admins needed a shared, durable session to work from &mdash; the same &ldquo;revisitable artifact, not ephemeral chat&rdquo; principle from the Intune agent work &mdash; not several separate, untraceable conversations.</p>
-    <p>The second finding was about entry points. Admins didn&rsquo;t want to learn which of several specialized agents to open for a given task &mdash; they wanted to describe the goal and let the system route to the right one. Natural-language chat became the front door, with the system identifying the right workflow instead of admins hunting for the right tool.</p>
+    <p>I contributed early, foundational design work on the interaction model, before this work had the shape it does today. The first clear finding: coordination couldn&rsquo;t just mean more chat. When several specialized agents contribute to one outcome, security teams needed a shared, durable session to work from &mdash; the same &ldquo;revisitable artifact, not ephemeral chat&rdquo; principle from the Intune agent work &mdash; not several separate, untraceable conversations.</p>
+    <p>The second finding was about entry points. Security teams didn&rsquo;t want to learn which of several specialized agents to open for a given task &mdash; they wanted to describe the goal and let the system route to the right one. Natural-language chat became the front door, with the system identifying the right workflow instead of security teams hunting for the right tool.</p>
     <figure class="fig">
       <img src="screenshots/04_project_perception/agentic-demo-ui.png" alt="Project Perception chat entry point in the Microsoft Defender portal: &quot;What do you want to do next?&quot; with a task box and playbook cards, alongside Sessions, Playbooks, and Agents in the side nav" />
       <figcaption>Chat as the front door, with Sessions and Playbooks as their own tabs alongside it &mdash; the shipped shape of that entry-point finding.</figcaption>
@@ -101,7 +102,7 @@
 <div class="phase">
   <div class="label">03 &mdash; Exploration</div>
   <div>
-    <p>How far the system could act on its own, without a human re-approving every step along the way, was the harder question. It doesn&rsquo;t scale to have an admin sign off on individual actions when the system is meant to operate continuously across an entire security estate &mdash; but the fix wasn&rsquo;t more automation with less oversight. It was moving where that oversight lives.</p>
+    <p>How far the system could act on its own, without a human re-approving every step along the way, was the harder question. It doesn&rsquo;t scale to have a security team member sign off on individual actions when the system is meant to operate continuously across an entire security estate &mdash; but the fix wasn&rsquo;t more automation with less oversight. It was moving where that oversight lives.</p>
     <div class="opt">
       <div class="status">Ruled out</div>
       <div>
@@ -113,7 +114,7 @@
       <div class="status">Preview</div>
       <div>
         <h4>Approve the strategy, not each step</h4>
-        <p>Admins set and approve the mission &mdash; what the system should be watching for, what it&rsquo;s allowed to act on. Review friction then scales with risk: a clean, in-bounds action gets a lightweight single-click confirmation instead of a full review; anything flagged or outside the approved bounds still gets escalated for explicit review. Every tier gets a human in the loop &mdash; what changes is how much friction that loop has. Microsoft&rsquo;s own framing for it: &ldquo;Strategy stays human. Scale becomes autonomous.&rdquo;</p>
+        <p>Security teams set and approve the mission &mdash; what the system should be watching for, what it&rsquo;s allowed to act on. Review friction then scales with risk: a clean, in-bounds action gets a lightweight single-click confirmation instead of a full review; anything flagged or outside the approved bounds still gets escalated for explicit review. Every tier gets a human in the loop &mdash; what changes is how much friction that loop has. Microsoft&rsquo;s own framing for it: &ldquo;Strategy stays human. Scale becomes autonomous.&rdquo;</p>
       </div>
     </div>
 
@@ -248,7 +249,7 @@
     </figure>
     <figure class="fig">
       <img src="diagrams_png/14_perception_session_lifecycle.png" alt="A session's lifecycle: In progress, Waiting for input (admin approves, rejects, or redirects), then Completed or Stopped. Viewable as a list or Kanban board." />
-      <figcaption>The redirect loop back to &ldquo;Waiting for input&rdquo; is where the strategy-vs-step tradeoff from phase 03 actually lives &mdash; a real point admins can pull a session back in.</figcaption>
+      <figcaption>The redirect loop back to &ldquo;Waiting for input&rdquo; is where the strategy-vs-step tradeoff from phase 03 actually lives &mdash; a real point security teams can pull a session back in.</figcaption>
     </figure>
     <p class="attrib">Public preview, per Microsoft&rsquo;s own announcement &mdash; <a href="https://www.microsoft.com/en-us/security/business/ai-powered-cybersecurity/project-perception-agentic-system">microsoft.com/security/project-perception-agentic-system</a>, with session-lifecycle details from <a href="https://learn.microsoft.com/en-us/security/agentic-security/agentic-security-sessions">learn.microsoft.com/security/agentic-security</a>. Shown as reference for the direction this foundational work fed into; my own contribution was early design work, not the full shipped product.</p>
   </div>
@@ -257,7 +258,7 @@
 <div class="phase">
   <div class="label">05 &mdash; Tradeoffs I own</div>
   <div>
-    <p>Approval checkpoints throughout the workflow, not just at the end, cost real friction &mdash; every checkpoint is a chance for an admin to pause a plan already in motion. I designed for it anyway: with several agents acting in sequence, the ability to intervene at any point mattered more than a faster end-to-end run. Approving once at the start and letting the whole chain execute would have been simpler to build, but it asked for more trust than a brand-new multi-agent system had earned yet.</p>
+    <p>Approval checkpoints throughout the workflow, not just at the end, cost real friction &mdash; every checkpoint is a chance for a security team to pause a plan already in motion. I designed for it anyway: with several agents acting in sequence, the ability to intervene at any point mattered more than a faster end-to-end run. Approving once at the start and letting the whole chain execute would have been simpler to build, but it asked for more trust than a brand-new multi-agent system had earned yet.</p>
   </div>
 </div>
 
