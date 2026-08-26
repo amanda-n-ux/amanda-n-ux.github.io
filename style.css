@@ -286,6 +286,25 @@ h2.sec{font-size:30px; margin:8px 0 26px; letter-spacing:-.4px;}
 .settings-card li:last-child{border-bottom:1px solid var(--line);}
 .settings-card li svg{flex-shrink:0; color:var(--s-accent);}
 
+/* SESSION FLOW DIAGRAM (phase 04) */
+.flow{display:grid; grid-template-columns:1fr 22px 1fr 22px 1fr 22px 1fr 22px 1fr; grid-template-rows:auto auto 22px auto; align-items:center; margin:26px 0 4px;}
+.flow .grp{font:400 9.5px ui-monospace,monospace; letter-spacing:.12em; text-transform:uppercase; color:var(--soft); opacity:.5; grid-row:1; padding-bottom:8px;}
+.flow .step{grid-row:2; border:1px solid var(--line); background:#fff; padding:16px 14px 14px; position:relative;}
+.flow .step.emph{border-color:var(--coral);}
+.flow .step .num{position:absolute; top:8px; right:10px; font:300 10px "Newsreader",Georgia,serif; letter-spacing:.08em; color:var(--soft); opacity:.5;}
+.flow .step svg{color:var(--coral); margin-bottom:14px;}
+.flow .step.emph svg{color:var(--coral);}
+.flow .step:not(.emph) svg{color:var(--soft);}
+.flow .step p{font:600 13px/1.4 Arial,sans-serif; color:var(--ink); margin:0; text-align:center;}
+.flow .arrow{grid-row:2; text-align:center; color:var(--soft); opacity:.5; font-size:15px;}
+.flow .varrow{grid-row:3; text-align:center; color:var(--soft); opacity:.5; font-size:14px;}
+.flow .sub{grid-row:4; border:1px solid var(--line); background:#fff; padding:14px; text-align:center;}
+.flow .sub.emph{border-color:var(--coral);}
+.flow .sub svg{color:var(--soft); margin-bottom:10px;}
+.flow .sub.emph svg{color:var(--coral);}
+.flow .sub p{font:600 12.5px/1.4 Arial,sans-serif; color:var(--ink); margin:0;}
+@media(max-width:800px){ .flow{grid-template-columns:1fr; grid-template-rows:none; gap:12px;} .flow .grp, .flow .arrow, .flow .varrow{display:none;} .flow .step, .flow .sub{grid-column:1; grid-row:auto;} }
+
 .tradeoffs{display:grid; grid-template-columns:1fr 1fr; gap:16px; max-width:720px;}
 @media(max-width:640px){ .tradeoffs{grid-template-columns:1fr;} }
 .tradeoff{border:1px solid var(--line); padding:18px; border-radius:2px;}

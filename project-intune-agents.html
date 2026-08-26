@@ -262,10 +262,53 @@
       <figcaption>All four agents on one landing page, one card pattern — published by Microsoft.</figcaption>
     </figure>
     <p>Every agent follows the same shape, whatever it&rsquo;s watching for: it&rsquo;s triggered by a schedule or an event, investigates the relevant state, builds a plan, and presents that plan for review before it does anything. Trust but review, not trust and hope — the plan is always visible before it becomes an action.</p>
-    <figure class="fig">
-      <img src="diagrams_png/01_agentic_session_flow.png" alt="Abstracted agentic session flow: trigger, investigate, plan, review, act" />
-      <figcaption>Abstracted agent session flow — a diagram I recreated for portfolio use (not internal artwork).</figcaption>
-    </figure>
+    <div class="flow">
+      <span class="grp" style="grid-column:1">Human</span>
+      <span class="grp" style="grid-column:3 / 6">Agent phase</span>
+      <span class="grp" style="grid-column:7 / 10">Human phase</span>
+
+      <div class="step emph" style="grid-column:1">
+        <span class="num">01</span>
+        <svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><circle cx="8" cy="4.5" r="2.75"/><path d="M2 13.5c0-3.31 2.69-6 6-6s6 2.69 6 6"/></svg>
+        <p>Admin starts agent session</p>
+      </div>
+      <div class="arrow" style="grid-column:2">&rarr;</div>
+      <div class="step" style="grid-column:3">
+        <span class="num">02</span>
+        <svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><circle cx="7" cy="7" r="4.5"/><path d="M10.3 10.3L14 14"/></svg>
+        <p>Agent investigates</p>
+      </div>
+      <div class="arrow" style="grid-column:4">&rarr;</div>
+      <div class="step" style="grid-column:5">
+        <span class="num">03</span>
+        <svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><path d="M1.5 2h10l3 3v9h-13z"/><path d="M4 7h6M4 9.5h6M4 12h4"/></svg>
+        <p>Agent builds a plan</p>
+      </div>
+      <div class="arrow" style="grid-column:6">&rarr;</div>
+      <div class="step emph" style="grid-column:7">
+        <span class="num">04</span>
+        <svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.25"/><path d="M5 8l2 2 4-4.5"/></svg>
+        <p>Admin reviews &amp; approves</p>
+      </div>
+      <div class="arrow" style="grid-column:8">&rarr;</div>
+      <div class="step" style="grid-column:9">
+        <span class="num">05</span>
+        <svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 2h10l3 3v9h-13z"/><path d="M8.5 9.5L11 7.5"/></svg>
+        <p>Durable artifact + action</p>
+      </div>
+
+      <div class="varrow" style="grid-column:7">&darr;</div>
+      <div class="varrow" style="grid-column:9">&darr;</div>
+
+      <div class="sub emph" style="grid-column:7">
+        <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round"><path d="M8 1.5L1 14h14L8 1.5z"/><path d="M8 6.5v3.5"/><circle cx="8" cy="11.75" r="0.5" fill="currentColor"/></svg>
+        <p>Requires human approval</p>
+      </div>
+      <div class="sub" style="grid-column:9">
+        <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="10" height="8" rx="0.5"/><path d="M4.5 5.5h7M4.5 7.5h5" /><path d="M14 6v6.5a0.5 .5 0 0 1-.5.5H5" /></svg>
+        <p>Revisit, audit, share</p>
+      </div>
+    </div>
     <p>Being &ldquo;managed&rdquo; meant more than a single task screen. Admins could customize what an agent watches for, pause or resume it, roll back what it did, or run multiple instances — reachable from the console or the notification center, not one single place they had to remember to check.</p>
     <p>Permissions, identity, and configuration followed the same shape too — one settings pattern, reused under every agent rather than redesigned per agent.</p>
     <div class="settings-cards">
@@ -294,7 +337,7 @@
         </div>
       </article>
     </div>
-    <p class="attrib">Multiple shipped Intune agents reuse the agent framework and interaction patterns I led — published by Microsoft (<a href="https://learn.microsoft.com/en-us/intune/copilot/agents/">learn.microsoft.com/intune/copilot/agents</a>). Evidence of pattern adoption across teams; my contribution is the design system, not the pixels. Microsoft describes every agent across the portfolio as built on Security Copilot for a &ldquo;consistent, secure, and unified experience&rdquo; — the same shared-framework goal, from the <a href="https://techcommunity.microsoft.com/blog/securitycopilotblog/rsa-conference-2025-security-copilot-agents-now-in-preview/4406797">RSA Conference 2025 preview announcement</a>.</p>
+    <p class="attrib">Multiple shipped Intune agents reuse the framework and interaction patterns I led — my contribution is the design system, not the pixels.</p>
   </div>
 </div>
 
