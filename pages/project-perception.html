@@ -82,7 +82,11 @@
   <div>
     <p>I contributed early, foundational design work on the interaction model, before this work had the shape it does today. The first clear finding: coordination couldn&rsquo;t just mean more chat. When several specialized agents contribute to one outcome, admins needed a shared, durable session to work from &mdash; the same &ldquo;revisitable artifact, not ephemeral chat&rdquo; principle from the Intune agent work &mdash; not several separate, untraceable conversations.</p>
     <p>The second finding was about entry points. Admins didn&rsquo;t want to learn which of several specialized agents to open for a given task &mdash; they wanted to describe the goal and let the system route to the right one. Natural-language chat became the front door, with the system identifying the right workflow instead of admins hunting for the right tool.</p>
-    <p>I also surfaced scale and monitoring challenges specific to Intune&rsquo;s agent volume that the broader system hadn&rsquo;t yet addressed. Solving them locally, then generalizing the pattern, pushed real improvements back into the shared security-wide pattern library &mdash; the same two-way bridging approach I used with the cross-product design-system team on the earlier Intune agent work.</p>
+    <figure class="fig">
+      <img src="screenshots/04_project_perception/agentic-demo-ui.png" alt="Project Perception chat entry point in the Microsoft Defender portal: &quot;What do you want to do next?&quot; with a task box and playbook cards, alongside Sessions, Playbooks, and Agents in the side nav" />
+      <figcaption>Chat as the front door, with Sessions and Playbooks as their own tabs alongside it &mdash; the shipped shape of that entry-point finding.</figcaption>
+    </figure>
+    <p class="attrib">Screenshot from Microsoft&rsquo;s public preview announcement &mdash; <a href="https://www.microsoft.com/en-us/security/business/ai-powered-cybersecurity/project-perception-agentic-system">microsoft.com/security/project-perception-agentic-system</a>.</p>
   </div>
 </div>
 
@@ -101,7 +105,7 @@
       <div class="status">Preview</div>
       <div>
         <h4>Approve the strategy, not each step</h4>
-        <p>Admins set and approve the mission &mdash; what the system should be watching for, what it&rsquo;s allowed to act on. Safe, in-scope actions execute within that approval without a second sign-off; anything outside the approved bounds still escalates for explicit review. Strategy stays human; scale becomes autonomous.</p>
+        <p>Admins set and approve the mission &mdash; what the system should be watching for, what it&rsquo;s allowed to act on. Safe, in-scope actions execute within that approval without a second sign-off; anything outside the approved bounds still escalates for explicit review. Microsoft&rsquo;s own framing for it: &ldquo;Strategy stays human. Scale becomes autonomous.&rdquo;</p>
       </div>
     </div>
   </div>
@@ -110,7 +114,7 @@
 <div class="phase">
   <div class="label">04 &mdash; What shipped</div>
   <div>
-    <p>Entered limited public preview in August 2026, hosted in the Microsoft Defender portal: specialized agent teams &mdash; Red for attack simulation, Blue for investigation and triage, Green for remediation and hardening &mdash; working as a closed loop, coordinated through a shared, auditable session rather than isolated chats. Strategy stays human: admins direct and approve at key checkpoints while the system handles the coordination between agents underneath.</p>
+    <p>Hosted directly in the Microsoft Defender portal: specialized agent teams &mdash; Red probing like an attacker, Blue investigating like a responder, Green remediating and hardening &mdash; working as a closed loop, coordinated through a shared, auditable session rather than isolated chats.</p>
 
     <figure class="fig">
       <img src="diagrams_png/04_governance_hub.png" alt="AI governance diagram: a fleet of agents centrally governed by approval &amp; oversight, observability &amp; monitoring, access control &amp; permissions, ownership &amp; accountability, durable audit trail, and blast-radius controls" />
@@ -118,13 +122,9 @@
     </figure>
     <figure class="fig">
       <img src="diagrams_png/14_perception_session_lifecycle.png" alt="A session's lifecycle: In progress, Waiting for input (admin approves, rejects, or redirects), then Completed or Stopped. Viewable as a list or Kanban board." />
-      <figcaption>Every session &mdash; however it started &mdash; moves through the same states, shared and auditable rather than private chat history.</figcaption>
+      <figcaption>The redirect loop back to &ldquo;Waiting for input&rdquo; is where the strategy-vs-step tradeoff from phase 03 actually lives &mdash; a real point admins can pull a session back in.</figcaption>
     </figure>
-    <figure class="fig">
-      <img src="diagrams_png/13_rai_principles.png" alt="Three RAI principles: Transparency, User in control, Avoid over-reliance on AI" />
-      <figcaption>The same transparency-and-control principles from Chapter One, extended into a system where several agents now contribute to one outcome.</figcaption>
-    </figure>
-    <p class="attrib">Entered limited public preview in August 2026 &mdash; product details from Microsoft&rsquo;s public announcement, <a href="https://www.microsoft.com/en-us/security/business/ai-powered-cybersecurity/project-perception-agentic-system">microsoft.com/security/project-perception-agentic-system</a>, with session-lifecycle details from <a href="https://learn.microsoft.com/en-us/security/agentic-security/agentic-security-sessions">learn.microsoft.com/security/agentic-security</a>. Shown as reference for the direction this foundational work fed into; my own contribution was early design work, not the full shipped product.</p>
+    <p class="attrib">Public preview, per Microsoft&rsquo;s own announcement &mdash; <a href="https://www.microsoft.com/en-us/security/business/ai-powered-cybersecurity/project-perception-agentic-system">microsoft.com/security/project-perception-agentic-system</a>, with session-lifecycle details from <a href="https://learn.microsoft.com/en-us/security/agentic-security/agentic-security-sessions">learn.microsoft.com/security/agentic-security</a>. Shown as reference for the direction this foundational work fed into; my own contribution was early design work, not the full shipped product.</p>
   </div>
 </div>
 
@@ -132,7 +132,6 @@
   <div class="label">05 &mdash; Tradeoffs I own</div>
   <div>
     <p>Approval checkpoints throughout the workflow, not just at the end, cost real friction &mdash; every checkpoint is a chance for an admin to pause a plan already in motion. I designed for it anyway: with several agents acting in sequence, the ability to intervene at any point mattered more than a faster end-to-end run. Approving once at the start and letting the whole chain execute would have been simpler to build, but it asked for more trust than a brand-new multi-agent system had earned yet.</p>
-    <p>I also carried the durable-session model over from the Intune agent work rather than designing a new one from scratch. That meant adapting a pattern built for one agent, one task onto a system where several agents now hand work to each other &mdash; slower than a purpose-built model, but it kept the audit trail consistent across every chapter of this framework, not just this one.</p>
   </div>
 </div>
 
