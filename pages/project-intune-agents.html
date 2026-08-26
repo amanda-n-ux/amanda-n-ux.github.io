@@ -317,21 +317,59 @@
   <div class="label">05 &mdash; Tradeoffs I own</div>
   <div>
     <p>Every one of these took longer to build than the simpler version would have — deliberately.</p>
-    <div class="tradeoffs">
-      <div class="tradeoff">
-        <h4>Durable artifacts over ephemeral chat</h4>
-        <p>A chat interface would have shipped faster. Admins need to revisit, audit, share, and continue work — chat transcripts can&rsquo;t support that.</p>
-      </div>
-      <div class="tradeoff">
-        <h4>Both standalone and in-context output</h4>
-        <p>Picking one surface would have been simpler. Some agent work needs a dedicated place to live and be audited; other output is most useful right where the admin is already looking.</p>
-      </div>
+    <div class="settings-cards">
+      <article class="settings-card">
+        <div class="bar"></div>
+        <div class="body">
+          <div class="head"><h5>Durable artifacts over ephemeral chat</h5><span class="num">01</span></div>
+          <p>A chat interface would have shipped faster. Admins need to revisit, audit, share, and continue work — chat transcripts can&rsquo;t support that.</p>
+        </div>
+      </article>
+      <article class="settings-card">
+        <div class="bar"></div>
+        <div class="body">
+          <div class="head"><h5>Both standalone and in-context output</h5><span class="num">02</span></div>
+          <p>Picking one surface would have been simpler. Some agent work needs a dedicated place to live and be audited; other output is most useful right where the admin is already looking.</p>
+        </div>
+      </article>
     </div>
-    <p>I designed for a fuller operational surface than what shipped: Teams and email delivery alongside the console, and the ability to dismiss a suggestion outright, not just act on it or leave it. Cut for v1 to ship the core loop &mdash; customize, pause/resume, rollback, multiple instances &mdash; faster, with the rest left as a deliberate next step rather than a gap nobody noticed.</p>
-    <figure class="fig">
-      <img src="diagrams_png/11_managed_agents_scope.png" alt="Design vision for what managed means for a class of agents: lifecycle and control (customization, memory and context, pause and resume, rollback, multiple instances, dismiss suggestions) and delivery and access (inline in console, Teams, email, notification center, text/SMS, role-based access control) — not all of which shipped in v1" />
-      <figcaption>The fuller operational surface I designed for, not a shipped inventory &mdash; Teams/email delivery and suggestion dismissal didn&rsquo;t make v1.</figcaption>
-    </figure>
+    <p>I designed for a fuller operational surface than what shipped. Cut for v1 to ship the core loop faster, with the rest left as a deliberate next step rather than a gap nobody noticed.</p>
+
+    <div class="diagram-head">
+      <h3>What &ldquo;Managed&rdquo; Means for a Class of Agents</h3>
+      <p class="sub">The operational surface every agent in the system needs &mdash; not just its own task UI.</p>
+    </div>
+    <div class="settings-cards">
+      <article class="settings-card">
+        <div class="bar"></div>
+        <div class="body">
+          <div class="head"><h5>Lifecycle &amp; control</h5><span class="num">01</span></div>
+          <ul>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Customization per org or scope</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Memory &amp; context across runs</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Pause &amp; resume</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Rollback an agent&rsquo;s actions</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Multiple instances of the same agent</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Dismiss individual suggestions</li>
+          </ul>
+        </div>
+      </article>
+      <article class="settings-card">
+        <div class="bar"></div>
+        <div class="body">
+          <div class="head"><h5>Delivery &amp; access</h5><span class="num">02</span></div>
+          <ul>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Inline, in the console</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Microsoft Teams</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Email</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Notification center</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Text / SMS alerts</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Role-based access control</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+    <p class="attrib">The fuller operational surface I designed for, not a shipped inventory &mdash; Teams/email delivery and suggestion dismissal didn&rsquo;t make v1.</p>
   </div>
 </div>
 
