@@ -232,7 +232,7 @@ h2.sec{font-size:30px; margin:8px 0 26px; letter-spacing:-.4px;}
 
 /* DIAGRAM TITLE + SUBTITLE (shared across .moments / .settings-cards / .flow / future diagrams) */
 .diagram-head{margin:28px 0 0;}
-.diagram-head h3{font-family:"Newsreader",Georgia,serif; font-weight:500; font-size:21px; color:var(--ink); margin:0 0 6px;}
+.diagram-head h3{font-family:"Newsreader",Georgia,serif; font-style:italic; font-weight:500; font-size:23px; line-height:1.25; color:var(--ink); margin:0 0 6px;}
 .diagram-head .sub{font:400 13.5px/1.6 Arial,sans-serif; color:var(--soft); margin:0;}
 .diagram-head + .moments, .diagram-head + .settings-cards, .diagram-head + .flow{margin-top:16px;}
 
@@ -315,6 +315,33 @@ h2.sec{font-size:30px; margin:8px 0 26px; letter-spacing:-.4px;}
 .prompt{background:#FFF8F0; border:2px dashed rgba(225,97,74,.5); border-radius:2px; padding:20px 22px; max-width:640px; margin:22px 0 4px;}
 .prompt .label{font:600 11px ui-monospace,monospace; letter-spacing:.06em; text-transform:uppercase; color:var(--coral); margin-bottom:8px;}
 .prompt div{font:400 13.5px/1.6 Arial,sans-serif; color:#4a4744;}
+
+/* THREAT-TO-PLAN DIAGRAM (VRA phase 04) */
+.threat-diagram{display:grid; grid-template-columns:1fr 1fr; border:1px solid var(--line); margin:22px 0 4px;}
+@media(max-width:700px){ .threat-diagram{grid-template-columns:1fr;} }
+.threat-diagram .col{padding:28px 30px; background:#fff;}
+.threat-diagram .signal{border-right:1px solid var(--line);}
+.threat-diagram .plan{background:var(--bg-warm); position:relative;}
+.threat-diagram .plan::before{content:""; position:absolute; top:0; left:0; right:0; height:2px; background:var(--coral);}
+.threat-diagram .eyebrow{font:600 11px ui-monospace,monospace; letter-spacing:.08em; text-transform:uppercase; color:var(--soft); margin:0 0 18px;}
+.threat-diagram .sig-item{padding:14px 0; border-top:1px solid var(--line);}
+.threat-diagram .sig-item:first-of-type{border-top:none; padding-top:0;}
+.threat-diagram .sig-item h5{font:600 14px Arial,sans-serif; color:var(--ink); margin:0 0 8px;}
+.threat-diagram .sig-item svg{display:block; color:var(--coral); opacity:.55; margin-bottom:6px;}
+.threat-diagram .sig-item .note{font:400 12.5px Arial,sans-serif; color:var(--soft); margin:0;}
+.threat-diagram .queue{margin-top:16px; padding-top:16px; border-top:1px solid var(--line);}
+.threat-diagram .queue-row{display:flex; justify-content:space-between; align-items:center; padding:5px 0; font:400 13px Arial,sans-serif; color:var(--soft);}
+.threat-diagram .queue-row b{color:var(--ink); font-weight:500;}
+.threat-diagram .plan-item{padding:12px 0; border-top:1px solid var(--line);}
+.threat-diagram .plan-item:first-of-type{border-top:none; padding-top:0;}
+.threat-diagram .plan-item .row{display:flex; align-items:baseline; gap:10px; margin-bottom:8px;}
+.threat-diagram .plan-item .num{font:300 15px "Newsreader",Georgia,serif; font-style:italic; color:var(--coral); opacity:.7;}
+.threat-diagram .plan-item h5{font:600 14px Arial,sans-serif; color:var(--ink); margin:0;}
+.threat-diagram .plan-item .track{height:3px; background:var(--line); border-radius:2px;}
+.threat-diagram .plan-item .track span{display:block; height:100%; background:var(--coral); opacity:.6; border-radius:2px;}
+.threat-diagram .callout{display:flex; align-items:center; gap:12px; margin-top:18px; padding:14px 16px; border:1px solid var(--line); background:#fff;}
+.threat-diagram .callout svg{color:var(--coral); flex-shrink:0;}
+.threat-diagram .callout p{font:400 13px/1.4 Arial,sans-serif; color:var(--soft); margin:0;}
 
 /* PLAIN LISTS (phase 04 settings) — no card chrome, just structured text */
 .plain-lists{display:grid; grid-template-columns:1fr 1fr; gap:32px; margin:22px 0 4px;}
