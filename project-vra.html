@@ -101,7 +101,7 @@
 <div class="phase">
   <div class="label">02 &mdash; What I learned first</div>
   <div>
-    <p>VRA needed permissions spanning two products, not one — read access to device apps and configurations from Intune, read access to security recommendations and threat hunting data from Defender, plus a Security Copilot role to set up and run the agent itself. Getting that permission set right was the first real test of whether the framework&rsquo;s access model actually held up across a product boundary, not just within Intune.</p>
+    <p>VRA needed permissions spanning two products, not one — read access to Defender&rsquo;s vulnerability data, plus read access to Intune&rsquo;s apps and device configurations. Getting that right was the first real test of whether the framework&rsquo;s access model held up across a product boundary, not just within Intune. That cross-product reach is also why VRA runs under its own dedicated Microsoft Entra agentic identity, distinct from how the other agents handle permissions &mdash; operating across Defender and Intune, rather than within one product, needed an identity model built for it.</p>
     <p>The other early problem was volume, not access. CVEs don&rsquo;t arrive one at a time, and admins had no way to know what mattered most in the pile. Before VRA could recommend anything, it had to rank what it was looking at.</p>
     <p>I owned the UX end to end — discoverability, setup, the approval workflow itself, and the patch-deployment summary at the close of a session — and co-led navigation and modal alignment with the Entra team so admins moving between the two products didn&rsquo;t feel a seam.</p>
   </div>
@@ -138,7 +138,7 @@
 <div class="phase">
   <div class="label">04 &mdash; What shipped</div>
   <div>
-    <p>Dedicated vulnerable-device groups kept execution targeted and remediation scope clear &mdash; admins deployed to a defined set, not a moving target. The job wasn&rsquo;t done the moment a fix deployed, either &mdash; verifying it actually worked was part of the loop, not just sending it and moving on.</p>
+    <p>Dedicated vulnerable-device groups kept execution targeted and remediation scope clear &mdash; admins deployed to a defined set, not a moving target. Marking a suggestion applied isn&rsquo;t automatic confirmation the fix worked, either &mdash; it&rsquo;s a timestamped record the admin attests to, something to track future runs against, not a signal the agent verified anything on its own.</p>
     <figure class="fig">
       <img src="diagrams_png/10_vuln_prioritization.png" alt="From constant threats (evolving CVEs, Defender signals, high/medium/longtail priority queues) to prioritized remediation: ranked by exploitability, grouped by device impact, ready for admin review" />
       <figcaption>Turning a flood of vulnerability signals into a ranked, actionable plan.</figcaption>
