@@ -95,14 +95,14 @@
   <div class="label">01 &mdash; The problem</div>
   <div>
     <p>Admins used to manually investigate and coordinate remediation across disconnected consoles — spending more time coordinating than solving problems.</p>
-    <p>Bringing agents into Intune raised a foundational design question: what does it mean to design agents as a category of Intune functionality — not one-off features, but a system that needs to be introduced, permissioned, governed, and managed at scale? Multiple agents were in motion at once — Policy Configuration, Vulnerability Remediation, Change Review, and Device Offboarding — each with different scope, timelines, and levels of readiness.</p>
+    <p>Bringing agents into Intune raised a foundational design question: what does it mean to design agents as a category of Intune functionality — not one-off features, but a system that needs to be introduced, permissioned, governed, and managed at scale? Multiple agents were in motion at once, each with different scope, timelines, and levels of readiness.</p>
   </div>
 </div>
 
 <div class="phase">
   <div class="label">02 &mdash; What I learned first</div>
   <div>
-    <p>Four agents — Policy Configuration, Vulnerability Remediation, Change Review, and Device Offboarding — were all in motion at once, built by different teams at different speeds. The real risk wasn&rsquo;t any single agent shipping badly; it was four teams each answering the same questions differently: how an admin grants an agent access, how the agent reaches admins where they already work, and how every action gets logged and approved before it runs.</p>
+    <p>Four agents were all in motion at once, built by different teams at different speeds. The real risk wasn&rsquo;t any single agent shipping badly; it was four teams each answering the same questions differently: how an admin grants an agent access, how the agent reaches admins where they already work, and how every action gets logged and approved before it runs.</p>
     <p>Before any one agent could be designed well, the category itself needed a shared framework to design against — role-based access, human-in-the-loop approval, and transparent logging as the default for every agent action, plus consistent delivery through the Intune console and Teams. Every agent after that built on the same foundation instead of each team inventing its own.</p>
     <p>I joined regular MVP calls as the UX representative to hear this from customers directly, not just infer it internally — admins wanted one consistent way to grant access, get notified, and audit what happened, not four different answers to the same three questions depending on which agent they were looking at.</p>
   </div>
@@ -258,7 +258,7 @@
   <div>
     <p>Four agents, sharing one interaction model and one set of components — not four separate UIs stitched together after the fact. Individual agent screens live on their own chapter pages; what shipped here is the framework underneath all of them. All four shipped to public preview on schedule for Ignite, under embargo, with quality validated through Microsoft Digital and CxE (Customer Experience Engineering) testing before enterprise rollout.</p>
     <figure class="fig">
-      <img src="screenshots/05_intune_agents/security-copilot-agents-landing.png" alt="Security Copilot Agents landing page in the Intune admin center, showing Change Review Agent, Device Offboarding Agent, Policy Configuration Agent, and Vulnerability Remediation Agent as four cards in the same layout" />
+      <img src="screenshots/05_intune_agents/security-copilot-agents-landing.png" alt="Security Copilot Agents landing page in the Intune admin center, showing four agent cards in the same layout" />
       <figcaption>All four agents on one landing page, one card pattern — published by Microsoft.</figcaption>
     </figure>
     <p>Every agent follows the same shape, whatever it&rsquo;s watching for: it&rsquo;s triggered by a schedule or an event, investigates the relevant state, builds a plan, and presents that plan for review before it does anything. Trust but review, not trust and hope — the plan is always visible before it becomes an action.</p>
@@ -294,7 +294,7 @@
         </div>
       </article>
     </div>
-    <p class="attrib">Multiple shipped Intune agents (Change Review, Device Offboarding, Policy Configuration, Vulnerability Remediation) reuse the agent framework and interaction patterns I led — published by Microsoft (<a href="https://learn.microsoft.com/en-us/intune/copilot/agents/">learn.microsoft.com/intune/copilot/agents</a>). Evidence of pattern adoption across teams; my contribution is the design system, not the pixels. Microsoft describes every agent across the portfolio as built on Security Copilot for a &ldquo;consistent, secure, and unified experience&rdquo; — the same shared-framework goal, from the <a href="https://techcommunity.microsoft.com/blog/securitycopilotblog/rsa-conference-2025-security-copilot-agents-now-in-preview/4406797">RSA Conference 2025 preview announcement</a>.</p>
+    <p class="attrib">Multiple shipped Intune agents reuse the agent framework and interaction patterns I led — published by Microsoft (<a href="https://learn.microsoft.com/en-us/intune/copilot/agents/">learn.microsoft.com/intune/copilot/agents</a>). Evidence of pattern adoption across teams; my contribution is the design system, not the pixels. Microsoft describes every agent across the portfolio as built on Security Copilot for a &ldquo;consistent, secure, and unified experience&rdquo; — the same shared-framework goal, from the <a href="https://techcommunity.microsoft.com/blog/securitycopilotblog/rsa-conference-2025-security-copilot-agents-now-in-preview/4406797">RSA Conference 2025 preview announcement</a>.</p>
   </div>
 </div>
 
