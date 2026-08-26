@@ -286,6 +286,7 @@
   <div class="label">06 &mdash; Beyond this feature</div>
   <div>
     <p>This early work didn&rsquo;t stay contained to Intune. The scale and monitoring gaps it surfaced were real problems for the broader security-agent pattern library, not just Intune&rsquo;s slice of it &mdash; solving them locally and pushing the fix back upstream strengthened the shared foundation other product agents build on, VRA included. It&rsquo;s the same cross-product bridging approach I used with the design-system team on the Intune agent work: solve the local problem, then generalize it for the group.</p>
+    <p>The ripple runs the other direction too. Perception&rsquo;s core principle is continuous, proactive protection &mdash; agents acting within their approved bounds without waiting on a human review cycle for every action. For an Intune admin, that means a patch can land on their own managed devices approved by security, not by them: a change they own the consequences of but never personally signed off on. That&rsquo;s an uneasy feeling to design for, and pulling Intune admins into that approval loop would just recreate the exact bottleneck already ruled out in phase 03. The answer puts the weight on monitoring and auditing instead of approval &mdash; every change traceable back to what did it and why, surfaced to Intune admins as an alert or a flag they can act on, not a signature they&rsquo;d never see in time to give anyway.</p>
   </div>
 </div>
 
