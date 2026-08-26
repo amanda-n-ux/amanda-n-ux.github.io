@@ -307,6 +307,13 @@ h2.sec{font-size:30px; margin:8px 0 26px; letter-spacing:-.4px;}
 
 .settings-card .body > p{font:400 13.5px/1.6 Arial,sans-serif; color:var(--soft); margin:0;}
 
+/* AUTHOR PROMPT — visible placeholder for prose only Amanda can write.
+   Never fill with invented content; leave this in place until she supplies
+   the real framing/research/rejected-concepts/tradeoffs for that spot. */
+.prompt{background:#FFF8F0; border:2px dashed rgba(225,97,74,.5); border-radius:2px; padding:20px 22px; max-width:640px; margin:22px 0 4px;}
+.prompt .label{font:600 11px ui-monospace,monospace; letter-spacing:.06em; text-transform:uppercase; color:var(--coral); margin-bottom:8px;}
+.prompt div{font:400 13.5px/1.6 Arial,sans-serif; color:#4a4744;}
+
 /* PLAIN LISTS (phase 04 settings) — no card chrome, just structured text */
 .plain-lists{display:grid; grid-template-columns:1fr 1fr; gap:32px; margin:22px 0 4px;}
 @media(max-width:640px){ .plain-lists{grid-template-columns:1fr;} }
