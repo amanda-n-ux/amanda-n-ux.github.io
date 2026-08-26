@@ -268,10 +268,32 @@
     </figure>
     <p>Being &ldquo;managed&rdquo; meant more than a single task screen. Admins could customize what an agent watches for, pause or resume it, roll back what it did, or run multiple instances — reachable from the console or the notification center, not one single place they had to remember to check.</p>
     <p>Permissions, identity, and configuration followed the same shape too — one settings pattern, reused under every agent rather than redesigned per agent.</p>
-    <figure class="fig">
-      <img src="diagrams_png/15_agent_settings_pattern.png" alt="One settings pattern shared by every agent: access and identity (required permissions, chosen identity, 90-day authentication expiry, role-based access control) and configuration and scope (plugins granting access to what each agent needs, roles with access, tenant Security Copilot workspace, custom instructions)" />
-      <figcaption>The shared settings pattern underneath every agent — a diagram I recreated for portfolio use (not internal artwork).</figcaption>
-    </figure>
+    <div class="settings-cards">
+      <article class="settings-card" style="--s-accent:#c9a44f">
+        <div class="bar"></div>
+        <div class="body">
+          <div class="head"><h5>Access &amp; identity</h5><span class="num">01</span></div>
+          <ul>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Required permissions, listed per agent</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Runs under a chosen identity, not a shared one</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Authentication expires after 90 days</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Role-based access control (RBAC)</li>
+          </ul>
+        </div>
+      </article>
+      <article class="settings-card" style="--s-accent:#7d6fbf">
+        <div class="bar"></div>
+        <div class="body">
+          <div class="head"><h5>Configuration &amp; scope</h5><span class="num">02</span></div>
+          <ul>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Plugins grant access to what each agent needs</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Roles with access define who can configure</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Tied to the tenant&rsquo;s Security Copilot workspace</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Custom instructions to guide behavior</li>
+          </ul>
+        </div>
+      </article>
+    </div>
     <p class="attrib">Multiple shipped Intune agents (Change Review, Device Offboarding, Policy Configuration, Vulnerability Remediation) reuse the agent framework and interaction patterns I led — published by Microsoft (<a href="https://learn.microsoft.com/en-us/intune/copilot/agents/">learn.microsoft.com/intune/copilot/agents</a>). Evidence of pattern adoption across teams; my contribution is the design system, not the pixels. Microsoft describes every agent across the portfolio as built on Security Copilot for a &ldquo;consistent, secure, and unified experience&rdquo; — the same shared-framework goal, from the <a href="https://techcommunity.microsoft.com/blog/securitycopilotblog/rsa-conference-2025-security-copilot-agents-now-in-preview/4406797">RSA Conference 2025 preview announcement</a>.</p>
   </div>
 </div>

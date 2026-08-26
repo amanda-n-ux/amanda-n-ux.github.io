@@ -272,6 +272,20 @@ h2.sec{font-size:30px; margin:8px 0 26px; letter-spacing:-.4px;}
 .moment .chip{padding:6px 12px; border:1px solid var(--line); font:400 10.5px Arial,sans-serif; color:var(--soft);}
 .moment .chip--approve{border-color:var(--m-accent); background:var(--bg-warm); color:var(--ink); font-weight:500;}
 
+/* SETTINGS PATTERN CARDS (phase 04) */
+.settings-cards{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); margin:22px 0 4px;}
+@media(max-width:640px){ .settings-cards{grid-template-columns:1fr;} }
+.settings-card{background:#fff; display:flex; flex-direction:column;}
+.settings-card .bar{height:2px; background:var(--s-accent);}
+.settings-card .body{padding:28px 30px;}
+.settings-card .head{display:flex; align-items:baseline; justify-content:space-between; margin-bottom:20px;}
+.settings-card h5{font-family:"Newsreader",Georgia,serif; font-style:italic; font-weight:500; font-size:21px; color:var(--ink); margin:0;}
+.settings-card .num{font:300 12px "Newsreader",Georgia,serif; letter-spacing:.1em; color:var(--soft); opacity:.55;}
+.settings-card ul{list-style:none; margin:0; padding:0;}
+.settings-card li{display:flex; align-items:center; gap:10px; font:400 13.5px/1.5 Arial,sans-serif; color:var(--soft); padding:12px 0; border-top:1px solid var(--line);}
+.settings-card li:last-child{border-bottom:1px solid var(--line);}
+.settings-card li svg{flex-shrink:0; color:var(--s-accent);}
+
 .tradeoffs{display:grid; grid-template-columns:1fr 1fr; gap:16px; max-width:720px;}
 @media(max-width:640px){ .tradeoffs{grid-template-columns:1fr;} }
 .tradeoff{border:1px solid var(--line); padding:18px; border-radius:2px;}
