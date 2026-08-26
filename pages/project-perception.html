@@ -234,15 +234,31 @@
   <div>
     <p>Hosted directly in the Microsoft Defender portal: specialized agent teams &mdash; Red probing like an attacker, Blue investigating like a responder, Green remediating and hardening &mdash; working as a closed loop, coordinated through a shared, auditable session rather than isolated chats.</p>
 
-    <figure class="fig">
-      <img src="diagrams_png/04_governance_hub.png" alt="AI governance diagram: a fleet of agents centrally governed by approval &amp; oversight, observability &amp; monitoring, access control &amp; permissions, ownership &amp; accountability, durable audit trail, and blast-radius controls" />
-      <figcaption>AI governance as one operational experience &mdash; a diagram I recreated for portfolio use (not internal artwork). The challenge isn&rsquo;t governing one agent; it&rsquo;s governing a fleet of them, safely, in one place.</figcaption>
-    </figure>
-    <figure class="fig">
-      <img src="diagrams_png/14_perception_session_lifecycle.png" alt="A session's lifecycle: In progress, Waiting for input (admin approves, rejects, or redirects), then Completed or Stopped. Viewable as a list or Kanban board." />
-      <figcaption>The redirect loop back to &ldquo;Waiting for input&rdquo; is where the strategy-vs-step tradeoff from phase 03 actually lives &mdash; a real point security teams can pull a session back in.</figcaption>
-    </figure>
-    <p class="attrib">Public preview, per Microsoft&rsquo;s own announcement &mdash; <a href="https://www.microsoft.com/en-us/security/business/ai-powered-cybersecurity/project-perception-agentic-system">microsoft.com/security/project-perception-agentic-system</a>, with session-lifecycle details from <a href="https://learn.microsoft.com/en-us/security/agentic-security/agentic-security-sessions">learn.microsoft.com/security/agentic-security</a>. Shown as reference for the direction this foundational work fed into; my own contribution was early design work, not the full shipped product.</p>
+    <div class="diagram-head">
+      <h3>One Investigation, Two Products</h3>
+      <p class="sub">A concrete version of the boundary-crossing problem from phase 01.</p>
+    </div>
+    <div class="flow" style="grid-template-columns:repeat(3,1fr);">
+      <div class="step" style="grid-column:1">
+        <div class="bar"></div>
+        <div class="head"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><circle cx="6.5" cy="6.5" r="4"/><line x1="9.5" y1="9.5" x2="13" y2="13"/></svg><span class="num">01</span></div>
+        <h4>Investigate</h4>
+        <p class="detail">Blue team agent flags an anomaly, opens a session in Defender.</p>
+      </div>
+      <div class="step emph" style="grid-column:2">
+        <div class="bar"></div>
+        <div class="head"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="8" rx="1"/><line x1="5" y1="13" x2="11" y2="13"/></svg><span class="num">02</span></div>
+        <h4>Enrich</h4>
+        <p class="detail">Pulls device compliance and enrollment context from Intune.</p>
+      </div>
+      <div class="step" style="grid-column:3">
+        <div class="bar"></div>
+        <div class="head"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M5 8l2 2 4-4.5"/></svg><span class="num">03</span></div>
+        <h4>Remediate</h4>
+        <p class="detail">Green team agent applies the fix, closes the loop back in Defender.</p>
+      </div>
+    </div>
+    <p class="attrib">Public preview, per Microsoft&rsquo;s own announcement &mdash; <a href="https://www.microsoft.com/en-us/security/business/ai-powered-cybersecurity/project-perception-agentic-system">microsoft.com/security/project-perception-agentic-system</a>. The flow above is an illustrative example built from the confirmed Red/Blue/Green roles, not a literal screenshot of Perception&rsquo;s internals. Shown as reference for the direction this foundational work fed into; my own contribution was early design work, not the full shipped product.</p>
   </div>
 </div>
 
