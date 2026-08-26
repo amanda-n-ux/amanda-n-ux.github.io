@@ -83,6 +83,14 @@
   </dl>
 </div>
 
+<div class="cs-video">
+  <div class="label">Overview</div>
+  <div>
+    <div class="frame"><iframe src="https://medius.microsoft.com/Embed/video-nc/73132893-af34-492c-8676-48fd8d099b37?r=12648952845" title="Supercharging IT Efficiency: Meet the Vulnerability Remediation Agent" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    <p class="caption">&ldquo;Supercharging IT Efficiency: Meet the Vulnerability Remediation Agent&rdquo; &mdash; Julia Idaewor, Intune PM, Microsoft.</p>
+  </div>
+</div>
+
 <div class="phase">
   <div class="label">01 &mdash; The problem</div>
   <div>
@@ -99,76 +107,94 @@
   </div>
 </div>
 
-<section id="work">
-  <div class="wrap">
-    <div class="case">
-      <div class="narrative">
-        <p>Security teams found problems that IT teams manually translated into fixes — slow, fragmented, coordination-heavy. Today, the agent converts vulnerability intelligence into remediation plans, ready for admin review and approval.</p>
+<div class="phase">
+  <div class="label">03 &mdash; Exploration</div>
+  <div>
+    <p>How much VRA should do on its own was the central question, and we held ourselves to the highest RAI standards in answering it: autonomy has to be earned through demonstrated trust and evidence, not assumed on day one. That meant staging the agent&rsquo;s capability deliberately &mdash; crawl, walk, run &mdash; rather than picking one autonomy level and shipping it.</p>
+    <div class="opt opt--shipped">
+      <div class="status">Shipped</div>
+      <div>
+        <h4>Guided</h4>
+        <p>Admin remediation &mdash; the agent explains what to do, the admin carries out the fix. The starting point for first-time or unfamiliar changes, where trust hadn&rsquo;t been established yet.</p>
       </div>
-      <div class="grid">
-        <div class="block">
-          <h4>Problem</h4>
-          <p>A single CVE requires understanding risk, identifying affected devices, creating deployment groups, choosing a strategy, and deploying — usually stitched together by hand across security and IT teams.</p>
-        </div>
-        <div class="block">
-          <h4>My Role</h4>
-          <p>Lead UX for the Vulnerability Remediation Agent — design owner across Public Preview and GA planning, applying the permissions, output, and RAI framework established above to a specific, high-stakes scenario. Led the Intune agent demo for the first public showcase of Security Copilot Agents to the press (RSA).</p>
-        </div>
-      </div>
-      <div class="block" style="margin-top:22px;">
-        <h4>Considerations</h4>
-        <ul>
-          <li><b>Customer needs</b> — security and IT teams needed a faster path from &ldquo;here&rsquo;s a CVE&rdquo; to &ldquo;here&rsquo;s what to do about it,&rdquo; without losing the ability to review and control what actually deploys.</li>
-          <li><b>Business objectives</b> — prove out the agent framework on a concrete, high-value scenario; establish credibility for Intune&rsquo;s agentic-AI direction with a flagship example.</li>
-          <li><b>Technical constraints</b> — CVE remediation spans risk assessment, device targeting, and deployment — each with different data sources and different levels of automation that could safely be offered at MVP.</li>
-        </ul>
-      </div>
-      <div class="decisions">
-        <div class="decision"><div class="d-title">Generate remediation plans automatically</div><div class="why"><b>Why:</b> surface impacted devices, recommended actions, and deployment guidance instead of forcing admins to build plans from scratch.</div></div>
-        <div class="decision"><div class="d-title">Keep the administrator in the loop</div><div class="why"><b>Why:</b> admins review, customize, and approve before anything deploys.</div></div>
-        <div class="decision"><div class="d-title">Dedicated vulnerable-device groups</div><div class="why"><b>Why:</b> targeted groups simplified execution and established clear remediation scope.</div></div>
-        <div class="decision"><div class="d-title">Deliberate MVP simplification</div><div class="why"><b>Why:</b> a strong tradeoff story — reduced interaction complexity for the MVP (plans, review, approval) while keeping an ambitious autonomy roadmap: assisted &rarr; automatic &rarr; safe rollouts &rarr; expanded coverage.</div></div>
-        <div class="decision"><div class="d-title">Consistent with Fluent, not a one-off</div><div class="why"><b>Why:</b> as the flagship agent, VRA set precedent — it needed to feel like it belonged in Intune, not like a bolted-on AI feature. Built within Fluent and Intune&rsquo;s shared, cross-product component library rather than custom, one-off patterns.</div></div>
-      </div>
-      <figure class="fig">
-        <img src="diagrams_png/08_vra_approval_principles.png" alt="Three principles behind approval calibration: approval scales with risk, batch the routine, verify don't just deploy" />
-        <figcaption>The thinking behind where friction goes &mdash; and where it deliberately doesn&rsquo;t.</figcaption>
-      </figure>
-      <p class="pull-quote">An early preview customer collapsed a two-week remediation cycle to under two minutes.</p>
-      <figure class="fig">
-        <img src="diagrams_png/07_vra_session_flow.png" alt="VRA session flow: trigger, investigate, plan, approve, execute, verify, with a human approval gate before anything deploys" />
-        <figcaption>The session end-to-end &mdash; one clear approval gate, not scattered review steps.</figcaption>
-      </figure>
-      <figure class="fig">
-        <img src="diagrams_png/09_remediation_types.png" alt="Three ways to remediate: Guided (admin remediation), Assisted (admin-approved automation), and Autonomous (automatous remediation within pre-approved bounds)" />
-        <figcaption>The progressive-autonomy roadmap made concrete &mdash; three distinct remediation modes, not one fixed level of automation.</figcaption>
-      </figure>
-      <figure class="fig">
-        <img src="diagrams_png/10_vuln_prioritization.png" alt="From constant threats (evolving CVEs, Defender signals, high/medium/longtail priority queues) to prioritized remediation: ranked by exploitability, grouped by device impact, ready for admin review" />
-        <figcaption>Turning a flood of vulnerability signals into a ranked, actionable plan.</figcaption>
-      </figure>
-      <figure class="fig">
-        <img src="diagrams_png/02_cve_remediation_flow.png" alt="Abstracted CVE remediation flow: discovery, plan, approval, deploy" />
-        <figcaption>Abstracted remediation flow I recreated (discovery &rarr; plan &rarr; approval &rarr; deploy).</figcaption>
-      </figure>
-      <div class="shots">
-        <figure><img src="screenshots/01_vra/suggestions-tab.png" alt="Prioritized vulnerability remediation suggestions" /><figcaption>Prioritized suggestions</figcaption></figure>
-        <figure><img src="screenshots/01_vra/suggested-action-pane.png" alt="Suggestion detail with CVE impact and remediation steps" /><figcaption>Suggestion detail &amp; remediation steps</figcaption></figure>
-        <figure><img src="screenshots/01_vra/agent-home-screen.png" alt="Vulnerability Remediation Agent home in the Intune admin center" /><figcaption>Agent home in the Intune admin center</figcaption></figure>
-        <figure><img src="screenshots/01_vra/configurations.png" alt="Agent configuration settings" /><figcaption>Agent configuration</figcaption></figure>
-        <figure><img src="screenshots/01_vra/agent-overview-full.png" alt="Full Vulnerability Remediation Agent overview tab, with agent status, description, suggestions grid, and activity log" /><figcaption>Agent overview — status, suggestions, and activity in one view</figcaption></figure>
-        <figure><img src="screenshots/01_vra/agent-settings-full.png" alt="Full Vulnerability Remediation Agent settings tab: trigger, permissions, identity, plugins, roles with access, workspace" /><figcaption>Agent settings — trigger, permissions, identity, plugins</figcaption></figure>
-        <figure><img src="screenshots/01_vra/suggestion-detail-export.png" alt="Suggestion detail panel with factors and remediation steps, plus a device export confirmation dialog" /><figcaption>Suggestion detail — factors, recommended actions, and export</figcaption></figure>
-      </div>
-      <p class="attrib">Shipped feature, published by Microsoft — <a href="https://learn.microsoft.com/en-us/intune/copilot/agents/vulnerability-remediation-agent">learn.microsoft.com</a>. Shown as reference for the shipped experience; my contribution is the interaction design and flows, not the raw pixels.</p>
     </div>
-
-    <div class="case-nav">
-      <a href="project-intune-agents.html">&larr; Chapter One: Adding Agents to Intune</a>
-      <a class="next" href="project-perception.html">Chapter Three: Project Perception &rarr;</a>
+    <div class="opt opt--shipped">
+      <div class="status">Shipped</div>
+      <div>
+        <h4>Assisted</h4>
+        <p>Admin-approved automation &mdash; the agent prepares the plan, the admin reviews and approves, then it executes. The core loop for routine, well-understood fixes admins had already grown comfortable trusting.</p>
+      </div>
+    </div>
+    <div class="opt opt--roadmap">
+      <div class="status">Roadmap</div>
+      <div>
+        <h4>Autonomous</h4>
+        <p>Remediation within pre-approved bounds, admin monitors the outcome. A deliberate next step, not a v1 feature &mdash; full autonomy earned once the pattern proves itself, not assumed upfront.</p>
+      </div>
     </div>
   </div>
-</section>
+</div>
+
+<div class="phase">
+  <div class="label">04 &mdash; What shipped</div>
+  <div>
+    <p>Every plan VRA generates is built the same way: impacted devices identified, a recommended action attached, deployment guidance included &mdash; instead of leaving admins to build a plan from scratch. Dedicated vulnerable-device groups kept execution targeted and remediation scope clear.</p>
+    <figure class="fig">
+      <img src="diagrams_png/07_vra_session_flow.png" alt="VRA session flow: trigger, investigate, plan, approve, execute, verify, with a human approval gate before anything deploys" />
+      <figcaption>The session end-to-end &mdash; one clear approval gate, not scattered review steps.</figcaption>
+    </figure>
+    <figure class="fig">
+      <img src="diagrams_png/08_vra_approval_principles.png" alt="Three principles behind approval calibration: approval scales with risk, batch the routine, verify don't just deploy" />
+      <figcaption>The thinking behind where friction goes &mdash; and where it deliberately doesn&rsquo;t.</figcaption>
+    </figure>
+    <figure class="fig">
+      <img src="diagrams_png/10_vuln_prioritization.png" alt="From constant threats (evolving CVEs, Defender signals, high/medium/longtail priority queues) to prioritized remediation: ranked by exploitability, grouped by device impact, ready for admin review" />
+      <figcaption>Turning a flood of vulnerability signals into a ranked, actionable plan.</figcaption>
+    </figure>
+    <!-- diagram slot: shipped-modes card (Guided + Assisted only) — pending Figma Make; old 09_remediation_types.png mixed in unshipped Autonomous, dropped for accuracy -->
+    <div class="shots">
+      <figure><img src="screenshots/01_vra/suggestions-tab.png" alt="Prioritized vulnerability remediation suggestions" /><figcaption>Prioritized suggestions</figcaption></figure>
+      <figure><img src="screenshots/01_vra/suggested-action-pane.png" alt="Suggestion detail with CVE impact and remediation steps" /><figcaption>Suggestion detail &amp; remediation steps</figcaption></figure>
+      <figure><img src="screenshots/01_vra/agent-home-screen.png" alt="Vulnerability Remediation Agent home in the Intune admin center" /><figcaption>Agent home in the Intune admin center</figcaption></figure>
+      <figure><img src="screenshots/01_vra/configurations.png" alt="Agent configuration settings" /><figcaption>Agent configuration</figcaption></figure>
+      <figure><img src="screenshots/01_vra/agent-overview-full.png" alt="Full Vulnerability Remediation Agent overview tab, with agent status, description, suggestions grid, and activity log" /><figcaption>Agent overview — status, suggestions, and activity in one view</figcaption></figure>
+      <figure><img src="screenshots/01_vra/agent-settings-full.png" alt="Full Vulnerability Remediation Agent settings tab: trigger, permissions, identity, plugins, roles with access, workspace" /><figcaption>Agent settings — trigger, permissions, identity, plugins</figcaption></figure>
+      <figure><img src="screenshots/01_vra/suggestion-detail-export.png" alt="Suggestion detail panel with factors and remediation steps, plus a device export confirmation dialog" /><figcaption>Suggestion detail — factors, recommended actions, and export</figcaption></figure>
+    </div>
+    <p class="attrib">Shipped feature, published by Microsoft — <a href="https://learn.microsoft.com/en-us/intune/copilot/agents/vulnerability-remediation-agent">learn.microsoft.com</a>. Shown as reference for the shipped experience; my contribution is the interaction design and flows, not the raw pixels.</p>
+  </div>
+</div>
+
+<div class="phase">
+  <div class="label">05 &mdash; Tradeoffs I own</div>
+  <div>
+    <p>I designed the interaction model to support all three autonomy levels from the start, even though only Guided and Assisted shipped. Building for progressive autonomy meant the settings, permissions, and plan structure wouldn&rsquo;t need to be redesigned when Autonomous mode ships &mdash; a deliberate bet that cost more upfront for a smoother path later.</p>
+    <p>As the flagship agent, VRA also set precedent for every agent that followed. Built within Fluent and Intune&rsquo;s shared, cross-product component library rather than custom, one-off patterns &mdash; slower than a bespoke build, but it meant VRA felt like it belonged in Intune from day one, not like a bolted-on AI feature.</p>
+  </div>
+</div>
+
+<div class="phase phase--warm">
+  <div class="label">06 &mdash; Beyond this feature</div>
+  <div>
+    <p>VRA was also the agent chosen for the first public showcase of Security Copilot Agents to the press, at RSA. I led that demo end to end, under embargo and a compressed timeline with last-minute changes from PM &mdash; the flagship agent had to represent the whole framework&rsquo;s credibility, not just its own feature set.</p>
+  </div>
+</div>
+
+<div class="phase">
+  <div class="label">07 &mdash; What I&rsquo;d carry forward</div>
+  <div class="carry-list">
+    <div class="carry-item"><span class="n">1</span><p>Design for the full roadmap even when shipping less of it &mdash; it&rsquo;s cheaper to build the extensible version once than to redesign for the next stage later.</p></div>
+    <div class="carry-item"><span class="n">2</span><p>Cross-product permission models need to be solved early &mdash; they&rsquo;re the first thing that breaks when an agent&rsquo;s scope crosses a product boundary.</p></div>
+    <div class="carry-item"><span class="n">3</span><p>Staged autonomy earns trust faster than jumping straight to automation &mdash; crawl, walk, run beats a single leap that asks for more confidence than anyone&rsquo;s earned yet.</p></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="case-nav">
+    <a href="project-intune-agents.html">&larr; Chapter One: Adding Agents to Intune</a>
+    <a class="next" href="project-perception.html">Chapter Three: Project Perception &rarr;</a>
+  </div>
+</div>
 
 </main>
 

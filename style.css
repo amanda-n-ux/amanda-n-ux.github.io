@@ -226,6 +226,7 @@ h2.sec{font-size:30px; margin:8px 0 26px; letter-spacing:-.4px;}
 .opt:last-child{border-bottom:1px solid var(--line);}
 .opt .status{font:600 12px ui-monospace,monospace; color:var(--muted); padding-top:2px;}
 .opt--shipped .status{color:var(--coral);}
+.opt--roadmap .status{color:var(--amber);}
 .opt h4{font-weight:600; font-size:15px; color:var(--ink); margin:0 0 4px;}
 .opt p{font:400 14px/1.6 Arial,sans-serif; color:var(--muted); margin:0; max-width:560px;}
 
