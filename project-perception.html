@@ -90,59 +90,87 @@
   </div>
 </div>
 
-<section id="work">
-  <div class="wrap">
-    <div class="case">
-      <div class="narrative">
-        <p>Agentic thinking had focused on individual agents handling individual tasks, each governed on its own. This work pushed it further: specialized agents coordinating in teams, sharing context, and working together toward a security outcome — with the admin directing and approving at key checkpoints.</p>
-      </div>
-      <div class="grid">
-        <div class="block">
-          <h4>Problem</h4>
-          <p>The agent-by-agent model raised the next question: what happens when agents need to work <b>together</b>, coordinating across roles rather than operating as isolated tools? Early thinking explored an interaction model, governance patterns, and durable-artifact approach for a multi-agent system spanning security workflows — building on security-wide agent patterns rather than any single product&rsquo;s approach.</p>
-        </div>
-        <div class="block">
-          <h4>My Role</h4>
-          <p>Contributed early, foundational design work on the interaction model and design direction for what became Project Perception — applying and extending security-wide agent patterns into a coordinated multi-agent system: specialized agent teams (investigation, analysis, remediation) working through orchestrated playbooks, with chat as a natural-language entry point and approval checkpoints throughout. Also designed new patterns to address scale and monitoring challenges specific to Intune&rsquo;s agent volume, and pushed those patterns back up into the security-wide pattern library — the same two-way bridging approach used with the cross-product design-system team on the Intune agent work.</p>
-        </div>
-      </div>
-      <div class="block" style="margin-top:22px;">
-        <h4>Considerations</h4>
-        <ul>
-          <li><b>Customer needs</b> — security teams needed coordinated defense, not more disconnected point tools; admins still needed to trust and control what agents did on their behalf, now multiplied across a team of agents instead of one.</li>
-          <li><b>Business objectives</b> — establish a credible agentic-AI security direction ahead of a fast-moving threat landscape, building on established security-wide agent patterns rather than starting over.</li>
-          <li><b>Technical constraints</b> — coordinating multiple agent types (investigation, analysis, remediation) sharing context and handing off work, while keeping the system auditable and governable end-to-end.</li>
-        </ul>
-      </div>
-      <div class="decisions">
-        <div class="decision"><div class="d-title">Extend durable, auditable sessions to multi-agent workflows</div><div class="why"><b>Why:</b> the same &ldquo;revisitable artifact, not ephemeral chat&rdquo; principle from the Intune agent work, applied to a system where several agents now contribute to one outcome.</div></div>
-        <div class="decision"><div class="d-title">Natural-language entry point (chat) over manual navigation</div><div class="why"><b>Why:</b> reduce the friction of finding and configuring the right tool for a task — describe the goal, let the system route to the right workflow.</div></div>
-        <div class="decision"><div class="d-title">Approval checkpoints throughout, not just at the end</div><div class="why"><b>Why:</b> with multiple agents acting in sequence, admins needed the ability to intervene at any point — approve, reject, or redirect — not just sign off on a final result.</div></div>
-        <div class="decision"><div class="d-title">Fed scale and monitoring patterns back into the broader security agent library</div><div class="why"><b>Why:</b> My explorations surfaced monitoring and scale challenges the broader system hadn&rsquo;t yet addressed — solving them locally, then generalizing the pattern, strengthened the system for every product using it.</div></div>
-        <div class="decision"><div class="d-title">Extended shared patterns beyond Intune</div><div class="why"><b>Why:</b> this work reached past Intune into the broader security surface. I carried the same Fluent foundation and cross-product design-system approach forward, adapting established patterns for a system spanning multiple products rather than inventing a new visual language.</div></div>
-      </div>
-      <p class="pull-quote">Publicly launched to preview in August 2026 — built on patterns proven first in Intune.</p>
-      <figure class="fig">
-        <img src="diagrams_png/04_governance_hub.png" alt="AI governance diagram: a fleet of agents centrally governed by approval &amp; oversight, observability &amp; monitoring, access control &amp; permissions, ownership &amp; accountability, durable audit trail, and blast-radius controls" />
-        <figcaption>AI governance as one operational experience — a diagram I recreated for portfolio use (not internal artwork). The challenge isn&rsquo;t governing one agent; it&rsquo;s governing a fleet of them, safely, in one place.</figcaption>
-      </figure>
-      <figure class="fig">
-        <img src="diagrams_png/14_perception_session_lifecycle.png" alt="A session's lifecycle: In progress, Waiting for input (admin approves, rejects, or redirects), then Completed or Stopped. Viewable as a list or Kanban board." />
-        <figcaption>Every session — however it started — moves through the same states, shared and auditable rather than private chat history.</figcaption>
-      </figure>
-      <figure class="fig">
-        <img src="diagrams_png/13_rai_principles.png" alt="Three RAI principles: Transparency, User in control, Avoid over-reliance on AI" />
-        <figcaption>The same transparency-and-control principles from Chapter One, extended into a system where several agents now contribute to one outcome.</figcaption>
-      </figure>
-      <p class="attrib">Project Perception publicly launched to preview in August 2026 — screenshot and product details from Microsoft's public announcement, <a href="https://www.microsoft.com/en-us/security/business/ai-powered-cybersecurity/project-perception-agentic-system">microsoft.com/security/project-perception-agentic-system</a>, with session-lifecycle details from <a href="https://learn.microsoft.com/en-us/security/agentic-security/agentic-security-sessions">learn.microsoft.com/security/agentic-security</a>. Shown as reference for the direction this foundational work fed into; specific screens and decisions above reflect my own contribution, not the full shipped product.</p>
-    </div>
+<div class="phase">
+  <div class="label">02 &mdash; What I learned first</div>
+  <div>
+    <p>I contributed early, foundational design work on the interaction model, before this work had the shape it does today. The first clear finding: coordination couldn&rsquo;t just mean more chat. When several specialized agents contribute to one outcome, admins needed a shared, durable session to work from &mdash; the same &ldquo;revisitable artifact, not ephemeral chat&rdquo; principle from the Intune agent work &mdash; not several separate, untraceable conversations.</p>
+    <p>The second finding was about entry points. Admins didn&rsquo;t want to learn which of several specialized agents to open for a given task &mdash; they wanted to describe the goal and let the system route to the right one. Natural-language chat became the front door, with the system identifying the right workflow instead of admins hunting for the right tool.</p>
+    <p>I also surfaced scale and monitoring challenges specific to Intune&rsquo;s agent volume that the broader system hadn&rsquo;t yet addressed. Solving them locally, then generalizing the pattern, pushed real improvements back into the shared security-wide pattern library &mdash; the same two-way bridging approach I used with the cross-product design-system team on the earlier Intune agent work.</p>
+  </div>
+</div>
 
-    <div class="case-nav">
-      <a href="project-vra.html">&larr; Chapter Two: VRA Deep Dive</a>
-      <a class="next" href="project-cloudpc.html">Additional Case Study: Windows 365 / Cloud PC &rarr;</a>
+<div class="phase">
+  <div class="label">03 &mdash; Exploration</div>
+  <div>
+    <p>How far the system could act on its own, without a human re-approving every step along the way, was the harder question. It doesn&rsquo;t scale to have an admin sign off on individual actions when the system is meant to operate continuously across an entire security estate &mdash; but the fix wasn&rsquo;t more automation with less oversight. It was moving where that oversight lives.</p>
+    <div class="opt">
+      <div class="status">Ruled out</div>
+      <div>
+        <h4>Approve every action individually</h4>
+        <p>The same approval-per-step model that worked for a single agent, single session doesn&rsquo;t scale to a system meant to run continuously, across multiple agents, all day. Treated as a queue of individual approvals, it would turn a defense system meant to operate around the clock back into exactly the bottleneck it was meant to remove.</p>
+      </div>
+    </div>
+    <div class="opt opt--shipped">
+      <div class="status">Preview</div>
+      <div>
+        <h4>Approve the strategy, not each step</h4>
+        <p>Admins set and approve the mission &mdash; what the system should be watching for, what it&rsquo;s allowed to act on. Safe, in-scope actions execute within that approval without a second sign-off; anything outside the approved bounds still escalates for explicit review. Strategy stays human; scale becomes autonomous.</p>
+      </div>
     </div>
   </div>
-</section>
+</div>
+
+<div class="phase">
+  <div class="label">04 &mdash; What shipped</div>
+  <div>
+    <p>Entered limited public preview in August 2026, hosted in the Microsoft Defender portal: specialized agent teams &mdash; Red for attack simulation, Blue for investigation and triage, Green for remediation and hardening &mdash; working as a closed loop, coordinated through a shared, auditable session rather than isolated chats. Strategy stays human: admins direct and approve at key checkpoints while the system handles the coordination between agents underneath.</p>
+
+    <figure class="fig">
+      <img src="diagrams_png/04_governance_hub.png" alt="AI governance diagram: a fleet of agents centrally governed by approval &amp; oversight, observability &amp; monitoring, access control &amp; permissions, ownership &amp; accountability, durable audit trail, and blast-radius controls" />
+      <figcaption>AI governance as one operational experience &mdash; a diagram I recreated for portfolio use (not internal artwork). The challenge isn&rsquo;t governing one agent; it&rsquo;s governing a fleet of them, safely, in one place.</figcaption>
+    </figure>
+    <figure class="fig">
+      <img src="diagrams_png/14_perception_session_lifecycle.png" alt="A session's lifecycle: In progress, Waiting for input (admin approves, rejects, or redirects), then Completed or Stopped. Viewable as a list or Kanban board." />
+      <figcaption>Every session &mdash; however it started &mdash; moves through the same states, shared and auditable rather than private chat history.</figcaption>
+    </figure>
+    <figure class="fig">
+      <img src="diagrams_png/13_rai_principles.png" alt="Three RAI principles: Transparency, User in control, Avoid over-reliance on AI" />
+      <figcaption>The same transparency-and-control principles from Chapter One, extended into a system where several agents now contribute to one outcome.</figcaption>
+    </figure>
+    <p class="attrib">Entered limited public preview in August 2026 &mdash; product details from Microsoft&rsquo;s public announcement, <a href="https://www.microsoft.com/en-us/security/business/ai-powered-cybersecurity/project-perception-agentic-system">microsoft.com/security/project-perception-agentic-system</a>, with session-lifecycle details from <a href="https://learn.microsoft.com/en-us/security/agentic-security/agentic-security-sessions">learn.microsoft.com/security/agentic-security</a>. Shown as reference for the direction this foundational work fed into; my own contribution was early design work, not the full shipped product.</p>
+  </div>
+</div>
+
+<div class="phase">
+  <div class="label">05 &mdash; Tradeoffs I own</div>
+  <div>
+    <p>Approval checkpoints throughout the workflow, not just at the end, cost real friction &mdash; every checkpoint is a chance for an admin to pause a plan already in motion. I designed for it anyway: with several agents acting in sequence, the ability to intervene at any point mattered more than a faster end-to-end run. Approving once at the start and letting the whole chain execute would have been simpler to build, but it asked for more trust than a brand-new multi-agent system had earned yet.</p>
+    <p>I also carried the durable-session model over from the Intune agent work rather than designing a new one from scratch. That meant adapting a pattern built for one agent, one task onto a system where several agents now hand work to each other &mdash; slower than a purpose-built model, but it kept the audit trail consistent across every chapter of this framework, not just this one.</p>
+  </div>
+</div>
+
+<div class="phase phase--warm">
+  <div class="label">06 &mdash; Beyond this feature</div>
+  <div>
+    <p>This early work didn&rsquo;t stay contained to Intune. The scale and monitoring gaps it surfaced were real problems for the broader security-agent pattern library, not just Intune&rsquo;s slice of it &mdash; solving them locally and pushing the fix back upstream strengthened the shared foundation other product agents build on, VRA included. It&rsquo;s the same cross-product bridging approach I used with the design-system team on the Intune agent work: solve the local problem, then generalize it for the group.</p>
+  </div>
+</div>
+
+<div class="phase">
+  <div class="label">07 &mdash; What I&rsquo;d carry forward</div>
+  <div class="carry-list">
+    <div class="carry-item"><span class="n"><svg width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="14" r="7"/><circle cx="18" cy="14" r="7"/></svg></span><p>A shared, durable session is worth the redesign cost the moment more than one agent touches an outcome &mdash; private, per-agent chat histories don&rsquo;t hold up once agents start handing off work to each other.</p></div>
+    <div class="carry-item"><span class="n"><svg width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="10"/><circle cx="14" cy="14" r="5"/><circle cx="14" cy="14" r="1.2" fill="currentColor" stroke="none"/></svg></span><p>Approval doesn&rsquo;t have to mean stopping at every step &mdash; the harder, more valuable design problem is deciding which layer of the system the approval belongs at.</p></div>
+    <div class="carry-item"><span class="n"><svg width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="11"/><path d="M14 19V9M9.5 13.5L14 9l4.5 4.5"/></svg></span><p>Patterns built for one product&rsquo;s constraints often reveal gaps the wider system hasn&rsquo;t hit yet &mdash; solve locally, then generalize, rather than waiting for someone else to find the same gap.</p></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="case-nav">
+    <a href="project-vra.html">&larr; Chapter Two: VRA Deep Dive</a>
+    <a class="next" href="project-cloudpc.html">Additional Case Study: Windows 365 / Cloud PC &rarr;</a>
+  </div>
+</div>
 
 </main>
 
