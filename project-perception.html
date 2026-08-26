@@ -126,11 +126,129 @@
       <div class="status">Preview</div>
       <div>
         <h4>Approve the strategy, not each step</h4>
-        <p>Admins set and approve the mission &mdash; what the system should be watching for, what it&rsquo;s allowed to act on. Safe, in-scope actions execute within that approval without a second sign-off; anything outside the approved bounds still escalates for explicit review. Microsoft&rsquo;s own framing for it: &ldquo;Strategy stays human. Scale becomes autonomous.&rdquo;</p>
+        <p>Admins set and approve the mission &mdash; what the system should be watching for, what it&rsquo;s allowed to act on. Review friction then scales with risk: a clean, in-bounds action gets a lightweight single-click confirmation instead of a full review; anything flagged or outside the approved bounds still gets escalated for explicit review. Every tier gets a human in the loop &mdash; what changes is how much friction that loop has. Microsoft&rsquo;s own framing for it: &ldquo;Strategy stays human. Scale becomes autonomous.&rdquo;</p>
       </div>
     </div>
+
+    <div class="guardrail" id="guardrail" data-open="false">
+      <div class="guardrail-summary">
+        <div class="gd-head">
+          <div>
+            <p class="eyebrow">Design exploration &middot; risk-tiered approval</p>
+            <h3>Safety &amp; Guardrail Flow</h3>
+            <p class="sub">Risk-tiered response &mdash; review friction scales to severity, not a flat on/off for autonomy.</p>
+          </div>
+          <button class="gd-toggle" type="button" id="gdToggle" aria-expanded="false" aria-controls="gdDetail">
+            <span id="gdToggleLabel">View</span>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg>
+          </button>
+        </div>
+        <div class="gd-chips">
+          <div class="gd-chip gd-chip--low"><h5>Low risk</h5><p>Single-click approve</p></div>
+          <div class="gd-chip gd-chip--elevated"><h5>Elevated</h5><p>Full review + reasoning</p></div>
+          <div class="gd-chip gd-chip--high"><h5>High-risk</h5><p>Escalated &middot; blocked until resolved</p></div>
+        </div>
+        <p class="hint">Interactive &middot; click to expand</p>
+      </div>
+
+      <div class="guardrail-detail" id="gdDetail" hidden>
+        <div class="gd-node">
+          <div class="head">
+            <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="2" width="9" height="12" rx="1"/><line x1="5.5" y1="5.5" x2="10.5" y2="5.5"/><line x1="5.5" y1="8" x2="10.5" y2="8"/></svg>
+            <h5>Incoming action</h5>
+          </div>
+          <p>Script, policy change, or remediation request enters the pipeline.</p>
+        </div>
+        <div class="gd-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M7 2v9M3 8l4 4 4-4"/></svg></div>
+        <div class="gd-node">
+          <div class="head">
+            <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.5" cy="6.5" r="4"/><line x1="9.5" y1="9.5" x2="13" y2="13"/></svg>
+            <h5>Risk analysis</h5>
+          </div>
+          <p>Agent evaluates harm potential, anomalies, and contextual signals.</p>
+        </div>
+        <div class="gd-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M7 2v9M3 8l4 4 4-4"/></svg></div>
+
+        <div class="gd-branches">
+          <div class="gd-branch gd-branch--low">
+            <div class="tier">
+              <p class="tag"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l7 3-3 1-1 3-3-7z"/></svg>Low risk</p>
+              <h4>No risk detected</h4>
+              <p>Signal is clean. Action is within expected parameters.</p>
+            </div>
+            <div class="depth">
+              <p class="lbl">Review depth</p>
+              <div class="depth-item"><span class="dn">1</span><div><p class="dt">Single-click approve</p><p class="dd">Admin sees a summary card &mdash; one button to approve.</p></div></div>
+              <div class="depth-item"><span class="dn">2</span><div><p class="dt">Audit logged</p><p class="dd">Decision recorded with actor, timestamp, and context.</p></div></div>
+            </div>
+            <div class="outcome">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5"/></svg>
+              <div><p class="ot">Action deployed</p><p class="od">Proceeds immediately on approval.</p></div>
+            </div>
+          </div>
+
+          <div class="gd-branch gd-branch--elevated">
+            <div class="tier">
+              <p class="tag"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="3" y1="4.5" x2="13" y2="4.5"/><line x1="3" y1="8" x2="13" y2="8"/><line x1="3" y1="11.5" x2="9" y2="11.5"/></svg>Elevated</p>
+              <h4>Risk detected</h4>
+              <p>Anomaly or policy concern flagged. Human judgment required.</p>
+            </div>
+            <div class="depth">
+              <p class="lbl">Review depth</p>
+              <div class="depth-item"><span class="dn">1</span><div><p class="dt">Reasoning surface</p><p class="dd">Agent explains why this was flagged and what it found.</p></div></div>
+              <div class="depth-item"><span class="dn">2</span><div><p class="dt">Full review form</p><p class="dd">Admin reads context, adds notes, approves or rejects.</p></div></div>
+              <div class="depth-item"><span class="dn">3</span><div><p class="dt">Audit logged</p><p class="dd">Full reasoning chain and decision recorded.</p></div></div>
+            </div>
+            <div class="outcome">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5"/></svg>
+              <div><p class="ot">Pending admin decision</p><p class="od">Proceeds or is blocked based on the outcome.</p></div>
+            </div>
+          </div>
+
+          <div class="gd-branch gd-branch--high">
+            <div class="tier">
+              <p class="tag"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5l5.5 2v4c0 3.6-2.3 6-5.5 7-3.2-1-5.5-3.4-5.5-7v-4L8 1.5z"/><line x1="8" y1="6.5" x2="8" y2="9"/><circle cx="8" cy="11" r="0.4" fill="currentColor"/></svg>High-risk</p>
+              <h4>High-risk or destructive</h4>
+              <p>Potentially catastrophic. Blocked immediately, escalated for review.</p>
+            </div>
+            <div class="depth">
+              <p class="lbl">Review depth</p>
+              <div class="depth-item"><span class="dn">1</span><div><p class="dt">Auto-block</p><p class="dd">Action is halted before any effect takes place.</p></div></div>
+              <div class="depth-item"><span class="dn">2</span><div><p class="dt">Escalated review</p><p class="dd">Routed to a senior admin with full context and diff.</p></div></div>
+              <div class="depth-item"><span class="dn">3</span><div><p class="dt">Threshold check</p><p class="dd">Configurable rules can pre-authorize known-safe destructive ops.</p></div></div>
+              <div class="depth-item"><span class="dn">4</span><div><p class="dt">Audit logged</p><p class="dd">Block reason, escalation chain, and final decision recorded.</p></div></div>
+            </div>
+            <div class="outcome">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5"/></svg>
+              <div><p class="ot">Blocked until resolved</p><p class="od">Only proceeds on explicit escalation approval.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <button class="gd-collapse" type="button" id="gdCollapse">Collapse</button>
+      </div>
+    </div>
+    <p class="attrib">A design exploration of mine, not a confirmed Perception mechanism &mdash; shown to illustrate the &ldquo;strategy stays human&rdquo; tradeoff above in more depth.</p>
   </div>
 </div>
+
+<script>
+(function(){
+  var wrap = document.getElementById('guardrail');
+  var detail = document.getElementById('gdDetail');
+  var toggle = document.getElementById('gdToggle');
+  var label = document.getElementById('gdToggleLabel');
+  var collapseBtn = document.getElementById('gdCollapse');
+  function setOpen(open){
+    wrap.setAttribute('data-open', open ? 'true' : 'false');
+    detail.hidden = !open;
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    label.textContent = open ? 'Hide' : 'View';
+  }
+  toggle.addEventListener('click', function(){ setOpen(detail.hidden); });
+  collapseBtn.addEventListener('click', function(){ setOpen(false); toggle.scrollIntoView({block:'center', behavior:'smooth'}); });
+})();
+</script>
 
 <div class="phase">
   <div class="label">04 &mdash; What shipped</div>
