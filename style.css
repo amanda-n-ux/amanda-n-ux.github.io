@@ -141,7 +141,8 @@ header.hero p.lede{font-size:18px; color:var(--ink); max-width:680px; margin:0 0
 
 /* CASE STUDY PREV/NEXT */
 .case-nav{display:flex; justify-content:space-between; gap:16px; margin-top:48px; padding-top:24px; border-top:1px solid var(--line);}
-.case-nav a{font-weight:600; font-size:15px;}
+.case-nav a{font:600 15px Arial,sans-serif;}
+.phase + .wrap .case-nav{border-top:none; padding-top:0;}
 .case-nav .next{margin-left:auto; text-align:right;}
 @media(max-width:640px){ .case-nav{flex-direction:column; gap:12px;} .case-nav .next{margin-left:0; text-align:left;} }
 
