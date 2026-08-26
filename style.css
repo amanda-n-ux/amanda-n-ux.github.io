@@ -132,7 +132,8 @@ header.hero p.lede{font-size:18px; color:var(--ink); max-width:680px; margin:0 0
 .chapter-card p{font:400 13.5px/1.6 Arial,sans-serif; color:var(--muted); max-width:520px; margin:0;}
 .chapter-card .meta{display:flex; flex-direction:column; align-items:flex-end; text-align:right; gap:8px; padding-top:2px;}
 .chapter-card .role{font:600 11px ui-monospace,monospace; letter-spacing:.05em; color:var(--muted);}
-.chapter-card .cta{font:600 13px Arial,sans-serif; color:var(--ink);}
+.chapter-card .cta{font:600 13px Arial,sans-serif; color:var(--coral);}
+.story--w365 .chapter-card .cta{color:var(--amber);}
 .chapter-card .thumb{aspect-ratio:4/3; border:1px solid var(--line); border-radius:2px; background:var(--bg-warm); display:flex; align-items:center; justify-content:center; transition:border-color .15s ease;}
 .chapter-card .thumb svg{width:74%; height:74%;}
 .story--w365 .chapter-card .num{color:var(--amber);}
