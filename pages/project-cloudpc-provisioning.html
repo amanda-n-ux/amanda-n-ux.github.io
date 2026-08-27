@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- SOURCE FILE — edit here, then run `python build.py` from the repo root.
+     Do NOT open this file directly in a browser: it links to style.css and
+     images with paths that only resolve at the repo root, and the nav/footer
+     include markers below are not real markup yet. Always preview the built
+     file at the repo root (same filename, one folder up) instead. -->
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Provisioning &amp; Shared Cloud PCs — Amanda Neves</title>
+<meta name="description" content="Case study: guided provisioning and shared Frontline/Flex Cloud PCs for Windows 365 — Amanda Neves, Principal Product Designer." />
+<link rel="canonical" href="https://amanda-n-ux.github.io/project-cloudpc-provisioning.html" />
+<meta name="theme-color" content="#FFFFFF" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=2" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" />
+<link rel="stylesheet" href="style.css" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://amanda-n-ux.github.io/project-cloudpc-provisioning.html" />
+<meta property="og:title" content="Provisioning &amp; Shared Cloud PCs — Amanda Neves" />
+<meta property="og:description" content="Guided provisioning and shared Frontline/Flex Cloud PCs for Windows 365." />
+<meta property="og:image" content="https://amanda-n-ux.github.io/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Provisioning &amp; Shared Cloud PCs — Amanda Neves" />
+<meta name="twitter:description" content="Guided provisioning and shared Frontline/Flex Cloud PCs for Windows 365." />
+<meta name="twitter:image" content="https://amanda-n-ux.github.io/og-image.png" />
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!--@include:nav active="projects"-->
+
+<main id="main">
+
+<header class="cs-head">
+  <div class="cs-crumb">
+    <a href="projects.html" style="color:inherit; text-decoration:none;">Projects</a>
+    <span class="sep">/</span>
+    <span>Windows 365 / Cloud PC</span>
+    <span class="sep">/</span>
+    <span class="here">Chapter One</span>
+  </div>
+  <div class="inner">
+    <div>
+      <h1>Guided Provisioning &amp; Shared Cloud PCs</h1>
+      <p class="sub">Windows 365 launched with no established admin model &mdash; no precedent for how admins would set up, assign, or scale a virtual PC they couldn&rsquo;t touch.</p>
+    </div>
+    <div class="cs-rail">
+      <div class="label">Windows 365 / Cloud PC</div>
+      <a class="current" href="project-cloudpc-provisioning.html"><span class="dot"></span>01 &mdash; Provisioning &amp; Shared Cloud PCs</a>
+      <a href="project-cloudpc-health.html"><span class="dot"></span>02 &mdash; Cloud PC Health &amp; Monitoring</a>
+    </div>
+  </div>
+</header>
+
+<div class="cs-glance">
+  <div class="label">At a glance</div>
+  <dl class="cells">
+    <div><dt>Role</dt><dd>Design Lead, Cloud PC admin UX &middot; Design Owner, Frontline/Flex</dd></div>
+    <div><dt>Scope</dt><dd>Guided setup, assignment, shared Cloud PCs &middot; 2020&ndash;2024</dd></div>
+    <div><dt>Outcome</dt><dd>Windows 365 Boot shipped; the wizard and assignment patterns outlived the feature</dd></div>
+  </dl>
+</div>
+
+<div class="phase">
+  <div class="label">01 &mdash; The problem</div>
+  <div>
+    <p>Windows 365 introduced Cloud PCs into Intune with no precedent for how admins would provision, assign, or scale them. Research showed admins confused Windows 365 with Microsoft 365 and Office 365, and treated provisioning as a one-time setup task disconnected from ongoing management &mdash; two different mental models the product needed to reconcile before a single workflow could make sense.</p>
+    <p>The entry point itself was part of the problem. Cloud PC was a brand-new product surfacing inside an existing, crowded admin console, not a green field &mdash; getting it discoverable at all meant reconciling two products&rsquo; worth of design, engineering, and leadership before any provisioning workflow could be designed.</p>
+  </div>
+</div>
+
+<div class="phase">
+  <div class="label">02 &mdash; What I learned first</div>
+  <div>
+    <p>The team that had originally built Intune&rsquo;s guided-scenario pattern was gone by the time Cloud PC needed it. Three scenarios &mdash; Boot to Cloud, end-to-end setup, and a Windows 365-for-Agents flow internally called NXT &mdash; all needed the same underlying pattern, and there was no one left who owned it. I pulled together a PM and engineer from Cloud PC and a PM from the NXT side myself to investigate requirements from scratch, rather than let three teams each reinvent the pattern independently.</p>
+    <p>The other early finding was about discoverability, not workflow. Surfacing Cloud PC on the console home page at all meant working across Intune design, engineering, and PM on one side and Cloud PC design, engineering, and PM on the other &mdash; plus leadership on both sides &mdash; just to agree on placement and framing before a single provisioning screen existed.</p>
+  </div>
+</div>
+
+<div class="phase">
+  <div class="label">03 &mdash; Exploration</div>
+  <div>
+    <p>With three guided scenarios in flight at once, the open question was whether each one needed its own wizard.</p>
+    <div class="opt">
+      <div class="status">Ruled out</div>
+      <div>
+        <h4>A separate wizard per scenario</h4>
+        <p>Boot to Cloud, end-to-end setup, and NXT setup were investigated in parallel, and each had enough surface-level difference to justify its own flow on paper. Building three bespoke wizards would have tripled the design and engineering cost for scenarios that overlapped far more than they differed.</p>
+      </div>
+    </div>
+    <div class="opt opt--shipped">
+      <div class="status">Shipped</div>
+      <div>
+        <h4>One flexible wizard, reused</h4>
+        <p>NXT&rsquo;s requirements were folded into the same wizard shell built for Boot to Cloud, so admins use one coherent guided scenario for related setup work instead of learning a new pattern per scenario. Boot to Cloud shipped first, in CY23H1; the reusable shell is what carried forward afterward.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="phase">
+  <div class="label">04 &mdash; What shipped</div>
+  <div>
+    <p>Windows 365 Boot: admins guide end users to sign directly into their Cloud PC from a physical device, extending the life of aging hardware instead of replacing it. It was the first guided scenario to ship, and the wizard shell built for it became the pattern other setup scenarios reused rather than rebuilt.</p>
+
+    <div class="diagram-head">
+      <h3>Getting Started, Assign, Provision</h3>
+      <p class="sub">The admin path from a brand-new console entry to a running Cloud PC.</p>
+    </div>
+    <div class="flow" style="grid-template-columns:repeat(3,1fr);">
+      <div class="step" style="grid-column:1">
+        <div class="bar"></div>
+        <div class="head"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5.5h12M2 9h8"/><circle cx="12.5" cy="11.5" r="2"/></svg><span class="num">01</span></div>
+        <h4>Getting started</h4>
+        <p class="detail">A dedicated section on the Cloud PC overview page surfaces guided scenarios in context, not buried in settings.</p>
+      </div>
+      <div class="step emph" style="grid-column:2">
+        <div class="bar"></div>
+        <div class="head"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="10" rx="1"/><path d="M5.5 13v1.5M10.5 13v1.5M4 14.5h8"/></svg><span class="num">02</span></div>
+        <h4>Assign</h4>
+        <p class="detail">Group-based assignment, down to Flex Cloud PCs shared across up to four people, one at a time.</p>
+      </div>
+      <div class="step" style="grid-column:3">
+        <div class="bar"></div>
+        <div class="head"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M5 8l2 2 4-4.5"/></svg><span class="num">03</span></div>
+        <h4>Provision</h4>
+        <p class="detail">The Cloud PC is created and ready &mdash; the guided path ends where day-to-day management begins.</p>
+      </div>
+    </div>
+
+    <div class="shots">
+      <figure><img src="screenshots/03_windows365_manage/cloud-pc-configurations__screenshot-that-shows-cloud-pc-configurations-in-intune.png" alt="Cloud PC configurations in Intune" /><figcaption>Cloud PC configurations in Intune</figcaption></figure>
+    </div>
+    <p class="attrib">Shipped Windows 365 provisioning experiences, published by Microsoft &mdash; <a href="https://learn.microsoft.com/en-us/windows-365/enterprise/create-provisioning-policy">learn.microsoft.com/windows-365</a>. Reference for the shipped admin surfaces; my contribution is the design of these provisioning and assignment workflows, not the raw pixels.</p>
+  </div>
+</div>
+
+<div class="phase">
+  <div class="label">05 &mdash; Tradeoffs I own</div>
+  <div>
+    <p>I designed the Flex/Frontline assignment model to support group-level licensing before anyone had asked for it to handle a user with more than one provisioning policy. That extra flexibility cost more upfront design work for a case that didn&rsquo;t exist yet &mdash; and it meant the pattern was already in place when assigning multiple provisioning policies to a single user became a real, requested feature later.</p>
+    <p>Reconciling three guided scenarios into one wizard shell was slower than letting each team build its own. It meant sitting between Cloud PC, Intune, and the NXT team to find the shape that worked for all three, instead of shipping Boot to Cloud alone and calling it done.</p>
+  </div>
+</div>
+
+<div class="phase phase--warm">
+  <div class="label">06 &mdash; Beyond this feature</div>
+  <div>
+    <p>The &ldquo;Getting started&rdquo; pattern I designed to surface Cloud PC&rsquo;s guided scenarios in context outgrew Cloud PC &mdash; Intune&rsquo;s own team told me directly they wanted to adopt the same strategy for their own onboarding. I also authored the &ldquo;source of truth&rdquo; design reference for Windows 365&rsquo;s general-availability launch: every standard MEM pattern and Azure control used across the release, plus a full accessibility audit that documented every existing WCAG reflow issue &mdash; the kind of fit-and-finish work that doesn&rsquo;t show up in a single feature but shapes how the whole launch holds together.</p>
+    <p>This body of work was part of what carried me to Principal Designer in late 2023.</p>
+  </div>
+</div>
+
+<div class="phase">
+  <div class="label">07 &mdash; What I&rsquo;d carry forward</div>
+  <div class="carry-list">
+    <div class="carry-item"><span class="n"><svg width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3.5l11 5.5-11 5.5-11-5.5 11-5.5z"/><path d="M3 15l11 5.5L25 15"/><path d="M3 20.5l11 5.5 11-5.5"/></svg></span><p>When a pattern&rsquo;s original owners are gone, someone still has to hold the line &mdash; I reconstituted stakeholders from scratch rather than let three teams quietly reinvent the same wizard three different ways.</p></div>
+    <div class="carry-item"><span class="n"><svg width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="9" height="9" rx="1"/><rect x="15.5" y="3.5" width="9" height="9" rx="1"/><rect x="3.5" y="15.5" width="9" height="9" rx="1"/><rect x="15.5" y="15.5" width="9" height="9" rx="1"/></svg></span><p>Design the assignment model for the requirement that hasn&rsquo;t landed yet, not just the one in front of you &mdash; the group-licensing pattern paid for itself the moment multi-policy assignment actually shipped.</p></div>
+    <div class="carry-item"><span class="n"><svg width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="11"/><path d="M9 14.5l3.5 3.5L20 10"/></svg></span><p>One flexible pattern, reconciled across teams, beats three bespoke ones shipped faster &mdash; the reuse is what survives past the first feature.</p></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="case-nav">
+    <a href="project-perception.html">&larr; Chapter Three: Project Perception</a>
+    <a class="next" href="project-cloudpc-health.html">Chapter Two: Cloud PC Health &amp; Monitoring &rarr;</a>
+  </div>
+</div>
+
+</main>
+
+<!--@include:footer extra="true"-->
+
+<script src="nav.js"></script>
+</body>
+</html>
