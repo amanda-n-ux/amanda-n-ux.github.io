@@ -483,8 +483,8 @@ h2.sec{font-size:30px; margin:8px 0 26px; letter-spacing:-.4px;}
 .fig{margin:22px 0 4px;}
 .fig img{width:100%; border:1px solid var(--line); border-radius:2px; display:block; background:#fff;}
 .fig figcaption{font-size:13px; color:var(--soft); font-style:italic; margin-top:8px; line-height:1.5;}
-.attrib{font-size:10.5px; font-style:italic; color:var(--soft); opacity:.62; margin-top:10px; line-height:1.5; max-width:560px;}
-.attrib a{color:inherit; text-decoration:underline; font-style:normal;}
+.attrib{font-size:9.5px !important; font-style:normal !important; color:var(--soft) !important; opacity:.6; margin-top:14px; padding-top:8px; border-top:1px solid var(--line); line-height:1.5 !important; letter-spacing:.01em; max-width:560px;}
+.attrib a{color:inherit; text-decoration:underline;}
 .shots{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:20px 0 4px;}
 @media(max-width:640px){ .shots{grid-template-columns:1fr;} }
 .shots figure{margin:0;}
