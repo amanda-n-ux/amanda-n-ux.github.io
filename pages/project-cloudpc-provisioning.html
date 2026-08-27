@@ -63,7 +63,7 @@
 <div class="cs-glance">
   <div class="label">At a glance</div>
   <dl class="cells">
-    <div><dt>Role</dt><dd>Design Lead, Cloud PC admin UX &middot; Design Owner, Frontline/Flex</dd></div>
+    <div><dt>Role</dt><dd>Design Lead, Cloud PC admin UX</dd></div>
     <div><dt>Scope</dt><dd>Provisioning at scale &mdash; device states, groups, licensing &middot; 2020&ndash;2024</dd></div>
     <div><dt>Outcome</dt><dd>A group-based provisioning model that scaled from one Cloud PC to thousands</dd></div>
   </dl>
@@ -147,7 +147,6 @@
 <div class="phase">
   <div class="label">05 &mdash; Tradeoffs I own</div>
   <div>
-    <p>The Flex/Frontline assignment model started with a research gap I flagged myself: nothing had tested how admins actually thought about group-based licensing for a shared Cloud PC. I scoped a dedicated study with research and built prototypes from it, then designed the model to support group-level licensing before anyone had asked for it to handle a user with more than one provisioning policy. That extra flexibility cost more upfront design and research work for a case that didn&rsquo;t exist yet &mdash; and it meant the pattern was already in place when assigning multiple provisioning policies to a single user became a real, requested feature later.</p>
     <p>Designing a genuinely new state model, instead of stretching Intune&rsquo;s existing physical-device states to cover Cloud PCs too, cost more time working with engineering to define what each state meant and when it applied. Reusing existing states would have shipped faster, but it would have told an admin a Cloud PC was &ldquo;enrolled&rdquo; when what they actually needed to know was whether it had finished being created in the first place &mdash; a different question a reused vocabulary couldn&rsquo;t answer.</p>
   </div>
 </div>
@@ -164,7 +163,7 @@
   <div class="label">07 &mdash; What I&rsquo;d carry forward</div>
   <div class="carry-list">
     <div class="carry-item"><span class="n"><svg width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3.5l11 5.5-11 5.5-11-5.5 11-5.5z"/><path d="M3 15l11 5.5L25 15"/><path d="M3 20.5l11 5.5 11-5.5"/></svg></span><p>A new device category doesn&rsquo;t just need new screens &mdash; it can need an entirely new dimension of state, one the existing model never had to represent. Cloud PC&rsquo;s provisioning lifecycle didn&rsquo;t exist in Intune&rsquo;s vocabulary until it was designed.</p></div>
-    <div class="carry-item"><span class="n"><svg width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="9" height="9" rx="1"/><rect x="15.5" y="3.5" width="9" height="9" rx="1"/><rect x="3.5" y="15.5" width="9" height="9" rx="1"/><rect x="15.5" y="15.5" width="9" height="9" rx="1"/></svg></span><p>Design the assignment model for the requirement that hasn&rsquo;t landed yet, not just the one in front of you &mdash; the group-licensing pattern paid for itself the moment multi-policy assignment actually shipped.</p></div>
+    <div class="carry-item"><span class="n"><svg width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="9" height="9" rx="1"/><rect x="15.5" y="3.5" width="9" height="9" rx="1"/><rect x="3.5" y="15.5" width="9" height="9" rx="1"/><rect x="15.5" y="15.5" width="9" height="9" rx="1"/></svg></span><p>Scaling by group doesn&rsquo;t mean abandoning individual configuration &mdash; naming templates and per-user settings let a system built for group-level scale still feel configured for the person using it, not mass-produced.</p></div>
     <div class="carry-item"><span class="n"><svg width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="11"/><path d="M9 14.5l3.5 3.5L20 10"/></svg></span><p>Find the constraint that won&rsquo;t scale before you design around it &mdash; the moment provisioning stopped being a per-device operation and became a per-group one, everything downstream could scale with it.</p></div>
   </div>
 </div>

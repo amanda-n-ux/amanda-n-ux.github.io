@@ -63,7 +63,7 @@
 <div class="cs-glance">
   <div class="label">At a glance</div>
   <dl class="cells">
-    <div><dt>Role</dt><dd>Design Lead &middot; monitoring, reporting &amp; alerting strategy, later spanning AVD too</dd></div>
+    <div><dt>Role</dt><dd>Design Lead, monitoring/reporting strategy &amp; Design Owner, Frontline/Flex &mdash; later spanning AVD too</dd></div>
     <div><dt>Scope</dt><dd>Fleet-scale monitoring &mdash; signal aggregation, dashboards, restore</dd></div>
     <div><dt>Outcome</dt><dd>A unified reporting dashboard, adopted across Cloud PC and Flex</dd></div>
   </dl>
@@ -136,6 +136,7 @@
       </div>
     </div>
 
+    <p>Flex &mdash; formerly Frontline &mdash; Cloud PCs needed a different kind of signal entirely, and this is where owning the shared model as its own design problem mattered most. A regular Cloud PC is one person, one device, so its health question is simple: is this machine working. A Flex Cloud PC is shared &mdash; up to four people licensed against one Cloud PC, one at a time &mdash; so the real question isn&rsquo;t about any single device, it&rsquo;s whether the shared pool is keeping up with demand. I designed a report showing concurrent license usage and which users couldn&rsquo;t connect, so admins could see actual utilization against capacity and decide whether they needed to license more Flex Cloud PCs &mdash; a capacity question the per-device model this page is built around doesn&rsquo;t answer on its own.</p>
     <p>Restore and repair live inside that same fleet-aware model. Restore lets an admin roll a Cloud PC back to a working point in time without a full rebuild; a compliance-focused restore point can be shared directly with forensic investigators, built as one shared framework since both are the same underlying capability for two audiences. Naming mattered too &mdash; I partnered with content design on &ldquo;Attempt to repair connection&rdquo; instead of the more obvious &ldquo;Troubleshoot,&rdquo; since Troubleshoot already meant something else elsewhere in Intune.</p>
 
     <div class="shots">
