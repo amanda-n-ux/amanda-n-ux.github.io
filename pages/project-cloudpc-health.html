@@ -9,7 +9,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Cloud PC Health &amp; Monitoring — Amanda Neves</title>
-<meta name="description" content="Case study: the Cloud PC health dashboard, monitoring, and recovery experience for Windows 365 — Amanda Neves, Principal Product Designer." />
+<meta name="description" content="Case study: monitoring a fleet of Cloud PCs at scale for Windows 365 — translating raw per-device signal into tenant-level, actionable dashboards. Amanda Neves, Principal Product Designer." />
 <link rel="canonical" href="https://amanda-n-ux.github.io/project-cloudpc-health.html" />
 <meta name="theme-color" content="#FFFFFF" />
 <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2" />
@@ -21,14 +21,14 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://amanda-n-ux.github.io/project-cloudpc-health.html" />
 <meta property="og:title" content="Cloud PC Health &amp; Monitoring — Amanda Neves" />
-<meta property="og:description" content="The Cloud PC health dashboard, monitoring, and recovery experience for Windows 365." />
+<meta property="og:description" content="Translating raw per-device signal into tenant-level, actionable dashboards for a growing fleet of Cloud PCs." />
 <meta property="og:image" content="https://amanda-n-ux.github.io/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Cloud PC Health &amp; Monitoring — Amanda Neves" />
-<meta name="twitter:description" content="The Cloud PC health dashboard, monitoring, and recovery experience for Windows 365." />
+<meta name="twitter:description" content="Translating raw per-device signal into tenant-level, actionable dashboards for a growing fleet of Cloud PCs." />
 <meta name="twitter:image" content="https://amanda-n-ux.github.io/og-image.png" />
 </head>
 <body>
@@ -50,7 +50,7 @@
   <div class="inner">
     <div>
       <h1>Cloud PC Health &amp; Monitoring</h1>
-      <p class="sub">Before this, admins couldn&rsquo;t tell if a Cloud PC was healthy at all &mdash; let alone why it wasn&rsquo;t, or what to do about it.</p>
+      <p class="sub">Before this, admins couldn&rsquo;t tell if a Cloud PC was healthy at all &mdash; let alone spot the pattern across a fleet of thousands, or know where to act first.</p>
     </div>
     <div class="cs-rail">
       <div class="label">Windows 365 / Cloud PC</div>
@@ -64,7 +64,7 @@
   <div class="label">At a glance</div>
   <dl class="cells">
     <div><dt>Role</dt><dd>Design Lead &middot; monitoring, reporting &amp; alerting strategy, later spanning AVD too</dd></div>
-    <div><dt>Scope</dt><dd>Health dashboard, connection quality, restore &amp; disaster recovery</dd></div>
+    <div><dt>Scope</dt><dd>Fleet-scale monitoring &mdash; signal aggregation, dashboards, restore</dd></div>
     <div><dt>Outcome</dt><dd>A unified reporting dashboard, adopted across Cloud PC and Flex</dd></div>
   </dl>
 </div>
@@ -72,7 +72,8 @@
 <div class="phase">
   <div class="label">01 &mdash; The problem</div>
   <div>
-    <p>A Cloud PC is a virtual machine an admin can&rsquo;t walk over and look at. When something went wrong &mdash; a bad connection, a corrupted profile, a region outage &mdash; there was no established way to see it coming, understand its scope, or fix it without a full rebuild. Windows 365 needed a health story before it could earn trust as a real alternative to a physical PC.</p>
+    <p>A Cloud PC is a virtual machine an admin can&rsquo;t walk over and look at. When something went wrong &mdash; a bad connection, a corrupted profile, a region outage &mdash; there was no established way to see it coming, understand its scope, or fix it without a full rebuild.</p>
+    <p>And every signal that told an admin something was wrong arrived one device at a time &mdash; one Cloud PC&rsquo;s connection failed, one Cloud PC ran slow, one license was about to run out. That doesn&rsquo;t scale as an admin experience once a tenant has thousands of Cloud PCs: nobody can review devices one by one looking for the ones that need attention. Windows 365 needed a way to turn per-device signal into a fleet-level picture before it could earn trust as a real alternative to a physical PC.</p>
   </div>
 </div>
 
@@ -80,26 +81,26 @@
   <div class="label">02 &mdash; What I learned first</div>
   <div>
     <p>The earliest version of this problem showed up before Cloud PC even had its own reporting: getting basic service health onto the console home page at all meant building a pattern generic enough to extend to any future service, not just this one. That reusable health pattern became the seed for everything that followed.</p>
-    <p>The second finding was that restore and legal/compliance forensics looked like two unrelated features until I looked at them together. Both PMs came to me separately; meeting with them individually first, I saw the overlap &mdash; both needed a point-in-time snapshot of a Cloud PC, just for different reasons. Designing them as one framework instead of two features meant every future addition to restore points could serve both needs at once.</p>
+    <p>The second finding was that raw signal isn&rsquo;t the same thing as an actionable view. Performance data, connection failures, and license usage all arrived as per-device facts, scattered across whichever team happened to own that signal. Before I could design a single dashboard, I had to work out how those device-level facts rolled up into something true at the tenant level &mdash; the design problem wasn&rsquo;t the screen, it was the aggregation underneath it.</p>
   </div>
 </div>
 
 <div class="phase">
   <div class="label">03 &mdash; Exploration</div>
   <div>
-    <p>Reporting requirements arrived scattered &mdash; performance, connection failures, license usage, device action status &mdash; each from a different stakeholder, each wanting its own report.</p>
+    <p>Reporting requirements arrived scattered &mdash; performance, connection failures, license usage, device action status &mdash; each from a different stakeholder, each describing its own signal on its own device.</p>
     <div class="opt">
       <div class="status">Ruled out</div>
       <div>
-        <h4>A standalone report per signal</h4>
-        <p>Each new monitoring need could have shipped as its own isolated report, on its own schedule, matching how each request arrived. That&rsquo;s also how admins would have experienced it: a growing pile of disconnected reports with no shared model.</p>
+        <h4>A report per signal, per device</h4>
+        <p>Each new monitoring need could have shipped as its own isolated report, showing the raw per-device data that prompted it. That&rsquo;s also how admins would have experienced it: a growing pile of disconnected reports, none of them answering &ldquo;is my fleet healthy&rdquo; without being read one device at a time.</p>
       </div>
     </div>
     <div class="opt opt--shipped">
       <div class="status">Shipped</div>
       <div>
-        <h4>One dashboard, grouped by intent</h4>
-        <p>I proposed grouping related reports into dashboards &mdash; Cloud PC performance, Flex Cloud PCs &mdash; so admins reasoned about health in one place instead of hunting across separate screens. The pattern was built to scale to whatever monitoring need came next, not just the ones already requested.</p>
+        <h4>Tenant-level dashboards, grouped by intent</h4>
+        <p>Raw per-device signal rolls up into tenant-level reports, and related reports get grouped into dashboards &mdash; Cloud PC performance, Flex Cloud PCs &mdash; so admins reason about fleet health in one place instead of hunting across separate, device-by-device screens. The pattern was built to scale to whatever monitoring need came next, not just the ones already requested.</p>
       </div>
     </div>
   </div>
@@ -108,33 +109,34 @@
 <div class="phase">
   <div class="label">04 &mdash; What shipped</div>
   <div>
-    <p>Restore lets an admin roll a Cloud PC back to a point in time when it was working, so the end user is back up quickly without a full system wipe. Paired with it, a compliance-focused restore point can be shared directly with forensic investigators &mdash; built as one shared framework since both are the same underlying capability, aimed at two different audiences.</p>
-    <p>Naming the repair action mattered as much as building it. I partnered with content design on &ldquo;Attempt to repair connection&rdquo; instead of the more obvious &ldquo;Troubleshoot,&rdquo; since Troubleshoot already meant something else elsewhere in Intune &mdash; precise wording so an admin knew exactly what the action would, and wouldn&rsquo;t, do before they clicked it.</p>
+    <p>Connection failures and license-usage gaps surface at the tenant level first &mdash; how many Cloud PCs are affected, how widespread the problem is &mdash; with a path to drill down into any single device, rather than starting from the device and hoping to spot a pattern.</p>
 
     <div class="diagram-head">
-      <h3>See It, Understand It, Fix It</h3>
-      <p class="sub">The health loop: surface a problem, explain its scope, give the admin a path to resolve it.</p>
+      <h3>Signal, Aggregate, Act</h3>
+      <p class="sub">How thousands of individual Cloud PC signals become one dashboard an admin can act on.</p>
     </div>
     <div class="flow" style="grid-template-columns:repeat(3,1fr);">
       <div class="step" style="grid-column:1">
         <div class="bar"></div>
-        <div class="head"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5L1 14h14L8 1.5z"/><path d="M8 6.5v4"/><circle cx="8" cy="12" r="0.4" fill="currentColor"/></svg><span class="num">01</span></div>
-        <h4>Alert</h4>
-        <p class="detail">Connection failures and license-usage gaps surfaced at the tenant level, not buried per device.</p>
+        <div class="head"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="10" height="7" rx="1"/><path d="M4.5 6.5h1.5l1-2 1 4 1-2H11"/></svg><span class="num">01</span></div>
+        <h4>Signal</h4>
+        <p class="detail">Each Cloud PC reports its own connection quality, performance, and license usage &mdash; one device at a time.</p>
       </div>
       <div class="step emph" style="grid-column:2">
         <div class="bar"></div>
-        <div class="head"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><circle cx="6.5" cy="6.5" r="4"/><line x1="9.5" y1="9.5" x2="13" y2="13"/></svg><span class="num">02</span></div>
-        <h4>Diagnose</h4>
-        <p class="detail">Drill from tenant-wide scope down to a single device to see why a Cloud PC can&rsquo;t connect.</p>
+        <div class="head"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h12l-4.5 6.5v4L7.5 15v-5.5L2 3z"/></svg><span class="num">02</span></div>
+        <h4>Aggregate</h4>
+        <p class="detail">Raw per-device signal rolls up to a tenant-level view &mdash; admins see patterns across the fleet, not one device.</p>
       </div>
       <div class="step" style="grid-column:3">
         <div class="bar"></div>
-        <div class="head"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v3M8 11v3M2 8h3M11 8h3M4.2 4.2l2.1 2.1M9.7 9.7l2.1 2.1M9.7 6.3l2.1-2.1M4.2 11.8l2.1-2.1"/></svg><span class="num">03</span></div>
-        <h4>Resolve</h4>
-        <p class="detail">Restore, resize, or reprovision &mdash; with status visible while the action runs, and cross-region recovery for outages.</p>
+        <div class="head"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="5" height="5" rx="0.5"/><rect x="9" y="2" width="5" height="5" rx="0.5"/><rect x="2" y="9" width="5" height="5" rx="0.5"/><rect x="9" y="9" width="5" height="5" rx="0.5"/></svg><span class="num">03</span></div>
+        <h4>Act</h4>
+        <p class="detail">Grouped into dashboards by intent, not by which team owned the signal &mdash; performance, Flex, connection health.</p>
       </div>
     </div>
+
+    <p>Restore and repair live inside that same fleet-aware model. Restore lets an admin roll a Cloud PC back to a working point in time without a full rebuild; a compliance-focused restore point can be shared directly with forensic investigators, built as one shared framework since both are the same underlying capability for two audiences. Naming mattered too &mdash; I partnered with content design on &ldquo;Attempt to repair connection&rdquo; instead of the more obvious &ldquo;Troubleshoot,&rdquo; since Troubleshoot already meant something else elsewhere in Intune.</p>
 
     <div class="shots">
       <figure><img src="screenshots/03_windows365_manage/report-resource-performance__resource-performance-report.png" alt="Windows 365 resource performance report in Endpoint analytics" /><figcaption>Cloud PC resource performance report</figcaption></figure>
@@ -150,6 +152,7 @@
 <div class="phase">
   <div class="label">05 &mdash; Tradeoffs I own</div>
   <div>
+    <p>Building a generic aggregation pattern &mdash; one that could roll any future per-device signal up to tenant level &mdash; cost more upfront design and engineering time than shipping each requested report as its own one-off screen. It paid off every time a new monitoring need arrived afterward, since it slotted into an existing model instead of becoming its own bespoke report.</p>
     <p>Designing restore and eDiscovery as one shared framework, instead of shipping the compliance ask as its own bolt-on feature, cost more upfront alignment between two PMs who&rsquo;d never planned to work together. It paid off every time a new restore-point capability shipped afterward, since it only had to be built once and it served both audiences.</p>
     <p>Cross-region disaster recovery meant designing for a scenario most tenants would hopefully never hit &mdash; a full regional outage, industries like financial services, government, and healthcare needed to plan around regardless. I designed the admin path to move affected Cloud PCs to a healthy region and back once resolved, for a workflow most admins would use rarely if ever.</p>
   </div>
@@ -166,7 +169,7 @@
 <div class="phase">
   <div class="label">07 &mdash; What I&rsquo;d carry forward</div>
   <div class="carry-list">
-    <div class="carry-item"><span class="n"><svg width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="14" r="7"/><circle cx="18" cy="14" r="7"/></svg></span><p>Two features that look unrelated on separate roadmaps can be the same underlying capability for two audiences &mdash; restore and eDiscovery only became one clean framework because I met with both PMs and looked at the overlap myself.</p></div>
+    <div class="carry-item"><span class="n"><svg width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 5h21l-8 11v7L11.5 27v-11l-8-11z"/></svg></span><p>Raw signal isn&rsquo;t the same thing as an actionable view &mdash; the real design work was translating per-device data into a tenant-level pattern admins could act on, not just displaying more data.</p></div>
     <div class="carry-item"><span class="n"><svg width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="18" width="5" height="7" rx="0.5"/><rect x="11.5" y="11" width="5" height="14" rx="0.5"/><rect x="20" y="3" width="5" height="22" rx="0.5"/></svg></span><p>Group scattered monitoring requests by admin intent, not by which team asked for them &mdash; a dashboard organized around &ldquo;is this healthy&rdquo; scales better than one report per requester.</p></div>
     <div class="carry-item"><span class="n"><svg width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="11"/><path d="M14 19V9M9.5 13.5L14 9l4.5 4.5"/></svg></span><p>Design for the rare, high-stakes failure too &mdash; cross-region recovery mattered most to the admins who&rsquo;d use it least often.</p></div>
   </div>
