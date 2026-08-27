@@ -119,6 +119,10 @@
         <p>Remediation within pre-approved bounds, admin monitors the outcome. A deliberate next step, not a v1 feature &mdash; full autonomy earned once the pattern proves itself, not assumed upfront.</p>
       </div>
     </div>
+    <figure class="fig">
+      <img src="screenshots/01_vra/ai-assisted-step-obfuscated.png" alt="Recreated layout of the Assisted-mode review step: suggestion details with impact and associated CVEs, recommended actions with a mark-as-completed control, and an app-creation panel" />
+      <figcaption>The Assisted-mode review step, recreated &mdash; layout and interaction pattern shown, specific text and figures redacted.</figcaption>
+    </figure>
   </div>
 </div>
 
@@ -220,7 +224,9 @@
     <!-- diagram slot: shipped-modes card (Guided + Assisted only) — pending Figma Make; old 09_remediation_types.png mixed in unshipped Autonomous, dropped for accuracy -->
     <div class="shots">
       <figure><img src="screenshots/01_vra/agent-home-screen.png" alt="Vulnerability Remediation Agent home in the Intune admin center" /><figcaption>Agent home in the Intune admin center</figcaption></figure>
+      <figure><img src="screenshots/01_vra/suggestions-tab.png" alt="Vulnerability Remediation Agent Suggestions tab: a ranked table of suggested next steps with remediation type, impact score, exposed device count, and status" /><figcaption>Suggestions, ranked &mdash; the table behind &ldquo;prioritized fixes&rdquo;</figcaption></figure>
       <figure><img src="screenshots/01_vra/suggestion-detail-export.png" alt="Suggestion detail panel with factors and remediation steps, plus a device export confirmation dialog" /><figcaption>Suggestion detail — factors, recommended actions, and export</figcaption></figure>
+      <figure><img src="screenshots/01_vra/agent-overview-full.png" alt="Intune Admin tasks page aggregating action items tenant-wide, including several sourced from the Vulnerability Remediation Agent alongside Endpoint Privilege Management and multi-admin approval tasks" /><figcaption>VRA suggestions post automatically into Admin tasks &mdash; Intune&rsquo;s existing, cross-product task queue &mdash; so they surface next to every other pending action, not off in a separate tool. (My contribution is how VRA&rsquo;s suggestions land here, not the Admin tasks page itself.)</figcaption></figure>
     </div>
     <p class="attrib">Shipped feature, published by Microsoft — <a href="https://learn.microsoft.com/en-us/intune/copilot/agents/vulnerability-remediation-agent">learn.microsoft.com</a>. Shown as reference for the shipped experience; my contribution is the interaction design and flows, not the raw pixels.</p>
   </div>

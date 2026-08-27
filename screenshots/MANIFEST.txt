@@ -25,3 +25,33 @@ Source page: https://learn.microsoft.com/en-us/intune/intune-service/protect/vul
 - 03_windows365: no eligible /media/ PNG/JPG image srcs found on https://learn.microsoft.com/en-us/windows-365/enterprise/provisioning
 - 03_windows365: no eligible /media/ PNG/JPG image srcs found on https://learn.microsoft.com/en-us/windows-365/enterprise/create-provisioning-policy
 - 03_windows365: no eligible /media/ PNG/JPG image srcs found on https://learn.microsoft.com/en-us/windows-365/enterprise/windows-365-flex-manage
+
+[06_oceanleaf_blog]
+Source page: https://www.oceanleaf.ch/windows-365-intune-management/ (Niklas Tinner, third-party blog, not Microsoft-published)
+  Saved: reports__connection-quality-overview.png | Original: reports.png | Cropped to remove top header bar (tenant email + avatar)
+  Saved: device-overview__remote-actions-raw.png | Original: Screenshot-2023-11-28-at-09.38.20.png | No crop needed, no identifying info in frame
+
+[07_techcommunity_frontline_quickstart]
+Source page: https://techcommunity.microsoft.com/discussions/windows365discussions/windows-365-frontline-cloud-pc-in-shared-mode-quick-start-guide/4399905 (Microsoft Community Hub, official Microsoft-authored post)
+  Saved: create-provisioning-policy__cloud-pc-naming.png | Configuration step of the provisioning policy wizard, Cloud PC naming / Apply device name template
+  Saved: concurrent-frontline-connections__report.png | Concurrent Frontline Cloud PC connections report, allotment capacity vs. concurrent connections over time
+
+[01_vra — previously-unused files now wired into project-vra.html]
+  agent-settings-full.png, ai-assisted-step-obfuscated.png, suggestions-tab.png, agent-overview-full.png
+  Source: Microsoft Learn / Intune admin center reference screenshots (agent-settings-full, suggestions-tab, agent-overview-full);
+  ai-assisted-step-obfuscated.png is a recreated/redacted illustration, not a raw shipped screenshot.
+
+[05_intune_agents — previously-unused files now wired into project-intune-agents.html]
+  change-review__overview.png, device-offboarding__overview.png, policy-agent-mapped-settings.png
+  Source: Microsoft Learn / Intune admin center reference screenshots, three distinct named agents proving the shared framework claim.
+  Still unused / not safe yet: finance-risk-drawer-UNCONFIRMED-SOURCE.png (source unconfirmed), policy-agent-review-instructions-NEEDS-NAME-REDACT.png (contains a real person's name, needs redaction before use)
+
+[05_intune_agents — name redaction]
+  policy-agent-review-instructions.png = policy-agent-review-instructions-NEEDS-NAME-REDACT.png with "Satya Nadella" swapped to "Alex Chen" (fictional placeholder), wired into project-intune-agents.html. Original NEEDS-NAME-REDACT file kept as source, not referenced by any page.
+
+[07_techcommunity_frontline_quickstart — swap]
+  create-provisioning-policy__general-tab.png replaces create-provisioning-policy__cloud-pc-naming.png on project-cloudpc-provisioning.html — the article's own primary "creating a provisioning policy" screenshot (General tab: license type, Frontline type, join type, network, geography), more comprehensive than the naming-checkbox crop.
+
+[08_perception_blog]
+Source page: https://blogs.microsoft.com/blog/2026/07/27/rethinking-security-for-the-age-of-ai/ (Official Microsoft Blog)
+  Saved: red-blue-green-teams.jpg | Official "Project Perception: Teams of agents" slide, confirming Red/Blue/Green naming. Wired into project-perception.html phase 04.

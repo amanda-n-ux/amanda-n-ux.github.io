@@ -37,7 +37,7 @@
 
 <nav>
   <div class="wrap">
-    <a class="brand" href="index.html">Amanda Neves</a>
+    <a class="brand" href="index.html"><img class="brand-mark" src="flower-mark.png" alt="" />Amanda Neves</a>
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
@@ -139,6 +139,11 @@
       <figcaption>Multiple agents on one landing page, one card pattern — published by Microsoft.</figcaption>
     </figure>
     <p>Every agent follows the same shape, whatever it&rsquo;s watching for: it&rsquo;s triggered by a schedule or an event, investigates the relevant state, builds a plan, and presents that plan for review before it does anything. Trust but review, not trust and hope — the plan is always visible before it becomes an action.</p>
+    <figure class="fig">
+      <img src="screenshots/05_intune_agents/device-offboarding__overview.png" alt="Device Offboarding Agent overview tab, showing the same Overview / Suggestions / Settings layout, with suggestions for removing stale Windows, iOS/iPadOS, and macOS devices" />
+      <figcaption>Device Offboarding Agent — a different job, the identical shape</figcaption>
+    </figure>
+    <p class="attrib">A separate shipped agent, published by Microsoft, sharing the same framework — not a one-off screen. My contribution is the shared interaction model, not the raw pixels.</p>
 
     <div class="diagram-head">
       <h3>Four Moments, Every Agent</h3>
@@ -269,6 +274,10 @@
     </div>
     <p>Being &ldquo;managed&rdquo; meant more than a single task screen — an ongoing lifecycle each agent needed, not a one-time action to watch run.</p>
     <p>Permissions, identity, and configuration followed the same shape too — one settings pattern, reused under every agent rather than redesigned per agent.</p>
+    <figure class="fig">
+      <img src="screenshots/01_vra/agent-settings-full.png" alt="Vulnerability Remediation Agent Settings tab showing Trigger, Permissions, Identity (runs using the identity of the user who set it up), Plugins, Roles with access, and Workspace — the same settings pattern every agent in the framework reuses" />
+      <figcaption>One settings template, reused agent to agent — Trigger, Permissions, Identity, Plugins, Roles, Workspace, every time.</figcaption>
+    </figure>
     <div class="plain-lists">
       <div>
         <h5>Access &amp; identity</h5>
@@ -289,6 +298,10 @@
         </ul>
       </div>
     </div>
+    <figure class="fig">
+      <img src="screenshots/05_intune_agents/policy-agent-review-instructions.png" alt="Policy Configuration Agent's Review instructions panel, with a custom instruction entered and the agent's plain-language interpretation of it shown below" />
+      <figcaption>Custom instructions, and the agent restating its own interpretation back — so an admin can catch a misread before it becomes a policy.</figcaption>
+    </figure>
     <p class="attrib">Multiple shipped Intune agents reuse the framework and interaction patterns I led — my contribution is the design system, not the pixels.</p>
   </div>
 </div>
