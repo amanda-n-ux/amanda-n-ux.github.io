@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" />
-<link rel="stylesheet" href="style.css?v=8" />
+<link rel="stylesheet" href="style.css?v=12" />
 
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://amanda-n-ux.github.io/project-cloudpc-health.html" />
@@ -36,20 +36,6 @@
 
 <a class="skip-link" href="#main">Skip to main content</a>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <filter id="sketch1" x="-30%" y="-30%" width="160%" height="160%">
-    <feTurbulence type="fractalNoise" baseFrequency="0.12" numOctaves="2" seed="2" result="n"/>
-    <feDisplacementMap in="SourceGraphic" in2="n" scale="1.9"/>
-  </filter>
-  <filter id="sketch2" x="-30%" y="-30%" width="160%" height="160%">
-    <feTurbulence type="fractalNoise" baseFrequency="0.12" numOctaves="2" seed="5" result="n"/>
-    <feDisplacementMap in="SourceGraphic" in2="n" scale="1.9"/>
-  </filter>
-  <filter id="sketch3" x="-30%" y="-30%" width="160%" height="160%">
-    <feTurbulence type="fractalNoise" baseFrequency="0.12" numOctaves="2" seed="8" result="n"/>
-    <feDisplacementMap in="SourceGraphic" in2="n" scale="1.9"/>
-  </filter>
-</svg>
 <nav>
   <div class="wrap">
     <a class="brand" href="index.html"><img class="brand-mark" src="flower-mark.png" alt="" />Amanda Neves</a>
@@ -168,7 +154,7 @@
 
     <figure class="fig">
       <img src="screenshots/03_windows365_manage/report-connected-frontline-cloud-pcs__capacity.png" alt="Devices overview showing Cloud PC performance tab, with Connected Frontline Cloud PCs tile reporting Approaching limit and Reached limit counts" />
-      <figcaption>Connected Frontline (Flex) Cloud PCs &mdash; approaching-limit and reached-limit, the capacity question a per-device view can&rsquo;t answer.</figcaption>
+      <figcaption>The Devices overview dashboard &mdash; bottom left, Connected Frontline Cloud PCs reporting approaching-limit and reached-limit counts, the capacity question a per-device view can&rsquo;t answer.</figcaption>
     </figure>
     <figure class="fig">
       <img src="screenshots/07_techcommunity_frontline_quickstart/concurrent-frontline-connections__report.png" alt="Concurrent Frontline Cloud PC connections report showing an allotment's current connections (6 of 20), users prevented from connecting, and a daily concurrent-connection-history chart over the last 28 days" />
@@ -177,16 +163,13 @@
 
     <p>Restore and repair live inside that same fleet-aware model. Restore lets an admin roll a Cloud PC back to a working point in time without a full rebuild; a compliance-focused restore point can be shared directly with forensic investigators, built as one shared framework since both are the same underlying capability for two audiences. Naming mattered too &mdash; I partnered with content design on &ldquo;Attempt to repair connection&rdquo; instead of the more obvious &ldquo;Troubleshoot,&rdquo; since Troubleshoot already meant something else elsewhere in Intune.</p>
 
+    <p>Those same actions needed to work at fleet scale, not one device at a time. I designed bulk-action workflows with batching underneath &mdash; an admin filters down to the Cloud PCs that need something, then acts on all of them at once, and the system works through the batch reliably instead of the admin repeating one action thousands of times by hand.</p>
+
     <div class="shots">
       <figure><img src="screenshots/03_windows365_manage/report-cloud-pc-overview__dashboard-groups.png" alt="Reports Cloud PC overview showing connection quality, Cloud PCs that aren't available, Cloud PC recommendations, utilization, Connected Frontline, and cross-region tiles grouped on one dashboard" /><figcaption>The tenant-level dashboard, grouped by intent &mdash; several signal types, one screen</figcaption></figure>
-      <figure><img src="screenshots/06_oceanleaf_blog/reports__connection-quality-overview.png" alt="Reports Cloud PC overview with the Connection quality (preview) panel expanded, showing round-trip time, remoting sign-in time, and available bandwidth as a metrics table" /><figcaption>Connection quality, one level deeper &mdash; round-trip time, sign-in time, and bandwidth as their own tracked metrics</figcaption></figure>
-      <figure><img src="screenshots/03_windows365_manage/report-resource-performance__resource-performance-report.png" alt="Windows 365 resource performance report in Endpoint analytics" /><figcaption>Cloud PC resource performance report</figcaption></figure>
-      <figure><img src="screenshots/03_windows365_manage/alerts__view-alerts.png" alt="Alerts for Cloud PCs in Tenant admin" /><figcaption>Cloud PC alerts &amp; monitoring</figcaption></figure>
       <figure><img src="screenshots/03_windows365_manage/restore-single-cloud-pc__select-restore-point.png" alt="Selecting a restore point for a single Cloud PC" /><figcaption>Restore a Cloud PC to a working point in time</figcaption></figure>
-      <figure><img src="screenshots/06_oceanleaf_blog/device-overview__remote-actions-raw.png" alt="A single Cloud PC's device overview with the remote actions bar open: Sync, Restart, Restore, Reprovision, Resize, Collect diagnostics, Quick scan, Full scan, plus an overflow menu with Rotate local admin password, New remote assistance session, and Place Cloud PC under review" /><figcaption>Restore and repair, alongside every other remote action available on a Cloud PC</figcaption></figure>
-      <figure><img src="screenshots/03_windows365_manage/resize-cloud-pc-single__resize.png" alt="Resize a Cloud PC" /><figcaption>Resize a Cloud PC (management action)</figcaption></figure>
     </div>
-    <p class="attrib">Shipped Windows 365 management experiences, published by Microsoft &mdash; <a href="https://learn.microsoft.com/en-us/windows-365/enterprise/report-resource-performance" target="_blank" rel="noopener">learn.microsoft.com/windows-365</a>, <a href="https://learn.microsoft.com/en-us/windows-365/enterprise/report-remoting-connection" target="_blank" rel="noopener">report-remoting-connection</a>, and <a href="https://learn.microsoft.com/en-us/windows-365/enterprise/report-connected-frontline-cloud-pcs" target="_blank" rel="noopener">report-connected-frontline-cloud-pcs</a>. Reference for the shipped admin surfaces; my contribution is the design of these monitoring and recovery experiences, not the raw pixels. Two additional screens (connection quality detail, device remote actions) via Niklas Tinner&rsquo;s write-up at <a href="https://www.oceanleaf.ch/windows-365-intune-management/" target="_blank" rel="noopener">oceanleaf.ch</a>, cropped to remove tenant-identifying info; same shipped surfaces, a different vantage point on them.</p>
+    <p class="attrib">Shipped Windows 365 management experiences, published by Microsoft &mdash; <a href="https://learn.microsoft.com/en-us/windows-365/enterprise/report-resource-performance" target="_blank" rel="noopener">learn.microsoft.com/windows-365</a>, <a href="https://learn.microsoft.com/en-us/windows-365/enterprise/report-remoting-connection" target="_blank" rel="noopener">report-remoting-connection</a>, and <a href="https://learn.microsoft.com/en-us/windows-365/enterprise/report-connected-frontline-cloud-pcs" target="_blank" rel="noopener">report-connected-frontline-cloud-pcs</a>. Reference for the shipped admin surfaces; my contribution is the design of these monitoring and recovery experiences, not the raw pixels.</p>
   </div>
 </div>
 
@@ -212,7 +195,7 @@
   <div class="carry-list">
     <div class="carry-item"><span class="n"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 5h21l-8 11v7L11.5 27v-11l-8-11z"/></svg></span><p>Raw signal isn&rsquo;t the same thing as an actionable view &mdash; the real design work was translating per-device data into a tenant-level pattern admins could act on, not just displaying more data.</p></div>
     <div class="carry-item"><span class="n"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="18" width="5" height="7" rx="0.5"/><rect x="11.5" y="11" width="5" height="14" rx="0.5"/><rect x="20" y="3" width="5" height="22" rx="0.5"/></svg></span><p>Group scattered monitoring requests by admin intent, not by which team asked for them &mdash; a dashboard organized around &ldquo;is this healthy&rdquo; scales better than one report per requester.</p></div>
-    <div class="carry-item"><span class="n"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#sketch3)"><circle cx="14" cy="14" r="11"/><path d="M14 19V9M9.5 13.5L14 9l4.5 4.5"/></svg></span><p>Design for the rare, high-stakes failure too &mdash; cross-region recovery mattered most to the admins who&rsquo;d use it least often.</p></div>
+    <div class="carry-item"><span class="n"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="11"/><path d="M14 19V9M9.5 13.5L14 9l4.5 4.5"/></svg></span><p>Design for the rare, high-stakes failure too &mdash; cross-region recovery mattered most to the admins who&rsquo;d use it least often.</p></div>
   </div>
 </div>
 

@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" />
-<link rel="stylesheet" href="style.css?v=8" />
+<link rel="stylesheet" href="style.css?v=12" />
 
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://amanda-n-ux.github.io/project-cloudpc-provisioning.html" />
@@ -36,20 +36,6 @@
 
 <a class="skip-link" href="#main">Skip to main content</a>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <filter id="sketch1" x="-30%" y="-30%" width="160%" height="160%">
-    <feTurbulence type="fractalNoise" baseFrequency="0.12" numOctaves="2" seed="2" result="n"/>
-    <feDisplacementMap in="SourceGraphic" in2="n" scale="1.9"/>
-  </filter>
-  <filter id="sketch2" x="-30%" y="-30%" width="160%" height="160%">
-    <feTurbulence type="fractalNoise" baseFrequency="0.12" numOctaves="2" seed="5" result="n"/>
-    <feDisplacementMap in="SourceGraphic" in2="n" scale="1.9"/>
-  </filter>
-  <filter id="sketch3" x="-30%" y="-30%" width="160%" height="160%">
-    <feTurbulence type="fractalNoise" baseFrequency="0.12" numOctaves="2" seed="8" result="n"/>
-    <feDisplacementMap in="SourceGraphic" in2="n" scale="1.9"/>
-  </filter>
-</svg>
 <nav>
   <div class="wrap">
     <a class="brand" href="index.html"><img class="brand-mark" src="flower-mark.png" alt="" />Amanda Neves</a>
@@ -140,10 +126,51 @@
     <p>A provisioning policy targets a group and carries the settings that scale with it &mdash; region, image, naming convention, language &mdash; so admins configure once per policy, not once per Cloud PC. Individual customization still had a place: device naming templates and per-user settings meant the system could scale by group while a Cloud PC (and the person using it) still felt configured for them, not mass-produced.</p>
     <p>Guided scenarios shipped on top of this foundation &mdash; Windows 365 Boot, for instance, walks an admin through letting end users sign directly into their Cloud PC from a physical device, extending the life of aging hardware instead of replacing it. But the wizard was the visible layer; the group-and-state model underneath is what let it, and everything that came after, actually scale.</p>
 
-    <div class="shots">
-      <figure><img src="screenshots/03_windows365_manage/devices-windows365__all-cloud-pcs.png" alt="Devices | Windows 365 landing page, All cloud PCs tab, showing status counts for failed provisioning, in grace period, provisioned, provisioned with warning, provisioning, and not provisioned, plus a device list with a Status column" /><figcaption>The Cloud PC landing page &mdash; every state this page talks about, counted and listed</figcaption></figure>
-      <figure><img src="screenshots/07_techcommunity_frontline_quickstart/create-provisioning-policy__general-tab.png" alt="Create a provisioning policy wizard, General step, showing Name, License type (Enterprise/Frontline), Frontline type (Dedicated/Shared), Join type, Network, Geography, and Region" /><figcaption>One policy, every setting that scales with it &mdash; license type, join type, network, geography &mdash; configured once, not once per Cloud PC</figcaption></figure>
+    <div class="diagram-head">
+      <h3>A Cloud PC&rsquo;s State Lifecycle</h3>
+      <p class="sub">The vocabulary physical devices never needed &mdash; what an admin sees at each stage, and what it means.</p>
     </div>
+    <div class="flow" style="grid-template-columns:repeat(5,1fr);">
+      <div class="step" style="grid-column:1">
+        <div class="bar"></div>
+        <div class="head"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><circle cx="8" cy="8" r="6" stroke-dasharray="4 3.5"/></svg><span class="num">01</span></div>
+        <h4>Provisioning</h4>
+        <p class="detail">Cloud PC is being created. Not yet usable.</p>
+      </div>
+      <div class="step" style="grid-column:2">
+        <div class="bar"></div>
+        <div class="head"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M5 8l2 2 4-4.5"/></svg><span class="num">02</span></div>
+        <h4>Provisioned</h4>
+        <p class="detail">Ready and healthy. The steady state.</p>
+      </div>
+      <div class="step" style="grid-column:3">
+        <div class="bar"></div>
+        <div class="head"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1L1 14h14L8 1z"/><path d="M8 6v4"/><circle cx="8" cy="12" r="0.5" fill="currentColor"/></svg><span class="num">03</span></div>
+        <h4>Provisioned with warning</h4>
+        <p class="detail">Usable, but something needs the admin&rsquo;s attention.</p>
+      </div>
+      <div class="step" style="grid-column:4">
+        <div class="bar"></div>
+        <div class="head"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M8 4.5v4l2.5 1.5"/></svg><span class="num">04</span></div>
+        <h4>Grace period</h4>
+        <p class="detail">User left the group &mdash; still accessible for a window before removal.</p>
+      </div>
+      <div class="step" style="grid-column:5">
+        <div class="bar"></div>
+        <div class="head"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><path d="M5.5 5.5l5 5M10.5 5.5l-5 5"/></svg><span class="num">05</span></div>
+        <h4>Deprovisioned</h4>
+        <p class="detail">Grace period expired. The Cloud PC is gone.</p>
+      </div>
+    </div>
+
+    <figure class="fig">
+      <img src="screenshots/03_windows365_manage/devices-windows365__all-cloud-pcs.png" alt="Devices | Windows 365 landing page, All cloud PCs tab, showing status counts for failed provisioning, in grace period, provisioned, provisioned with warning, provisioning, and not provisioned, plus a device list with a Status column" />
+      <figcaption>The Cloud PC landing page &mdash; every state this page talks about, counted and listed</figcaption>
+    </figure>
+    <figure class="fig">
+      <img src="screenshots/07_techcommunity_frontline_quickstart/create-provisioning-policy__general-tab.png" alt="Create a provisioning policy wizard, General step, showing Name, License type (Enterprise/Frontline), Frontline type (Dedicated/Shared), Join type, Network, Geography, and Region" />
+      <figcaption>One policy, every setting that scales with it &mdash; license type, join type, network, geography &mdash; configured once, not once per Cloud PC</figcaption>
+    </figure>
     <p class="attrib">Shipped Windows 365 provisioning experiences, published by Microsoft &mdash; <a href="https://techcommunity.microsoft.com/blog/windows-itpro-blog/windows-365-cloud-pc-provisioning-scenarios/2676879" target="_blank" rel="noopener">techcommunity.microsoft.com/windows-365-cloud-pc-provisioning-scenarios</a> and <a href="https://techcommunity.microsoft.com/discussions/windows365discussions/windows-365-frontline-cloud-pc-in-shared-mode-%E2%80%93-quick-start-guide/4399905" target="_blank" rel="noopener">windows-365-frontline-cloud-pc-in-shared-mode-quick-start-guide</a>. Reference for the shipped admin surfaces; my contribution is the design of these provisioning and assignment workflows, not the raw pixels.</p>
   </div>
 </div>
@@ -168,7 +195,7 @@
   <div class="carry-list">
     <div class="carry-item"><span class="n"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3.5l11 5.5-11 5.5-11-5.5 11-5.5z"/><path d="M3 15l11 5.5L25 15"/><path d="M3 20.5l11 5.5 11-5.5"/></svg></span><p>A new device category doesn&rsquo;t just need new screens &mdash; it can need an entirely new dimension of state, one the existing model never had to represent. Cloud PC&rsquo;s provisioning lifecycle didn&rsquo;t exist in Intune&rsquo;s vocabulary until it was designed.</p></div>
     <div class="carry-item"><span class="n"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="9" height="9" rx="1"/><rect x="15.5" y="3.5" width="9" height="9" rx="1"/><rect x="3.5" y="15.5" width="9" height="9" rx="1"/><rect x="15.5" y="15.5" width="9" height="9" rx="1"/></svg></span><p>Scaling by group doesn&rsquo;t mean abandoning individual configuration &mdash; naming templates and per-user settings let a system built for group-level scale still feel configured for the person using it, not mass-produced.</p></div>
-    <div class="carry-item"><span class="n"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#sketch3)"><circle cx="14" cy="14" r="11"/><path d="M9 14.5l3.5 3.5L20 10"/></svg></span><p>Find the constraint that won&rsquo;t scale before you design around it &mdash; the moment provisioning stopped being a per-device operation and became a per-group one, everything downstream could scale with it.</p></div>
+    <div class="carry-item"><span class="n"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="11"/><path d="M9 14.5l3.5 3.5L20 10"/></svg></span><p>Find the constraint that won&rsquo;t scale before you design around it &mdash; the moment provisioning stopped being a per-device operation and became a per-group one, everything downstream could scale with it.</p></div>
   </div>
 </div>
 

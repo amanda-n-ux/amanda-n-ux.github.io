@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" />
-<link rel="stylesheet" href="style.css?v=8" />
+<link rel="stylesheet" href="style.css?v=12" />
 
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://amanda-n-ux.github.io/project-intune-agents.html" />
@@ -130,9 +130,8 @@
     <p>Every agent follows the same shape, whatever it&rsquo;s watching for: it&rsquo;s triggered by a schedule or an event, investigates the relevant state, builds a plan, and presents that plan for review before it does anything. Trust but review, not trust and hope — the plan is always visible before it becomes an action.</p>
     <figure class="fig">
       <img src="screenshots/05_intune_agents/device-offboarding__overview.png" alt="Device Offboarding Agent overview tab, showing the same Overview / Suggestions / Settings layout, with suggestions for removing stale Windows, iOS/iPadOS, and macOS devices" />
-      <figcaption>Device Offboarding Agent — a different job, the identical shape</figcaption>
+      <figcaption>Device Offboarding Agent, published by Microsoft — a different job, the identical shape. My contribution is the shared interaction model here, not the raw pixels.</figcaption>
     </figure>
-    <p class="attrib">A separate shipped agent, published by Microsoft, sharing the same framework — not a one-off screen. My contribution is the shared interaction model, not the raw pixels.</p>
 
     <div class="diagram-head">
       <h3>Four Moments, Every Agent</h3>
@@ -209,6 +208,11 @@
             <span class="num">03</span>
           </div>
           <div class="content">
+            <div class="draft-bars draft-bars--tight">
+              <span style="width:95%"></span>
+              <span style="width:80%"></span>
+              <span style="width:60%"></span>
+            </div>
             <div class="risk-box">
               <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1L1 14h14L8 1z"/><path d="M8 6v4"/><circle cx="8" cy="12" r="0.5" fill="currentColor"/></svg>
               <div>
@@ -228,7 +232,7 @@
         <div class="body">
           <div class="head">
             <div class="who">
-              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" filter="url(#sketch3)"><circle cx="7" cy="4" r="2.5"/><path d="M1.5 13c0-3.04 2.46-5.5 5.5-5.5s5.5 2.46 5.5 5.5"/></svg>
+              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><circle cx="7" cy="4" r="2.5"/><path d="M1.5 13c0-3.04 2.46-5.5 5.5-5.5s5.5 2.46 5.5 5.5"/></svg>
               <span>Approval gate</span>
             </div>
             <span class="num">04</span>
@@ -242,7 +246,7 @@
             <div class="gate-divider">
               <div class="ln"></div>
               <div class="icons">
-                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" filter="url(#sketch3)"><circle cx="7" cy="4" r="2.5"/><path d="M1.5 13c0-3.04 2.46-5.5 5.5-5.5s5.5 2.46 5.5 5.5"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><circle cx="7" cy="4" r="2.5"/><path d="M1.5 13c0-3.04 2.46-5.5 5.5-5.5s5.5 2.46 5.5 5.5"/></svg>
                 <svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>
               </div>
               <div class="ln"></div>
@@ -285,9 +289,8 @@
     </div>
     <figure class="fig">
       <img src="screenshots/05_intune_agents/policy-agent-review-instructions.png" alt="Policy Configuration Agent's Review instructions panel, with a custom instruction entered and the agent's plain-language interpretation of it shown below" />
-      <figcaption>Custom instructions, and the agent restating its own interpretation back — so an admin can catch a misread before it becomes a policy.</figcaption>
+      <figcaption>Policy Configuration Agent, published by Microsoft — custom instructions, with the agent restating its own interpretation back so an admin can catch a misread before it becomes a policy. Alongside VRA, one of two agents I owned end-to-end.</figcaption>
     </figure>
-    <p class="attrib">Policy Configuration Agent, published by Microsoft — alongside VRA, one of two agents I owned end-to-end, not just the shared framework shown elsewhere on this page.</p>
   </div>
 </div>
 
@@ -313,35 +316,29 @@
       <h3>What &ldquo;Managed&rdquo; Means for a Class of Agents</h3>
       <p class="sub">The operational surface every agent in the system needs &mdash; not just its own task UI.</p>
     </div>
-    <div class="settings-cards">
-      <article class="settings-card">
-        <div class="bar"></div>
-        <div class="body">
-          <div class="head"><h5>Lifecycle &amp; control</h5><span class="num">01</span></div>
-          <ul>
-            <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Customization per org or scope</li>
-            <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Memory &amp; context across runs</li>
-            <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Pause &amp; resume</li>
-            <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Rollback an agent&rsquo;s actions</li>
-            <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Multiple instances of the same agent</li>
-            <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Dismiss individual suggestions</li>
-          </ul>
-        </div>
-      </article>
-      <article class="settings-card">
-        <div class="bar"></div>
-        <div class="body">
-          <div class="head"><h5>Delivery &amp; access</h5><span class="num">02</span></div>
-          <ul>
-            <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Inline, in the console</li>
-            <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Microsoft Teams</li>
-            <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Email</li>
-            <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Notification center</li>
-            <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Text / SMS alerts</li>
-            <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Role-based access control</li>
-          </ul>
-        </div>
-      </article>
+    <div class="plain-lists">
+      <div>
+        <h5>Lifecycle &amp; control</h5>
+        <ul>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Customization per org or scope</li>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Memory &amp; context across runs</li>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Pause &amp; resume</li>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Rollback an agent&rsquo;s actions</li>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Multiple instances of the same agent</li>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Dismiss individual suggestions</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Delivery &amp; access</h5>
+        <ul>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Inline, in the console</li>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Microsoft Teams</li>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Email</li>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Notification center</li>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Text / SMS alerts</li>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Role-based access control</li>
+        </ul>
+      </div>
     </div>
     <p class="attrib">The fuller operational surface I designed for, not a shipped inventory &mdash; Teams/email delivery and suggestion dismissal didn&rsquo;t make v1.</p>
   </div>
@@ -359,7 +356,7 @@
   <div class="label">07 &mdash; What I&rsquo;d carry forward</div>
   <div class="carry-list">
     <div class="carry-item"><span class="n"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="16" height="22" rx="1"/><line x1="9.5" y1="9" x2="18.5" y2="9"/><line x1="9.5" y1="14" x2="18.5" y2="14"/><line x1="9.5" y1="19" x2="15" y2="19"/></svg></span><p>Durable, auditable artifacts beat ephemeral chat for anything an admin needs to revisit, audit, or share — worth the extra build time.</p></div>
-    <div class="carry-item"><span class="n"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#sketch2)"><circle cx="14" cy="14" r="11"/><path d="M9 14.5l3.5 3.5L20 10"/></svg></span><p>Approval as the default, not a bolted-on safety net, earns trust faster than defaulting to automation and asking forgiveness.</p></div>
+    <div class="carry-item"><span class="n"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="11"/><path d="M9 14.5l3.5 3.5L20 10"/></svg></span><p>Approval as the default, not a bolted-on safety net, earns trust faster than defaulting to automation and asking forgiveness.</p></div>
     <div class="carry-item"><span class="n"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="9" height="9" rx="1"/><rect x="15.5" y="3.5" width="9" height="9" rx="1"/><rect x="3.5" y="15.5" width="9" height="9" rx="1"/><rect x="15.5" y="15.5" width="9" height="9" rx="1"/></svg></span><p>Building the shared framework before any single agent shipped meant every agent after the first got faster, not slower, to design.</p></div>
   </div>
 </div>

@@ -44,10 +44,10 @@ Source page: https://techcommunity.microsoft.com/discussions/windows365discussio
 [05_intune_agents — previously-unused files now wired into project-intune-agents.html]
   change-review__overview.png, device-offboarding__overview.png, policy-agent-mapped-settings.png
   Source: Microsoft Learn / Intune admin center reference screenshots, three distinct named agents proving the shared framework claim.
-  Still unused / not safe yet: finance-risk-drawer-UNCONFIRMED-SOURCE.png (source unconfirmed), policy-agent-review-instructions-NEEDS-NAME-REDACT.png (contains a real person's name, needs redaction before use)
+  Still unused / not safe yet: finance-risk-drawer-UNCONFIRMED-SOURCE.png (source unconfirmed)
 
-[05_intune_agents — name redaction]
-  policy-agent-review-instructions.png = policy-agent-review-instructions-NEEDS-NAME-REDACT.png with "Satya Nadella" swapped to "Alex Chen" (fictional placeholder), wired into project-intune-agents.html. Original NEEDS-NAME-REDACT file kept as source, not referenced by any page.
+[05_intune_agents — policy-agent-review-instructions.png]
+  Published by Microsoft as-is (example/hint text names "Satya Nadella" — Microsoft's own public material, not something Amanda is exposing). Restored to the original, unredacted file; the earlier "Alex Chen" swap was reverted per Amanda's call. The duplicate NEEDS-NAME-REDACT source file was removed since it was now identical and its name was stale/inaccurate.
 
 [07_techcommunity_frontline_quickstart — swap]
   create-provisioning-policy__general-tab.png replaces create-provisioning-policy__cloud-pc-naming.png on project-cloudpc-provisioning.html — the article's own primary "creating a provisioning policy" screenshot (General tab: license type, Frontline type, join type, network, geography), more comprehensive than the naming-checkbox crop.
