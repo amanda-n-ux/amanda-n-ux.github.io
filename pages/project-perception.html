@@ -7,6 +7,7 @@
      file at the repo root (same filename, one folder up) instead. -->
 <head>
 <meta charset="UTF-8" />
+<meta name="google" content="notranslate" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Project Perception — Amanda Neves</title>
 <meta name="description" content="Case study: extending agents into a coordinated, multi-agent security system — Amanda Neves, Principal Product Designer." />
@@ -16,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" />
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="style.css?v=12" />
 
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://amanda-n-ux.github.io/project-perception.html" />
@@ -50,7 +51,7 @@
   <div class="inner">
     <div>
       <h1>Extending Agents Into a Coordinated, Multi-Agent System</h1>
-      <p class="sub">The framework so far governed many agents within Intune. Real security work spans the whole estate, not one product &mdash; and needed agents that could coordinate across that boundary, not just across tasks.</p>
+      <p class="sub">Real security work spans the whole estate, not one product &mdash; and needed agents that could coordinate across that boundary. Microsoft&rsquo;s own framing for the answer: strategy stays human, scale becomes autonomous.</p>
     </div>
     <div class="cs-rail">
       <div class="label">Agents in Intune</div>
@@ -81,40 +82,38 @@
 <div class="phase">
   <div class="label">01 &mdash; The problem</div>
   <div>
-    <p>Every agent in the framework so far had been governed within Intune &mdash; one product, one approval loop, however many agents. But real security work doesn&rsquo;t stay inside one product&rsquo;s boundary: an investigation might start in Defender, pull device context from Intune, and end with a policy change somewhere else in the estate entirely. Nothing in the existing framework coordinated agents across that boundary, shared context between them, or gave the people responsible for security a single place to direct and approve work spanning more than one product at a time.</p>
-    <p>The audience shifted too. The earlier agents were built for the Intune admin, managing devices and policy. This system is built for security teams instead &mdash; the Security Reader and Security Admin roles working in Defender, running threat investigation and remediation, not device management.</p>
+    <p>Every agent so far had been governed within one product, Intune. But real security work crosses boundaries &mdash; an investigation might start in Defender, pull device context from Intune, and end with a policy change elsewhere in the estate &mdash; and nothing coordinated agents across that line or gave security a single place to direct and approve work spanning more than one product.</p>
+    <p>The audience shifted too: from the Intune admin managing devices, to security teams &mdash; Security Reader and Security Admin roles working in Defender on threat investigation and remediation.</p>
   </div>
 </div>
 
 <div class="phase">
   <div class="label">02 &mdash; What I learned first</div>
   <div>
-    <p>I contributed early, foundational design work on the interaction model, before this work had the shape it does today. The first clear finding: coordination couldn&rsquo;t just mean more chat. When several specialized agents contribute to one outcome, security teams needed a shared, durable session to work from &mdash; the same &ldquo;revisitable artifact, not ephemeral chat&rdquo; principle from the Intune agent work &mdash; not several separate, untraceable conversations.</p>
-    <p>The second finding was about entry points. Security teams didn&rsquo;t want to learn which of several specialized agents to open for a given task &mdash; they wanted to describe the goal and let the system route to the right one. Natural-language chat became the front door, with the system identifying the right workflow instead of security teams hunting for the right tool.</p>
+    <p>I contributed early, foundational design work on the interaction model. Two findings shaped it: coordination needed a shared, durable session &mdash; the same &ldquo;revisitable artifact, not ephemeral chat&rdquo; principle from the Intune agent work &mdash; not scattered, untraceable conversations. And security teams didn&rsquo;t want to learn which specialized agent to open for a given task; they wanted to describe the goal and let the system route to the right one, with natural-language chat as the front door.</p>
     <figure class="fig">
       <img src="screenshots/04_project_perception/agentic-demo-ui.png" alt="Project Perception chat entry point in the Microsoft Defender portal: &quot;What do you want to do next?&quot; with a task box and playbook cards, alongside Sessions, Playbooks, and Agents in the side nav" />
-      <figcaption>Chat as the front door, with Sessions and Playbooks as their own tabs alongside it &mdash; the shipped shape of that entry-point finding.</figcaption>
+      <figcaption>Chat as the front door, with Sessions and Playbooks as their own tabs alongside it &mdash; the shipped shape of that entry-point finding. Screenshot from Microsoft&rsquo;s public preview announcement &mdash; <a href="https://www.microsoft.com/en-us/security/business/ai-powered-cybersecurity/project-perception-agentic-system" target="_blank" rel="noopener">microsoft.com/security/project-perception-agentic-system</a>.</figcaption>
     </figure>
-    <p class="attrib">Screenshot from Microsoft&rsquo;s public preview announcement &mdash; <a href="https://www.microsoft.com/en-us/security/business/ai-powered-cybersecurity/project-perception-agentic-system">microsoft.com/security/project-perception-agentic-system</a>.</p>
   </div>
 </div>
 
 <div class="phase">
   <div class="label">03 &mdash; Exploration</div>
   <div>
-    <p>How far the system could act on its own, without a human re-approving every step along the way, was the harder question. It doesn&rsquo;t scale to have a security team member sign off on individual actions when the system is meant to operate continuously across an entire security estate &mdash; but the fix wasn&rsquo;t more automation with less oversight. It was moving where that oversight lives.</p>
+    <p>How far the system could act on its own, without a human re-approving every step, was the harder question. It doesn&rsquo;t scale to sign off on individual actions across an entire security estate &mdash; but the fix wasn&rsquo;t more automation with less oversight. It was moving where that oversight lives.</p>
     <div class="opt">
       <div class="status">Ruled out</div>
       <div>
         <h4>Approve every action individually</h4>
-        <p>The same approval-per-step model that worked for a single agent, single session doesn&rsquo;t scale to a system meant to run continuously, across multiple agents, all day. Treated as a queue of individual approvals, it would turn a defense system meant to operate around the clock back into exactly the bottleneck it was meant to remove.</p>
+        <p>Approval-per-step works for one agent, one session &mdash; not a system meant to run continuously across multiple agents. Treated as a queue, it becomes exactly the bottleneck it was meant to remove.</p>
       </div>
     </div>
     <div class="opt opt--shipped">
       <div class="status">Preview</div>
       <div>
         <h4>Approve the strategy, not each step</h4>
-        <p>Security teams set and approve the mission &mdash; what the system should be watching for, what it&rsquo;s allowed to act on. Review friction then scales with risk: a clean, in-bounds action gets a lightweight single-click confirmation instead of a full review; anything flagged or outside the approved bounds still gets escalated for explicit review. Every tier gets a human in the loop &mdash; what changes is how much friction that loop has. Microsoft&rsquo;s own framing for it: &ldquo;Strategy stays human. Scale becomes autonomous.&rdquo;</p>
+        <p>Security teams approve the mission &mdash; what to watch for, what it&rsquo;s allowed to act on. Review friction then scales with risk: clean actions get a single-click confirmation, flagged ones get escalated. Microsoft&rsquo;s framing: &ldquo;Strategy stays human. Scale becomes autonomous.&rdquo;</p>
       </div>
     </div>
 
@@ -124,34 +123,27 @@
     </div>
     <div class="guardrail" id="guardrail" data-open="false">
       <div class="guardrail-summary">
-        <div class="gd-actions">
-          <button class="gd-toggle" type="button" id="gdToggle" aria-expanded="false" aria-controls="gdDetail">
-            <span id="gdToggleLabel">Review depth</span>
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg>
-          </button>
-        </div>
-
         <div class="gd-node">
           <div class="head">
-            <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="2" width="9" height="12" rx="1"/><line x1="5.5" y1="5.5" x2="10.5" y2="5.5"/><line x1="5.5" y1="8" x2="10.5" y2="8"/></svg>
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="2" width="9" height="12" rx="1"/><line x1="5.5" y1="5.5" x2="10.5" y2="5.5"/><line x1="5.5" y1="8" x2="10.5" y2="8"/></svg>
             <h5>Incoming action</h5>
           </div>
           <p>Script, policy change, or remediation request enters the pipeline.</p>
         </div>
-        <div class="gd-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M7 2v9M3 8l4 4 4-4"/></svg></div>
+        <div class="gd-arrow"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M7 2v9M3 8l4 4 4-4"/></svg></div>
         <div class="gd-node">
           <div class="head">
-            <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.5" cy="6.5" r="4"/><line x1="9.5" y1="9.5" x2="13" y2="13"/></svg>
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.5" cy="6.5" r="4"/><line x1="9.5" y1="9.5" x2="13" y2="13"/></svg>
             <h5>Risk analysis</h5>
           </div>
           <p>Agent evaluates harm potential, anomalies, and contextual signals.</p>
         </div>
-        <div class="gd-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M7 2v9M3 8l4 4 4-4"/></svg></div>
+        <div class="gd-arrow"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M7 2v9M3 8l4 4 4-4"/></svg></div>
 
         <div class="gd-branches" id="gdDetail">
           <div class="gd-branch gd-branch--low">
             <div class="tier">
-              <p class="tag"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l7 3-3 1-1 3-3-7z"/></svg>Low risk</p>
+              <p class="tag"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l7 3-3 1-1 3-3-7z"/></svg>Low risk</p>
               <h4>No risk detected</h4>
               <p>Signal is clean. Action is within expected parameters.</p>
             </div>
@@ -162,7 +154,7 @@
                 <div class="depth-item"><span class="dn">2</span><div><p class="dt">Audit logged</p><p class="dd">Decision recorded with actor, timestamp, and context.</p></div></div>
               </div>
               <div class="outcome">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5"/></svg>
                 <div><p class="ot">Action deployed</p><p class="od">Proceeds immediately on approval.</p></div>
               </div>
             </div>
@@ -170,7 +162,7 @@
 
           <div class="gd-branch gd-branch--elevated">
             <div class="tier">
-              <p class="tag"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="3" y1="4.5" x2="13" y2="4.5"/><line x1="3" y1="8" x2="13" y2="8"/><line x1="3" y1="11.5" x2="9" y2="11.5"/></svg>Elevated</p>
+              <p class="tag"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="3" y1="4.5" x2="13" y2="4.5"/><line x1="3" y1="8" x2="13" y2="8"/><line x1="3" y1="11.5" x2="9" y2="11.5"/></svg>Elevated</p>
               <h4>Risk detected</h4>
               <p>Anomaly or policy concern flagged. Human judgment required.</p>
             </div>
@@ -182,7 +174,7 @@
                 <div class="depth-item"><span class="dn">3</span><div><p class="dt">Audit logged</p><p class="dd">Full reasoning chain and decision recorded.</p></div></div>
               </div>
               <div class="outcome">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5"/></svg>
                 <div><p class="ot">Pending admin decision</p><p class="od">Proceeds or is blocked based on the outcome.</p></div>
               </div>
             </div>
@@ -190,7 +182,7 @@
 
           <div class="gd-branch gd-branch--high">
             <div class="tier">
-              <p class="tag"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5l5.5 2v4c0 3.6-2.3 6-5.5 7-3.2-1-5.5-3.4-5.5-7v-4L8 1.5z"/><line x1="8" y1="6.5" x2="8" y2="9"/><circle cx="8" cy="11" r="0.4" fill="currentColor"/></svg>High-risk</p>
+              <p class="tag"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5l5.5 2v4c0 3.6-2.3 6-5.5 7-3.2-1-5.5-3.4-5.5-7v-4L8 1.5z"/><line x1="8" y1="6.5" x2="8" y2="9"/><circle cx="8" cy="11" r="0.4" fill="currentColor"/></svg>High-risk</p>
               <h4>High-risk or destructive</h4>
               <p>Potentially catastrophic. Blocked immediately, escalated for review.</p>
             </div>
@@ -203,11 +195,17 @@
                 <div class="depth-item"><span class="dn">4</span><div><p class="dt">Audit logged</p><p class="dd">Block reason, escalation chain, and final decision recorded.</p></div></div>
               </div>
               <div class="outcome">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5"/></svg>
                 <div><p class="ot">Blocked until resolved</p><p class="od">Only proceeds on explicit escalation approval.</p></div>
               </div>
             </div>
           </div>
+        </div>
+        <div class="gd-actions">
+          <button class="gd-toggle" type="button" id="gdToggle" aria-expanded="false" aria-controls="gdDetail">
+            <span id="gdToggleLabel">Review depth</span>
+            <svg aria-hidden="true" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg>
+          </button>
         </div>
       </div>
     </div>
@@ -223,7 +221,7 @@
   function setOpen(open){
     wrap.setAttribute('data-open', open ? 'true' : 'false');
     toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    label.textContent = open ? 'Hide review depth' : 'Review depth';
+    label.textContent = open ? 'Hide depth' : 'Review depth';
   }
   toggle.addEventListener('click', function(){ setOpen(wrap.getAttribute('data-open') !== 'true'); });
 })();
@@ -232,64 +230,45 @@
 <div class="phase">
   <div class="label">04 &mdash; What shipped</div>
   <div>
-    <p>Hosted directly in the Microsoft Defender portal: specialized agent teams &mdash; Red probing like an attacker, Blue investigating like a responder, Green remediating and hardening &mdash; working as a closed loop, coordinated through a shared, auditable session rather than isolated chats.</p>
+    <p>What shipped is a framework Microsoft can keep extending, not just three agent teams working one case. Underneath sits what Microsoft calls the Harness &mdash; the orchestration layer that keeps every agent reliable and guided, so autonomy grows without losing the human checkpoint. Hosted in Microsoft Defender: Red probes like an attacker, Blue investigates like a responder, Green remediates &mdash; coordinated through one shared, auditable session instead of isolated chats.</p>
 
-    <div class="diagram-head">
-      <h3>One Investigation, Two Products</h3>
-      <p class="sub">A concrete version of the boundary-crossing problem from phase 01.</p>
+    <div class="role-badges">
+      <div class="role-badge"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><circle cx="8" cy="8" r="5.5"/><circle cx="8" cy="8" r="1.5" fill="currentColor" stroke="none"/><path d="M8 1v2.5M8 12.5V15M1 8h2.5M12.5 8H15"/></svg><div><strong>Red team</strong><span>Simulates attacks</span></div></div>
+      <div class="role-badge"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5l5.5 2v4c0 3.6-2.3 6-5.5 7-3.2-1-5.5-3.4-5.5-7v-4L8 1.5z"/></svg><div><strong>Blue team</strong><span>Detects and triages</span></div></div>
+      <div class="role-badge"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M5 8l2 2 4-4.5"/></svg><div><strong>Green team</strong><span>Fixes and remediates</span></div></div>
     </div>
-    <div class="flow" style="grid-template-columns:repeat(3,1fr);">
-      <div class="step" style="grid-column:1">
-        <div class="bar"></div>
-        <div class="head"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><circle cx="6.5" cy="6.5" r="4"/><line x1="9.5" y1="9.5" x2="13" y2="13"/></svg><span class="num">01</span></div>
-        <h4>Investigate</h4>
-        <p class="detail">Blue team agent flags an anomaly, opens a session in Defender.</p>
-      </div>
-      <div class="step emph" style="grid-column:2">
-        <div class="bar"></div>
-        <div class="head"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="8" rx="1"/><line x1="5" y1="13" x2="11" y2="13"/></svg><span class="num">02</span></div>
-        <h4>Enrich</h4>
-        <p class="detail">Pulls device compliance and enrollment context from Intune.</p>
-      </div>
-      <div class="step" style="grid-column:3">
-        <div class="bar"></div>
-        <div class="head"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M5 8l2 2 4-4.5"/></svg><span class="num">03</span></div>
-        <h4>Remediate</h4>
-        <p class="detail">Green team agent applies the fix, closes the loop back in Defender.</p>
-      </div>
-    </div>
-    <p class="attrib">Public preview, per Microsoft&rsquo;s own announcement &mdash; <a href="https://www.microsoft.com/en-us/security/business/ai-powered-cybersecurity/project-perception-agentic-system">microsoft.com/security/project-perception-agentic-system</a>. The flow above is an illustrative example built from the confirmed Red/Blue/Green roles, not a literal screenshot of Perception&rsquo;s internals. Shown as reference for the direction this foundational work fed into; my own contribution was early design work, not the full shipped product.</p>
+    <p class="attrib">Red, Blue, Green &mdash; Microsoft&rsquo;s own framing for the three agent teams, not a naming convention I invented. Public preview, per Microsoft&rsquo;s own announcement &mdash; <a href="https://www.microsoft.com/en-us/security/business/ai-powered-cybersecurity/project-perception-agentic-system" target="_blank" rel="noopener">microsoft.com/security/project-perception-agentic-system</a> and the <a href="https://blogs.microsoft.com/blog/2026/07/27/rethinking-security-for-the-age-of-ai/" target="_blank" rel="noopener">Official Microsoft Blog</a> announcement.</p>
   </div>
 </div>
 
 <div class="phase">
   <div class="label">05 &mdash; Tradeoffs I own</div>
   <div>
-    <p>Approval checkpoints throughout the workflow, not just at the end, cost real friction &mdash; every checkpoint is a chance for a security team to pause a plan already in motion. I designed for it anyway: with several agents acting in sequence, the ability to intervene at any point mattered more than a faster end-to-end run. Approving once at the start and letting the whole chain execute would have been simpler to build, but it asked for more trust than a brand-new multi-agent system had earned yet.</p>
+    <p>Approval checkpoints throughout the workflow cost real friction &mdash; every one is a chance to pause a plan already in motion. I designed for it anyway: with several agents acting in sequence, the ability to intervene mattered more than a faster run. One approval up front would have been simpler, but asked for more trust than a brand-new system had earned.</p>
   </div>
 </div>
 
 <div class="phase phase--warm">
   <div class="label">06 &mdash; Beyond this feature</div>
   <div>
-    <p>This early work didn&rsquo;t stay contained to Intune. The scale and monitoring gaps it surfaced were real problems for the broader security-agent pattern library, not just Intune&rsquo;s slice of it &mdash; solving them locally and pushing the fix back upstream strengthened the shared foundation other product agents build on, VRA included. It&rsquo;s the same cross-product bridging approach I used with the design-system team on the Intune agent work: solve the local problem, then generalize it for the group.</p>
-    <p>The ripple runs the other direction too. Perception&rsquo;s core principle is continuous, proactive protection &mdash; agents acting within their approved bounds without waiting on a human review cycle for every action. Follow that principle to its logical end for an Intune admin, and a patch could land on their own managed devices, approved by security, not by them &mdash; a change they&rsquo;d own the consequences of but never personally signed off on. That&rsquo;s an uneasy feeling to design for, and pulling Intune admins into that approval loop would just recreate the exact bottleneck already ruled out in phase 03. The design answer, as I&rsquo;d frame it: put the weight on monitoring and auditing instead of approval &mdash; every change traceable back to what did it and why, surfaced to Intune admins as an alert or a flag they can act on, not a signature they&rsquo;d never see in time to give anyway.</p>
+    <p>This work started as a cross-platform initiative, not something scoped to Intune &mdash; so its scale and monitoring gaps were never just Intune&rsquo;s to solve. Pushing the fix into the shared foundation strengthened what every product agent builds on, VRA included: solve the problem where you find it, then generalize it.</p>
+    <p>The ripple runs the other direction too: Perception&rsquo;s continuous, proactive protection means a patch could land on an Intune admin&rsquo;s own devices, approved by security, not by them. Pulling admins into that approval loop would recreate the same bottleneck ruled out in phase 03. My answer: configurable thresholds so an admin sets their own comfort level upfront, backed by the ability to audit and roll back after the fact.</p>
   </div>
 </div>
 
 <div class="phase">
   <div class="label">07 &mdash; What I&rsquo;d carry forward</div>
   <div class="carry-list">
-    <div class="carry-item"><span class="n"><svg width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="14" r="7"/><circle cx="18" cy="14" r="7"/></svg></span><p>A shared, durable session is worth the redesign cost the moment more than one agent touches an outcome &mdash; private, per-agent chat histories don&rsquo;t hold up once agents start handing off work to each other.</p></div>
-    <div class="carry-item"><span class="n"><svg width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="10"/><circle cx="14" cy="14" r="5"/><circle cx="14" cy="14" r="1.2" fill="currentColor" stroke="none"/></svg></span><p>Approval doesn&rsquo;t have to mean stopping at every step &mdash; the harder, more valuable design problem is deciding which layer of the system the approval belongs at.</p></div>
-    <div class="carry-item"><span class="n"><svg width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="11"/><path d="M14 19V9M9.5 13.5L14 9l4.5 4.5"/></svg></span><p>Patterns built for one product&rsquo;s constraints often reveal gaps the wider system hasn&rsquo;t hit yet &mdash; solve locally, then generalize, rather than waiting for someone else to find the same gap.</p></div>
+    <div class="carry-item"><span class="n"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="14" r="7"/><circle cx="18" cy="14" r="7"/></svg></span><p>A shared, durable session is worth the redesign cost once more than one agent touches an outcome &mdash; per-agent chat histories don&rsquo;t hold up when agents hand off work.</p></div>
+    <div class="carry-item"><span class="n"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="13.9" r="10.1"/><circle cx="13.9" cy="14.1" r="9.9" opacity=".4"/><circle cx="14.1" cy="14" r="5.05"/><circle cx="13.9" cy="14.05" r="4.9" opacity=".4"/><circle cx="14" cy="14" r="1.2" fill="currentColor" stroke="none"/></svg></span><p>Approval doesn&rsquo;t have to mean stopping at every step &mdash; the harder, more valuable design problem is deciding which layer of the system the approval belongs at.</p></div>
+    <div class="carry-item"><span class="n"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="11"/><path d="M14 19V9M9.5 13.5L14 9l4.5 4.5"/></svg></span><p>Patterns built for one product&rsquo;s constraints often reveal gaps the wider system hasn&rsquo;t hit yet &mdash; solve locally, then generalize, rather than waiting for someone else to find the same gap.</p></div>
   </div>
 </div>
 
 <div class="wrap">
   <div class="case-nav">
     <a href="project-vra.html">&larr; Chapter Two: VRA Deep Dive</a>
-    <a class="next" href="project-cloudpc.html">Additional Case Study: Windows 365 / Cloud PC &rarr;</a>
+    <a class="next" href="project-cloudpc-provisioning.html">Additional Case Study: Windows 365 / Cloud PC &rarr;</a>
   </div>
 </div>
 

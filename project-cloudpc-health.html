@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- SOURCE FILE — edit here, then run `python build.py` from the repo root.
+     Do NOT open this file directly in a browser: it links to style.css and
+     images with paths that only resolve at the repo root, and the nav/footer
+     include markers below are not real markup yet. Always preview the built
+     file at the repo root (same filename, one folder up) instead. -->
+<head>
+<meta charset="UTF-8" />
+<meta name="google" content="notranslate" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cloud PC Health &amp; Monitoring — Amanda Neves</title>
+<meta name="description" content="Case study: monitoring a fleet of Cloud PCs at scale for Windows 365 — turning raw per-device signal into tenant-level, actionable dashboards." />
+<link rel="canonical" href="https://amanda-n-ux.github.io/project-cloudpc-health.html" />
+<meta name="theme-color" content="#FFFFFF" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=2" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" />
+<link rel="stylesheet" href="style.css?v=12" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://amanda-n-ux.github.io/project-cloudpc-health.html" />
+<meta property="og:title" content="Cloud PC Health &amp; Monitoring — Amanda Neves" />
+<meta property="og:description" content="Translating raw per-device signal into tenant-level, actionable dashboards for a growing fleet of Cloud PCs." />
+<meta property="og:image" content="https://amanda-n-ux.github.io/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Cloud PC Health &amp; Monitoring — Amanda Neves" />
+<meta name="twitter:description" content="Translating raw per-device signal into tenant-level, actionable dashboards for a growing fleet of Cloud PCs." />
+<meta name="twitter:image" content="https://amanda-n-ux.github.io/og-image.png" />
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html"><img class="brand-mark" src="flower-mark.png" alt="" />Amanda Neves</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="resume.html">Résumé</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<header class="cs-head">
+  <div class="cs-crumb">
+    <a href="projects.html" style="color:inherit; text-decoration:none;">Projects</a>
+    <span class="sep">/</span>
+    <span>Windows 365 / Cloud PC</span>
+    <span class="sep">/</span>
+    <span class="here">Chapter Two</span>
+  </div>
+  <div class="inner">
+    <div>
+      <h1>Cloud PC Health &amp; Monitoring</h1>
+      <p class="sub">Before this, admins couldn&rsquo;t tell if a Cloud PC was healthy at all &mdash; let alone spot the pattern across a fleet of thousands, or know where to act first. The fix was a three-step model &mdash; Signal, Aggregate, Act &mdash; turning per-device noise into a fleet-level view an admin could actually act on.</p>
+    </div>
+    <div class="cs-rail">
+      <div class="label">Windows 365 / Cloud PC</div>
+      <a href="project-cloudpc-provisioning.html"><span class="dot"></span>01 &mdash; Provisioning Cloud PCs at Scale</a>
+      <a class="current" href="project-cloudpc-health.html"><span class="dot"></span>02 &mdash; Cloud PC Health &amp; Monitoring</a>
+    </div>
+  </div>
+</header>
+
+<div class="cs-glance">
+  <div class="label">At a glance</div>
+  <dl class="cells">
+    <div><dt>Role</dt><dd>Design Lead, monitoring/reporting strategy &amp; Design Owner, Frontline/Flex &mdash; with a prior AVD background</dd></div>
+    <div><dt>Scope</dt><dd>Fleet-scale monitoring &mdash; signal aggregation, dashboards, restore</dd></div>
+    <div><dt>Outcome</dt><dd>A unified reporting dashboard, adopted across Cloud PC and Flex &mdash; the same reporting work that unblocked a 40,000+ employee enterprise migration onto Windows 365</dd></div>
+  </dl>
+</div>
+
+<div class="phase">
+  <div class="label">01 &mdash; The problem</div>
+  <div>
+    <p>A Cloud PC is a virtual machine an admin can&rsquo;t walk over and look at. When something went wrong &mdash; a bad connection, a corrupted profile, a region outage &mdash; there was no established way to see it coming, understand its scope, or fix it without a full rebuild.</p>
+    <p>And every signal that told an admin something was wrong arrived one device at a time &mdash; one Cloud PC&rsquo;s connection failed, one Cloud PC ran slow, one license was about to run out. That doesn&rsquo;t scale as an admin experience once a tenant has thousands of Cloud PCs: nobody can review devices one by one looking for the ones that need attention. Windows 365 needed a way to turn per-device signal into a fleet-level picture before it could earn trust as a real alternative to a physical PC.</p>
+  </div>
+</div>
+
+<div class="phase">
+  <div class="label">02 &mdash; What I learned first</div>
+  <div>
+    <p>The earliest version of this problem showed up before Cloud PC even had its own reporting: getting basic service health onto the console home page at all meant building a pattern generic enough to extend to any future service, not just this one. That reusable health pattern became the seed for everything that followed.</p>
+    <p>The second finding was that raw signal isn&rsquo;t the same thing as an actionable view. Performance data, connection failures, and license usage all arrived as per-device facts, scattered across whichever team happened to own that signal. Before I could design a single dashboard, I had to work out how those device-level facts rolled up into something true at the tenant level &mdash; the design problem wasn&rsquo;t the screen, it was the aggregation underneath it.</p>
+  </div>
+</div>
+
+<div class="phase">
+  <div class="label">03 &mdash; Exploration</div>
+  <div>
+    <p>Reporting requirements arrived scattered &mdash; performance, connection failures, license usage, device action status &mdash; each from a different stakeholder, each describing its own signal on its own device.</p>
+    <div class="opt">
+      <div class="status">Ruled out</div>
+      <div>
+        <h4>A report per signal, per device</h4>
+        <p>Each new monitoring need could have shipped as its own isolated report, showing the raw per-device data that prompted it. That&rsquo;s also how admins would have experienced it: a growing pile of disconnected reports, none of them answering &ldquo;is my fleet healthy&rdquo; without being read one device at a time.</p>
+      </div>
+    </div>
+    <div class="opt opt--shipped">
+      <div class="status">Shipped</div>
+      <div>
+        <h4>Tenant-level dashboards, grouped by intent</h4>
+        <p>Raw per-device signal rolls up into tenant-level reports, and related reports get grouped into dashboards &mdash; Cloud PC performance, Flex Cloud PCs &mdash; so admins reason about fleet health in one place instead of hunting across separate, device-by-device screens. The pattern was built to scale to whatever monitoring need came next, not just the ones already requested.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="phase">
+  <div class="label">04 &mdash; What shipped</div>
+  <div>
+    <p>Connection failures and license-usage gaps surface at the tenant level first &mdash; how many Cloud PCs are affected, how widespread the problem is &mdash; with a path to drill down into any single device, rather than starting from the device and hoping to spot a pattern.</p>
+
+    <div class="diagram-head">
+      <h3>Signal, Aggregate, Act</h3>
+      <p class="sub">How thousands of individual Cloud PC signals become one dashboard an admin can act on.</p>
+    </div>
+    <div class="flow" style="grid-template-columns:repeat(3,1fr);">
+      <div class="step" style="grid-column:1">
+        <div class="bar"></div>
+        <div class="head"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="10" height="7" rx="1"/><path d="M4.5 6.5h1.5l1-2 1 4 1-2H11"/></svg><span class="num">01</span></div>
+        <h4>Signal</h4>
+        <p class="detail">Each Cloud PC reports its own connection quality, performance, and license usage &mdash; one device at a time.</p>
+      </div>
+      <div class="step emph" style="grid-column:2">
+        <div class="bar"></div>
+        <div class="head"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h12l-4.5 6.5v4L7.5 15v-5.5L2 3z"/></svg><span class="num">02</span></div>
+        <h4>Aggregate</h4>
+        <p class="detail">Raw per-device signal rolls up to a tenant-level view &mdash; admins see patterns across the fleet, not one device.</p>
+      </div>
+      <div class="step" style="grid-column:3">
+        <div class="bar"></div>
+        <div class="head"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="5" height="5" rx="0.5"/><rect x="9" y="2" width="5" height="5" rx="0.5"/><rect x="2" y="9" width="5" height="5" rx="0.5"/><rect x="9" y="9" width="5" height="5" rx="0.5"/></svg><span class="num">03</span></div>
+        <h4>Act</h4>
+        <p class="detail">Grouped into dashboards by intent, not by which team owned the signal &mdash; performance, Flex, connection health.</p>
+      </div>
+    </div>
+
+    <p>Flex &mdash; formerly Frontline &mdash; Cloud PCs needed a different kind of signal entirely, and this is where owning the shared model as its own design problem mattered most. A regular Cloud PC is one person, one device, so its health question is simple: is this machine working. A Flex Cloud PC is shared &mdash; up to four people licensed against one Cloud PC, one at a time &mdash; so the real question isn&rsquo;t about any single device, it&rsquo;s whether the shared pool is keeping up with demand. I designed a report showing concurrent license usage and which users couldn&rsquo;t connect, so admins could see actual utilization against capacity and decide whether they needed to license more Flex Cloud PCs &mdash; a capacity question the per-device model this page is built around doesn&rsquo;t answer on its own.</p>
+
+    <figure class="fig">
+      <img src="screenshots/03_windows365_manage/report-connected-frontline-cloud-pcs__capacity.png" alt="Devices overview showing Cloud PC performance tab, with Connected Frontline Cloud PCs tile reporting Approaching limit and Reached limit counts" />
+      <figcaption>The Devices overview dashboard &mdash; bottom left, Connected Frontline Cloud PCs reporting approaching-limit and reached-limit counts, the capacity question a per-device view can&rsquo;t answer.</figcaption>
+    </figure>
+    <figure class="fig">
+      <img src="screenshots/07_techcommunity_frontline_quickstart/concurrent-frontline-connections__report.png" alt="Concurrent Frontline Cloud PC connections report showing an allotment's current connections (6 of 20), users prevented from connecting, and a daily concurrent-connection-history chart over the last 28 days" />
+      <figcaption>The same question, over time &mdash; concurrent connections against the license allotment, with the moments demand outpaced capacity.</figcaption>
+    </figure>
+
+    <p>Restore and repair live inside that same fleet-aware model. Restore lets an admin roll a Cloud PC back to a working point in time without a full rebuild; a compliance-focused restore point can be shared directly with forensic investigators, built as one shared framework since both are the same underlying capability for two audiences. Naming mattered too &mdash; I partnered with content design on &ldquo;Attempt to repair connection&rdquo; instead of the more obvious &ldquo;Troubleshoot,&rdquo; since Troubleshoot already meant something else elsewhere in Intune.</p>
+
+    <p>Those same actions needed to work at fleet scale, not one device at a time. I designed bulk-action workflows with batching underneath &mdash; an admin filters down to the Cloud PCs that need something, then acts on all of them at once, and the system works through the batch reliably instead of the admin repeating one action thousands of times by hand.</p>
+
+    <div class="shots">
+      <figure><img src="screenshots/03_windows365_manage/report-cloud-pc-overview__dashboard-groups.png" alt="Reports Cloud PC overview showing connection quality, Cloud PCs that aren't available, Cloud PC recommendations, utilization, Connected Frontline, and cross-region tiles grouped on one dashboard" /><figcaption>The tenant-level dashboard, grouped by intent &mdash; several signal types, one screen</figcaption></figure>
+      <figure><img src="screenshots/03_windows365_manage/restore-single-cloud-pc__select-restore-point.png" alt="Selecting a restore point for a single Cloud PC" /><figcaption>Restore a Cloud PC to a working point in time</figcaption></figure>
+    </div>
+    <p class="attrib">Shipped Windows 365 management experiences, published by Microsoft &mdash; <a href="https://learn.microsoft.com/en-us/windows-365/enterprise/report-resource-performance" target="_blank" rel="noopener">learn.microsoft.com/windows-365</a>, <a href="https://learn.microsoft.com/en-us/windows-365/enterprise/report-remoting-connection" target="_blank" rel="noopener">report-remoting-connection</a>, and <a href="https://learn.microsoft.com/en-us/windows-365/enterprise/report-connected-frontline-cloud-pcs" target="_blank" rel="noopener">report-connected-frontline-cloud-pcs</a>. Reference for the shipped admin surfaces; my contribution is the design of these monitoring and recovery experiences, not the raw pixels.</p>
+  </div>
+</div>
+
+<div class="phase">
+  <div class="label">05 &mdash; Tradeoffs I own</div>
+  <div>
+    <p>Building a generic aggregation pattern &mdash; one that could roll any future per-device signal up to tenant level &mdash; cost more upfront design and engineering time than shipping each requested report as its own one-off screen. It paid off every time a new monitoring need arrived afterward, since it slotted into an existing model instead of becoming its own bespoke report.</p>
+    <p>Designing restore and eDiscovery as one shared framework, instead of shipping the compliance ask as its own bolt-on feature, cost more upfront alignment between two PMs who&rsquo;d never planned to work together. It paid off every time a new restore-point capability shipped afterward, since it only had to be built once and it served both audiences.</p>
+    <p>Cross-region disaster recovery meant designing for a scenario most tenants would hopefully never hit &mdash; a full regional outage, industries like financial services, government, and healthcare needed to plan around regardless. I designed the admin path to move affected Cloud PCs to a healthy region and back once resolved, for a workflow most admins would use rarely if ever.</p>
+  </div>
+</div>
+
+<div class="phase phase--warm">
+  <div class="label">06 &mdash; Beyond this feature</div>
+  <div>
+    <p>The unified dashboard pattern didn&rsquo;t stay scoped to the reports that prompted it. I led the alignment of Cloud PC reporting updates across both the Cloud PC and Intune teams, building new data visualization and one unified dashboard for reporting that both teams adopted going forward &mdash; not a one-off report, a shared reporting model. This monitoring, reporting, and alerting strategy was explicit, ongoing work I owned across the full arc of the product, not a single shipped feature.</p>
+    <p>Before Windows 365, I worked on Azure Virtual Desktop &mdash; that background is part of why I was later trusted to drive the strategy for unified device management across Windows 365, AVD, and core Intune: developing the conceptual designs and presenting the coherence strategy to design and research leadership. I also mentored the designer joining the team on AVD, helping her get up to speed on Intune&rsquo;s patterns; she went on to deliver the Cloud PC Copilot designs for Private Preview.</p>
+  </div>
+</div>
+
+<div class="phase">
+  <div class="label">07 &mdash; What I&rsquo;d carry forward</div>
+  <div class="carry-list">
+    <div class="carry-item"><span class="n"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 5h21l-8 11v7L11.5 27v-11l-8-11z"/></svg></span><p>Raw signal isn&rsquo;t the same thing as an actionable view &mdash; the real design work was translating per-device data into a tenant-level pattern admins could act on, not just displaying more data.</p></div>
+    <div class="carry-item"><span class="n"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="18" width="5" height="7" rx="0.5"/><rect x="11.5" y="11" width="5" height="14" rx="0.5"/><rect x="20" y="3" width="5" height="22" rx="0.5"/></svg></span><p>Group scattered monitoring requests by admin intent, not by which team asked for them &mdash; a dashboard organized around &ldquo;is this healthy&rdquo; scales better than one report per requester.</p></div>
+    <div class="carry-item"><span class="n"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="11"/><path d="M14 19V9M9.5 13.5L14 9l4.5 4.5"/></svg></span><p>Design for the rare, high-stakes failure too &mdash; cross-region recovery mattered most to the admins who&rsquo;d use it least often.</p></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="case-nav">
+    <a href="project-cloudpc-provisioning.html">&larr; Chapter One: Provisioning Cloud PCs at Scale</a>
+    <a class="next" href="projects.html">All Projects &rarr;</a>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>Amanda Neves &middot; Principal Product Designer</div>
+    <div class="note">
+      This portfolio describes my role, process, and design decisions in my own words.
+      Visuals are either diagrams I recreated or Microsoft-published, public screenshots (attributed) —
+      never confidential or unreleased company materials.
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+</body>
+</html>

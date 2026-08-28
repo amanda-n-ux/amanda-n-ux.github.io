@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- SOURCE FILE — edit here, then run `python build.py` from the repo root.
+     Do NOT open this file directly in a browser: it links to style.css and
+     images with paths that only resolve at the repo root, and the nav/footer
+     include markers below are not real markup yet. Always preview the built
+     file at the repo root (same filename, one folder up) instead. -->
+<head>
+<meta charset="UTF-8" />
+<meta name="google" content="notranslate" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Provisioning Cloud PCs at Scale — Amanda Neves</title>
+<meta name="description" content="Case study: provisioning Cloud PCs at scale for Windows 365 — translating a per-user license into a group-based system for thousands of devices at once." />
+<link rel="canonical" href="https://amanda-n-ux.github.io/project-cloudpc-provisioning.html" />
+<meta name="theme-color" content="#FFFFFF" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=2" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" />
+<link rel="stylesheet" href="style.css?v=12" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://amanda-n-ux.github.io/project-cloudpc-provisioning.html" />
+<meta property="og:title" content="Provisioning Cloud PCs at Scale — Amanda Neves" />
+<meta property="og:description" content="Translating a per-user license into a group-based system, and designing a state model Intune never needed for physical devices." />
+<meta property="og:image" content="https://amanda-n-ux.github.io/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Provisioning Cloud PCs at Scale — Amanda Neves" />
+<meta name="twitter:description" content="Translating a per-user license into a group-based system, and designing a state model Intune never needed for physical devices." />
+<meta name="twitter:image" content="https://amanda-n-ux.github.io/og-image.png" />
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!--@include:nav active="projects"-->
+
+<main id="main">
+
+<header class="cs-head">
+  <div class="cs-crumb">
+    <a href="projects.html" style="color:inherit; text-decoration:none;">Projects</a>
+    <span class="sep">/</span>
+    <span>Windows 365 / Cloud PC</span>
+    <span class="sep">/</span>
+    <span class="here">Chapter One</span>
+  </div>
+  <div class="inner">
+    <div>
+      <h1>Provisioning Cloud PCs at Scale</h1>
+      <p class="sub">Windows 365 made the Cloud PC a first-class Intune device, managed side by side with physical hardware &mdash; which meant inventing both a new state model and a way to provision by the thousand, not one at a time.</p>
+    </div>
+    <div class="cs-rail">
+      <div class="label">Windows 365 / Cloud PC</div>
+      <a class="current" href="project-cloudpc-provisioning.html"><span class="dot"></span>01 &mdash; Provisioning Cloud PCs at Scale</a>
+      <a href="project-cloudpc-health.html"><span class="dot"></span>02 &mdash; Cloud PC Health &amp; Monitoring</a>
+    </div>
+  </div>
+</header>
+
+<div class="cs-glance">
+  <div class="label">At a glance</div>
+  <dl class="cells">
+    <div><dt>Role</dt><dd>Design Lead, Cloud PC admin UX</dd></div>
+    <div><dt>Scope</dt><dd>Provisioning at scale &mdash; device states, groups, licensing &middot; 2020&ndash;2024</dd></div>
+    <div><dt>Outcome</dt><dd>A group-based provisioning model built to scale to thousands of devices at a time &mdash; the way enterprise deployment actually requires</dd></div>
+  </dl>
+</div>
+
+<div class="phase">
+  <div class="label">01 &mdash; The problem</div>
+  <div>
+    <p>Intune had never managed a virtual device the way it managed a physical one. Remote desktops existed before Windows 365, but as separate infrastructure with their own setup and tooling &mdash; not something that showed up in Intune&rsquo;s own device list next to a laptop. Windows 365 changed that: Cloud PCs would be first-class Intune devices, governed by the same policies, compliance checks, and update rings as physical hardware, side by side in one console.</p>
+    <p>That integration was the whole selling point, but it exposed two problems Intune&rsquo;s admin model had never had to solve. First, state: a physical device is either enrolled or it isn&rsquo;t &mdash; a Cloud PC has to be created before it can be managed at all, and it moves through its own lifecycle on the way there, a dimension of state physical devices never needed. Second, scale: a physical device gets set up one at a time, by design. Cloud PCs couldn&rsquo;t work that way &mdash; a single policy could need to bring a thousand of them online at once, and provisioning had to be designed for that from the start, not retrofitted onto a one-device-at-a-time model.</p>
+  </div>
+</div>
+
+<div class="phase">
+  <div class="label">02 &mdash; What I learned first</div>
+  <div>
+    <p>The first real finding was that a Windows 365 license is a per-user construct, the same as any other Microsoft 365 license &mdash; but provisioning couldn&rsquo;t be a per-user operation if it needed to scale. The pattern that emerged was translating that individual license into a group-level operation: a policy targets a Microsoft Entra group, not a person, and Cloud PCs get created automatically for whoever is a licensed member. Scale stopped meaning &ldquo;an admin repeats this workflow a thousand times&rdquo; and started meaning &ldquo;the system reacts to group membership.&rdquo;</p>
+    <p>The second finding was that state needed its own vocabulary. A Cloud PC that&rsquo;s mid-creation, one that provisioned with a warning, one sitting in a grace period after its user left the group &mdash; none of that mapped onto how Intune already talked about physical devices. I had to help define not just the screens, but the state model itself: what admins actually needed to know and act on at each stage of a Cloud PC&rsquo;s life, working closely with engineering to get there.</p>
+  </div>
+</div>
+
+<div class="phase">
+  <div class="label">03 &mdash; Exploration</div>
+  <div>
+    <p>The obvious starting point was the model Intune already had for physical devices: one admin, one device, one setup flow.</p>
+    <div class="opt">
+      <div class="status">Ruled out</div>
+      <div>
+        <h4>Provision and manage Cloud PC by Cloud PC</h4>
+        <p>Mirroring physical-device enrollment meant an admin working through individual devices one at a time &mdash; a model physical hardware could support because devices arrived one at a time too. Cloud PCs don&rsquo;t: a single provisioning policy could need to create hundreds of them at once, and per-device management would have made that impossible to operate at any real size.</p>
+      </div>
+    </div>
+    <div class="opt opt--shipped">
+      <div class="status">Shipped</div>
+      <div>
+        <h4>Provision and manage through group assignment</h4>
+        <p>A provisioning policy targets a Microsoft Entra group, not individual users or devices. Licenses, already a per-user construct, get translated into a group-level policy the moment they&rsquo;re assigned &mdash; Cloud PCs are created, resized, and deprovisioned as group membership changes, not as a queue of individual admin actions.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="phase">
+  <div class="label">04 &mdash; What shipped</div>
+  <div>
+    <p>A provisioning policy targets a group and carries the settings that scale with it &mdash; region, image, naming convention, language &mdash; so admins configure once per policy, not once per Cloud PC. Individual customization still had a place: device naming templates and per-user settings meant the system could scale by group while a Cloud PC (and the person using it) still felt configured for them, not mass-produced.</p>
+    <p>Guided scenarios shipped on top of this foundation &mdash; Windows 365 Boot, for instance, walks an admin through letting end users sign directly into their Cloud PC from a physical device, extending the life of aging hardware instead of replacing it. But the wizard was the visible layer; the group-and-state model underneath is what let it, and everything that came after, actually scale.</p>
+
+    <div class="diagram-head">
+      <h3>A Cloud PC&rsquo;s State Lifecycle</h3>
+      <p class="sub">The vocabulary physical devices never needed &mdash; what an admin sees at each stage, and what it means.</p>
+    </div>
+    <div class="flow" style="grid-template-columns:repeat(5,1fr);">
+      <div class="step" style="grid-column:1">
+        <div class="bar"></div>
+        <div class="head"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><circle cx="8" cy="8" r="6" stroke-dasharray="4 3.5"/></svg><span class="num">01</span></div>
+        <h4>Provisioning</h4>
+        <p class="detail">Cloud PC is being created. Not yet usable.</p>
+      </div>
+      <div class="step" style="grid-column:2">
+        <div class="bar"></div>
+        <div class="head"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M5 8l2 2 4-4.5"/></svg><span class="num">02</span></div>
+        <h4>Provisioned</h4>
+        <p class="detail">Ready and healthy. The steady state.</p>
+      </div>
+      <div class="step" style="grid-column:3">
+        <div class="bar"></div>
+        <div class="head"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1L1 14h14L8 1z"/><path d="M8 6v4"/><circle cx="8" cy="12" r="0.5" fill="currentColor"/></svg><span class="num">03</span></div>
+        <h4>Provisioned with warning</h4>
+        <p class="detail">Usable, but something needs the admin&rsquo;s attention.</p>
+      </div>
+      <div class="step" style="grid-column:4">
+        <div class="bar"></div>
+        <div class="head"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M8 4.5v4l2.5 1.5"/></svg><span class="num">04</span></div>
+        <h4>Grace period</h4>
+        <p class="detail">User left the group &mdash; still accessible for a window before removal.</p>
+      </div>
+      <div class="step" style="grid-column:5">
+        <div class="bar"></div>
+        <div class="head"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><path d="M5.5 5.5l5 5M10.5 5.5l-5 5"/></svg><span class="num">05</span></div>
+        <h4>Deprovisioned</h4>
+        <p class="detail">Grace period expired. The Cloud PC is gone.</p>
+      </div>
+    </div>
+
+    <figure class="fig">
+      <img src="screenshots/03_windows365_manage/devices-windows365__all-cloud-pcs.png" alt="Devices | Windows 365 landing page, All cloud PCs tab, showing status counts for failed provisioning, in grace period, provisioned, provisioned with warning, provisioning, and not provisioned, plus a device list with a Status column" />
+      <figcaption>The Cloud PC landing page &mdash; every state this page talks about, counted and listed</figcaption>
+    </figure>
+    <figure class="fig">
+      <img src="screenshots/07_techcommunity_frontline_quickstart/create-provisioning-policy__general-tab.png" alt="Create a provisioning policy wizard, General step, showing Name, License type (Enterprise/Frontline), Frontline type (Dedicated/Shared), Join type, Network, Geography, and Region" />
+      <figcaption>One policy, every setting that scales with it &mdash; license type, join type, network, geography &mdash; configured once, not once per Cloud PC</figcaption>
+    </figure>
+    <p class="attrib">Shipped Windows 365 provisioning experiences, published by Microsoft &mdash; <a href="https://techcommunity.microsoft.com/blog/windows-itpro-blog/windows-365-cloud-pc-provisioning-scenarios/2676879" target="_blank" rel="noopener">techcommunity.microsoft.com/windows-365-cloud-pc-provisioning-scenarios</a> and <a href="https://techcommunity.microsoft.com/discussions/windows365discussions/windows-365-frontline-cloud-pc-in-shared-mode-%E2%80%93-quick-start-guide/4399905" target="_blank" rel="noopener">windows-365-frontline-cloud-pc-in-shared-mode-quick-start-guide</a>. Reference for the shipped admin surfaces; my contribution is the design of these provisioning and assignment workflows, not the raw pixels.</p>
+  </div>
+</div>
+
+<div class="phase">
+  <div class="label">05 &mdash; Tradeoffs I own</div>
+  <div>
+    <p>Designing a genuinely new state model, instead of stretching Intune&rsquo;s existing physical-device states to cover Cloud PCs too, cost more time working with engineering to define what each state meant and when it applied. Reusing existing states would have shipped faster, but it would have told an admin a Cloud PC was &ldquo;enrolled&rdquo; when what they actually needed to know was whether it had finished being created in the first place &mdash; a different question a reused vocabulary couldn&rsquo;t answer.</p>
+  </div>
+</div>
+
+<div class="phase phase--warm">
+  <div class="label">06 &mdash; Beyond this feature</div>
+  <div>
+    <p>I authored the &ldquo;source of truth&rdquo; design reference for Windows 365&rsquo;s general-availability launch: every standard Intune pattern and Azure control used across the release, plus a full accessibility audit that documented every existing WCAG reflow issue &mdash; the kind of fit-and-finish work that doesn&rsquo;t show up in a single feature but shapes how the whole launch holds together.</p>
+    <p>This body of work was part of what carried me to Principal Designer in late 2023.</p>
+  </div>
+</div>
+
+<div class="phase">
+  <div class="label">07 &mdash; What I&rsquo;d carry forward</div>
+  <div class="carry-list">
+    <div class="carry-item"><span class="n"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3.5l11 5.5-11 5.5-11-5.5 11-5.5z"/><path d="M3 15l11 5.5L25 15"/><path d="M3 20.5l11 5.5 11-5.5"/></svg></span><p>A new device category doesn&rsquo;t just need new screens &mdash; it can need an entirely new dimension of state, one the existing model never had to represent. Cloud PC&rsquo;s provisioning lifecycle didn&rsquo;t exist in Intune&rsquo;s vocabulary until it was designed.</p></div>
+    <div class="carry-item"><span class="n"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="9" height="9" rx="1"/><rect x="15.5" y="3.5" width="9" height="9" rx="1"/><rect x="3.5" y="15.5" width="9" height="9" rx="1"/><rect x="15.5" y="15.5" width="9" height="9" rx="1"/></svg></span><p>Scaling by group doesn&rsquo;t mean abandoning individual configuration &mdash; naming templates and per-user settings let a system built for group-level scale still feel configured for the person using it, not mass-produced.</p></div>
+    <div class="carry-item"><span class="n"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="11"/><path d="M9 14.5l3.5 3.5L20 10"/></svg></span><p>Find the constraint that won&rsquo;t scale before you design around it &mdash; the moment provisioning stopped being a per-device operation and became a per-group one, everything downstream could scale with it.</p></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="case-nav">
+    <a href="project-perception.html">&larr; Chapter Three: Project Perception</a>
+    <a class="next" href="project-cloudpc-health.html">Chapter Two: Cloud PC Health &amp; Monitoring &rarr;</a>
+  </div>
+</div>
+
+</main>
+
+<!--@include:footer extra="true"-->
+
+<script src="nav.js"></script>
+</body>
+</html>
