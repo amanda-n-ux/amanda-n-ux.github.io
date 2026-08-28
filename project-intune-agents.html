@@ -7,6 +7,7 @@
      file at the repo root (same filename, one folder up) instead. -->
 <head>
 <meta charset="UTF-8" />
+<meta name="google" content="notranslate" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Agents as a Managed System — Amanda Neves</title>
 <meta name="description" content="Case study: bringing agents into Intune as a managed, governable system — Amanda Neves, Principal Product Designer." />
@@ -16,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" />
-<link rel="stylesheet" href="style.css?v=3" />
+<link rel="stylesheet" href="style.css?v=8" />
 
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://amanda-n-ux.github.io/project-intune-agents.html" />
@@ -35,6 +36,20 @@
 
 <a class="skip-link" href="#main">Skip to main content</a>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="sketch1" x="-30%" y="-30%" width="160%" height="160%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.12" numOctaves="2" seed="2" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="1.9"/>
+  </filter>
+  <filter id="sketch2" x="-30%" y="-30%" width="160%" height="160%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.12" numOctaves="2" seed="5" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="1.9"/>
+  </filter>
+  <filter id="sketch3" x="-30%" y="-30%" width="160%" height="160%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.12" numOctaves="2" seed="8" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="1.9"/>
+  </filter>
+</svg>
 <nav>
   <div class="wrap">
     <a class="brand" href="index.html"><img class="brand-mark" src="flower-mark.png" alt="" />Amanda Neves</a>
@@ -63,7 +78,7 @@
   <div class="inner">
     <div>
       <h1>Agents as a Managed System</h1>
-      <p class="sub">Admins coordinated remediation across disconnected consoles, with no consistent way to introduce, permission, or govern agents at scale.</p>
+      <p class="sub">Admins coordinated remediation across disconnected consoles, with no consistent way to introduce, permission, or govern agents at scale. The answer was one shared management layer &mdash; identity, permissions, lifecycle &mdash; that every agent plugs into, not a bespoke settings screen built one agent at a time.</p>
     </div>
     <div class="cs-rail">
       <div class="label">Agents in Intune</div>
@@ -80,6 +95,7 @@
     <div><dt>Role</dt><dd>Experience Strategy &amp; Interaction Design</dd></div>
     <div><dt>Scope</dt><dd>Multiple shipped agents</dd></div>
     <div><dt>Framework</dt><dd>1 shared system</dd></div>
+    <div><dt>Outcome</dt><dd>A shared framework that let multiple Intune agents ship together, on schedule for Ignite &mdash; not a one-off pattern built per agent</dd></div>
   </dl>
 </div>
 
@@ -155,7 +171,7 @@
         <div class="body">
           <div class="head">
             <div class="who">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><path d="M8 1v3M8 12v3M1 8h3M12 8h3M3.22 3.22l2.12 2.12M10.66 10.66l2.12 2.12M10.66 5.34l2.12-2.12M3.22 12.78l2.12-2.12"/></svg>
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><path d="M8 1v3M8 12v3M1 8h3M12 8h3M3.22 3.22l2.12 2.12M10.66 10.66l2.12 2.12M10.66 5.34l2.12-2.12M3.22 12.78l2.12-2.12"/></svg>
               <span>Drafting moment</span>
             </div>
             <span class="num">01</span>
@@ -180,7 +196,7 @@
         <div class="body">
           <div class="head">
             <div class="who">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M1 10.5l7 3.5 7-3.5"/><path d="M1 7l7 3.5L15 7"/><path d="M1 3.5L8 7l7-3.5L8 0 1 3.5z"/></svg>
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M1 10.5l7 3.5 7-3.5"/><path d="M1 7l7 3.5L15 7"/><path d="M1 3.5L8 7l7-3.5L8 0 1 3.5z"/></svg>
               <span>Reasoning moment</span>
             </div>
             <span class="num">02</span>
@@ -214,14 +230,14 @@
         <div class="body">
           <div class="head">
             <div class="who">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1L1 14h14L8 1z"/><path d="M8 6v4"/><circle cx="8" cy="12" r="0.5" fill="currentColor"/></svg>
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1L1 14h14L8 1z"/><path d="M8 6v4"/><circle cx="8" cy="12" r="0.5" fill="currentColor"/></svg>
               <span>Risk flag moment</span>
             </div>
             <span class="num">03</span>
           </div>
           <div class="content">
             <div class="risk-box">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1L1 14h14L8 1z"/><path d="M8 6v4"/><circle cx="8" cy="12" r="0.5" fill="currentColor"/></svg>
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1L1 14h14L8 1z"/><path d="M8 6v4"/><circle cx="8" cy="12" r="0.5" fill="currentColor"/></svg>
               <div>
                 <p class="t">Potential risk detected</p>
                 <p class="s">Agent paused &mdash; review recommended</p>
@@ -239,7 +255,7 @@
         <div class="body">
           <div class="head">
             <div class="who">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><circle cx="7" cy="4" r="2.5"/><path d="M1.5 13c0-3.04 2.46-5.5 5.5-5.5s5.5 2.46 5.5 5.5"/></svg>
+              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" filter="url(#sketch3)"><circle cx="7" cy="4" r="2.5"/><path d="M1.5 13c0-3.04 2.46-5.5 5.5-5.5s5.5 2.46 5.5 5.5"/></svg>
               <span>Approval gate</span>
             </div>
             <span class="num">04</span>
@@ -253,8 +269,8 @@
             <div class="gate-divider">
               <div class="ln"></div>
               <div class="icons">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><circle cx="7" cy="4" r="2.5"/><path d="M1.5 13c0-3.04 2.46-5.5 5.5-5.5s5.5 2.46 5.5 5.5"/></svg>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" filter="url(#sketch3)"><circle cx="7" cy="4" r="2.5"/><path d="M1.5 13c0-3.04 2.46-5.5 5.5-5.5s5.5 2.46 5.5 5.5"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>
               </div>
               <div class="ln"></div>
             </div>
@@ -274,27 +290,23 @@
     </div>
     <p>Being &ldquo;managed&rdquo; meant more than a single task screen — an ongoing lifecycle each agent needed, not a one-time action to watch run.</p>
     <p>Permissions, identity, and configuration followed the same shape too — one settings pattern, reused under every agent rather than redesigned per agent.</p>
-    <figure class="fig">
-      <img src="screenshots/01_vra/agent-settings-full.png" alt="Vulnerability Remediation Agent Settings tab showing Trigger, Permissions, Identity (runs using the identity of the user who set it up), Plugins, Roles with access, and Workspace — the same settings pattern every agent in the framework reuses" />
-      <figcaption>One settings template, reused agent to agent — Trigger, Permissions, Identity, Plugins, Roles, Workspace, every time.</figcaption>
-    </figure>
     <div class="plain-lists">
       <div>
         <h5>Access &amp; identity</h5>
         <ul>
-          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Required permissions, listed per agent</li>
-          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Runs under a chosen identity, not a shared one</li>
-          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Authentication expires after 90 days</li>
-          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Role-based access control (RBAC)</li>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Required permissions, listed per agent</li>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Runs under a chosen identity, not a shared one</li>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Authentication expires after 90 days</li>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Role-based access control (RBAC)</li>
         </ul>
       </div>
       <div>
         <h5>Configuration &amp; scope</h5>
         <ul>
-          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Plugins grant access to what each agent needs</li>
-          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Roles with access define who can configure</li>
-          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Tied to the tenant&rsquo;s Security Copilot workspace</li>
-          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Custom instructions to guide behavior</li>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Plugins grant access to what each agent needs</li>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Roles with access define who can configure</li>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Tied to the tenant&rsquo;s Security Copilot workspace</li>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Custom instructions to guide behavior</li>
         </ul>
       </div>
     </div>
@@ -302,7 +314,7 @@
       <img src="screenshots/05_intune_agents/policy-agent-review-instructions.png" alt="Policy Configuration Agent's Review instructions panel, with a custom instruction entered and the agent's plain-language interpretation of it shown below" />
       <figcaption>Custom instructions, and the agent restating its own interpretation back — so an admin can catch a misread before it becomes a policy.</figcaption>
     </figure>
-    <p class="attrib">Multiple shipped Intune agents reuse the framework and interaction patterns I led — my contribution is the design system, not the pixels.</p>
+    <p class="attrib">Policy Configuration Agent, published by Microsoft — alongside VRA, one of two agents I owned end-to-end, not just the shared framework shown elsewhere on this page.</p>
   </div>
 </div>
 
@@ -334,12 +346,12 @@
         <div class="body">
           <div class="head"><h5>Lifecycle &amp; control</h5><span class="num">01</span></div>
           <ul>
-            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Customization per org or scope</li>
-            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Memory &amp; context across runs</li>
-            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Pause &amp; resume</li>
-            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Rollback an agent&rsquo;s actions</li>
-            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Multiple instances of the same agent</li>
-            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Dismiss individual suggestions</li>
+            <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Customization per org or scope</li>
+            <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Memory &amp; context across runs</li>
+            <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Pause &amp; resume</li>
+            <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Rollback an agent&rsquo;s actions</li>
+            <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Multiple instances of the same agent</li>
+            <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Dismiss individual suggestions</li>
           </ul>
         </div>
       </article>
@@ -348,12 +360,12 @@
         <div class="body">
           <div class="head"><h5>Delivery &amp; access</h5><span class="num">02</span></div>
           <ul>
-            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Inline, in the console</li>
-            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Microsoft Teams</li>
-            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Email</li>
-            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Notification center</li>
-            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Text / SMS alerts</li>
-            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Role-based access control</li>
+            <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Inline, in the console</li>
+            <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Microsoft Teams</li>
+            <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Email</li>
+            <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Notification center</li>
+            <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Text / SMS alerts</li>
+            <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Role-based access control</li>
           </ul>
         </div>
       </article>
@@ -373,9 +385,9 @@
 <div class="phase">
   <div class="label">07 &mdash; What I&rsquo;d carry forward</div>
   <div class="carry-list">
-    <div class="carry-item"><span class="n"><svg width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="16" height="22" rx="1"/><line x1="9.5" y1="9" x2="18.5" y2="9"/><line x1="9.5" y1="14" x2="18.5" y2="14"/><line x1="9.5" y1="19" x2="15" y2="19"/></svg></span><p>Durable, auditable artifacts beat ephemeral chat for anything an admin needs to revisit, audit, or share — worth the extra build time.</p></div>
-    <div class="carry-item"><span class="n"><svg width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="11"/><path d="M9 14.5l3.5 3.5L20 10"/></svg></span><p>Approval as the default, not a bolted-on safety net, earns trust faster than defaulting to automation and asking forgiveness.</p></div>
-    <div class="carry-item"><span class="n"><svg width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="9" height="9" rx="1"/><rect x="15.5" y="3.5" width="9" height="9" rx="1"/><rect x="3.5" y="15.5" width="9" height="9" rx="1"/><rect x="15.5" y="15.5" width="9" height="9" rx="1"/></svg></span><p>Building the shared framework before any single agent shipped meant every agent after the first got faster, not slower, to design.</p></div>
+    <div class="carry-item"><span class="n"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="16" height="22" rx="1"/><line x1="9.5" y1="9" x2="18.5" y2="9"/><line x1="9.5" y1="14" x2="18.5" y2="14"/><line x1="9.5" y1="19" x2="15" y2="19"/></svg></span><p>Durable, auditable artifacts beat ephemeral chat for anything an admin needs to revisit, audit, or share — worth the extra build time.</p></div>
+    <div class="carry-item"><span class="n"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#sketch2)"><circle cx="14" cy="14" r="11"/><path d="M9 14.5l3.5 3.5L20 10"/></svg></span><p>Approval as the default, not a bolted-on safety net, earns trust faster than defaulting to automation and asking forgiveness.</p></div>
+    <div class="carry-item"><span class="n"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="9" height="9" rx="1"/><rect x="15.5" y="3.5" width="9" height="9" rx="1"/><rect x="3.5" y="15.5" width="9" height="9" rx="1"/><rect x="15.5" y="15.5" width="9" height="9" rx="1"/></svg></span><p>Building the shared framework before any single agent shipped meant every agent after the first got faster, not slower, to design.</p></div>
   </div>
 </div>
 
