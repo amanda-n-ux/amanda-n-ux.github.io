@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" />
-<link rel="stylesheet" href="style.css?v=12" />
+<link rel="stylesheet" href="style.css?v=14" />
 
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://amanda-n-ux.github.io/project-vra.html" />
@@ -88,7 +88,7 @@
   <div class="label">Overview</div>
   <div>
     <div class="frame"><iframe src="https://medius.microsoft.com/Embed/video-nc/73132893-af34-492c-8676-48fd8d099b37?r=12648952845" title="Supercharging IT Efficiency: Meet the Vulnerability Remediation Agent" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-    <p class="caption">&ldquo;Supercharging IT Efficiency: Meet the Vulnerability Remediation Agent&rdquo; &mdash; Julia Idaewor, Intune PM, Microsoft.</p>
+    <p class="caption">&ldquo;Supercharging IT Efficiency: Meet the Vulnerability Remediation Agent&rdquo; &mdash; Julia Idaewor, Intune PM, Microsoft. <a href="https://medius.microsoft.com/Embed/video-nc/73132893-af34-492c-8676-48fd8d099b37?r=12648952845" target="_blank" rel="noopener">Watch video directly &#8599;</a></p>
   </div>
 </div>
 
@@ -111,26 +111,19 @@
 <div class="phase">
   <div class="label">03 &mdash; Exploration</div>
   <div>
-    <p>How much VRA should do on its own was the central question, and we held ourselves to the highest RAI standards in answering it: autonomy has to be earned through demonstrated trust and evidence, not assumed on day one. That meant staging the agent&rsquo;s capability deliberately &mdash; crawl, walk, run &mdash; rather than picking one autonomy level and shipping it.</p>
-    <div class="opt opt--shipped">
-      <div class="status">Crawl</div>
+    <p>The framework staged autonomy deliberately &mdash; crawl, walk, run. For VRA, the open question was how much of that staged model to design upfront.</p>
+    <div class="opt">
+      <div class="status">Ruled out</div>
       <div>
-        <h4>Guided</h4>
-        <p>Admin remediation &mdash; the agent explains what to do, the admin carries out the fix. The starting point for first-time or unfamiliar changes, where trust hadn&rsquo;t been established yet.</p>
+        <h4>Design Guided mode, redesign later</h4>
+        <p>Design the interaction model for Guided mode only, and redesign it later as Assisted and Autonomous modes became real.</p>
       </div>
     </div>
     <div class="opt opt--shipped">
-      <div class="status">Walk</div>
+      <div class="status">Shipped</div>
       <div>
-        <h4>Assisted</h4>
-        <p>Admin-approved automation &mdash; the agent prepares the plan, the admin reviews and approves, then it executes. The core loop for routine, well-understood fixes admins had already grown comfortable trusting.</p>
-      </div>
-    </div>
-    <div class="opt opt--roadmap">
-      <div class="status">Run</div>
-      <div>
-        <h4>Autonomous</h4>
-        <p>Remediation within pre-approved bounds, admin monitors the outcome. A deliberate next step, not a v1 feature &mdash; full autonomy earned once the pattern proves itself, not assumed upfront.</p>
+        <h4>Design for all three levels upfront</h4>
+        <p>Design for all three autonomy levels from day one. Only Guided and Assisted shipped at launch, but the model didn&rsquo;t need to change shape when Autonomous mode does.</p>
       </div>
     </div>
     <figure class="fig">
@@ -242,14 +235,14 @@
       <figure><img src="screenshots/01_vra/suggestion-detail-export.png" alt="Suggestion detail panel with factors and remediation steps, plus a device export confirmation dialog" /><figcaption>Suggestion detail — factors, recommended actions, and export</figcaption></figure>
       <figure><img src="screenshots/01_vra/agent-overview-full.png" alt="Intune Admin tasks page aggregating action items tenant-wide, including several sourced from the Vulnerability Remediation Agent alongside Endpoint Privilege Management and multi-admin approval tasks" /><figcaption>VRA suggestions post automatically into Admin tasks &mdash; Intune&rsquo;s existing, cross-product task queue &mdash; so they surface next to every other pending action, not off in a separate tool. (My contribution is how VRA&rsquo;s suggestions land here, not the Admin tasks page itself.)</figcaption></figure>
     </div>
-    <p class="attrib">Shipped feature, published by Microsoft — <a href="https://learn.microsoft.com/en-us/intune/copilot/agents/vulnerability-remediation-agent" target="_blank" rel="noopener">learn.microsoft.com</a>. Shown as reference for the shipped experience; my contribution is the interaction design and flows, not the raw pixels.</p>
+    <p class="attrib">Shipped feature, published by Microsoft — <a href="https://learn.microsoft.com/en-us/intune/copilot/agents/vulnerability-remediation-agent" target="_blank" rel="noopener">learn.microsoft.com</a>. Shown as reference for the shipped experience.</p>
   </div>
 </div>
 
 <div class="phase">
   <div class="label">05 &mdash; Tradeoffs I own</div>
   <div>
-    <p>I designed the interaction model to support all three autonomy levels from the start, even though only Guided and Assisted shipped. Building for progressive autonomy meant the settings, permissions, and plan structure wouldn&rsquo;t need to be redesigned when Autonomous mode ships &mdash; a deliberate bet that cost more upfront for a smoother path later. That bet is still paying off: there&rsquo;s more in active development beyond what&rsquo;s shipped today, some of which I can&rsquo;t detail here yet.</p>
+    <p>I designed the interaction model to support all three autonomy levels from the start &mdash; a deliberate bet that cost more upfront for a smoother path later. That bet is still paying off: there&rsquo;s more in active development beyond what&rsquo;s shipped today, some of which I can&rsquo;t detail here yet.</p>
     <p>As the flagship agent, VRA also set precedent for every agent that followed. Built within Fluent and Intune&rsquo;s shared, cross-product component library rather than custom, one-off patterns &mdash; slower than a bespoke build, but it meant VRA felt like it belonged in Intune from day one, not like a bolted-on AI feature.</p>
   </div>
 </div>
@@ -284,8 +277,10 @@
     <div>Amanda Neves &middot; Principal Product Designer</div>
     <div class="note">
       This portfolio describes my role, process, and design decisions in my own words.
-      Visuals are either diagrams I recreated or Microsoft-published, public screenshots (attributed) —
-      never confidential or unreleased company materials.
+      The diagrams throughout are my own — designed and built in code, not reproductions of shipped UI.
+      Where a screen depicts a real shipped experience, it&rsquo;s either a redacted recreation (noted in its
+      caption) or a Microsoft-published, public screenshot (attributed) — never confidential or unreleased
+      company materials.
     </div>
   </div>
 </footer>
