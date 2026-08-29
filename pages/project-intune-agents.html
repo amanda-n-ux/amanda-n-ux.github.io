@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" />
-<link rel="stylesheet" href="style.css?v=12" />
+<link rel="stylesheet" href="style.css?v=14" />
 
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://amanda-n-ux.github.io/project-intune-agents.html" />
@@ -76,7 +76,7 @@
   <div class="label">Overview</div>
   <div>
     <div class="frame"><iframe src="https://www.youtube.com/embed/V7dlyoXzEE4" title="Agents in Microsoft Intune | Automate Policy Creation, Troubleshooting &amp; Fix Guidance" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-    <p class="caption">&ldquo;Agents in Microsoft Intune&rdquo; &mdash; Microsoft Mechanics, Microsoft&rsquo;s official product-demo channel.</p>
+    <p class="caption">&ldquo;Agents in Microsoft Intune&rdquo; &mdash; Microsoft Mechanics, Microsoft&rsquo;s official product-demo channel. <a href="https://www.youtube.com/watch?v=V7dlyoXzEE4" target="_blank" rel="noopener">Watch on YouTube for captions and transcript &#8599;</a></p>
   </div>
 </div>
 
@@ -116,6 +116,27 @@
         <p>Admins review, customize, and approve before anything deploys, with reasoning visible, not just outcomes — automation earns expanded trust over time rather than starting with it. This became the standard every agent in the framework follows.</p>
       </div>
     </div>
+    <p>Approval gates set the oversight bar &mdash; but that bar could move as trust was earned. The framework staged that explicitly:</p>
+    <div class="spectrum-h">
+      <div class="spectrum-h-item"><span class="spectrum-h-label">Crawl</span><span class="spectrum-h-node spectrum-h-node--1"></span></div>
+      <div class="spectrum-h-item"><span class="spectrum-h-label">Walk</span><span class="spectrum-h-node spectrum-h-node--2"></span></div>
+      <div class="spectrum-h-item"><span class="spectrum-h-label">Run</span><span class="spectrum-h-node spectrum-h-node--3"></span></div>
+    </div>
+    <div class="spectrum-cards">
+      <div class="spectrum-card">
+        <h4>Guided</h4>
+        <p>Admin remediation &mdash; the agent explains what to do, the admin carries out the fix. Where every agent in this framework started.</p>
+      </div>
+      <div class="spectrum-card">
+        <h4>Assisted</h4>
+        <p>Admin-approved automation &mdash; the agent prepares the plan, the admin reviews and approves, then it executes. Earned once a pattern proves itself.</p>
+      </div>
+      <div class="spectrum-card">
+        <h4>Autonomous</h4>
+        <p>Remediation within pre-approved bounds, admin monitors the outcome. A deliberate next step, never assumed upfront.</p>
+      </div>
+    </div>
+    <p>Every agent in this first wave shipped at Guided. Walk and Run were never off the table &mdash; they&rsquo;re the reason the framework was built to stage autonomy at all, not just gate it once.</p>
   </div>
 </div>
 
@@ -130,7 +151,7 @@
     <p>Every agent follows the same shape, whatever it&rsquo;s watching for: it&rsquo;s triggered by a schedule or an event, investigates the relevant state, builds a plan, and presents that plan for review before it does anything. Trust but review, not trust and hope — the plan is always visible before it becomes an action.</p>
     <figure class="fig">
       <img src="screenshots/05_intune_agents/device-offboarding__overview.png" alt="Device Offboarding Agent overview tab, showing the same Overview / Suggestions / Settings layout, with suggestions for removing stale Windows, iOS/iPadOS, and macOS devices" />
-      <figcaption>Device Offboarding Agent, published by Microsoft — a different job, the identical shape. My contribution is the shared interaction model here, not the raw pixels.</figcaption>
+      <figcaption>Device Offboarding Agent, published by Microsoft — a different job, the identical shape.</figcaption>
     </figure>
 
     <div class="diagram-head">
@@ -265,7 +286,7 @@
         </div>
       </article>
     </div>
-    <p>Being &ldquo;managed&rdquo; meant more than a single task screen — an ongoing lifecycle each agent needed, not a one-time action to watch run.</p>
+    <p>I designed &ldquo;managed&rdquo; to mean an ongoing lifecycle each agent plugs into, not a one-time action to watch run &mdash; starting with identity and permissions: every agent runs under its own chosen identity rather than a shared one, scoped access, authentication that expires after 90 days. I reused that same settings pattern for configuration and scope across every agent, rather than redesigning a bespoke screen each time a new one shipped.</p>
     <p>Permissions, identity, and configuration followed the same shape too — one settings pattern, reused under every agent rather than redesigned per agent.</p>
     <div class="plain-lists">
       <div>

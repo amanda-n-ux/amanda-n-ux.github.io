@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" />
-<link rel="stylesheet" href="style.css?v=12" />
+<link rel="stylesheet" href="style.css?v=14" />
 
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://amanda-n-ux.github.io/project-cloudpc-health.html" />
@@ -136,6 +136,7 @@
         <p class="detail">Grouped into dashboards by intent, not by which team owned the signal &mdash; performance, Flex, connection health.</p>
       </div>
     </div>
+    <p>The design problem was never the dashboard screen &mdash; it was working out how per-device facts scattered across teams rolled up into something true at the tenant level. Aggregate is where that decision lives.</p>
 
     <p>Flex &mdash; formerly Frontline &mdash; Cloud PCs needed a different kind of signal entirely, and this is where owning the shared model as its own design problem mattered most. A regular Cloud PC is one person, one device, so its health question is simple: is this machine working. A Flex Cloud PC is shared &mdash; up to four people licensed against one Cloud PC, one at a time &mdash; so the real question isn&rsquo;t about any single device, it&rsquo;s whether the shared pool is keeping up with demand. I designed a report showing concurrent license usage and which users couldn&rsquo;t connect, so admins could see actual utilization against capacity and decide whether they needed to license more Flex Cloud PCs &mdash; a capacity question the per-device model this page is built around doesn&rsquo;t answer on its own.</p>
 
@@ -156,7 +157,7 @@
       <figure><img src="screenshots/03_windows365_manage/report-cloud-pc-overview__dashboard-groups.png" alt="Reports Cloud PC overview showing connection quality, Cloud PCs that aren't available, Cloud PC recommendations, utilization, Connected Frontline, and cross-region tiles grouped on one dashboard" /><figcaption>The tenant-level dashboard, grouped by intent &mdash; several signal types, one screen</figcaption></figure>
       <figure><img src="screenshots/03_windows365_manage/restore-single-cloud-pc__select-restore-point.png" alt="Selecting a restore point for a single Cloud PC" /><figcaption>Restore a Cloud PC to a working point in time</figcaption></figure>
     </div>
-    <p class="attrib">Shipped Windows 365 management experiences, published by Microsoft &mdash; <a href="https://learn.microsoft.com/en-us/windows-365/enterprise/report-resource-performance" target="_blank" rel="noopener">learn.microsoft.com/windows-365</a>, <a href="https://learn.microsoft.com/en-us/windows-365/enterprise/report-remoting-connection" target="_blank" rel="noopener">report-remoting-connection</a>, and <a href="https://learn.microsoft.com/en-us/windows-365/enterprise/report-connected-frontline-cloud-pcs" target="_blank" rel="noopener">report-connected-frontline-cloud-pcs</a>. Reference for the shipped admin surfaces; my contribution is the design of these monitoring and recovery experiences, not the raw pixels.</p>
+    <p class="attrib">Shipped Windows 365 management experiences, published by Microsoft &mdash; <a href="https://learn.microsoft.com/en-us/windows-365/enterprise/report-resource-performance" target="_blank" rel="noopener">learn.microsoft.com/windows-365</a>, <a href="https://learn.microsoft.com/en-us/windows-365/enterprise/report-remoting-connection" target="_blank" rel="noopener">report-remoting-connection</a>, and <a href="https://learn.microsoft.com/en-us/windows-365/enterprise/report-connected-frontline-cloud-pcs" target="_blank" rel="noopener">report-connected-frontline-cloud-pcs</a>. Reference for the shipped admin surfaces.</p>
   </div>
 </div>
 

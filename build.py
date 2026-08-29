@@ -20,8 +20,10 @@ PAGES = ROOT / "pages"
 NAV_KEYS = ["home", "about", "projects", "resume"]
 
 FOOTER_EXTRA = (
-    "\n      Visuals are either diagrams I recreated or Microsoft-published, public screenshots (attributed) —"
-    "\n      never confidential or unreleased company materials."
+    "\n      The diagrams throughout are my own — designed and built in code, not reproductions of shipped UI."
+    "\n      Where a screen depicts a real shipped experience, it&rsquo;s either a redacted recreation (noted in its"
+    "\n      caption) or a Microsoft-published, public screenshot (attributed) — never confidential or unreleased"
+    "\n      company materials."
 )
 
 INCLUDE_RE = re.compile(r'<!--@include:(\w+)((?:\s+\w+="[^"]*")*)\s*-->')
