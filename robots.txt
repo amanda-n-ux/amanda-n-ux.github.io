@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://amanda-n-ux.github.io/sitemap.xml
+Sitemap: https://amanda-neves.com/sitemap.xml
