@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- SOURCE FILE — edit here, then run `python build.py` from the repo root.
-     Do NOT open this file directly in a browser: it links to style.css and
-     images with paths that only resolve at the repo root, and the nav/footer
-     include markers below are not real markup yet. Always preview the built
-     file at the repo root (same filename, one folder up) instead. -->
+
 <head>
 <meta charset="UTF-8" />
 <meta name="google" content="notranslate" />
@@ -79,7 +75,7 @@
   <dl class="cells">
     <div><dt>Role</dt><dd>Design Lead, monitoring/reporting strategy &amp; Design Owner, Frontline/Flex &mdash; with a prior AVD background</dd></div>
     <div><dt>Scope</dt><dd>Fleet-scale monitoring &mdash; signal aggregation, dashboards, restore</dd></div>
-    <div><dt>Outcome</dt><dd>A unified reporting dashboard, adopted across Cloud PC and Flex &mdash; the same reporting work that unblocked a 40,000+ employee enterprise migration onto Windows 365</dd></div>
+    <div><dt>Outcome</dt><dd>A unified reporting dashboard, adopted across Cloud PC and Flex &mdash; one shared reporting model rather than a per-signal, per-device pile of reports</dd></div>
   </dl>
 </div>
 
@@ -151,14 +147,14 @@
     </div>
     <p>The design problem was never the dashboard screen &mdash; it was working out how per-device facts scattered across teams rolled up into something true at the tenant level. Aggregate is where that decision lives.</p>
 
-    <p>Flex &mdash; formerly Frontline &mdash; Cloud PCs needed a different kind of signal entirely, and this is where owning the shared model as its own design problem mattered most. A regular Cloud PC is one person, one device, so its health question is simple: is this machine working. A Flex Cloud PC is shared &mdash; up to four people licensed against one Cloud PC, one at a time &mdash; so the real question isn&rsquo;t about any single device, it&rsquo;s whether the shared pool is keeping up with demand. I designed a report showing concurrent license usage and which users couldn&rsquo;t connect, so admins could see actual utilization against capacity and decide whether they needed to license more Flex Cloud PCs &mdash; a capacity question the per-device model this page is built around doesn&rsquo;t answer on its own.</p>
+    <p>Flex &mdash; formerly Frontline &mdash; Cloud PCs needed a different kind of signal entirely, and this is where owning the shared model as its own design problem mattered most. A regular Cloud PC is one person, one device, so its health question is simple: is this machine working. A Flex Cloud PC is shared &mdash; multiple people licensed against one Cloud PC, one at a time &mdash; so the real question isn&rsquo;t about any single device, it&rsquo;s whether the shared pool is keeping up with demand. I designed a report showing concurrent license usage and which users couldn&rsquo;t connect, so admins could see actual utilization against capacity and decide whether they needed to license more Flex Cloud PCs &mdash; a capacity question the per-device model this page is built around doesn&rsquo;t answer on its own.</p>
 
     <figure class="fig">
-      <img src="screenshots/03_windows365_manage/report-connected-frontline-cloud-pcs__capacity.png" alt="Devices overview showing Cloud PC performance tab, with Connected Frontline Cloud PCs tile reporting Approaching limit and Reached limit counts" />
+      <img src="screenshots/03_windows365_manage/report-connected-frontline-cloud-pcs__capacity.png" alt="Devices overview showing Cloud PC performance tab, with Connected Frontline Cloud PCs tile reporting Approaching limit and Reached limit counts" loading="lazy" />
       <figcaption>The Devices overview dashboard &mdash; bottom left, Connected Frontline Cloud PCs reporting approaching-limit and reached-limit counts, the capacity question a per-device view can&rsquo;t answer.</figcaption>
     </figure>
     <figure class="fig">
-      <img src="screenshots/07_techcommunity_frontline_quickstart/concurrent-frontline-connections__report.png" alt="Concurrent Frontline Cloud PC connections report showing an allotment's current connections (6 of 20), users prevented from connecting, and a daily concurrent-connection-history chart over the last 28 days" />
+      <img src="screenshots/07_techcommunity_frontline_quickstart/concurrent-frontline-connections__report.png" alt="Concurrent Frontline Cloud PC connections report showing an allotment's current connections (6 of 20), users prevented from connecting, and a daily concurrent-connection-history chart over the last 28 days" loading="lazy" />
       <figcaption>The same question, over time &mdash; concurrent connections against the license allotment, with the moments demand outpaced capacity.</figcaption>
     </figure>
 
@@ -167,8 +163,8 @@
     <p>Those same actions needed to work at fleet scale, not one device at a time. I designed bulk-action workflows with batching underneath &mdash; an admin filters down to the Cloud PCs that need something, then acts on all of them at once, and the system works through the batch reliably instead of the admin repeating one action thousands of times by hand.</p>
 
     <div class="shots">
-      <figure><img src="screenshots/03_windows365_manage/report-cloud-pc-overview__dashboard-groups.png" alt="Reports Cloud PC overview showing connection quality, Cloud PCs that aren't available, Cloud PC recommendations, utilization, Connected Frontline, and cross-region tiles grouped on one dashboard" /><figcaption>The tenant-level dashboard, grouped by intent &mdash; several signal types, one screen</figcaption></figure>
-      <figure><img src="screenshots/03_windows365_manage/restore-single-cloud-pc__select-restore-point.png" alt="Selecting a restore point for a single Cloud PC" /><figcaption>Restore a Cloud PC to a working point in time</figcaption></figure>
+      <figure><img src="screenshots/03_windows365_manage/report-cloud-pc-overview__dashboard-groups.png" alt="Reports Cloud PC overview showing connection quality, Cloud PCs that aren't available, Cloud PC recommendations, utilization, Connected Frontline, and cross-region tiles grouped on one dashboard" loading="lazy" /><figcaption>The tenant-level dashboard, grouped by intent &mdash; several signal types, one screen</figcaption></figure>
+      <figure><img src="screenshots/03_windows365_manage/restore-single-cloud-pc__select-restore-point.png" alt="Selecting a restore point for a single Cloud PC" loading="lazy" /><figcaption>Restore a Cloud PC to a working point in time</figcaption></figure>
     </div>
     <p class="attrib">Shipped Windows 365 management experiences, published by Microsoft &mdash; <a href="https://learn.microsoft.com/en-us/windows-365/enterprise/report-resource-performance" target="_blank" rel="noopener">learn.microsoft.com/windows-365</a>, <a href="https://learn.microsoft.com/en-us/windows-365/enterprise/report-remoting-connection" target="_blank" rel="noopener">report-remoting-connection</a>, and <a href="https://learn.microsoft.com/en-us/windows-365/enterprise/report-connected-frontline-cloud-pcs" target="_blank" rel="noopener">report-connected-frontline-cloud-pcs</a>. Reference for the shipped admin surfaces.</p>
   </div>

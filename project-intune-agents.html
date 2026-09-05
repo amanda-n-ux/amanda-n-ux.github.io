@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- SOURCE FILE — edit here, then run `python build.py` from the repo root.
-     Do NOT open this file directly in a browser: it links to style.css and
-     images with paths that only resolve at the repo root, and the nav/footer
-     include markers below are not real markup yet. Always preview the built
-     file at the repo root (same filename, one folder up) instead. -->
+
 <head>
 <meta charset="UTF-8" />
 <meta name="google" content="notranslate" />
@@ -156,14 +152,14 @@
 <div class="phase">
   <div class="label">04 &mdash; What shipped</div>
   <div>
-    <p>Multiple agents, sharing one interaction model and one set of components — not separate UIs stitched together after the fact. Individual agent screens live on their own chapter pages; what shipped here is the framework underneath all of them. All shipped to public preview on schedule for Ignite, under embargo, with quality validated through Microsoft Digital and CxE (Customer Experience Engineering) testing before enterprise rollout.</p>
+    <p>Multiple agents, sharing one interaction model and one set of components — not separate UIs stitched together after the fact. Individual agent screens live on their own chapter pages; what shipped here is the framework underneath all of them. All shipped to public preview on schedule for Ignite, under embargo, with quality validated through internal dogfooding and pre-release testing before enterprise rollout.</p>
     <figure class="fig">
-      <img src="screenshots/05_intune_agents/security-copilot-agents-landing.png" alt="Security Copilot Agents landing page in the Intune admin center, showing four agent cards in the same layout" />
+      <img src="screenshots/05_intune_agents/security-copilot-agents-landing.png" alt="Security Copilot Agents landing page in the Intune admin center, showing four agent cards in the same layout" loading="lazy" />
       <figcaption>Multiple agents on one landing page, one card pattern — published by Microsoft.</figcaption>
     </figure>
     <p>Every agent follows the same shape, whatever it&rsquo;s watching for: it&rsquo;s triggered by a schedule or an event, investigates the relevant state, builds a plan, and presents that plan for review before it does anything. Trust but review, not trust and hope — the plan is always visible before it becomes an action.</p>
     <figure class="fig">
-      <img src="screenshots/05_intune_agents/device-offboarding__overview.png" alt="Device Offboarding Agent overview tab, showing the same Overview / Suggestions / Settings layout, with suggestions for removing stale Windows, iOS/iPadOS, and macOS devices" />
+      <img src="screenshots/05_intune_agents/device-offboarding__overview.png" alt="Device Offboarding Agent overview tab, showing the same Overview / Suggestions / Settings layout, with suggestions for removing stale Windows, iOS/iPadOS, and macOS devices" loading="lazy" />
       <figcaption>Device Offboarding Agent, published by Microsoft — a different job, the identical shape.</figcaption>
     </figure>
 
@@ -299,14 +295,14 @@
         </div>
       </article>
     </div>
-    <p>I designed &ldquo;managed&rdquo; to mean an ongoing lifecycle each agent plugs into, not a one-time action to watch run &mdash; starting with identity and permissions: every agent runs under its own chosen identity rather than a shared one, scoped access, authentication that expires after 90 days. I reused that same settings pattern for configuration and scope across every agent, rather than redesigning a bespoke screen each time a new one shipped.</p>
+    <p>I designed &ldquo;managed&rdquo; to mean an ongoing lifecycle each agent plugs into, not a one-time action to watch run &mdash; starting with identity and permissions: every agent runs under its own chosen identity rather than a shared one, scoped access, authentication that expires and must be renewed. I reused that same settings pattern for configuration and scope across every agent, rather than redesigning a bespoke screen each time a new one shipped.</p>
     <div class="plain-lists">
       <div>
         <h5>Access &amp; identity</h5>
         <ul>
           <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Required permissions, listed per agent</li>
           <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Runs under a chosen identity, not a shared one</li>
-          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Authentication expires after 90 days</li>
+          <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Time-boxed credentials that expire and must be renewed</li>
           <li><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5 6.5-7"/></svg>Role-based access control (RBAC)</li>
         </ul>
       </div>
@@ -321,7 +317,7 @@
       </div>
     </div>
     <figure class="fig">
-      <img src="screenshots/05_intune_agents/policy-agent-review-instructions.png" alt="Policy Configuration Agent's Review instructions panel, with a custom instruction entered and the agent's plain-language interpretation of it shown below" />
+      <img src="screenshots/05_intune_agents/policy-agent-review-instructions.png" alt="Policy Configuration Agent's Review instructions panel, with a custom instruction entered and the agent's plain-language interpretation of it shown below" loading="lazy" />
       <figcaption>Policy Configuration Agent, published by Microsoft — custom instructions, with the agent restating its own interpretation back so an admin can catch a misread before it becomes a policy. Alongside VRA, one of two agents I owned end-to-end.</figcaption>
     </figure>
   </div>
