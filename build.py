@@ -43,6 +43,16 @@ def render_footer(extra):
     return tpl.replace("{{footer_extra}}", FOOTER_EXTRA if extra else "").rstrip("\n")
 
 
+COMMENT_RE = re.compile(r"<!--.*?-->", re.DOTALL)
+
+
+def strip_comments(text):
+    """Drop all HTML comments from built output (source-file headers, TODOs,
+    dev notes) so they aren't served publicly. Must run after include
+    substitution, since @include markers are themselves HTML comments."""
+    return COMMENT_RE.sub("", text)
+
+
 def build_page(src_path):
     text = src_path.read_text(encoding="utf-8")
 
@@ -55,7 +65,8 @@ def build_page(src_path):
             return render_footer(attrs.get("extra", "false") == "true")
         raise ValueError(f"Unknown include type: {name!r} in {src_path.name}")
 
-    return INCLUDE_RE.sub(repl, text)
+    built = INCLUDE_RE.sub(repl, text)
+    return strip_comments(built)
 
 
 def main():
