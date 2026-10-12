@@ -20,7 +20,7 @@ PAGES = ROOT / "pages"
 NAV_KEYS = ["home", "about", "projects", "resume"]
 
 FOOTER_EXTRA = (
-    "\n      The diagrams throughout are my own — designed and built in code, not reproductions of shipped UI."
+    "\n      The diagrams throughout are my own — directed by me, not reproductions of shipped UI."
     "\n      Where a screen depicts a real shipped experience, it&rsquo;s either a redacted recreation (noted in its"
     "\n      caption) or a Microsoft-published, public screenshot (attributed) — never confidential or unreleased"
     "\n      company materials."
