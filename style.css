@@ -116,6 +116,12 @@ header.hero p.lede{font-size:18px; color:var(--ink); max-width:680px; margin:0 0
 .story-lede{font:400 13.5px/1.6 Arial,sans-serif; color:var(--muted); max-width:600px; margin-bottom:18px;}
 .chapters{display:flex; flex-direction:column; gap:10px;}
 
+/* Meta story: same shell, quieter treatment so it doesn't compete with the enterprise case studies */
+.story--meta{border-left-color:var(--muted); border-left-style:dashed;}
+.story--meta .story-count{color:var(--muted); background:var(--chip);}
+.story--meta .chapter-card{border:1px dashed var(--line);}
+.story--meta .chapter-card .eyebrow{color:var(--muted);}
+
 .chapter-card{display:grid; grid-template-columns:44px 1fr 150px 170px; gap:24px; align-items:center; padding:26px 34px; background:var(--bg); border-radius:2px; color:var(--ink);}
 .chapter-card:hover{text-decoration:none;}
 .chapter-card:hover .thumb{border-color:var(--coral);}

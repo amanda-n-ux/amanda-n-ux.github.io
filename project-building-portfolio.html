@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="google" content="notranslate" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Building This Portfolio — Amanda Neves</title>
+<meta name="description" content="Case study: designing this portfolio site and directing an AI coding assistant to build it — Amanda Neves, Principal Product Designer." />
+<link rel="canonical" href="https://amanda-neves.com/project-building-portfolio.html" />
+<meta name="theme-color" content="#FFFFFF" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=2" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" />
+<link rel="stylesheet" href="style.css?v=16" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://amanda-neves.com/project-building-portfolio.html" />
+<meta property="og:title" content="Building This Portfolio — Amanda Neves" />
+<meta property="og:description" content="Designing this site, then directing an AI coding assistant to build it — with the review discipline of a design lead, not a passive user." />
+<meta property="og:image" content="https://amanda-neves.com/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Building This Portfolio — Amanda Neves" />
+<meta name="twitter:description" content="Designing this site, then directing an AI coding assistant to build it — with the review discipline of a design lead, not a passive user." />
+<meta name="twitter:image" content="https://amanda-neves.com/og-image.png" />
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html"><img class="brand-mark" src="flower-mark.png" alt="" />Amanda Neves</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="resume.html">Résumé</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<header class="cs-head">
+  <div class="cs-crumb">
+    <a href="projects.html" style="color:inherit; text-decoration:none;">Projects</a>
+    <span class="sep">/</span>
+    <span>Building This Portfolio</span>
+    <span class="sep">/</span>
+    <span class="here">Chapter One</span>
+  </div>
+  <div class="inner" style="grid-template-columns:1fr;">
+    <div>
+      <h1>Building This Portfolio</h1>
+      <p class="sub">I&rsquo;m a designer, not a developer &mdash; so I designed this site and directed Claude, an AI coding assistant, to build it. AI wrote the code. The decisions were mine &mdash; the structure, the palette, the flower mark, the copy, every catch below. &ldquo;Used AI&rdquo; undersells what that took: nothing here shipped because AI suggested it, and when its first draft didn&rsquo;t hold up, I sent it back until it did.</p>
+    </div>
+  </div>
+</header>
+
+<div class="cs-glance">
+  <div class="label">At a glance</div>
+  <dl class="cells">
+    <div><dt>Role</dt><dd>Designer &amp; director &mdash; content, visual system, and QA</dd></div>
+    <div><dt>Scope</dt><dd>Four pages, five case studies, a hidden design-system reference &middot; summer 2026</dd></div>
+    <div><dt>Outcome</dt><dd>A shipped portfolio site, built by directing an AI coding assistant end-to-end &mdash; not by writing the code by hand, and not by accepting its first draft of anything</dd></div>
+    <div><dt>Tools</dt><dd>Built and hosted on GitHub (GitHub Pages, git tracking every change) &middot; Claude for code &middot; Figma Make for a few of the diagrams</dd></div>
+  </dl>
+</div>
+
+<div class="phase">
+  <div class="label">01 &mdash; The problem</div>
+  <div>
+    <p>I needed a portfolio that could carry a job search on its own &mdash; something a hiring manager could click through unsupervised, not a slide deck that only works with me narrating it. I could design every screen in Figma and hand it to an engineer to build, except there was no engineer on this project, and the site needed to exist before that hire came from wherever the search led.</p>
+    <p>So I directed Claude Code to build it &mdash; reviewing every output, catching what was wrong, and redirecting until it matched what I wanted, rather than accepting whatever came back first.</p>
+  </div>
+</div>
+
+<div class="phase">
+  <div class="label">02 &mdash; What I learned first</div>
+  <div>
+    <p>The first drafts back told me a lot about where I&rsquo;d need to push, before I&rsquo;d made a single visual decision.</p>
+    <p>The first version was one long page with anchor-linked sections. I wanted a real Home / About / Projects / R&eacute;sum&eacute; structure instead &mdash; separate pages, a r&eacute;sum&eacute; that displays in-page instead of forcing a download, a home page that doesn&rsquo;t try to do everything at once &mdash; and had the whole site rebuilt around that.</p>
+    <img class="process-shot" src="process-shots/ia-onepager-draft.png" alt="Recreation of the original one-page draft: Home, About, Projects, and R&eacute;sum&eacute; all stacked as anchor-linked sections on a single scrolling page &mdash; it didn't last long enough to get screenshotted at the time" loading="lazy" />
+    <img class="process-shot" src="process-shots/ia-home.png" alt="Screenshot: the restructured Home page" loading="lazy" />
+    <img class="process-shot" src="process-shots/ia-resume.png" alt="Screenshot: the in-page R&eacute;sum&eacute; viewer" loading="lazy" />
+    <p>AI&rsquo;s first pass at a palette leaned into a navy-and-white &ldquo;enterprise software&rdquo; look. I already had a warmer direction in mind &mdash; dusty blue and soft pink on a warm off-white &mdash; from an earlier design conversation, and redirected it there.</p>
+  </div>
+</div>
+
+<div class="phase">
+  <div class="label">03 &mdash; Exploration</div>
+  <div>
+    <p>The visual identity took a full pivot mid-build, not an incremental nudge &mdash; and it happened in conversation, not by generating options and picking one.</p>
+    <p>Once I introduced a hand-drawn flower motif as a personal mark, the earlier dusty-blue/pink direction stopped fitting. Rather than just dropping in a new accent color, I had a full palette specified up front &mdash; black, white, coral, orange, cool grays &mdash; with contrast ratios checked against WCAG AA before anything shipped, so text stays legible instead of just &ldquo;looking right&rdquo; at a glance.</p>
+    <img class="process-shot" src="screenshots/09_building_portfolio/palette-conversation.png" alt="Screenshot: the conversation working through the palette pivot" loading="lazy" />
+    <img class="process-mark" src="flower-mark.png" alt="The redrawn flower mark, based on a hand-drawn original" loading="lazy" />
+    <p>AI&rsquo;s actual first attempt makes the point better than I could describe it: a rigid ring of overlapping circles that read as a geometric mandala, plus an oversimplified solid blob for small sizes &mdash; confident, polished output, and not remotely the hand-drawn mark I&rsquo;d sent as reference. My note back was blunt: &ldquo;This doesn&rsquo;t look right. Compare this to the original EPS.&rdquo;</p>
+    <img class="process-shot" src="screenshots/09_building_portfolio/flower-first-attempt.png" alt="Screenshot: AI's first attempt at the flower mark &mdash; a geometric circle pattern and an oversimplified blob, both rejected" loading="lazy" />
+    <p>From there it took over twenty more rounds &mdash; fixing where the outlines converged, repositioning the center dots relative to the stamens, correcting uneven petal exposure &mdash; before it read as drawn by hand instead of generated. The exchange below picks up at version 24, mid-way through dialing a wobble pass back after it overshot into &ldquo;too much.&rdquo; It mattered more than it should have, because it&rsquo;s the one graphic element that appears on every page.</p>
+    <img class="process-shot" src="screenshots/09_building_portfolio/flower-mark-iteration.png" alt="Screenshot: iterating on the flower mark, twenty-plus versions in" loading="lazy" />
+    <p>Once the mark was applied everywhere, I noticed it being used differently page to page &mdash; sometimes decorative, sometimes floating oddly against a photo. I had it standardized to one placement and treatment sitewide before publishing, rather than letting each page&rsquo;s version stand.</p>
+    <img class="process-shot" src="screenshots/09_building_portfolio/flower-consistency-fix.png" alt="Screenshot: standardizing the flower mark's placement across the site" loading="lazy" />
+    <p>For the Projects index, I had two real options mocked side by side &mdash; a type-led index with no thumbnails, versus wide alternating rows with a screenshot per case &mdash; and picked based on which one held up with the screenshots I actually had, not which one looked better empty.</p>
+    <img class="process-shot" src="screenshots/09_building_portfolio/layout-options.png" alt="Screenshot: two layout directions for the Projects index, compared side by side" loading="lazy" />
+  </div>
+</div>
+
+<div class="phase">
+  <div class="label">04 &mdash; What shipped</div>
+  <div>
+    <p>A four-page site, five case studies, and a hidden internal reference page documenting the design system itself &mdash; built on a palette and component set specified once and reused everywhere, not improvised page by page. It&rsquo;s built and hosted on GitHub, so every change is tracked in git. For the process diagrams in this and the other case studies, I used Figma Make &mdash; a second AI tool &mdash; and directed it the same way I directed Claude with the code.</p>
+    <p>One pass color-coded a Problem/Role grid to visually echo a Before/After comparison above it. It looked intentional &mdash; it wasn&rsquo;t. The pairing didn&rsquo;t hold up conceptually, and I asked for a different pattern rather than keeping a fix that just looked finished.</p>
+    <img class="process-shot" src="process-shots/layout-before.png" alt="Screenshot: the Problem/My Role grid before the fix" loading="lazy" />
+    <img class="process-shot" src="process-shots/layout-correction.png" alt="Screenshot: catching the issue and redirecting mid-build" loading="lazy" />
+    <img class="process-shot" src="screenshots/09_building_portfolio/layout-catch-live.png" alt="Screenshot: the live site and the conversation catching the pattern, side by side" loading="lazy" />
+    <p>The dark case-study headers, the active nav state, and the coral accent were starting to feel like separate decisions rather than one palette. I had black standardized as the fullest expression of a color already used throughout &mdash; nav text, borders, tags &mdash; instead of a one-off dark section.</p>
+    <img class="process-shot" src="screenshots/09_building_portfolio/black-as-system.png" alt="Screenshot: treating black as a consistent system color across the Projects page" loading="lazy" />
+  </div>
+</div>
+
+<div class="phase">
+  <div class="label">05 &mdash; Tradeoffs I own</div>
+  <div>
+    <p>A few calls cost more time than the faster version would have &mdash; deliberately.</p>
+    <p>No phone number. Colleague feedback cited without names or dates, available on request instead. And when I noticed the r&eacute;sum&eacute; PDF still showed a personal email address after I&rsquo;d already scrubbed it from the page text, I had it pulled before it went any further &mdash; the kind of call about what&rsquo;s appropriate in front of strangers online that AI doesn&rsquo;t make without being asked.</p>
+    <img class="process-shot" src="screenshots/09_building_portfolio/privacy-fix.png" alt="Screenshot: catching a personal email address in the resume PDF and fixing it before publishing" loading="lazy" />
+    <p>Early drafts leaned hard into AI-agent language and Microsoft-internal jargon &mdash; exactly the kind of narrow framing that can get filtered out of a broad job search. I had the home and about pages rewritten until they read as a general Principal Product Designer, with AI-agentic work as one strong thread, not the whole identity.</p>
+    <p>Home&rsquo;s headline and About&rsquo;s opening two blocks were all making the same &ldquo;ambiguous problems into reusable patterns&rdquo; point in slightly different words &mdash; reading as padding, not progressive disclosure. I had it cut to one clean statement per idea, so About&rsquo;s bio leads with specifics instead of repeating what Home already said.</p>
+    <p>A portrait on the hero was an easy default to accept and a genuinely awkward one to get wrong &mdash; too corporate, too casual, or just off. I sat with it rather than shipping the first crop that technically worked.</p>
+    <img class="process-shot" src="screenshots/09_building_portfolio/photo-decision.png" alt="Screenshot: weighing whether the home page portrait felt right" loading="lazy" />
+  </div>
+</div>
+
+<div class="phase phase--warm">
+  <div class="label">06 &mdash; Beyond this feature</div>
+  <div>
+    <p>None of this shows up as a single visible feature, but it&rsquo;s the part of directing AI that actually took discipline: checking what it told me before I let it stand as fact.</p>
+    <p>A caption stated a feature&rsquo;s status as settled fact when it was still in preview. I caught the discrepancy, had it verified against the case study&rsquo;s own framing, and had the copy corrected &mdash; a small accuracy check that matters more on a page meant to represent me to strangers than it would almost anywhere else.</p>
+    <img class="process-shot" src="screenshots/09_building_portfolio/accuracy-check.png" alt="Screenshot: verifying a claim's preview status before publishing it as fact" loading="lazy" />
+    <p>I also had the finished site checked against real usability and accessibility criteria &mdash; reading order on interactive cards, missing video transcripts, inconsistent cross-page navigation labels, and WCAG contrast ratios on the coral brand color and status tags. Several issues were critical contrast failures I wouldn&rsquo;t have caught by eye.</p>
+    <img class="process-shot" src="screenshots/09_building_portfolio/accessibility-audit.png" alt="Screenshot: usability audit findings run against the finished site" loading="lazy" />
+    <img class="process-shot" src="screenshots/09_building_portfolio/wcag-audit.png" alt="Screenshot: WCAG contrast-ratio audit with corrected hex values" loading="lazy" />
+  </div>
+</div>
+
+<div class="phase">
+  <div class="label">07 &mdash; What I&rsquo;d carry forward</div>
+  <div class="carry-list">
+    <div class="carry-item"><span class="n"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="10.5"/><path d="M14 8v6l4 3"/></svg></span><p>Directing beats accepting. Reviewing an AI assistant&rsquo;s output the same way I&rsquo;d review a junior engineer&rsquo;s PR &mdash; line by line, redirecting rather than settling &mdash; is what separated a site that looks finished from one that actually is.</p></div>
+    <div class="carry-item"><span class="n"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h6l2-6 4 12 2-6h6"/></svg></span><p>Specificity earns credibility faster than volume does. Cutting a repeated idea down to one clean statement said more than three softer passes at the same point ever did.</p></div>
+    <div class="carry-item"><span class="n"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l9 4.5v6c0 6-3.9 9.7-9 11.5-5.1-1.8-9-5.5-9-11.5v-6L14 4z"/><path d="M10.5 14l2.5 2.5 4.5-5"/></svg></span><p>Verify before you publish, especially your own claims about yourself. An AI assistant will confidently restate whatever you tell it &mdash; the last accuracy check on a page representing you to strangers is still yours to make.</p></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="case-nav">
+    <a href="projects.html">&larr; All Projects</a>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>Amanda Neves &middot; Principal Product Designer</div>
+    <div class="note">
+      This portfolio describes my role, process, and design decisions in my own words.
+      The diagrams throughout are my own — directed by me, not reproductions of shipped UI.
+      Where a screen depicts a real shipped experience, it&rsquo;s either a redacted recreation (noted in its
+      caption) or a Microsoft-published, public screenshot (attributed) — never confidential or unreleased
+      company materials.
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+</body>
+</html>
