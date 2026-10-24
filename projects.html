@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" />
-<link rel="stylesheet" href="style.css?v=16" />
+<link rel="stylesheet" href="style.css?v=17" />
 
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://amanda-neves.com/projects.html" />
@@ -60,16 +60,20 @@
     <div class="story">
       <div class="story-head">
         <h2>Agents in Intune</h2>
-        <span class="story-count">Three chapters</span>
+        <span class="story-count">Two related cases &middot; start anywhere</span>
       </div>
-      <p class="story-lede">How agents earn the right to act on an admin's behalf — built up across three connected releases.</p>
+      <p class="story-lede">How agents earn the right to act on an admin's behalf — built up across connected releases.</p>
       <div class="chapters">
         <a class="chapter-card" href="project-intune-agents.html">
           <div class="num">01</div>
           <div>
             <div class="eyebrow">Adding Agents to Intune</div>
             <h3>Agents as a Managed System</h3>
-            <p>Agents investigate, build durable plans, and present actionable recommendations while keeping the admin firmly in control.</p>
+            <dl class="card-prr">
+<div><dt>Problem</dt><dd>Intune&rsquo;s first agents, with no precedent &mdash; and admins had to trust an agent before they&rsquo;d let it act for them.</dd></div>
+<div><dt>My part</dt><dd>Experience strategy and interaction design for the shared framework every Intune agent is built on.</dd></div>
+<div><dt>Result</dt><dd>Multiple agents shipped to public preview together, on schedule for Ignite.</dd></div>
+</dl>
           </div>
           <div class="meta">
             <span class="role">Experience Strategy</span>
@@ -98,7 +102,11 @@
           <div>
             <div class="eyebrow">VRA Deep Dive</div>
             <h3>Vulnerability Remediation Agent</h3>
-            <p>The agent converts vulnerability intelligence into remediation plans, ready for administrator review and approval.</p>
+            <dl class="card-prr">
+<div><dt>Problem</dt><dd>One CVE could touch thousands of devices, and fixing it meant stitching Defender and Intune together by hand.</dd></div>
+<div><dt>My part</dt><dd>Lead UX, end to end &mdash; discoverability, setup, ranked suggestions, the approval workflow, and tracking.</dd></div>
+<div><dt>Result</dt><dd>One guided, admin-reviewed remediation flow inside Intune. For one early customer, roughly two weeks of remediation work dropped to under two minutes.</dd></div>
+</dl>
           </div>
           <div class="meta">
             <span class="role">Lead UX</span>
@@ -115,49 +123,13 @@
             </svg>
           </div>
         </a>
-        <a class="chapter-card" href="project-perception.html">
-          <div class="num">03</div>
-          <div>
-            <div class="eyebrow">Project Perception</div>
-            <h3>Extending Agents Into a Coordinated, Multi-Agent System</h3>
-            <p>Specialized agents coordinate toward a single outcome — with the admin directing and approving at key checkpoints.</p>
-          </div>
-          <div class="meta">
-            <span class="role">Experience Strategy</span>
-            <span class="cta">Read the case study &rarr;</span>
-          </div>
-          <div class="thumb">
-            <svg aria-hidden="true" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M59.6 49.4q0.6 -15.8 0.9 -31" stroke="#E1614A" stroke-width="1.2" stroke-dasharray="1 4.3" stroke-linecap="round"/>
-              <path d="M60.3 50.3q-14.5 -9 -30.8 -18.6" stroke="#E1614A" stroke-width="1.2" stroke-dasharray="1 4.3" stroke-linecap="round"/>
-              <path d="M60 49.7q14.8 -9.2 30.5 -18" stroke="#E1614A" stroke-width="1.2" stroke-dasharray="1 4.3" stroke-linecap="round"/>
-              <path d="M59.7 50.5q-14.6 8.7 -30.2 19.8" stroke="#E1614A" stroke-width="1.2" stroke-dasharray="1 4.3" stroke-linecap="round"/>
-              <path d="M60.3 49.8q15 8.6 30 20.5" stroke="#E1614A" stroke-width="1.2" stroke-dasharray="1 4.3" stroke-linecap="round"/>
-              <path d="M60.1 50.6q0.3 16.5 -0.4 33" stroke="#E1614A" stroke-width="1.2" stroke-dasharray="1 4.3" stroke-linecap="round"/>
-              <circle cx="59.6" cy="49.7" r="11.2" fill="#E1614A"/>
-              <circle cx="60.7" cy="50.6" r="10.4" fill="none" stroke="#E1614A" stroke-width="1" opacity=".5"/>
-              <circle cx="59.7" cy="17.6" r="7.1" fill="#fff" stroke="#E1614A" stroke-width="1.3"/>
-              <circle cx="60.5" cy="18.6" r="6.6" fill="none" stroke="#E1614A" stroke-width="1"/>
-              <circle cx="29.7" cy="31.6" r="7.2" fill="#fff" stroke="#E1614A" stroke-width="1.3"/>
-              <circle cx="30.6" cy="32.7" r="6.5" fill="none" stroke="#E1614A" stroke-width="1"/>
-              <circle cx="90.3" cy="32.2" r="7.1" fill="#E1614A"/>
-              <circle cx="89.4" cy="31.3" r="6.6" fill="none" stroke="#E1614A" stroke-width="1" opacity=".5"/>
-              <circle cx="29.8" cy="70.4" r="7.2" fill="#fff" stroke="#E1614A" stroke-width="1.3"/>
-              <circle cx="30.7" cy="69.4" r="6.5" fill="none" stroke="#E1614A" stroke-width="1"/>
-              <circle cx="90.2" cy="69.7" r="7" fill="#fff" stroke="#E1614A" stroke-width="1.3"/>
-              <circle cx="89.4" cy="70.7" r="6.6" fill="none" stroke="#E1614A" stroke-width="1"/>
-              <circle cx="59.8" cy="84.3" r="7.1" fill="#E1614A"/>
-              <circle cx="60.6" cy="83.3" r="6.5" fill="none" stroke="#E1614A" stroke-width="1" opacity=".5"/>
-            </svg>
-          </div>
-        </a>
       </div>
     </div>
 
     <div class="story story--w365">
       <div class="story-head">
         <h2>Windows 365 / Cloud PC</h2>
-        <span class="story-count">Two chapters</span>
+        <span class="story-count">Two related cases &middot; start anywhere</span>
       </div>
       <p class="story-lede">Complete lifecycle ownership — taking a brand-new product's admin experience from pre-launch through general availability and ongoing management, building on earlier Azure Virtual Desktop experience.</p>
       <div class="chapters">
@@ -166,7 +138,11 @@
           <div>
             <div class="eyebrow">Complete Lifecycle Ownership</div>
             <h3>Provisioning Cloud PCs at Scale</h3>
-            <p>Translating a per-user license into a group-based system, and designing a state model Intune never needed for physical devices — provisioning that scaled to thousands of Cloud PCs, not one at a time.</p>
+            <dl class="card-prr">
+<div><dt>Problem</dt><dd>A per-user license had to become something admins could deploy to thousands of devices at once.</dd></div>
+<div><dt>My part</dt><dd>Design lead &mdash; a group-based provisioning model and a device state model Intune had never needed.</dd></div>
+<div><dt>Result</dt><dd>Provisioning built to scale to thousands of Cloud PCs at a time, not one at a time.</dd></div>
+</dl>
           </div>
           <div class="meta">
             <span class="role">Design Lead</span>
@@ -190,7 +166,11 @@
           <div>
             <div class="eyebrow">Complete Lifecycle Ownership</div>
             <h3>Cloud PC Health &amp; Monitoring</h3>
-            <p>A unified health dashboard, connection-quality alerts, restore, and cross-region recovery — so admins could tell a Cloud PC was healthy at fleet scale, not just one device at a time.</p>
+            <dl class="card-prr">
+<div><dt>Problem</dt><dd>Admins couldn&rsquo;t tell whether a Cloud PC was healthy &mdash; let alone spot patterns across a fleet.</dd></div>
+<div><dt>My part</dt><dd>Design lead for the monitoring, reporting, and alerting strategy.</dd></div>
+<div><dt>Result</dt><dd>One unified reporting dashboard, adopted as the shared model across teams.</dd></div>
+</dl>
           </div>
           <div class="meta">
             <span class="role">Design Lead</span>
@@ -222,7 +202,11 @@
           <div>
             <div class="eyebrow">Designer &amp; Director</div>
             <h3>Building This Portfolio</h3>
-            <p>Directed, not automated &mdash; the decisions, redirects, and QA behind a portfolio built without writing the code by hand.</p>
+            <dl class="card-prr">
+<div><dt>Problem</dt><dd>Show how I work &mdash; judgment, iteration, and QA &mdash; not just finished screens.</dd></div>
+<div><dt>My part</dt><dd>Design, content, and direction of an AI coding assistant, reviewing every change.</dd></div>
+<div><dt>Result</dt><dd>This shipped site.</dd></div>
+</dl>
           </div>
           <div class="meta">
             <span class="role">Design &amp; Direction</span>
