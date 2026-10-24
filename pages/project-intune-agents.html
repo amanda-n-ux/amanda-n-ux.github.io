@@ -57,7 +57,6 @@
       <div class="label">Agents in Intune</div>
       <a class="current" href="project-intune-agents.html"><span class="dot"></span>01 &mdash; Agents as a Managed System</a>
       <a href="project-vra.html"><span class="dot"></span>02 &mdash; Vulnerability Remediation Agent</a>
-      <a href="project-perception.html"><span class="dot"></span>03 &mdash; Extending Agents Into a Coordinated, Multi-Agent System</a>
     </div>
   </div>
 </header>
@@ -372,8 +371,20 @@
   </div>
 </div>
 
+<div class="phase" id="where-next">
+  <div class="label">07 &mdash; Where this went next</div>
+  <div>
+    <p>This framework was built inside one product, but real security work isn&rsquo;t. An investigation might start in Defender, pull device context from Intune, and end with a policy change somewhere else in the estate. <a href="https://www.microsoft.com/en-us/security/business/ai-powered-cybersecurity/project-perception-agentic-system" target="_blank" rel="noopener">Project Perception</a>, Microsoft&rsquo;s multi-agent security system, took that on &mdash; specialized agents coordinating across products, hosted in Microsoft Defender. It entered limited public preview in August 2026.</p>
+    <p>My part was a contribution, not ownership. My Intune agent work, and the Intune agent demo I led for the multi-agent press release, fed into it, and I contributed early design work on the interaction model. Two findings from that work shaped it: coordination needed a shared, durable session &mdash; the same &ldquo;revisitable artifact, not ephemeral chat&rdquo; principle as this framework &mdash; and security teams wanted to describe a goal and let the system route it to the right agent, not learn which specialized agent to open. The system itself was designed and built by the wider Perception team.</p>
+    <figure class="fig">
+      <img src="screenshots/04_project_perception/agentic-demo-ui.png" alt="Project Perception chat entry point in the Microsoft Defender portal: &quot;What do you want to do next?&quot; with a task box and playbook cards, alongside Sessions, Playbooks, and Agents in the side nav" loading="lazy" />
+      <figcaption>Chat as the front door, with Sessions and Playbooks alongside it. Screenshot from Microsoft&rsquo;s public preview announcement &mdash; <a href="https://www.microsoft.com/en-us/security/business/ai-powered-cybersecurity/project-perception-agentic-system" target="_blank" rel="noopener">microsoft.com/security/project-perception-agentic-system</a>. <a href="https://www.youtube.com/watch?v=0o22Sc6hpS4" target="_blank" rel="noopener">Watch Microsoft&rsquo;s announcement video &#8599;</a></figcaption>
+    </figure>
+  </div>
+</div>
+
 <div class="phase">
-  <div class="label">07 &mdash; What I&rsquo;d carry forward</div>
+  <div class="label">08 &mdash; What I&rsquo;d carry forward</div>
   <div class="carry-list">
     <div class="carry-item"><span class="n"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="16" height="22" rx="1"/><line x1="9.5" y1="9" x2="18.5" y2="9"/><line x1="9.5" y1="14" x2="18.5" y2="14"/><line x1="9.5" y1="19" x2="15" y2="19"/></svg></span><p>Durable, auditable artifacts beat ephemeral chat for anything an admin needs to revisit, audit, or share — worth the extra build time.</p></div>
     <div class="carry-item"><span class="n"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="11"/><path d="M9 14.5l3.5 3.5L20 10"/></svg></span><p>Approval as the default, not a bolted-on safety net, earns trust faster than defaulting to automation and asking forgiveness.</p></div>
